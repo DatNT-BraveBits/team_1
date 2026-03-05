@@ -88,21 +88,21 @@ const UI = {
     alignItems: "center",
     justifyContent: "space-between",
     gap: 12,
-    border: "1px solid #BFDBFE",
+    border: "1px solid #E5E7EB",
     borderRadius: 14,
-    background: "linear-gradient(90deg, #EFF6FF 0%, #F8FAFC 100%)",
+    background: "#FFFFFF",
     padding: "10px 12px",
   },
   actionTitle: {
     margin: 0,
     fontSize: 14,
     fontWeight: 700,
-    color: "#1E3A8A",
+    color: "#111827",
   },
   actionHint: {
     margin: 0,
     fontSize: 12,
-    color: "#475569",
+    color: "#6B7280",
   },
   detailsSummary: {
     cursor: "pointer",
@@ -195,29 +195,6 @@ const UI = {
     alignItems: "center",
     fontSize: 15,
     color: "#111827",
-  },
-  submitButton: {
-    minHeight: 44,
-    border: "none",
-    borderRadius: 10,
-    padding: "10px 14px",
-    background: "linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%)",
-    color: "#FFFFFF",
-    fontWeight: 700,
-    cursor: "pointer",
-    boxShadow: "0 8px 16px rgba(37, 99, 235, 0.25)",
-  },
-  submitButtonPrimary: {
-    minHeight: 44,
-    border: "none",
-    borderRadius: 10,
-    padding: "10px 16px",
-    background: "linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%)",
-    color: "#FFFFFF",
-    fontWeight: 800,
-    cursor: "pointer",
-    boxShadow: "0 10px 18px rgba(37, 99, 235, 0.28)",
-    whiteSpace: "nowrap",
   },
   blockTitle: {
     margin: 0,
@@ -409,6 +386,197 @@ function BadgePreview({ settings }) {
         ) : null}
       </div>
     </div>
+  );
+}
+
+function SettingField({ label, children }) {
+  return (
+    <label style={UI.label}>
+      {label}
+      {children}
+    </label>
+  );
+}
+
+function ProductSelectionList({
+  products,
+  inputName,
+  selectedHandles,
+  controlled = false,
+  onToggle,
+  keyPrefix = "",
+}) {
+  return (
+    <div
+      style={{
+        maxHeight: 220,
+        overflow: "auto",
+        border: "1px solid #D1D5DB",
+        borderRadius: 10,
+        padding: 10,
+        background: "#fff",
+        display: "grid",
+        gap: 8,
+      }}
+    >
+      {products.length === 0 ? (
+        <p style={{ margin: 0, color: "#64748B", fontSize: 13 }}>No products found.</p>
+      ) : (
+        products.map((product) => (
+          <label key={`${keyPrefix}${product.id}`} style={UI.checkboxRow}>
+            <input
+              type="checkbox"
+              name={inputName}
+              value={product.handle}
+              {...(controlled
+                ? {
+                    checked: selectedHandles.includes(product.handle),
+                    onChange: (event) => onToggle?.(product.handle, event.target.checked),
+                  }
+                : {
+                    defaultChecked: selectedHandles.includes(product.handle),
+                  })}
+            />
+            <span style={{ display: "grid", gap: 2 }}>
+              <span>{product.title}</span>
+              <span style={{ fontSize: 12, color: "#64748B" }}>/products/{product.handle}</span>
+            </span>
+          </label>
+        ))
+      )}
+    </div>
+  );
+}
+
+function BadgeStyleFields({ fieldPrefix, badge }) {
+  return (
+    <details style={UI.groupCard}>
+      <summary style={UI.detailsSummary}>Advanced style</summary>
+      <div style={UI.twoCols}>
+        <SettingField label="Border radius">
+          <input
+            style={UI.input}
+            type="number"
+            name={`${fieldPrefix}_radius`}
+            min="0"
+            defaultValue={badge?.borderRadius ?? 999}
+          />
+        </SettingField>
+        <SettingField label="Badge height">
+          <input
+            style={UI.input}
+            type="number"
+            name={`${fieldPrefix}_height`}
+            min="18"
+            max="100"
+            defaultValue={badge?.badgeHeight ?? 28}
+          />
+        </SettingField>
+      </div>
+      <div style={UI.twoCols}>
+        <SettingField label="Font size">
+          <input
+            style={UI.input}
+            type="number"
+            name={`${fieldPrefix}_font_size`}
+            min="10"
+            max="28"
+            defaultValue={badge?.fontSize ?? 12}
+          />
+        </SettingField>
+        <SettingField label="Text color">
+          <input
+            style={{ ...UI.input, padding: 4 }}
+            type="color"
+            name={`${fieldPrefix}_text_color`}
+            defaultValue={badge?.textColor || "#FFFFFF"}
+          />
+        </SettingField>
+      </div>
+      <div style={UI.twoCols}>
+        <SettingField label="Horizontal padding">
+          <input
+            style={UI.input}
+            type="number"
+            name={`${fieldPrefix}_padding_x`}
+            min="0"
+            defaultValue={badge?.paddingX ?? 10}
+          />
+        </SettingField>
+        <SettingField label="Vertical padding">
+          <input
+            style={UI.input}
+            type="number"
+            name={`${fieldPrefix}_padding_y`}
+            min="0"
+            defaultValue={badge?.paddingY ?? 4}
+          />
+        </SettingField>
+      </div>
+    </details>
+  );
+}
+
+function BadgeBackgroundFields({ fieldPrefix, badge, defaultColor, labelPrefix }) {
+  return (
+    <details style={UI.groupCard}>
+      <summary style={UI.detailsSummary}>Background ({labelPrefix})</summary>
+      <div style={UI.twoCols}>
+        <SettingField label="Background color">
+          <input
+            style={{ ...UI.input, padding: 4 }}
+            type="color"
+            name={`${fieldPrefix}_background_color`}
+            defaultValue={badge?.backgroundColor || defaultColor}
+          />
+        </SettingField>
+        <SettingField label="Background size">
+          <select
+            name={`${fieldPrefix}_background_size`}
+            style={UI.input}
+            defaultValue={badge?.backgroundSize || "cover"}
+          >
+            <option value="cover">cover</option>
+            <option value="contain">contain</option>
+            <option value="auto">auto</option>
+          </select>
+        </SettingField>
+        <SettingField label="Background position">
+          <select
+            name={`${fieldPrefix}_background_position`}
+            style={UI.input}
+            defaultValue={badge?.backgroundPosition || "center"}
+          >
+            <option value="center">center</option>
+            <option value="top">top</option>
+            <option value="bottom">bottom</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+          </select>
+        </SettingField>
+      </div>
+      <SettingField label={`${labelPrefix} background image URL`}>
+        <input
+          type="url"
+          name={`${fieldPrefix}_background_image_url`}
+          style={UI.input}
+          placeholder="https://..."
+          defaultValue={badge?.backgroundImageUrl || ""}
+        />
+      </SettingField>
+      <SettingField label={`Upload ${labelPrefix} background (max 250 KB)`}>
+        <input
+          style={UI.fileInput}
+          type="file"
+          name={`${fieldPrefix}_background_image_file`}
+          accept="image/*"
+        />
+      </SettingField>
+      <label style={UI.checkboxRow}>
+        <input name={`remove_${fieldPrefix}_background_image`} type="checkbox" />
+        Remove {labelPrefix} background image
+      </label>
+    </details>
   );
 }
 
@@ -1039,6 +1207,7 @@ export default function Feature1Route() {
                 <p style={UI.blockTitle}>Badge Settings</p>
               </div>
               <fetcher.Form method="post" encType="multipart/form-data">
+                <input type="hidden" name="intent" value="save_badges" />
                 <div style={UI.fieldGrid}>
                 <div style={UI.actionBar}>
                   <div>
@@ -1047,15 +1216,14 @@ export default function Feature1Route() {
                       Update settings in both columns, review preview, then save.
                     </p>
                   </div>
-                  <button
-                    style={UI.submitButtonPrimary}
+                  <s-button
+                    variant="primary"
                     type="submit"
-                    name="intent"
-                    value="save_badges"
+                    loading={isSaving}
                     disabled={isSaving}
                   >
-                    {isSaving ? "Saving..." : "Save settings"}
-                  </button>
+                    Save settings
+                  </s-button>
                 </div>
                 <div style={UI.groupCard}>
                   <p style={UI.groupTitle}>Visibility</p>
@@ -1081,16 +1249,14 @@ export default function Feature1Route() {
                     />
                     Enable normal text badge
                   </label>
-                  <label style={UI.label}>
-                    Badge label
+                  <SettingField label="Badge label">
                     <input
                       style={UI.input}
                       name="text_badge_label"
                       defaultValue={settings.trustBadges.textBadge?.label || "New"}
                     />
-                  </label>
-                  <label style={UI.label}>
-                    Badge position
+                  </SettingField>
+                  <SettingField label="Badge position">
                     <select
                       style={UI.input}
                       name="text_badge_position"
@@ -1102,77 +1268,11 @@ export default function Feature1Route() {
                         </option>
                       ))}
                     </select>
-                  </label>
-                  <details style={UI.groupCard}>
-                    <summary style={UI.detailsSummary}>Advanced style</summary>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Border radius
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="text_badge_radius"
-                          min="0"
-                          defaultValue={settings.trustBadges.textBadge?.borderRadius ?? 999}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Badge height
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="text_badge_height"
-                          min="18"
-                          max="100"
-                          defaultValue={settings.trustBadges.textBadge?.badgeHeight ?? 28}
-                        />
-                      </label>
-                    </div>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Font size
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="text_badge_font_size"
-                          min="10"
-                          max="28"
-                          defaultValue={settings.trustBadges.textBadge?.fontSize ?? 12}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Text color
-                        <input
-                          style={{ ...UI.input, padding: 4 }}
-                          type="color"
-                          name="text_badge_text_color"
-                          defaultValue={settings.trustBadges.textBadge?.textColor || "#FFFFFF"}
-                        />
-                      </label>
-                    </div>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Horizontal padding
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="text_badge_padding_x"
-                          min="0"
-                          defaultValue={settings.trustBadges.textBadge?.paddingX ?? 10}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Vertical padding
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="text_badge_padding_y"
-                          min="0"
-                          defaultValue={settings.trustBadges.textBadge?.paddingY ?? 4}
-                        />
-                      </label>
-                    </div>
-                  </details>
+                  </SettingField>
+                  <BadgeStyleFields
+                    fieldPrefix="text_badge"
+                    badge={settings.trustBadges.textBadge}
+                  />
                   <div style={UI.groupCard}>
                     <p style={{ ...UI.groupTitle, fontSize: 14 }}>Text badge targets</p>
                     <p style={UI.helpText}>
@@ -1202,109 +1302,18 @@ export default function Feature1Route() {
                         Only selected products
                       </label>
                     </div>
-                    <div
-                      style={{
-                        maxHeight: 220,
-                        overflow: "auto",
-                        border: "1px solid #D1D5DB",
-                        borderRadius: 10,
-                        padding: 10,
-                        background: "#fff",
-                        display: "grid",
-                        gap: 8,
-                      }}
-                    >
-                      {products.length === 0 ? (
-                        <p style={{ margin: 0, color: "#64748B", fontSize: 13 }}>
-                          No products found.
-                        </p>
-                      ) : (
-                        products.map((product) => (
-                          <label key={product.id} style={UI.checkboxRow}>
-                            <input
-                              type="checkbox"
-                              name="text_selected_product_handles"
-                              value={product.handle}
-                              defaultChecked={(
-                                settings.trustBadges.textBadge?.selectedProductHandles || []
-                              ).includes(product.handle)}
-                            />
-                            <span style={{ display: "grid", gap: 2 }}>
-                              <span>{product.title}</span>
-                              <span style={{ fontSize: 12, color: "#64748B" }}>
-                                /products/{product.handle}
-                              </span>
-                            </span>
-                          </label>
-                        ))
-                      )}
-                    </div>
+                    <ProductSelectionList
+                      products={products}
+                      inputName="text_selected_product_handles"
+                      selectedHandles={settings.trustBadges.textBadge?.selectedProductHandles || []}
+                    />
                   </div>
-                  <details style={UI.groupCard}>
-                    <summary style={UI.detailsSummary}>Background (text badge)</summary>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Background color
-                        <input
-                          style={{ ...UI.input, padding: 4 }}
-                          type="color"
-                          name="text_badge_background_color"
-                          defaultValue={settings.trustBadges.textBadge?.backgroundColor || "#0F766E"}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Background size
-                        <select
-                          name="text_badge_background_size"
-                          style={UI.input}
-                          defaultValue={settings.trustBadges.textBadge?.backgroundSize || "cover"}
-                        >
-                          <option value="cover">cover</option>
-                          <option value="contain">contain</option>
-                          <option value="auto">auto</option>
-                        </select>
-                      </label>
-                      <label style={UI.label}>
-                        Background position
-                        <select
-                          name="text_badge_background_position"
-                          style={UI.input}
-                          defaultValue={
-                            settings.trustBadges.textBadge?.backgroundPosition || "center"
-                          }
-                        >
-                          <option value="center">center</option>
-                          <option value="top">top</option>
-                          <option value="bottom">bottom</option>
-                          <option value="left">left</option>
-                          <option value="right">right</option>
-                        </select>
-                      </label>
-                    </div>
-                    <label style={UI.label}>
-                      Text badge background image URL
-                      <input
-                        type="url"
-                        name="text_badge_background_image_url"
-                        style={UI.input}
-                        placeholder="https://..."
-                        defaultValue={settings.trustBadges.textBadge?.backgroundImageUrl || ""}
-                      />
-                    </label>
-                    <label style={UI.label}>
-                      Upload text badge background (max 250 KB)
-                      <input
-                        style={UI.fileInput}
-                        type="file"
-                        name="text_badge_background_image_file"
-                        accept="image/*"
-                      />
-                    </label>
-                    <label style={UI.checkboxRow}>
-                      <input name="remove_text_badge_background_image" type="checkbox" />
-                      Remove text badge background image
-                    </label>
-                  </details>
+                  <BadgeBackgroundFields
+                    fieldPrefix="text_badge"
+                    badge={settings.trustBadges.textBadge}
+                    defaultColor="#0F766E"
+                    labelPrefix="text badge"
+                  />
                 </div>
                 </div>
 
@@ -1320,24 +1329,22 @@ export default function Feature1Route() {
                     Enable countdown badge
                   </label>
                   <div style={UI.twoCols}>
-                    <label style={UI.label}>
-                      Countdown prefix
+                    <SettingField label="Countdown prefix">
                       <input
                         style={UI.input}
                         name="countdown_badge_prefix"
                         defaultValue={settings.trustBadges.countdownBadge?.prefix || "Ends in"}
                         placeholder="Ends in"
                       />
-                    </label>
-                    <label style={UI.label}>
-                      Countdown end time
+                    </SettingField>
+                    <SettingField label="Countdown end time">
                       <input
                         style={UI.input}
                         type="datetime-local"
                         name="countdown_badge_end_at"
                         defaultValue={settings.trustBadges.countdownBadge?.endAt || ""}
                       />
-                    </label>
+                    </SettingField>
                   </div>
                   <div style={UI.groupCard}>
                     <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown time mode</p>
@@ -1369,8 +1376,7 @@ export default function Feature1Route() {
                       Per-product mode lets you set a different end time for each product.
                     </p>
                   </div>
-                  <label style={UI.label}>
-                    Badge position
+                  <SettingField label="Badge position">
                     <select
                       style={UI.input}
                       name="countdown_badge_position"
@@ -1382,79 +1388,11 @@ export default function Feature1Route() {
                         </option>
                       ))}
                     </select>
-                  </label>
-                  <details style={UI.groupCard}>
-                    <summary style={UI.detailsSummary}>Advanced style</summary>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Border radius
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="countdown_badge_radius"
-                          min="0"
-                          defaultValue={settings.trustBadges.countdownBadge?.borderRadius ?? 999}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Badge height
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="countdown_badge_height"
-                          min="18"
-                          max="100"
-                          defaultValue={settings.trustBadges.countdownBadge?.badgeHeight ?? 28}
-                        />
-                      </label>
-                    </div>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Font size
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="countdown_badge_font_size"
-                          min="10"
-                          max="28"
-                          defaultValue={settings.trustBadges.countdownBadge?.fontSize ?? 12}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Text color
-                        <input
-                          style={{ ...UI.input, padding: 4 }}
-                          type="color"
-                          name="countdown_badge_text_color"
-                          defaultValue={
-                            settings.trustBadges.countdownBadge?.textColor || "#FFFFFF"
-                          }
-                        />
-                      </label>
-                    </div>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Horizontal padding
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="countdown_badge_padding_x"
-                          min="0"
-                          defaultValue={settings.trustBadges.countdownBadge?.paddingX ?? 10}
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Vertical padding
-                        <input
-                          style={UI.input}
-                          type="number"
-                          name="countdown_badge_padding_y"
-                          min="0"
-                          defaultValue={settings.trustBadges.countdownBadge?.paddingY ?? 4}
-                        />
-                      </label>
-                    </div>
-                  </details>
+                  </SettingField>
+                  <BadgeStyleFields
+                    fieldPrefix="countdown_badge"
+                    badge={settings.trustBadges.countdownBadge}
+                  />
                   <div style={UI.groupCard}>
                     <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown badge targets</p>
                     <p style={UI.helpText}>
@@ -1482,51 +1420,21 @@ export default function Feature1Route() {
                         Only selected products
                       </label>
                     </div>
-                    <div
-                      style={{
-                        maxHeight: 220,
-                        overflow: "auto",
-                        border: "1px solid #D1D5DB",
-                        borderRadius: 10,
-                        padding: 10,
-                        background: "#fff",
-                        display: "grid",
-                        gap: 8,
+                    <ProductSelectionList
+                      products={products}
+                      inputName="countdown_selected_product_handles"
+                      selectedHandles={countdownSelectedHandlesDraft}
+                      controlled
+                      keyPrefix="countdown-"
+                      onToggle={(handle, checked) => {
+                        setCountdownSelectedHandlesDraft((previous) => {
+                          if (checked) {
+                            return previous.includes(handle) ? previous : [...previous, handle];
+                          }
+                          return previous.filter((item) => item !== handle);
+                        });
                       }}
-                    >
-                      {products.length === 0 ? (
-                        <p style={{ margin: 0, color: "#64748B", fontSize: 13 }}>
-                          No products found.
-                        </p>
-                      ) : (
-                        products.map((product) => (
-                          <label key={`countdown-${product.id}`} style={UI.checkboxRow}>
-                            <input
-                              type="checkbox"
-                              name="countdown_selected_product_handles"
-                              value={product.handle}
-                              checked={countdownSelectedHandlesDraft.includes(product.handle)}
-                              onChange={(event) => {
-                                setCountdownSelectedHandlesDraft((previous) => {
-                                  if (event.target.checked) {
-                                    return previous.includes(product.handle)
-                                      ? previous
-                                      : [...previous, product.handle];
-                                  }
-                                  return previous.filter((item) => item !== product.handle);
-                                });
-                              }}
-                            />
-                            <span style={{ display: "grid", gap: 2 }}>
-                              <span>{product.title}</span>
-                              <span style={{ fontSize: 12, color: "#64748B" }}>
-                                /products/{product.handle}
-                              </span>
-                            </span>
-                          </label>
-                        ))
-                      )}
-                    </div>
+                    />
                     <div style={UI.groupCard}>
                       <p style={{ ...UI.groupTitle, fontSize: 14 }}>
                         Per-product countdown end time
@@ -1562,75 +1470,12 @@ export default function Feature1Route() {
                       )}
                     </div>
                   </div>
-                  <details style={UI.groupCard}>
-                    <summary style={UI.detailsSummary}>Background (countdown badge)</summary>
-                    <div style={UI.twoCols}>
-                      <label style={UI.label}>
-                        Background color
-                        <input
-                          style={{ ...UI.input, padding: 4 }}
-                          type="color"
-                          name="countdown_badge_background_color"
-                          defaultValue={
-                            settings.trustBadges.countdownBadge?.backgroundColor || "#7C3AED"
-                          }
-                        />
-                      </label>
-                      <label style={UI.label}>
-                        Background size
-                        <select
-                          name="countdown_badge_background_size"
-                          style={UI.input}
-                          defaultValue={
-                            settings.trustBadges.countdownBadge?.backgroundSize || "cover"
-                          }
-                        >
-                          <option value="cover">cover</option>
-                          <option value="contain">contain</option>
-                          <option value="auto">auto</option>
-                        </select>
-                      </label>
-                      <label style={UI.label}>
-                        Background position
-                        <select
-                          name="countdown_badge_background_position"
-                          style={UI.input}
-                          defaultValue={
-                            settings.trustBadges.countdownBadge?.backgroundPosition || "center"
-                          }
-                        >
-                          <option value="center">center</option>
-                          <option value="top">top</option>
-                          <option value="bottom">bottom</option>
-                          <option value="left">left</option>
-                          <option value="right">right</option>
-                        </select>
-                      </label>
-                    </div>
-                    <label style={UI.label}>
-                      Countdown badge background image URL
-                      <input
-                        type="url"
-                        name="countdown_badge_background_image_url"
-                        style={UI.input}
-                        placeholder="https://..."
-                        defaultValue={settings.trustBadges.countdownBadge?.backgroundImageUrl || ""}
-                      />
-                    </label>
-                    <label style={UI.label}>
-                      Upload countdown badge background (max 250 KB)
-                      <input
-                        style={UI.fileInput}
-                        type="file"
-                        name="countdown_badge_background_image_file"
-                        accept="image/*"
-                      />
-                    </label>
-                    <label style={UI.checkboxRow}>
-                      <input name="remove_countdown_badge_background_image" type="checkbox" />
-                      Remove countdown badge background image
-                    </label>
-                  </details>
+                  <BadgeBackgroundFields
+                    fieldPrefix="countdown_badge"
+                    badge={settings.trustBadges.countdownBadge}
+                    defaultColor="#7C3AED"
+                    labelPrefix="countdown badge"
+                  />
                 </div>
                 </div>
                 </div>
@@ -1638,15 +1483,6 @@ export default function Feature1Route() {
                 <div style={UI.groupCard}>
                   <p style={UI.groupTitle}>Preview</p>
                   <BadgePreview settings={settings.trustBadges} />
-                  <button
-                    style={UI.submitButtonPrimary}
-                    type="submit"
-                    name="intent"
-                    value="save_badges"
-                    disabled={isSaving}
-                  >
-                    {isSaving ? "Saving..." : "Save trust badge settings"}
-                  </button>
                 </div>
                 </div>
               </fetcher.Form>
