@@ -62,6 +62,7 @@ model Feature4_Product {
   sizeCharts  Feature4_SizeChart[]
   tryOnSessions Feature4_TryOnSession[]
   ugcPhotos     Feature4_UgcPhoto[]
+  purchaseHistory Feature4_PurchaseHistory[]
 }
 
 model Feature4_SizeChart {
@@ -90,11 +91,25 @@ model Feature4_TryOnSession {
 }
 
 model Feature4_UgcPhoto {
+  id           String   @id @default(uuid())
+  productId    String
+  imageUrl     String
+  customerName String   @default("Anonymous")
+  approved     Boolean  @default(false)
+  consentGiven Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  product      Feature4_Product @relation(fields: [productId], references: [id])
+}
+
+model Feature4_PurchaseHistory {
   id          String   @id @default(uuid())
+  customerId  String
   productId   String
-  imageUrl    String
-  customerName String  @default("Anonymous")
-  approved    Boolean  @default(false)
+  productName String
+  size        String
+  fitFeedback String?
+  returned    Boolean  @default(false)
+  returnReason String?
   createdAt   DateTime @default(now())
   product     Feature4_Product @relation(fields: [productId], references: [id])
 }

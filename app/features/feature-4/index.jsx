@@ -2,9 +2,10 @@ import { useLoaderData } from "react-router";
 import { useState } from "react";
 import TryOnModal from "./components/TryOnModal";
 import UgcGallery from "./components/UgcGallery";
+import Analytics from "./components/Analytics";
 
 export default function Feature4Page() {
-  const { products, ugcPhotos } = useLoaderData();
+  const { products, ugcPhotos, analyticsStats } = useLoaderData();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activeTab, setActiveTab] = useState("products");
 
@@ -59,6 +60,19 @@ export default function Feature4Page() {
               {ugcPhotos.filter((p) => !p.approved).length}
             </span>
           )}
+        </button>
+        <button
+          onClick={() => setActiveTab("analytics")}
+          style={{
+            padding: "10px 20px", border: "none", background: "none",
+            borderBottom: activeTab === "analytics" ? "2px solid #1a1a1a" : "2px solid transparent",
+            marginBottom: "-2px", cursor: "pointer",
+            fontWeight: activeTab === "analytics" ? "600" : "400",
+            color: activeTab === "analytics" ? "#1a1a1a" : "#6b7280",
+            fontSize: "14px",
+          }}
+        >
+          Analytics
         </button>
       </div>
 
@@ -184,6 +198,11 @@ export default function Feature4Page() {
       {/* UGC Gallery tab */}
       {activeTab === "ugc" && (
         <UgcGallery photos={ugcPhotos} />
+      )}
+
+      {/* Analytics tab */}
+      {activeTab === "analytics" && (
+        <Analytics stats={analyticsStats} />
       )}
 
       {selectedProduct && (

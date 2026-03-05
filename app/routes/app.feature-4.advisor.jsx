@@ -6,13 +6,13 @@ export const action = async ({ request }) => {
   await authenticate.admin(request);
 
   const body = await request.json();
-  const { productId, height, weight } = body;
+  const { productId, height, weight, customerId } = body;
 
   if (!productId) {
     return Response.json({ error: "Missing productId" }, { status: 400 });
   }
 
-  const result = await getSizeAdvice({ productId, height, weight });
+  const result = await getSizeAdvice({ productId, height, weight, customerId });
   return Response.json(result);
 };
 

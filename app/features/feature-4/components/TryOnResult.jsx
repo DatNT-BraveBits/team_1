@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function TryOnResult({ imageUrl, productId, productName }) {
   const [ugcState, setUgcState] = useState("prompt"); // prompt | saving | saved | dismissed
   const [customerName, setCustomerName] = useState("");
+  const [consent, setConsent] = useState(false);
 
   async function handleSaveUgc() {
     setUgcState("saving");
@@ -14,6 +15,7 @@ export default function TryOnResult({ imageUrl, productId, productName }) {
           productId,
           imageUrl,
           customerName: customerName || "Anonymous",
+          consentGiven: true,
         }),
       });
       if (res.ok) {
@@ -91,11 +93,24 @@ export default function TryOnResult({ imageUrl, productId, productName }) {
                     marginBottom: "8px", boxSizing: "border-box",
                   }}
                 />
+                <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", cursor: "pointer" }}>
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    style={{ marginTop: "2px" }}
+                  />
+                  <span style={{ fontSize: "11px", color: "#6b7280", lineHeight: "1.4" }}>
+                    I agree to share this photo on the shop's product gallery. My photo may be visible to other shoppers.
+                  </span>
+                </label>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <button
                     onClick={handleSaveUgc}
+                    disabled={!consent}
                     style={{
-                      background: "#1a1a1a", color: "white", border: "none",
+                      background: consent ? "#1a1a1a" : "#9ca3af", color: "white", border: "none",
+                      opacity: consent ? 1 : 0.6,
                       borderRadius: "8px", padding: "8px 16px",
                       fontSize: "13px", fontWeight: "600", cursor: "pointer",
                     }}

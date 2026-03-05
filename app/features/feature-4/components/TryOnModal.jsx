@@ -53,13 +53,19 @@ export default function TryOnModal({ product, onClose }) {
       }
       const tryOnData = await tryOnRes.json();
 
-      let sizeAdvice = null;
+      let sizeData = null;
       if (advisorRes?.ok) {
-        const advisorData = await advisorRes.json();
-        sizeAdvice = advisorData.advice;
+        sizeData = await advisorRes.json();
       }
 
-      setResult({ imageUrl: tryOnData.imageUrl, sizeAdvice });
+      setResult({
+        imageUrl: tryOnData.imageUrl,
+        sizeAdvice: sizeData?.advice || null,
+        recommendedSize: sizeData?.recommendedSize || null,
+        confidence: sizeData?.confidence || null,
+        fitWarnings: sizeData?.fitWarnings || null,
+        comparedToPrevious: sizeData?.comparedToPrevious || null,
+      });
       setStep("result");
     } catch (err) {
       setError(err.message);
@@ -177,7 +183,15 @@ export default function TryOnModal({ product, onClose }) {
                 productId={product.id}
                 productName={product.name}
               />
-              {result.sizeAdvice && <SizeAdvisor advice={result.sizeAdvice} />}
+              {result.sizeAdvice && (
+                <SizeAdvisor
+                  advice={result.sizeAdvice}
+                  recommendedSize={result.recommendedSize}
+                  confidence={result.confidence}
+                  fitWarnings={result.fitWarnings}
+                  comparedToPrevious={result.comparedToPrevious}
+                />
+              )}
               <div style={{ display: "flex", gap: "8px" }}>
                 <s-button
                   variant="primary"

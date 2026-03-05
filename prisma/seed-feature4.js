@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.feature4_PurchaseHistory.deleteMany();
   await prisma.feature4_TryOnSession.deleteMany();
   await prisma.feature4_SizeChart.deleteMany();
   await prisma.feature4_UgcPhoto.deleteMany();
@@ -97,7 +98,48 @@ async function main() {
     console.log("Seeded:", created.name, created.id);
   }
 
-  console.log(`Done! ${products.length} products seeded.`);
+  // Seed mock purchase history for size comparison feature
+  const allProducts = await prisma.feature4_Product.findMany();
+  const mockCustomerId = "customer-demo-001";
+  const purchaseData = [
+    { product: allProducts[0], size: "M", fitFeedback: "Perfect fit", returned: false },
+    { product: allProducts[1], size: "S", fitFeedback: "Too tight at hips", returned: true, returnReason: "Wrong size" },
+    { product: allProducts[2], size: "L", fitFeedback: "Slightly loose at shoulders", returned: false },
+    { product: allProducts[4], size: "M", fitFeedback: "Great oversized feel", returned: false },
+  ];
+
+  for (const p of purchaseData) {
+    await prisma.feature4_PurchaseHistory.create({
+      data: {
+        customerId: mockCustomerId,
+        productId: p.product.id,
+        productName: p.product.name,
+        size: p.size,
+        fitFeedback: p.fitFeedback,
+        returned: p.returned,
+        returnReason: p.returnReason || null,
+      },
+    });
+  }
+
+  // Seed mock try-on sessions for analytics
+  for (let i = 0; i < 25; i++) {
+    const prod = allProducts[Math.floor(Math.random() * allProducts.length)];
+    const sizes = ["S", "M", "L", "XL"];
+    await prisma.feature4_TryOnSession.create({
+      data: {
+        productId: prod.id,
+        photoUrl: "mock",
+        resultUrl: "mock",
+        height: 155 + Math.floor(Math.random() * 30),
+        weight: 45 + Math.floor(Math.random() * 35),
+        sizeAdvice: `Recommended: ${sizes[Math.floor(Math.random() * sizes.length)]}`,
+        createdAt: new Date(Date.now() - Math.floor(Math.random() * 7 * 24 * 60 * 60 * 1000)),
+      },
+    });
+  }
+
+  console.log(`Done! ${products.length} products + purchase history + try-on sessions seeded.`);
 }
 
 main()
