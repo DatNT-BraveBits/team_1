@@ -1,30 +1,13 @@
-import { useLoaderData, Form, redirect } from "react-router";
+import { Form, redirect } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { createLiveStream } from "../features/feature-5/utils/mux.server";
 import { useState } from "react";
 
-const PRODUCTS_LIST_QUERY = `#graphql
-  query listProducts {
-    products(first: 20) {
-      edges {
-        node {
-          id
-          title
-          images(first: 1) { edges { node { url } } }
-          variants(first: 1) { edges { node { price } } }
-        }
-      }
-    }
-  }
-`;
-
 export const loader = async ({ request }) => {
-  const { admin } = await authenticate.admin(request);
-  const res = await admin.graphql(PRODUCTS_LIST_QUERY);
-  const data = await res.json();
-  return { products: data.data.products.edges.map((e) => e.node) };
+  await authenticate.admin(request);
+  return {};
 };
 
 export const action = async ({ request }) => {
@@ -48,64 +31,36 @@ export const action = async ({ request }) => {
   return redirect(`/app/feature-5/${liveSession.id}`);
 };
 
-function ProductCard({ product, selected, onToggle }) {
-  const imgUrl = product.images.edges[0]?.node.url;
-  const price = product.variants.edges[0]?.node.price;
-
-  return (
-    <s-card>
-      <s-box padding="small">
-        <s-stack direction="block" gap="small">
-          {imgUrl ? (
-            <s-box borderRadius="base" overflow="hidden">
-              <s-image src={imgUrl} alt={product.title} objectFit="cover" />
-            </s-box>
-          ) : (
-            <s-box padding="large" background="subdued" borderRadius="base">
-              <s-stack direction="block" align="center">
-                <s-icon type="image" />
-                <s-text tone="subdued" variant="bodySm">No image</s-text>
-              </s-stack>
-            </s-box>
-          )}
-          <s-stack direction="block" gap="small">
-            <s-text variant="bodySm" fontWeight="semibold">
-              {product.title}
-            </s-text>
-            {price && (
-              <s-text variant="bodySm" tone="subdued">${price}</s-text>
-            )}
-            <s-checkbox
-              label="Select"
-              labelHidden
-              checked={selected}
-              onChange={onToggle}
-            />
-          </s-stack>
-        </s-stack>
-      </s-box>
-    </s-card>
-  );
-}
-
 export default function CreateSession() {
-  const { products } = useLoaderData();
-  const [selectedProducts, setSelectedProducts] = useState(new Set());
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
-  const toggleProduct = (id) => {
-    setSelectedProducts((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
+  const handleSelectProducts = async () => {
+    const selected = await shopify.resourcePicker({
+      type: "product",
+      multiple: true,
+      action: "select",
+      selectionIds: selectedProducts.map((p) => ({ id: p.id })),
     });
+    if (selected) {
+      setSelectedProducts(
+        selected.map((p) => ({
+          id: p.id,
+          title: p.title,
+          imageUrl: p.images?.[0]?.originalSrc,
+          price: p.variants?.[0]?.price,
+        })),
+      );
+    }
+  };
+
+  const removeProduct = (id) => {
+    setSelectedProducts((prev) => prev.filter((p) => p.id !== id));
   };
 
   return (
     <Form method="post" data-save-bar>
-      {/* Hidden inputs for selected products */}
-      {[...selectedProducts].map((id) => (
-        <input key={id} type="hidden" name="products" value={id} />
+      {selectedProducts.map((p) => (
+        <input key={p.id} type="hidden" name="products" value={p.id} />
       ))}
 
       <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
@@ -128,32 +83,68 @@ export default function CreateSession() {
         <s-section heading="Select Products">
           <s-stack direction="block" gap="base">
             <s-stack direction="inline" gap="small" alignItems="center">
-              <s-text tone="subdued">
-                Choose products to showcase during your livestream.
-              </s-text>
-              {selectedProducts.size > 0 && (
+              <s-button variant="secondary" onClick={handleSelectProducts}>
+                {selectedProducts.length > 0 ? "Change products" : "Browse products"}
+              </s-button>
+              {selectedProducts.length > 0 && (
                 <s-badge tone="info">
-                  {selectedProducts.size} selected
+                  {selectedProducts.length} selected
                 </s-badge>
               )}
             </s-stack>
-            <s-grid columns="3">
-              {products.map((p) => (
-                <ProductCard
-                  key={p.id}
-                  product={p}
-                  selected={selectedProducts.has(p.id)}
-                  onToggle={() => toggleProduct(p.id)}
-                />
-              ))}
-            </s-grid>
-          </s-stack>
-        </s-section>
 
-        <s-section>
-          <s-button submit variant="primary">
-            Create Livestream
-          </s-button>
+            {selectedProducts.length > 0 && (
+              <s-table>
+                <s-table-header-row>
+                  <s-table-header listSlot="primary">Product</s-table-header>
+                  <s-table-header listSlot="labeled">Price</s-table-header>
+                  <s-table-header listSlot="secondary">
+                    <s-stack alignItems="end">Remove</s-stack>
+                  </s-table-header>
+                </s-table-header-row>
+                <s-table-body>
+                  {selectedProducts.map((p) => (
+                    <s-table-row key={p.id}>
+                      <s-table-cell>
+                        <s-stack direction="inline" gap="small" alignItems="center">
+                          {p.imageUrl && (
+                            <s-box
+                              border="base"
+                              borderRadius="base"
+                              overflow="hidden"
+                              inlineSize="40px"
+                              blockSize="40px"
+                            >
+                              <s-image
+                                src={p.imageUrl}
+                                alt={p.title}
+                                objectFit="cover"
+                              />
+                            </s-box>
+                          )}
+                          <s-text fontWeight="semibold">{p.title}</s-text>
+                        </s-stack>
+                      </s-table-cell>
+                      <s-table-cell>
+                        {p.price ? `$${p.price}` : "—"}
+                      </s-table-cell>
+                      <s-table-cell>
+                        <s-stack alignItems="end">
+                          <s-button
+                            variant="tertiary"
+                            tone="critical"
+                            icon="x"
+                            accessibilityLabel={`Remove ${p.title}`}
+                            onClick={() => removeProduct(p.id)}
+                          />
+                        </s-stack>
+                      </s-table-cell>
+                    </s-table-row>
+                  ))}
+                </s-table-body>
+              </s-table>
+            )}
+          </s-stack>
         </s-section>
       </s-page>
     </Form>
