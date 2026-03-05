@@ -19,65 +19,61 @@ export default function LiveChat({ sessionId }) {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "400px" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
       <div
         style={{
           flex: 1,
           overflowY: "auto",
+          padding: "12px",
           display: "flex",
           flexDirection: "column",
           gap: "8px",
-          marginBottom: "12px",
         }}
       >
         {messages.length === 0 && (
-          <s-box padding="large-100">
-            <s-text tone="subdued" alignment="center">
-              Ask me anything about the products!
-            </s-text>
-          </s-box>
+          <p style={{ color: "#666", textAlign: "center" }}>
+            Ask me anything about the products!
+          </p>
         )}
         {messages.map((m) => (
-          <s-box
+          <div
             key={m.id}
-            padding="small-200"
-            borderRadius="base"
-            background={m.role === "user" ? "info" : "subdued"}
             style={{
+              padding: "8px 12px",
+              borderRadius: "8px",
+              background: m.role === "user" ? "#e3f2fd" : "#f5f5f5",
               alignSelf: m.role === "user" ? "flex-end" : "flex-start",
-              maxWidth: "85%",
+              maxWidth: "80%",
             }}
           >
-            <s-text variant="bodySm">
-              {m.parts?.map((part, i) =>
-                part.type === "text" ? <span key={i}>{part.text}</span> : null,
-              )}
-            </s-text>
-          </s-box>
+            {m.parts?.map((part, i) =>
+              part.type === "text" ? <span key={i}>{part.text}</span> : null,
+            )}
+          </div>
         ))}
         {isLoading && (
-          <s-text tone="subdued" variant="bodySm">
-            Typing...
-          </s-text>
+          <div style={{ color: "#999", fontStyle: "italic" }}>Typing...</div>
         )}
       </div>
-      <form onSubmit={handleSubmit}>
-        <s-stack direction="inline" gap="small-200">
-          <div style={{ flex: 1 }}>
-            <s-text-field
-              label=""
-              placeholder="Ask about a product..."
-              value={input}
-              onChange={(e) => setInput(e.currentTarget.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSubmit(e);
-              }}
-            />
-          </div>
-          <s-button type="submit" variant="primary" disabled={isLoading}>
-            Send
-          </s-button>
-        </s-stack>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: "flex", gap: "8px", padding: "12px" }}
+      >
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask about a product..."
+          style={{
+            flex: 1,
+            padding: "8px 12px",
+            borderRadius: "8px",
+            border: "1px solid #ccc",
+            fontSize: "14px",
+          }}
+        />
+        <s-button submit variant="primary">
+          Send
+        </s-button>
       </form>
     </div>
   );

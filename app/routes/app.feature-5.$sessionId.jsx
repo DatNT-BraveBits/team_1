@@ -60,11 +60,61 @@ export const action = async ({ request, params }) => {
   return { ok: true };
 };
 
+function CopyField({ label, value }) {
+  return (
+    <div style={{ marginBottom: "12px" }}>
+      <s-text variant="bodySm" fontWeight="bold">
+        {label}
+      </s-text>
+      <div
+        style={{
+          display: "flex",
+          gap: "8px",
+          marginTop: "4px",
+          alignItems: "center",
+        }}
+      >
+        <input
+          type="text"
+          value={value}
+          readOnly
+          style={{
+            flex: 1,
+            padding: "7px 12px",
+            borderRadius: "8px",
+            border: "1px solid #8c9196",
+            fontSize: "13px",
+            fontFamily: "monospace",
+            background: "#f6f6f7",
+          }}
+          onClick={(e) => e.target.select()}
+        />
+        <button
+          type="button"
+          onClick={() => navigator.clipboard.writeText(value)}
+          style={{
+            padding: "7px 14px",
+            borderRadius: "8px",
+            border: "1px solid #8c9196",
+            background: "#fff",
+            cursor: "pointer",
+            fontSize: "13px",
+            fontFamily: "inherit",
+          }}
+        >
+          Copy
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function ManageSession() {
   const { session, products } = useLoaderData();
   const fetcher = useFetcher();
 
   const rtmpUrl = "rtmp://global-live.mux.com:5222/app";
+  const isEnded = session.status === "ended";
 
   return (
     <s-page heading={session.title} backAction={{ url: "/app/feature-5" }}>
@@ -73,19 +123,28 @@ export default function ManageSession() {
         tone={
           session.status === "live"
             ? "success"
-            : session.status === "ended"
+            : isEnded
               ? "default"
               : "info"
         }
       >
         {session.status === "live"
           ? "LIVE"
-          : session.status === "ended"
+          : isEnded
             ? "Ended"
             : "Ready"}
       </s-badge>
 
-      {session.status !== "ended" && (
+      {!isEnded && (
+        <Link to={`/app/feature-5/live/${session.id}`}>
+          <s-button slot="secondary-actions" variant="tertiary">
+            Preview
+          </s-button>
+        </Link>
+      )}
+
+      {/* Browser Streaming */}
+      {!isEnded && (
         <s-section heading="Go Live from Browser">
           <BrowserStream
             streamKey={session.muxStreamKey}
@@ -95,87 +154,177 @@ export default function ManageSession() {
         </s-section>
       )}
 
-      <s-section heading="Stream Configuration (OBS)">
+      {/* Stream Configuration */}
+      <s-section heading="Stream Configuration">
         <s-card>
           <s-box padding="base">
-            <s-stack direction="block" gap="base">
-              <s-text-field
-                label="RTMP URL"
-                value={rtmpUrl}
-                readOnly
-                selectOnFocus
-              />
-              <s-text-field
+            <s-text variant="bodySm" tone="subdued">
+              Use these credentials with OBS or any RTMP-compatible streaming
+              software.
+            </s-text>
+            <div style={{ marginTop: "12px" }}>
+              <CopyField label="RTMP URL" value={rtmpUrl} />
+              <CopyField
                 label="Stream Key"
                 value={session.muxStreamKey || "N/A"}
-                readOnly
-                selectOnFocus
               />
-              <s-text-field
+              <CopyField
                 label="Session ID (for theme block)"
                 value={session.id}
-                readOnly
-                selectOnFocus
               />
-            </s-stack>
+            </div>
           </s-box>
         </s-card>
       </s-section>
 
-      <s-section heading="Quick Links">
-        <s-stack direction="inline" gap="base">
-          <Link to={`/app/feature-5/live/${session.id}`}>
-            <s-button variant="tertiary">Preview Viewer Page</s-button>
-          </Link>
-        </s-stack>
-      </s-section>
-
+      {/* Products */}
       <s-section heading={`Products (${products.length})`}>
-        <s-stack direction="block" gap="base">
-          {products.map((p) => {
-            const imgUrl = p.images?.edges[0]?.node?.url;
-            const isPinned = session.pinnedProductId === p.id;
-            return (
-              <s-card key={p.id}>
-                <s-box padding="base">
-                  <s-stack direction="inline" gap="base" align="center">
-                    {imgUrl && (
-                      <s-thumbnail src={imgUrl} alt={p.title} size="small-200" />
-                    )}
-                    <s-stack direction="block" gap="small-200" style={{ flex: 1 }}>
-                      <s-text fontWeight="bold">{p.title}</s-text>
-                      {isPinned && <s-badge tone="success">Pinned</s-badge>}
-                    </s-stack>
-                    {isPinned ? (
-                      <fetcher.Form method="post">
-                        <input type="hidden" name="intent" value="unpin" />
-                        <s-button type="submit">Unpin</s-button>
-                      </fetcher.Form>
-                    ) : (
-                      <fetcher.Form method="post">
-                        <input type="hidden" name="intent" value="pin" />
-                        <input type="hidden" name="productId" value={p.id} />
-                        <s-button type="submit" variant="primary">
-                          Pin
-                        </s-button>
-                      </fetcher.Form>
-                    )}
-                  </s-stack>
-                </s-box>
-              </s-card>
-            );
-          })}
-        </s-stack>
+        {products.length === 0 ? (
+          <s-card>
+            <s-box padding="base">
+              <s-text tone="subdued">
+                No products added to this livestream.
+              </s-text>
+            </s-box>
+          </s-card>
+        ) : (
+          <s-stack direction="block" gap="base">
+            {products.map((p) => {
+              const imgUrl = p.images?.edges[0]?.node?.url;
+              const isPinned = session.pinnedProductId === p.id;
+              return (
+                <s-card key={p.id}>
+                  <s-box padding="base">
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+                      }}
+                    >
+                      {imgUrl ? (
+                        <img
+                          src={imgUrl}
+                          alt={p.title}
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            objectFit: "cover",
+                            borderRadius: "8px",
+                            border: "1px solid #e1e3e5",
+                          }}
+                        />
+                      ) : (
+                        <div
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            borderRadius: "8px",
+                            background: "#f6f6f7",
+                            border: "1px solid #e1e3e5",
+                          }}
+                        />
+                      )}
+                      <div style={{ flex: 1 }}>
+                        <s-text fontWeight="bold">{p.title}</s-text>
+                        {isPinned && (
+                          <s-badge tone="success">Pinned</s-badge>
+                        )}
+                      </div>
+                      {!isEnded &&
+                        (isPinned ? (
+                          <fetcher.Form method="post">
+                            <input
+                              type="hidden"
+                              name="intent"
+                              value="unpin"
+                            />
+                            <button
+                              type="submit"
+                              style={{
+                                padding: "6px 14px",
+                                borderRadius: "8px",
+                                border: "1px solid #8c9196",
+                                background: "#fff",
+                                cursor: "pointer",
+                                fontSize: "13px",
+                                fontFamily: "inherit",
+                              }}
+                            >
+                              Unpin
+                            </button>
+                          </fetcher.Form>
+                        ) : (
+                          <fetcher.Form method="post">
+                            <input type="hidden" name="intent" value="pin" />
+                            <input
+                              type="hidden"
+                              name="productId"
+                              value={p.id}
+                            />
+                            <button
+                              type="submit"
+                              style={{
+                                padding: "6px 14px",
+                                borderRadius: "8px",
+                                border: "none",
+                                background: "#005bd3",
+                                color: "#fff",
+                                cursor: "pointer",
+                                fontSize: "13px",
+                                fontWeight: "600",
+                                fontFamily: "inherit",
+                              }}
+                            >
+                              Pin
+                            </button>
+                          </fetcher.Form>
+                        ))}
+                    </div>
+                  </s-box>
+                </s-card>
+              );
+            })}
+          </s-stack>
+        )}
       </s-section>
 
-      {session.status !== "ended" && (
-        <s-section>
-          <fetcher.Form method="post">
-            <input type="hidden" name="intent" value="end" />
-            <s-button type="submit" tone="critical">
-              End Stream
-            </s-button>
-          </fetcher.Form>
+      {/* End Stream */}
+      {!isEnded && (
+        <s-section heading="Danger Zone">
+          <s-card>
+            <s-box padding="base">
+              <s-stack direction="inline" gap="base" align="center">
+                <s-stack direction="block" gap="tight">
+                  <s-text fontWeight="bold">End this stream</s-text>
+                  <s-text variant="bodySm" tone="subdued">
+                    This will stop the livestream and disconnect all viewers.
+                    This action cannot be undone.
+                  </s-text>
+                </s-stack>
+                <fetcher.Form method="post">
+                  <input type="hidden" name="intent" value="end" />
+                  <button
+                    type="submit"
+                    style={{
+                      padding: "8px 16px",
+                      borderRadius: "8px",
+                      border: "none",
+                      background: "#e51c00",
+                      color: "#fff",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                      fontSize: "13px",
+                      fontFamily: "inherit",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    End Stream
+                  </button>
+                </fetcher.Form>
+              </s-stack>
+            </s-box>
+          </s-card>
         </s-section>
       )}
     </s-page>

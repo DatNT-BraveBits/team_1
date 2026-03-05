@@ -32,13 +32,22 @@ export const loader = async ({ request, params }) => {
 export default function ViewerPage() {
   const { session, products } = useLoaderData();
 
-  const pinnedProduct = products.find((p) => p.id === session.pinnedProductId);
+  const pinnedProduct = products.find(
+    (p) => p.id === session.pinnedProductId,
+  );
   const otherProducts = products.filter(
     (p) => p.id !== session.pinnedProductId,
   );
 
   return (
     <s-page heading={session.title} backAction={{ url: "/app/feature-5" }}>
+      <s-badge
+        slot="title-metadata"
+        tone={session.status === "live" ? "success" : "info"}
+      >
+        {session.status === "live" ? "LIVE" : "Preview"}
+      </s-badge>
+
       <div
         style={{
           display: "grid",
@@ -48,7 +57,7 @@ export default function ViewerPage() {
         }}
       >
         {/* Left: Video + Products */}
-        <s-stack direction="block" gap="base">
+        <div>
           <div
             style={{
               borderRadius: "12px",
@@ -68,88 +77,158 @@ export default function ViewerPage() {
             ) : (
               <div
                 style={{
-                  color: "#fff",
+                  color: "#666",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   height: "100%",
                   minHeight: "300px",
+                  flexDirection: "column",
+                  gap: "8px",
                 }}
               >
-                Stream not available
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#666"
+                  strokeWidth="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <polygon
+                    points="10 8 16 12 10 16 10 8"
+                    fill="#666"
+                    stroke="none"
+                  />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                <span>Waiting for stream...</span>
               </div>
             )}
           </div>
 
+          {/* Pinned Product */}
           {pinnedProduct && (
-            <s-card>
-              <s-box padding="base">
-                <s-stack direction="inline" gap="base" align="center">
-                  {pinnedProduct.images?.edges[0]?.node?.url && (
-                    <s-thumbnail
-                      src={pinnedProduct.images.edges[0].node.url}
-                      alt={pinnedProduct.title}
-                      size="small-200"
-                    />
-                  )}
-                  <s-stack direction="block" gap="small-200" style={{ flex: 1 }}>
-                    <s-stack direction="inline" gap="small-200" align="center">
-                      <s-badge tone="success">NOW SHOWING</s-badge>
+            <div style={{ marginTop: "12px" }}>
+              <s-card>
+                <s-box padding="base">
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                    }}
+                  >
+                    {pinnedProduct.images?.edges[0]?.node?.url && (
+                      <img
+                        src={pinnedProduct.images.edges[0].node.url}
+                        alt={pinnedProduct.title}
+                        style={{
+                          width: "56px",
+                          height: "56px",
+                          objectFit: "cover",
+                          borderRadius: "8px",
+                          border: "1px solid #e1e3e5",
+                        }}
+                      />
+                    )}
+                    <div style={{ flex: 1 }}>
+                      <s-stack direction="inline" gap="tight" align="center">
+                        <s-badge tone="success">NOW SHOWING</s-badge>
+                      </s-stack>
                       <s-text fontWeight="bold">{pinnedProduct.title}</s-text>
-                    </s-stack>
-                    <s-text variant="headingSm">
-                      ${pinnedProduct.variants?.edges[0]?.node.price || "N/A"}
-                    </s-text>
-                  </s-stack>
-                  <s-button variant="primary">Buy Now</s-button>
-                </s-stack>
-              </s-box>
-            </s-card>
+                      <s-text variant="bodySm">
+                        $
+                        {pinnedProduct.variants.edges[0]?.node.price || "N/A"}
+                      </s-text>
+                    </div>
+                    <s-button variant="primary">Buy Now</s-button>
+                  </div>
+                </s-box>
+              </s-card>
+            </div>
           )}
 
+          {/* Other Products */}
           {otherProducts.length > 0 && (
-            <s-section heading="Products">
-              <s-grid columns="2">
+            <div style={{ marginTop: "16px" }}>
+              <s-text fontWeight="bold">
+                Products ({otherProducts.length})
+              </s-text>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: "12px",
+                  marginTop: "8px",
+                }}
+              >
                 {otherProducts.map((p) => (
                   <s-card key={p.id}>
                     <s-box padding="base">
-                      <s-stack direction="block" gap="small-200">
-                        {p.images?.edges[0]?.node?.url && (
-                          <s-image
+                      <s-stack direction="block" gap="tight">
+                        {p.images.edges[0]?.node.url && (
+                          <img
                             src={p.images.edges[0].node.url}
                             alt={p.title}
-                            aspectRatio="1/1"
-                            objectFit="cover"
-                            borderRadius="base"
-                            inlineSize="fill"
+                            style={{
+                              width: "100%",
+                              borderRadius: "8px",
+                              aspectRatio: "1",
+                              objectFit: "cover",
+                            }}
                           />
                         )}
                         <s-text fontWeight="bold">{p.title}</s-text>
-                        <s-text>
-                          ${p.variants?.edges[0]?.node.price || "N/A"}
+                        <s-text variant="bodySm" tone="subdued">
+                          ${p.variants.edges[0]?.node.price || "N/A"}
                         </s-text>
-                        <s-button>View Product</s-button>
                       </s-stack>
                     </s-box>
                   </s-card>
                 ))}
-              </s-grid>
-            </s-section>
+              </div>
+            </div>
           )}
-        </s-stack>
+        </div>
 
         {/* Right: Chat */}
-        <s-card>
-          <s-box padding="base">
-            <s-stack direction="block" gap="base">
-              <s-text variant="headingSm" fontWeight="bold">
-                AI Shopping Assistant
-              </s-text>
-              <s-divider />
-              <LiveChat sessionId={session.id} />
-            </s-stack>
-          </s-box>
-        </s-card>
+        <div
+          style={{
+            border: "1px solid #e1e3e5",
+            borderRadius: "12px",
+            display: "flex",
+            flexDirection: "column",
+            background: "#fff",
+          }}
+        >
+          <div
+            style={{
+              padding: "14px 16px",
+              borderBottom: "1px solid #e1e3e5",
+              fontWeight: "600",
+              fontSize: "14px",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            AI Shopping Assistant
+          </div>
+          <LiveChat sessionId={session.id} />
+        </div>
       </div>
     </s-page>
   );
