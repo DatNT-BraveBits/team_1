@@ -71,4 +71,15 @@ model Feature5_LiveSession {
   pinnedProductId String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
+  messages        Feature5_ChatMessage[]
+}
+
+model Feature5_ChatMessage {
+  id        String               @id @default(cuid())
+  sessionId String
+  session   Feature5_LiveSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  nickname  String
+  clientId  String
+  message   String
+  createdAt DateTime             @default(now())
 }
