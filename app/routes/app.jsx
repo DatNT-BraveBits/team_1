@@ -2,6 +2,7 @@ import { Outlet, useLoaderData, useRouteError } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { AppProvider } from "@shopify/shopify-app-react-router/react";
 import { authenticate } from "../shopify.server";
+import { features } from "../nav-config";
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -17,7 +18,11 @@ export default function App() {
     <AppProvider embedded apiKey={apiKey}>
       <s-app-nav>
         <s-link href="/app">Home</s-link>
-        <s-link href="/app/additional">Additional page</s-link>
+        {features.map((f) => (
+          <s-link key={f.href} href={f.href}>
+            {f.label}
+          </s-link>
+        ))}
       </s-app-nav>
       <Outlet />
     </AppProvider>

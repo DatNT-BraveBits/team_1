@@ -32,3 +32,28 @@ model Session {
   refreshToken        String?
   refreshTokenExpires DateTime?
 }
+
+// ============================================
+// FEATURE 1 — Person 1
+// Add your models below with Feature1_ prefix
+// ============================================
+
+// ============================================
+// FEATURE 2 — Person 2
+// Add your models below with Feature2_ prefix
+// ============================================
+
+// ============================================
+// FEATURE 3 — Person 3
+// Add your models below with Feature3_ prefix
+// ============================================
+
+// ============================================
+// FEATURE 4 — Person 4
+// Add your models below with Feature4_ prefix
+// ============================================
+
+// ============================================
+// FEATURE 5 — Person 5
+// Add your models below with Feature5_ prefix
+// ============================================
