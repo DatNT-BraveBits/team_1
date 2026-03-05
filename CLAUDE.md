@@ -31,7 +31,14 @@ prisma/schema.prisma             # DB models with Feature{N}_ prefix
 - React Router v7 (file-based routing)
 - Shopify App Bridge + Polaris web components (`<s-page>`, `<s-card>`, etc.)
 - Prisma ORM with SQLite
+- Vercel AI SDK (`ai`) with OpenAI + Anthropic providers
 - Authentication via `authenticate.admin(request)` in loaders/actions
+
+## AI SDK
+
+- Shared config: `app/shared/ai.server.js` (import `defaultModel`, `openai`, `anthropic`)
+- Usage examples: `app/shared/ai-example.md`
+- Env vars needed: `OPENAI_API_KEY` and/or `ANTHROPIC_API_KEY` in `.env`
 
 ## Common Patterns
 
