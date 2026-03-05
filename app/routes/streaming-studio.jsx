@@ -49,8 +49,8 @@ export default function StreamingStudio() {
       const offer = await pc.createOffer();
       await pc.setLocalDescription(offer);
 
-      const whipUrl = `https://global-live.mux.com/app/${streamKey}/whip`;
-      const res = await fetch(whipUrl, {
+      const proxyUrl = `/api/whip-proxy?key=${encodeURIComponent(streamKey)}`;
+      const res = await fetch(proxyUrl, {
         method: "POST",
         headers: { "Content-Type": "application/sdp" },
         body: offer.sdp,
