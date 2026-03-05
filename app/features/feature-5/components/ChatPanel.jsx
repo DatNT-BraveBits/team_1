@@ -50,33 +50,37 @@ function ChatMessageList({ messages, hostClientId }) {
 }
 
 function ChatInput({ onSend }) {
-  const [input, setInput] = useState("");
+  const inputRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const text = input.trim();
+  const handleSend = () => {
+    const el = inputRef.current;
+    if (!el) return;
+    const text = (el.value || "").trim();
     if (!text) return;
     onSend(text);
-    setInput("");
+    el.value = "";
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <s-stack direction="inline" gap="small" alignItems="end">
-        <s-box inlineSize="fill">
-          <s-text-field
-            label="Message"
-            labelHidden
-            value={input}
-            placeholder="Type a message..."
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </s-box>
-        <s-button submit variant="primary">
-          Send
-        </s-button>
-      </s-stack>
-    </form>
+    <s-stack direction="inline" gap="small" alignItems="end">
+      <s-box inlineSize="fill">
+        <s-text-field
+          ref={inputRef}
+          label="Message"
+          labelHidden
+          placeholder="Type a message..."
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSend();
+            }
+          }}
+        />
+      </s-box>
+      <s-button variant="primary" onClick={handleSend}>
+        Send
+      </s-button>
+    </s-stack>
   );
 }
 
@@ -118,10 +122,7 @@ export default function ChatPanel({
           justifyContent="space-between"
           alignItems="center"
         >
-          <s-stack direction="inline" gap="small" alignItems="center">
-            <s-text fontWeight="bold">Live Chat</s-text>
-            {!isConnected && <s-badge tone="warning">Connecting...</s-badge>}
-          </s-stack>
+          {!isConnected && <s-badge tone="warning">Connecting...</s-badge>}
           <ViewerCount count={viewerCount} />
         </s-stack>
 
