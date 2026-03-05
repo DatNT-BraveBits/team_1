@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "3cc5e084cad24e9b536d4dad4af7619e"
-name = "App-ai"
+client_id = "90045477e24b4ec3242fd52bf043d690"
+name = "Vuxapp"
 application_url = "https://example.com"
 embedded = true
 
@@ -12,17 +12,9 @@ include_config_on_deploy = true
 [webhooks]
 api_version = "2026-04"
 
-  [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
-
-  [[webhooks.subscriptions]]
-  topics = [ "app/scopes_update" ]
-  uri = "/webhooks/app/scopes_update"
-
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products,read_products"
 
 [auth]
 redirect_urls = [ "https://example.com/api/auth" ]

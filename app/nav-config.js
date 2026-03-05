@@ -22,8 +22,8 @@ export const features = [
     // owner: "Person 4"
   },
   {
-    label: "Feature 5",
+    label: "Live Shopping",
     href: "/app/feature-5",
-    // owner: "Person 5"
+    // owner: "Person 5 (Vu)"
   },
 ];
