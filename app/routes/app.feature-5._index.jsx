@@ -42,19 +42,29 @@ export default function Feature5Dashboard() {
       </s-link>
 
       {sessions.length === 0 ? (
-        <s-section>
-          <s-box padding="large-600">
-            <s-stack direction="block" gap="base" align="center">
-              <s-text variant="headingLg">Start live selling</s-text>
-              <s-text tone="subdued">
-                Create your first livestream to showcase products and sell live to
-                your customers.
-              </s-text>
-              <s-link href="/app/feature-5/create">
-                <s-button variant="primary">Create Livestream</s-button>
-              </s-link>
-            </s-stack>
-          </s-box>
+        <s-section accessibilityLabel="Empty state section">
+          <s-grid gap="large" justifyItems="center" paddingBlock="large-400">
+            <s-box maxInlineSize="260px" maxBlockSize="200px">
+              <s-image
+                aspectRatio="1/0.6"
+                src="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
+                alt="Live shopping illustration"
+              />
+            </s-box>
+            <s-grid justifyItems="center" maxInlineSize="400px" gap="base">
+              <s-stack alignItems="center" gap="small">
+                <s-heading>Go live, sell more</s-heading>
+                <s-paragraph>
+                  Showcase products in real-time, interact with customers, and pin items during your stream. Set up your first session in under a minute.
+                </s-paragraph>
+              </s-stack>
+              <s-stack direction="inline" gap="small" justifyContent="center">
+                <s-link href="/app/feature-5/create">
+                  <s-button variant="primary">Create your first stream</s-button>
+                </s-link>
+              </s-stack>
+            </s-grid>
+          </s-grid>
         </s-section>
       ) : (
         <s-section padding="none" accessibilityLabel="Streams table section">
