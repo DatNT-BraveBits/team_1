@@ -109,7 +109,8 @@ export default function ManageSession() {
   const pinnedCount = session.pinnedProductId ? 1 : 0;
 
   return (
-    <s-page heading={session.title} backAction={{ url: "/app/feature-5" }}>
+    <s-page heading={session.title}>
+      <s-link slot="breadcrumb-actions" href="/app/feature-5">Live Shopping</s-link>
 
       {!isEnded && (
         <s-link slot="secondary-actions" href={`/app/feature-5/live/${session.id}`}>

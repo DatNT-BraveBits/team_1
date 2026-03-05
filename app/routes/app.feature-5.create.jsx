@@ -78,7 +78,8 @@ export default function CreateSession() {
         )}
       />
 
-      <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
+      <s-page heading="Create Livestream">
+        <s-link slot="breadcrumb-actions" href="/app/feature-5">Live Shopping</s-link>
         <s-section heading="Stream Details">
           <s-text-field
             label="Title"
