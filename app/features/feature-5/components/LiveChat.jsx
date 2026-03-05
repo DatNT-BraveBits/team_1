@@ -19,62 +19,62 @@ export default function LiveChat({ sessionId }) {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
-      <div
-        style={{
-          flex: 1,
-          overflowY: "auto",
-          padding: "12px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "8px",
-        }}
-      >
-        {messages.length === 0 && (
-          <p style={{ color: "#666", textAlign: "center" }}>
-            Ask me anything about the products!
-          </p>
-        )}
-        {messages.map((m) => (
-          <div
-            key={m.id}
-            style={{
-              padding: "8px 12px",
-              borderRadius: "8px",
-              background: m.role === "user" ? "#e3f2fd" : "#f5f5f5",
-              alignSelf: m.role === "user" ? "flex-end" : "flex-start",
-              maxWidth: "80%",
-            }}
-          >
-            {m.parts?.map((part, i) =>
-              part.type === "text" ? <span key={i}>{part.text}</span> : null,
+    <s-box padding="base" blockSize="fill">
+      <s-stack direction="block" gap="small" blockSize="fill">
+        {/* Messages area */}
+        <s-box blockSize="fill" overflow="auto">
+          <s-stack direction="block" gap="small">
+            {messages.length === 0 && (
+              <s-box padding="large">
+                <s-text tone="subdued" alignment="center">
+                  Ask me anything about the products!
+                </s-text>
+              </s-box>
             )}
-          </div>
-        ))}
-        {isLoading && (
-          <div style={{ color: "#999", fontStyle: "italic" }}>Typing...</div>
-        )}
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", gap: "8px", padding: "12px" }}
-      >
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about a product..."
-          style={{
-            flex: 1,
-            padding: "8px 12px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-            fontSize: "14px",
-          }}
-        />
-        <s-button submit variant="primary">
-          Send
-        </s-button>
-      </form>
-    </div>
+            {messages.map((m) => (
+              <s-box
+                key={m.id}
+                padding="small"
+                borderRadius="large"
+                background={m.role === "user" ? "fill" : "subdued"}
+              >
+                {m.parts?.map((part, i) =>
+                  part.type === "text" ? (
+                    <s-text key={i} variant="bodySm">
+                      {part.text}
+                    </s-text>
+                  ) : null,
+                )}
+              </s-box>
+            ))}
+            {isLoading && (
+              <s-box padding="small">
+                <s-text tone="subdued" variant="bodySm">
+                  Typing...
+                </s-text>
+              </s-box>
+            )}
+          </s-stack>
+        </s-box>
+
+        {/* Input area */}
+        <form onSubmit={handleSubmit}>
+          <s-stack direction="inline" gap="small" alignItems="end">
+            <s-box inlineSize="fill">
+              <s-text-field
+                label="Message"
+                labelHidden
+                value={input}
+                placeholder="Ask about a product..."
+                onChange={(e) => setInput(e.target.value)}
+              />
+            </s-box>
+            <s-button submit variant="primary">
+              Send
+            </s-button>
+          </s-stack>
+        </form>
+      </s-stack>
+    </s-box>
   );
 }
