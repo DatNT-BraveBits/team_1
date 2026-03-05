@@ -5,7 +5,8 @@ import { authenticate } from "../shopify.server";
 
 const SETTINGS_NAMESPACE = "app_ai";
 const SETTINGS_KEY = "feature_1_settings";
-const MAX_UPLOAD_SIZE_BYTES = 250 * 1024;
+const MAX_UPLOAD_SIZE_BYTES = 2 * 1024 * 1024;
+const MAX_UPLOAD_SIZE_LABEL = "2 MB";
 
 const DEFAULT_SETTINGS = {
   trustBadges: {
@@ -564,7 +565,7 @@ function BadgeBackgroundFields({ fieldPrefix, badge, defaultColor, labelPrefix }
           defaultValue={badge?.backgroundImageUrl || ""}
         />
       </SettingField>
-      <SettingField label={`Upload ${labelPrefix} background (max 250 KB)`}>
+      <SettingField label={`Upload ${labelPrefix} background (max ${MAX_UPLOAD_SIZE_LABEL})`}>
         <input
           style={UI.fileInput}
           type="file"
@@ -596,9 +597,7 @@ function normalizeHandle(value) {
 async function fileToDataUrl(file) {
   if (!(file instanceof File) || file.size <= 0) return "";
   if (file.size > MAX_UPLOAD_SIZE_BYTES) {
-    throw new Error(
-      `File is too large. Max ${Math.round(MAX_UPLOAD_SIZE_BYTES / 1024)} KB.`,
-    );
+    throw new Error(`File is too large. Max ${MAX_UPLOAD_SIZE_LABEL}.`);
   }
 
   const fileBytes = Buffer.from(await file.arrayBuffer());
