@@ -58,94 +58,63 @@ export default function ViewerPage() {
       >
         {/* Left: Video + Products */}
         <div>
-          <div
-            style={{
-              borderRadius: "12px",
-              overflow: "hidden",
-              background: "#000",
-              aspectRatio: "16/9",
-            }}
+          <s-box
+            border="base"
+            borderRadius="large-200"
+            overflow="hidden"
+            background="strong"
           >
-            {session.muxPlaybackId ? (
-              <MuxPlayer
-                playbackId={session.muxPlaybackId}
-                streamType="live"
-                autoPlay
-                muted
-                style={{ width: "100%", height: "100%" }}
-              />
-            ) : (
-              <div
-                style={{
-                  color: "#666",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "100%",
-                  minHeight: "300px",
-                  flexDirection: "column",
-                  gap: "8px",
-                }}
-              >
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#666"
-                  strokeWidth="1.5"
-                >
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                  <polygon
-                    points="10 8 16 12 10 16 10 8"
-                    fill="#666"
-                    stroke="none"
-                  />
-                  <line x1="8" y1="21" x2="16" y2="21" />
-                  <line x1="12" y1="17" x2="12" y2="21" />
-                </svg>
-                <span>Waiting for stream...</span>
-              </div>
-            )}
-          </div>
+            <div style={{ aspectRatio: "16/9", background: "#000" }}>
+              {session.muxPlaybackId ? (
+                <MuxPlayer
+                  playbackId={session.muxPlaybackId}
+                  streamType="live"
+                  autoPlay
+                  muted
+                  style={{ width: "100%", height: "100%" }}
+                />
+              ) : (
+                <s-box padding="large-600">
+                  <s-stack direction="block" gap="small" align="center">
+                    <s-icon type="camera" size="large" />
+                    <s-text tone="subdued">Waiting for stream...</s-text>
+                  </s-stack>
+                </s-box>
+              )}
+            </div>
+          </s-box>
 
           {/* Pinned Product */}
           {pinnedProduct && (
             <div style={{ marginTop: "12px" }}>
               <s-card>
                 <s-box padding="base">
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "12px",
-                    }}
-                  >
+                  <s-stack direction="inline" gap="base" alignItems="center">
                     {pinnedProduct.images?.edges[0]?.node?.url && (
-                      <img
-                        src={pinnedProduct.images.edges[0].node.url}
-                        alt={pinnedProduct.title}
-                        style={{
-                          width: "56px",
-                          height: "56px",
-                          objectFit: "cover",
-                          borderRadius: "8px",
-                          border: "1px solid #e1e3e5",
-                        }}
-                      />
+                      <s-box
+                        border="base"
+                        borderRadius="base"
+                        overflow="hidden"
+                        inlineSize="56px"
+                        blockSize="56px"
+                      >
+                        <s-image
+                          src={pinnedProduct.images.edges[0].node.url}
+                          alt={pinnedProduct.title}
+                          objectFit="cover"
+                        />
+                      </s-box>
                     )}
-                    <div style={{ flex: 1 }}>
-                      <s-stack direction="inline" gap="tight" align="center">
-                        <s-badge tone="success">NOW SHOWING</s-badge>
-                      </s-stack>
+                    <s-stack direction="block" gap="small" inlineSize="fill">
+                      <s-badge tone="success">NOW SHOWING</s-badge>
                       <s-text fontWeight="bold">{pinnedProduct.title}</s-text>
                       <s-text variant="bodySm">
                         $
                         {pinnedProduct.variants.edges[0]?.node.price || "N/A"}
                       </s-text>
-                    </div>
+                    </s-stack>
                     <s-button variant="primary">Buy Now</s-button>
-                  </div>
+                  </s-stack>
                 </s-box>
               </s-card>
             </div>
@@ -157,29 +126,23 @@ export default function ViewerPage() {
               <s-text fontWeight="bold">
                 Products ({otherProducts.length})
               </s-text>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2, 1fr)",
-                  gap: "12px",
-                  marginTop: "8px",
-                }}
-              >
+              <s-grid columns="2" style={{ marginTop: "8px" }}>
                 {otherProducts.map((p) => (
                   <s-card key={p.id}>
                     <s-box padding="base">
-                      <s-stack direction="block" gap="tight">
+                      <s-stack direction="block" gap="small">
                         {p.images.edges[0]?.node.url && (
-                          <img
-                            src={p.images.edges[0].node.url}
-                            alt={p.title}
-                            style={{
-                              width: "100%",
-                              borderRadius: "8px",
-                              aspectRatio: "1",
-                              objectFit: "cover",
-                            }}
-                          />
+                          <s-box
+                            border="base"
+                            borderRadius="base"
+                            overflow="hidden"
+                          >
+                            <s-image
+                              src={p.images.edges[0].node.url}
+                              alt={p.title}
+                              objectFit="cover"
+                            />
+                          </s-box>
                         )}
                         <s-text fontWeight="bold">{p.title}</s-text>
                         <s-text variant="bodySm" tone="subdued">
@@ -189,46 +152,31 @@ export default function ViewerPage() {
                     </s-box>
                   </s-card>
                 ))}
-              </div>
+              </s-grid>
             </div>
           )}
         </div>
 
         {/* Right: Chat */}
-        <div
-          style={{
-            border: "1px solid #e1e3e5",
-            borderRadius: "12px",
-            display: "flex",
-            flexDirection: "column",
-            background: "#fff",
-          }}
+        <s-box
+          border="base"
+          borderRadius="large-200"
+          overflow="hidden"
+          background="surface"
         >
-          <div
-            style={{
-              padding: "14px 16px",
-              borderBottom: "1px solid #e1e3e5",
-              fontWeight: "600",
-              fontSize: "14px",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
+          <s-box
+            padding="base"
+            borderBlockEndWidth="base"
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-            AI Shopping Assistant
-          </div>
+            <s-stack direction="inline" gap="small" alignItems="center">
+              <s-icon type="chat" />
+              <s-text fontWeight="semibold" variant="bodySm">
+                AI Shopping Assistant
+              </s-text>
+            </s-stack>
+          </s-box>
           <LiveChat sessionId={session.id} />
-        </div>
+        </s-box>
       </div>
     </s-page>
   );

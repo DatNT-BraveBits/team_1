@@ -1,4 +1,4 @@
-import { useLoaderData, useFetcher, Link } from "react-router";
+import { useLoaderData, useFetcher } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
@@ -62,50 +62,27 @@ export const action = async ({ request, params }) => {
 
 function CopyField({ label, value }) {
   return (
-    <div style={{ marginBottom: "12px" }}>
+    <s-stack direction="block" gap="small">
       <s-text variant="bodySm" fontWeight="bold">
         {label}
       </s-text>
-      <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          marginTop: "4px",
-          alignItems: "center",
-        }}
-      >
-        <input
-          type="text"
-          value={value}
-          readOnly
-          style={{
-            flex: 1,
-            padding: "7px 12px",
-            borderRadius: "8px",
-            border: "1px solid #8c9196",
-            fontSize: "13px",
-            fontFamily: "monospace",
-            background: "#f6f6f7",
-          }}
-          onClick={(e) => e.target.select()}
-        />
-        <button
-          type="button"
-          onClick={() => navigator.clipboard.writeText(value)}
-          style={{
-            padding: "7px 14px",
-            borderRadius: "8px",
-            border: "1px solid #8c9196",
-            background: "#fff",
-            cursor: "pointer",
-            fontSize: "13px",
-            fontFamily: "inherit",
-          }}
+      <s-stack direction="inline" gap="small">
+        <s-box
+          padding="small"
+          background="subdued"
+          border="base"
+          borderRadius="base"
+          inlineSize="fill"
         >
-          Copy
-        </button>
-      </div>
-    </div>
+          <s-text variant="bodySm">{value}</s-text>
+        </s-box>
+        <s-clipboard-item id={`copy-${label}`} content={value}>
+          <s-button command="--copy" commandFor={`copy-${label}`}>
+            Copy
+          </s-button>
+        </s-clipboard-item>
+      </s-stack>
+    </s-stack>
   );
 }
 
@@ -136,11 +113,12 @@ export default function ManageSession() {
       </s-badge>
 
       {!isEnded && (
-        <Link to={`/app/feature-5/live/${session.id}`}>
-          <s-button slot="secondary-actions" variant="tertiary">
-            Preview
-          </s-button>
-        </Link>
+        <s-link
+          slot="secondary-actions"
+          href={`/app/feature-5/live/${session.id}`}
+        >
+          Preview
+        </s-link>
       )}
 
       {/* Browser Streaming */}
@@ -156,23 +134,20 @@ export default function ManageSession() {
 
       {/* Stream Configuration */}
       <s-section heading="Stream Configuration">
+        <s-banner>
+          Use these credentials with OBS or any RTMP-compatible streaming
+          software. Copy the Session ID into the theme block settings.
+        </s-banner>
         <s-card>
           <s-box padding="base">
-            <s-text variant="bodySm" tone="subdued">
-              Use these credentials with OBS or any RTMP-compatible streaming
-              software.
-            </s-text>
-            <div style={{ marginTop: "12px" }}>
+            <s-stack direction="block" gap="base">
               <CopyField label="RTMP URL" value={rtmpUrl} />
               <CopyField
                 label="Stream Key"
                 value={session.muxStreamKey || "N/A"}
               />
-              <CopyField
-                label="Session ID (for theme block)"
-                value={session.id}
-              />
-            </div>
+              <CopyField label="Session ID" value={session.id} />
+            </s-stack>
           </s-box>
         </s-card>
       </s-section>
@@ -188,143 +163,114 @@ export default function ManageSession() {
             </s-box>
           </s-card>
         ) : (
-          <s-stack direction="block" gap="base">
-            {products.map((p) => {
-              const imgUrl = p.images?.edges[0]?.node?.url;
-              const isPinned = session.pinnedProductId === p.id;
-              return (
-                <s-card key={p.id}>
-                  <s-box padding="base">
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "12px",
-                      }}
-                    >
-                      {imgUrl ? (
-                        <img
-                          src={imgUrl}
-                          alt={p.title}
-                          style={{
-                            width: "48px",
-                            height: "48px",
-                            objectFit: "cover",
-                            borderRadius: "8px",
-                            border: "1px solid #e1e3e5",
-                          }}
-                        />
-                      ) : (
-                        <div
-                          style={{
-                            width: "48px",
-                            height: "48px",
-                            borderRadius: "8px",
-                            background: "#f6f6f7",
-                            border: "1px solid #e1e3e5",
-                          }}
-                        />
+          <s-box
+            background="strong"
+            border="base"
+            borderRadius="base"
+            overflow="hidden"
+          >
+            <s-table>
+              <s-table-header-row>
+                <s-table-header>Product</s-table-header>
+                <s-table-header>Status</s-table-header>
+                <s-table-header>
+                  <s-stack alignItems="end">Action</s-stack>
+                </s-table-header>
+              </s-table-header-row>
+              {products.map((p) => {
+                const imgUrl = p.images?.edges[0]?.node?.url;
+                const isPinned = session.pinnedProductId === p.id;
+                return (
+                  <s-table-row key={p.id}>
+                    <s-table-cell>
+                      <s-stack direction="inline" gap="small" alignItems="center">
+                        <s-box
+                          border="base"
+                          borderRadius="base"
+                          overflow="hidden"
+                          inlineSize="40px"
+                          blockSize="40px"
+                        >
+                          {imgUrl ? (
+                            <s-image
+                              src={imgUrl}
+                              alt={p.title}
+                              objectFit="cover"
+                            />
+                          ) : (
+                            <s-icon type="image" />
+                          )}
+                        </s-box>
+                        <s-text fontWeight="semibold">{p.title}</s-text>
+                      </s-stack>
+                    </s-table-cell>
+                    <s-table-cell>
+                      {isPinned && (
+                        <s-badge tone="success" icon="pin">
+                          Pinned
+                        </s-badge>
                       )}
-                      <div style={{ flex: 1 }}>
-                        <s-text fontWeight="bold">{p.title}</s-text>
-                        {isPinned && (
-                          <s-badge tone="success">Pinned</s-badge>
-                        )}
-                      </div>
-                      {!isEnded &&
-                        (isPinned ? (
-                          <fetcher.Form method="post">
-                            <input
-                              type="hidden"
-                              name="intent"
-                              value="unpin"
-                            />
-                            <button
-                              type="submit"
-                              style={{
-                                padding: "6px 14px",
-                                borderRadius: "8px",
-                                border: "1px solid #8c9196",
-                                background: "#fff",
-                                cursor: "pointer",
-                                fontSize: "13px",
-                                fontFamily: "inherit",
-                              }}
-                            >
-                              Unpin
-                            </button>
-                          </fetcher.Form>
-                        ) : (
-                          <fetcher.Form method="post">
-                            <input type="hidden" name="intent" value="pin" />
-                            <input
-                              type="hidden"
-                              name="productId"
-                              value={p.id}
-                            />
-                            <button
-                              type="submit"
-                              style={{
-                                padding: "6px 14px",
-                                borderRadius: "8px",
-                                border: "none",
-                                background: "#005bd3",
-                                color: "#fff",
-                                cursor: "pointer",
-                                fontSize: "13px",
-                                fontWeight: "600",
-                                fontFamily: "inherit",
-                              }}
-                            >
-                              Pin
-                            </button>
-                          </fetcher.Form>
-                        ))}
-                    </div>
-                  </s-box>
-                </s-card>
-              );
-            })}
-          </s-stack>
+                    </s-table-cell>
+                    <s-table-cell>
+                      {!isEnded && (
+                        <s-stack direction="inline" alignItems="end">
+                          {isPinned ? (
+                            <fetcher.Form method="post">
+                              <input
+                                type="hidden"
+                                name="intent"
+                                value="unpin"
+                              />
+                              <s-button submit>Unpin</s-button>
+                            </fetcher.Form>
+                          ) : (
+                            <fetcher.Form method="post">
+                              <input
+                                type="hidden"
+                                name="intent"
+                                value="pin"
+                              />
+                              <input
+                                type="hidden"
+                                name="productId"
+                                value={p.id}
+                              />
+                              <s-button submit variant="primary">
+                                Pin
+                              </s-button>
+                            </fetcher.Form>
+                          )}
+                        </s-stack>
+                      )}
+                    </s-table-cell>
+                  </s-table-row>
+                );
+              })}
+            </s-table>
+          </s-box>
         )}
       </s-section>
 
       {/* End Stream */}
       {!isEnded && (
-        <s-section heading="Danger Zone">
-          <s-card>
-            <s-box padding="base">
-              <s-stack direction="inline" gap="base" align="center">
-                <s-stack direction="block" gap="tight">
-                  <s-text fontWeight="bold">End this stream</s-text>
-                  <s-text variant="bodySm" tone="subdued">
-                    This will stop the livestream and disconnect all viewers.
-                    This action cannot be undone.
-                  </s-text>
-                </s-stack>
-                <fetcher.Form method="post">
-                  <input type="hidden" name="intent" value="end" />
-                  <button
-                    type="submit"
-                    style={{
-                      padding: "8px 16px",
-                      borderRadius: "8px",
-                      border: "none",
-                      background: "#e51c00",
-                      color: "#fff",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                      fontSize: "13px",
-                      fontFamily: "inherit",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    End Stream
-                  </button>
-                </fetcher.Form>
+        <s-section>
+          <s-banner tone="warning">
+            <s-stack direction="inline" gap="base" alignItems="center">
+              <s-stack direction="block" gap="small">
+                <s-text fontWeight="bold">End this stream</s-text>
+                <s-text variant="bodySm">
+                  This will stop the livestream and disconnect all viewers. This
+                  action cannot be undone.
+                </s-text>
               </s-stack>
-            </s-box>
-          </s-card>
+              <fetcher.Form method="post">
+                <input type="hidden" name="intent" value="end" />
+                <s-button submit variant="primary" tone="critical">
+                  End Stream
+                </s-button>
+              </fetcher.Form>
+            </s-stack>
+          </s-banner>
         </s-section>
       )}
     </s-page>
