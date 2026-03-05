@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
+import { useState } from "react";
 
 export const loader = async ({ request }) => {
   const { session } = await authenticate.admin(request);
@@ -15,88 +16,105 @@ export const loader = async ({ request }) => {
 function EmptyState() {
   return (
     <s-section>
-      <s-card>
-        <s-box padding="large-600">
-          <s-stack direction="block" gap="base" align="center">
-            <s-icon type="camera" size="large" />
-            <s-heading>Start live selling</s-heading>
-            <s-text tone="subdued">
-              Create your first livestream to showcase products and sell live to
-              your customers.
-            </s-text>
-            <s-link href="/app/feature-5/create">
-              <s-button variant="primary">Create Livestream</s-button>
-            </s-link>
-          </s-stack>
-        </s-box>
-      </s-card>
+      <s-box padding="large-600">
+        <s-stack direction="block" gap="base" align="center">
+          <s-icon type="camera" size="large" />
+          <s-text variant="headingLg">Start live selling</s-text>
+          <s-text tone="subdued">
+            Create your first livestream to showcase products and sell live to
+            your customers.
+          </s-text>
+          <s-link href="/app/feature-5/create">
+            <s-button variant="primary">Create Livestream</s-button>
+          </s-link>
+        </s-stack>
+      </s-box>
     </s-section>
   );
 }
 
-function SessionTable({ sessions }) {
+function StatusFilter({ filter, onFilter }) {
   return (
-    <s-box background="strong" border="base" borderRadius="base" overflow="hidden">
-      <s-table>
-        <s-table-header-row>
-          <s-table-header>Title</s-table-header>
-          <s-table-header>Status</s-table-header>
-          <s-table-header>Products</s-table-header>
-          <s-table-header>Created</s-table-header>
-        </s-table-header-row>
-        {sessions.map((s) => (
-          <s-table-row key={s.id}>
-            <s-table-cell>
-              <s-link href={`/app/feature-5/${s.id}`}>{s.title}</s-link>
-            </s-table-cell>
-            <s-table-cell>
-              <s-badge
-                tone={
-                  s.status === "live"
-                    ? "success"
-                    : s.status === "ended"
-                      ? "default"
-                      : "info"
-                }
-              >
-                {s.status === "live"
-                  ? "LIVE"
-                  : s.status === "ended"
-                    ? "Ended"
-                    : "Ready"}
-              </s-badge>
-            </s-table-cell>
-            <s-table-cell>
-              {JSON.parse(s.productIds || "[]").length}
-            </s-table-cell>
-            <s-table-cell>
-              {new Date(s.createdAt).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
-            </s-table-cell>
-          </s-table-row>
-        ))}
-      </s-table>
-    </s-box>
+    <s-stack direction="inline" gap="small">
+      {["all", "active", "ended"].map((f) => (
+        <s-button
+          key={f}
+          variant={filter === f ? "primary" : "secondary"}
+          onClick={() => onFilter(f)}
+        >
+          {f === "all" ? "All" : f === "active" ? "Active" : "Ended"}
+        </s-button>
+      ))}
+    </s-stack>
+  );
+}
+
+function SessionRow({ session }) {
+  const productCount = JSON.parse(session.productIds || "[]").length;
+  const date = new Date(session.createdAt).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  return (
+    <s-table-row>
+      <s-table-cell>
+        <s-link href={`/app/feature-5/${session.id}`}>
+          <s-text fontWeight="semibold">{session.title}</s-text>
+        </s-link>
+      </s-table-cell>
+      <s-table-cell>
+        <s-badge
+          tone={
+            session.status === "live"
+              ? "success"
+              : session.status === "ended"
+                ? "default"
+                : "info"
+          }
+        >
+          {session.status === "live"
+            ? "LIVE"
+            : session.status === "ended"
+              ? "Ended"
+              : "Ready"}
+        </s-badge>
+      </s-table-cell>
+      <s-table-cell>
+        <s-text variant="bodySm">{productCount}</s-text>
+      </s-table-cell>
+      <s-table-cell>
+        <s-text variant="bodySm" tone="subdued">{date}</s-text>
+      </s-table-cell>
+    </s-table-row>
   );
 }
 
 export default function Feature5Dashboard() {
   const { sessions } = useLoaderData();
+  const [filter, setFilter] = useState("all");
 
-  const liveSessions = sessions.filter(
+  const filteredSessions = sessions.filter((s) => {
+    if (filter === "active") return s.status === "live" || s.status === "idle";
+    if (filter === "ended") return s.status === "ended";
+    return true;
+  });
+
+  const activeSessions = sessions.filter(
     (s) => s.status === "live" || s.status === "idle",
   );
-  const endedSessions = sessions.filter((s) => s.status === "ended");
+  const totalProducts = sessions.reduce(
+    (sum, s) => sum + JSON.parse(s.productIds || "[]").length,
+    0,
+  );
 
   return (
     <s-page heading="Live Shopping" inlineSize="large">
-      <s-link slot="primary-action" href="/app/feature-5/create">
+      <s-button slot="primary-action" variant="primary" href="/app/feature-5/create">
         Create Livestream
-      </s-link>
+      </s-button>
 
       {sessions.length === 0 ? (
         <EmptyState />
@@ -104,53 +122,37 @@ export default function Feature5Dashboard() {
         <>
           {/* Stats */}
           <s-section>
-            <s-grid columns="3">
-              <s-card>
-                <s-box padding="base">
-                  <s-text tone="subdued" variant="bodySm">
-                    Total Streams
-                  </s-text>
-                  <s-heading>{sessions.length}</s-heading>
-                </s-box>
-              </s-card>
-              <s-card>
-                <s-box padding="base">
-                  <s-text tone="subdued" variant="bodySm">
-                    Active Now
-                  </s-text>
-                  <s-heading>{liveSessions.length}</s-heading>
-                </s-box>
-              </s-card>
-              <s-card>
-                <s-box padding="base">
-                  <s-text tone="subdued" variant="bodySm">
-                    Products Showcased
-                  </s-text>
-                  <s-heading>
-                    {sessions.reduce(
-                      (sum, s) =>
-                        sum + JSON.parse(s.productIds || "[]").length,
-                      0,
-                    )}
-                  </s-heading>
-                </s-box>
-              </s-card>
-            </s-grid>
+            <s-stack direction="inline" gap="large">
+              <s-stack direction="block" gap="small">
+                <s-text tone="subdued" variant="bodySm">Total Streams</s-text>
+                <s-text variant="headingLg">{sessions.length}</s-text>
+              </s-stack>
+              <s-stack direction="block" gap="small">
+                <s-text tone="subdued" variant="bodySm">Active Now</s-text>
+                <s-text variant="headingLg">{activeSessions.length}</s-text>
+              </s-stack>
+              <s-stack direction="block" gap="small">
+                <s-text tone="subdued" variant="bodySm">Products Showcased</s-text>
+                <s-text variant="headingLg">{totalProducts}</s-text>
+              </s-stack>
+            </s-stack>
           </s-section>
 
-          {/* Active Streams */}
-          {liveSessions.length > 0 && (
-            <s-section heading="Active Streams">
-              <SessionTable sessions={liveSessions} />
-            </s-section>
-          )}
-
-          {/* Past Streams */}
-          {endedSessions.length > 0 && (
-            <s-section heading="Past Streams">
-              <SessionTable sessions={endedSessions} />
-            </s-section>
-          )}
+          {/* Filter + Table */}
+          <s-section heading="Streams">
+            <StatusFilter filter={filter} onFilter={setFilter} />
+            <s-table>
+              <s-table-header-row>
+                <s-table-header>Title</s-table-header>
+                <s-table-header>Status</s-table-header>
+                <s-table-header>Products</s-table-header>
+                <s-table-header>Created</s-table-header>
+              </s-table-header-row>
+              {filteredSessions.map((s) => (
+                <SessionRow key={s.id} session={s} />
+              ))}
+            </s-table>
+          </s-section>
         </>
       )}
     </s-page>
