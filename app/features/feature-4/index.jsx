@@ -3,16 +3,10 @@ import { useState } from "react";
 import TryOnModal from "./components/TryOnModal";
 import UgcGallery from "./components/UgcGallery";
 
-const PRODUCT_IMAGES = {
-  "Classic Fit Cotton T-Shirt": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop",
-  "Floral Summer Dress": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=500&fit=crop",
-  "Denim Trucker Jacket": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400&h=500&fit=crop",
-};
-
 export default function Feature4Page() {
   const { products, ugcPhotos } = useLoaderData();
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [activeTab, setActiveTab] = useState("products"); // products | ugc
+  const [activeTab, setActiveTab] = useState("products");
 
   return (
     <s-page heading="MirrorAI">
@@ -41,7 +35,7 @@ export default function Feature4Page() {
             fontSize: "14px",
           }}
         >
-          Products
+          Products ({products.length})
         </button>
         <button
           onClick={() => setActiveTab("ugc")}
@@ -71,50 +65,106 @@ export default function Feature4Page() {
       {/* Products tab */}
       {activeTab === "products" && (
         <>
-          <s-grid columns="3">
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "16px",
+          }}>
             {products.map((product) => (
-              <s-card key={product.id}>
+              <div
+                key={product.id}
+                style={{
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  border: "1px solid #e5e7eb",
+                  background: "white",
+                  transition: "box-shadow 0.2s ease",
+                  cursor: "pointer",
+                }}
+                onClick={() => setSelectedProduct(product)}
+              >
+                {/* Square image container */}
                 <div style={{
-                  position: "relative", overflow: "hidden",
-                  borderRadius: "8px 8px 0 0",
+                  position: "relative",
+                  width: "100%",
+                  paddingBottom: "100%", /* 1:1 aspect ratio */
+                  overflow: "hidden",
+                  background: "#f9fafb",
                 }}>
                   <img
-                    src={PRODUCT_IMAGES[product.name] || product.imageUrl}
+                    src={product.imageUrl}
                     alt={product.name}
                     style={{
-                      width: "100%", height: "220px",
-                      objectFit: "cover", display: "block",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      padding: "12px",
                     }}
                   />
+                  {/* Size badge */}
                   <div style={{
-                    position: "absolute", top: "8px", right: "8px",
-                    background: "#1a1a1a", color: "white",
-                    padding: "2px 8px", borderRadius: "12px",
-                    fontSize: "11px", fontWeight: "600",
+                    position: "absolute", bottom: "8px", left: "8px",
+                    display: "flex", gap: "4px", flexWrap: "wrap",
                   }}>
-                    {product.sizeCharts.map((s) => s.size).join(" / ")}
+                    {product.sizeCharts.map((s) => (
+                      <span
+                        key={s.size}
+                        style={{
+                          background: "rgba(255,255,255,0.9)",
+                          backdropFilter: "blur(4px)",
+                          padding: "2px 8px",
+                          borderRadius: "4px",
+                          fontSize: "11px",
+                          fontWeight: "600",
+                          color: "#374151",
+                          border: "1px solid rgba(0,0,0,0.08)",
+                        }}
+                      >
+                        {s.size}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <s-box padding="base">
-                  <s-stack direction="block" gap="tight">
-                    <s-text variant="headingSm">{product.name}</s-text>
-                    <s-text variant="bodySm" tone="subdued">
-                      {product.description}
-                    </s-text>
-                    <s-box padding-block-start="tight">
-                      <s-button
-                        variant="primary"
-                        size="large"
-                        onClick={() => setSelectedProduct(product)}
-                      >
-                        See It On Me
-                      </s-button>
-                    </s-box>
-                  </s-stack>
-                </s-box>
-              </s-card>
+
+                {/* Product info */}
+                <div style={{ padding: "12px 14px 14px" }}>
+                  <div style={{ fontSize: "14px", fontWeight: "600", color: "#1a1a1a", marginBottom: "4px" }}>
+                    {product.name}
+                  </div>
+                  <div style={{
+                    fontSize: "12px", color: "#6b7280", lineHeight: "1.4",
+                    marginBottom: "10px",
+                    display: "-webkit-box", WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical", overflow: "hidden",
+                  }}>
+                    {product.description}
+                  </div>
+                  <button
+                    style={{
+                      width: "100%",
+                      padding: "8px 0",
+                      background: "#1a1a1a",
+                      color: "white",
+                      border: "none",
+                      borderRadius: "8px",
+                      fontSize: "13px",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedProduct(product);
+                    }}
+                  >
+                    See It On Me
+                  </button>
+                </div>
+              </div>
             ))}
-          </s-grid>
+          </div>
 
           <s-box padding-block-start="loose">
             <s-card>
