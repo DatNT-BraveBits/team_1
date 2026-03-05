@@ -80,6 +80,37 @@ const UI = {
     display: "grid",
     gap: 24,
   },
+  actionBar: {
+    position: "sticky",
+    top: 10,
+    zIndex: 5,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+    border: "1px solid #BFDBFE",
+    borderRadius: 14,
+    background: "linear-gradient(90deg, #EFF6FF 0%, #F8FAFC 100%)",
+    padding: "10px 12px",
+  },
+  actionTitle: {
+    margin: 0,
+    fontSize: 14,
+    fontWeight: 700,
+    color: "#1E3A8A",
+  },
+  actionHint: {
+    margin: 0,
+    fontSize: 12,
+    color: "#475569",
+  },
+  detailsSummary: {
+    cursor: "pointer",
+    fontSize: 14,
+    fontWeight: 700,
+    color: "#1E293B",
+    listStyle: "none",
+  },
   groupCard: {
     display: "grid",
     gap: 18,
@@ -176,6 +207,18 @@ const UI = {
     cursor: "pointer",
     boxShadow: "0 8px 16px rgba(37, 99, 235, 0.25)",
   },
+  submitButtonPrimary: {
+    minHeight: 44,
+    border: "none",
+    borderRadius: 10,
+    padding: "10px 16px",
+    background: "linear-gradient(90deg, #0EA5E9 0%, #2563EB 100%)",
+    color: "#FFFFFF",
+    fontWeight: 800,
+    cursor: "pointer",
+    boxShadow: "0 10px 18px rgba(37, 99, 235, 0.28)",
+    whiteSpace: "nowrap",
+  },
   blockTitle: {
     margin: 0,
     fontSize: 18,
@@ -202,6 +245,14 @@ const UI = {
     width: "100%",
     maxWidth: "none",
     margin: "0 auto",
+  },
+  badgePanel: {
+    display: "grid",
+    gap: 16,
+    border: "1px solid #DCE7F6",
+    borderRadius: 16,
+    background: "#F8FAFF",
+    padding: 16,
   },
 };
 
@@ -260,16 +311,14 @@ function BadgePreview({ settings }) {
   return (
     <div
       style={{
-        position: "relative",
-        minHeight: 160,
+        minHeight: 250,
         borderRadius: 14,
         border: "1px dashed #BFDBFE",
-        background:
-          "linear-gradient(160deg, rgba(239,246,255,1) 0%, rgba(255,255,255,1) 100%)",
-        overflow: "hidden",
+        background: "linear-gradient(160deg, #F8FBFF 0%, #FFFFFF 100%)",
+        padding: 14,
       }}
     >
-      <div style={{ padding: 14, paddingTop: 64 }}>
+      <div style={{ display: "grid", gap: 4 }}>
         <p style={{ margin: 0, color: "#1E3A8A", fontWeight: 700 }}>
           Product card preview
         </p>
@@ -278,63 +327,87 @@ function BadgePreview({ settings }) {
         </p>
       </div>
 
-      {settings.textBadge?.enabled ? (
-        <span
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: 360,
+          height: 170,
+          margin: "12px auto 0",
+          borderRadius: 14,
+          overflow: "hidden",
+          border: "1px solid #DBEAFE",
+          background:
+            "linear-gradient(180deg, rgba(224,242,254,0.7) 0%, rgba(255,255,255,1) 100%)",
+        }}
+      >
+        <div
           style={{
             position: "absolute",
-            ...getPositionStyle(settings.textBadge.position),
-            zIndex: 2,
-            height: settings.textBadge?.badgeHeight ?? 28,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: settings.textBadge?.borderRadius ?? 999,
-            padding: `${settings.textBadge?.paddingY ?? 4}px ${settings.textBadge?.paddingX ?? 10}px`,
-            fontSize: settings.textBadge?.fontSize ?? 12,
-            backgroundColor: settings.textBadge?.backgroundColor || "#0F766E",
-            backgroundImage: settings.textBadge?.backgroundImageUrl
-              ? `url(${settings.textBadge.backgroundImageUrl})`
-              : "none",
-            backgroundSize: settings.textBadge?.backgroundSize || "cover",
-            backgroundPosition: settings.textBadge?.backgroundPosition || "center",
-            color: settings.textBadge?.textColor || "#FFFFFF",
-            fontWeight: 700,
-            whiteSpace: "nowrap",
-            lineHeight: 1.1,
+            inset: 0,
+            background:
+              "linear-gradient(135deg, rgba(148,163,184,.22) 0%, rgba(226,232,240,.5) 55%, rgba(241,245,249,.8) 100%)",
           }}
-        >
-          {settings.textBadge.label}
-        </span>
-      ) : null}
+        />
 
-      {settings.countdownBadge?.enabled ? (
-        <span
-          style={{
-            position: "absolute",
-            ...countdownPositionStyle,
-            zIndex: 2,
-            height: settings.countdownBadge?.badgeHeight ?? 28,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: settings.countdownBadge?.borderRadius ?? 999,
-            padding: `${settings.countdownBadge?.paddingY ?? 4}px ${settings.countdownBadge?.paddingX ?? 10}px`,
-            fontSize: settings.countdownBadge?.fontSize ?? 12,
-            backgroundColor: settings.countdownBadge?.backgroundColor || "#7C3AED",
-            backgroundImage: settings.countdownBadge?.backgroundImageUrl
-              ? `url(${settings.countdownBadge.backgroundImageUrl})`
-              : "none",
-            backgroundSize: settings.countdownBadge?.backgroundSize || "cover",
-            backgroundPosition: settings.countdownBadge?.backgroundPosition || "center",
-            color: settings.countdownBadge?.textColor || "#FFFFFF",
-            fontWeight: 700,
-            whiteSpace: "nowrap",
-            lineHeight: 1.1,
-          }}
-        >
-          {settings.countdownBadge.prefix || "Ends in"} {previewTimer}
-        </span>
-      ) : null}
+        {settings.textBadge?.enabled ? (
+          <span
+            style={{
+              position: "absolute",
+              ...getPositionStyle(settings.textBadge.position),
+              zIndex: 2,
+              height: settings.textBadge?.badgeHeight ?? 28,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: settings.textBadge?.borderRadius ?? 999,
+              padding: `${settings.textBadge?.paddingY ?? 4}px ${settings.textBadge?.paddingX ?? 10}px`,
+              fontSize: settings.textBadge?.fontSize ?? 12,
+              backgroundColor: settings.textBadge?.backgroundColor || "#0F766E",
+              backgroundImage: settings.textBadge?.backgroundImageUrl
+                ? `url(${settings.textBadge.backgroundImageUrl})`
+                : "none",
+              backgroundSize: settings.textBadge?.backgroundSize || "cover",
+              backgroundPosition: settings.textBadge?.backgroundPosition || "center",
+              color: settings.textBadge?.textColor || "#FFFFFF",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+              lineHeight: 1.1,
+            }}
+          >
+            {settings.textBadge.label}
+          </span>
+        ) : null}
+
+        {settings.countdownBadge?.enabled ? (
+          <span
+            style={{
+              position: "absolute",
+              ...countdownPositionStyle,
+              zIndex: 2,
+              height: settings.countdownBadge?.badgeHeight ?? 28,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: settings.countdownBadge?.borderRadius ?? 999,
+              padding: `${settings.countdownBadge?.paddingY ?? 4}px ${settings.countdownBadge?.paddingX ?? 10}px`,
+              fontSize: settings.countdownBadge?.fontSize ?? 12,
+              backgroundColor: settings.countdownBadge?.backgroundColor || "#7C3AED",
+              backgroundImage: settings.countdownBadge?.backgroundImageUrl
+                ? `url(${settings.countdownBadge.backgroundImageUrl})`
+                : "none",
+              backgroundSize: settings.countdownBadge?.backgroundSize || "cover",
+              backgroundPosition: settings.countdownBadge?.backgroundPosition || "center",
+              color: settings.countdownBadge?.textColor || "#FFFFFF",
+              fontWeight: 700,
+              whiteSpace: "nowrap",
+              lineHeight: 1.1,
+            }}
+          >
+            {settings.countdownBadge.prefix || "Ends in"} {previewTimer}
+          </span>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -949,7 +1022,10 @@ export default function Feature1Route() {
           <s-card>
             <div style={UI.cardBody}>
               <div style={{ display: "grid", gap: 6 }}>
-                <h2 style={{ margin: 0 }}>Feature control center</h2>
+                <h2 style={{ margin: 0 }}>Trust Badge Settings</h2>
+                <p style={{ margin: 0, color: "#64748B", fontSize: 14 }}>
+                  Configure global visibility, text badge, and countdown badge.
+                </p>
               </div>
             </div>
           </s-card>
@@ -964,6 +1040,23 @@ export default function Feature1Route() {
               </div>
               <fetcher.Form method="post" encType="multipart/form-data">
                 <div style={UI.fieldGrid}>
+                <div style={UI.actionBar}>
+                  <div>
+                    <p style={UI.actionTitle}>Important: Save your changes</p>
+                    <p style={UI.actionHint}>
+                      Update settings in both columns, review preview, then save.
+                    </p>
+                  </div>
+                  <button
+                    style={UI.submitButtonPrimary}
+                    type="submit"
+                    name="intent"
+                    value="save_badges"
+                    disabled={isSaving}
+                  >
+                    {isSaving ? "Saving..." : "Save settings"}
+                  </button>
+                </div>
                 <div style={UI.groupCard}>
                   <p style={UI.groupTitle}>Visibility</p>
                   <label style={UI.checkboxRow}>
@@ -977,6 +1070,7 @@ export default function Feature1Route() {
                 </div>
 
                 <div style={UI.badgeCols}>
+                <div style={UI.badgePanel}>
                 <div style={UI.groupCard}>
                   <p style={UI.groupTitle}>Text Badge</p>
                   <label style={UI.checkboxRow}>
@@ -1009,8 +1103,8 @@ export default function Feature1Route() {
                       ))}
                     </select>
                   </label>
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Text badge style</p>
+                  <details style={UI.groupCard}>
+                    <summary style={UI.detailsSummary}>Advanced style</summary>
                     <div style={UI.twoCols}>
                       <label style={UI.label}>
                         Border radius
@@ -1078,7 +1172,7 @@ export default function Feature1Route() {
                         />
                       </label>
                     </div>
-                  </div>
+                  </details>
                   <div style={UI.groupCard}>
                     <p style={{ ...UI.groupTitle, fontSize: 14 }}>Text badge targets</p>
                     <p style={UI.helpText}>
@@ -1146,9 +1240,8 @@ export default function Feature1Route() {
                       )}
                     </div>
                   </div>
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Text Badge Background</p>
-                    <p style={UI.helpText}>Set background rieng cho text badge.</p>
+                  <details style={UI.groupCard}>
+                    <summary style={UI.detailsSummary}>Background (text badge)</summary>
                     <div style={UI.twoCols}>
                       <label style={UI.label}>
                         Background color
@@ -1211,9 +1304,11 @@ export default function Feature1Route() {
                       <input name="remove_text_badge_background_image" type="checkbox" />
                       Remove text badge background image
                     </label>
-                  </div>
+                  </details>
+                </div>
                 </div>
 
+                <div style={UI.badgePanel}>
                 <div style={UI.groupCard}>
                   <p style={UI.groupTitle}>Countdown Badge (Flash Sale)</p>
                   <label style={UI.checkboxRow}>
@@ -1288,8 +1383,8 @@ export default function Feature1Route() {
                       ))}
                     </select>
                   </label>
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown badge style</p>
+                  <details style={UI.groupCard}>
+                    <summary style={UI.detailsSummary}>Advanced style</summary>
                     <div style={UI.twoCols}>
                       <label style={UI.label}>
                         Border radius
@@ -1359,7 +1454,7 @@ export default function Feature1Route() {
                         />
                       </label>
                     </div>
-                  </div>
+                  </details>
                   <div style={UI.groupCard}>
                     <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown badge targets</p>
                     <p style={UI.helpText}>
@@ -1467,9 +1562,8 @@ export default function Feature1Route() {
                       )}
                     </div>
                   </div>
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown Badge Background</p>
-                    <p style={UI.helpText}>Set background rieng cho countdown badge.</p>
+                  <details style={UI.groupCard}>
+                    <summary style={UI.detailsSummary}>Background (countdown badge)</summary>
                     <div style={UI.twoCols}>
                       <label style={UI.label}>
                         Background color
@@ -1536,13 +1630,16 @@ export default function Feature1Route() {
                       <input name="remove_countdown_badge_background_image" type="checkbox" />
                       Remove countdown badge background image
                     </label>
-                  </div>
+                  </details>
+                </div>
                 </div>
                 </div>
 
+                <div style={UI.groupCard}>
+                  <p style={UI.groupTitle}>Preview</p>
                   <BadgePreview settings={settings.trustBadges} />
                   <button
-                    style={UI.submitButton}
+                    style={UI.submitButtonPrimary}
                     type="submit"
                     name="intent"
                     value="save_badges"
@@ -1550,6 +1647,7 @@ export default function Feature1Route() {
                   >
                     {isSaving ? "Saving..." : "Save trust badge settings"}
                   </button>
+                </div>
                 </div>
               </fetcher.Form>
             </div>
