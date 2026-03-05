@@ -50,10 +50,10 @@ export default function ViewerPage() {
       </s-badge>
 
       {/* Live Chat sidebar */}
-      <s-section heading="Live Chat" slot="aside">
-        <s-box blockSize="400px">
+      <s-section slot="aside">
+        <div style={{ height: "450px" }}>
           <ChatPanel sessionId={session.id} />
-        </s-box>
+        </div>
       </s-section>
 
       {/* AI Chat sidebar via aside slot */}

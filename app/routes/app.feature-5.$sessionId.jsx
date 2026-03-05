@@ -162,15 +162,6 @@ export default function ManageSession() {
         </s-button>
       </s-section>
 
-      {/* Live Chat */}
-      {!isEnded && (
-        <s-section heading="Live Chat" slot="aside">
-          <s-box blockSize="400px">
-            <ChatPanel sessionId={session.id} isHost={true} />
-          </s-box>
-        </s-section>
-      )}
-
       {/* Page-level banner */}
       <s-banner>
         Use these credentials with OBS or any RTMP-compatible streaming
@@ -185,6 +176,15 @@ export default function ManageSession() {
             sessionId={session.id}
             title={session.title}
           />
+        </s-section>
+      )}
+
+      {/* Live Chat */}
+      {!isEnded && (
+        <s-section heading="Live Chat">
+          <div style={{ height: "450px" }}>
+            <ChatPanel sessionId={session.id} isHost={true} />
+          </div>
         </s-section>
       )}
 
