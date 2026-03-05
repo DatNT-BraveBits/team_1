@@ -3,6 +3,7 @@ import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { createLiveStream } from "../features/feature-5/utils/mux.server";
+import { useState } from "react";
 
 const PRODUCTS_LIST_QUERY = `#graphql
   query listProducts {
@@ -47,12 +48,71 @@ export const action = async ({ request }) => {
   return redirect(`/app/feature-5/${liveSession.id}`);
 };
 
+function ProductCard({ product, selected, onToggle }) {
+  const imgUrl = product.images.edges[0]?.node.url;
+  const price = product.variants.edges[0]?.node.price;
+
+  return (
+    <s-card>
+      <s-box padding="small">
+        <s-stack direction="block" gap="small">
+          {imgUrl ? (
+            <s-box borderRadius="base" overflow="hidden">
+              <s-image src={imgUrl} alt={product.title} objectFit="cover" />
+            </s-box>
+          ) : (
+            <s-box padding="large" background="subdued" borderRadius="base">
+              <s-stack direction="block" align="center">
+                <s-icon type="image" />
+                <s-text tone="subdued" variant="bodySm">No image</s-text>
+              </s-stack>
+            </s-box>
+          )}
+          <s-stack direction="block" gap="small">
+            <s-text variant="bodySm" fontWeight="semibold">
+              {product.title}
+            </s-text>
+            {price && (
+              <s-text variant="bodySm" tone="subdued">${price}</s-text>
+            )}
+            <s-checkbox
+              label="Select"
+              labelHidden
+              checked={selected}
+              onChange={onToggle}
+            />
+          </s-stack>
+        </s-stack>
+      </s-box>
+    </s-card>
+  );
+}
+
 export default function CreateSession() {
   const { products } = useLoaderData();
+  const [selectedProducts, setSelectedProducts] = useState(new Set());
+
+  const toggleProduct = (id) => {
+    setSelectedProducts((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
 
   return (
     <Form method="post" data-save-bar>
+      {/* Hidden inputs for selected products */}
+      {[...selectedProducts].map((id) => (
+        <input key={id} type="hidden" name="products" value={id} />
+      ))}
+
       <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
+        <s-button slot="primary-action" variant="primary" submit>
+          Create Livestream
+        </s-button>
+
         <s-section heading="Stream Details">
           <s-text-field
             label="Title"
@@ -61,107 +121,37 @@ export default function CreateSession() {
             details="Give your livestream a name that describes the event."
             required
           />
+          <s-text-field
+            label="Description"
+            name="description"
+            placeholder="Tell viewers what to expect"
+            multiline
+          />
         </s-section>
 
         <s-section heading="Select Products">
-          <s-text tone="subdued">
-            Choose products to showcase during your livestream. You can pin
-            products in real-time while streaming.
-          </s-text>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-              gap: "12px",
-              marginTop: "12px",
-            }}
-          >
-            {products.map((p) => {
-              const imgUrl = p.images.edges[0]?.node.url;
-              const price = p.variants.edges[0]?.node.price;
-              return (
-                <label
+          <s-stack direction="block" gap="base">
+            <s-stack direction="inline" gap="small" alignItems="center">
+              <s-text tone="subdued">
+                Choose products to showcase during your livestream.
+              </s-text>
+              {selectedProducts.size > 0 && (
+                <s-badge tone="info">
+                  {selectedProducts.size} selected
+                </s-badge>
+              )}
+            </s-stack>
+            <s-grid columns="3">
+              {products.map((p) => (
+                <ProductCard
                   key={p.id}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    border: "2px solid var(--p-color-border)",
-                    borderRadius: "var(--p-border-radius-300)",
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    position: "relative",
-                    background: "var(--p-color-bg-surface)",
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    name="products"
-                    value={p.id}
-                    style={{
-                      position: "absolute",
-                      top: "8px",
-                      left: "8px",
-                      width: "18px",
-                      height: "18px",
-                      zIndex: 1,
-                      accentColor: "var(--p-color-bg-fill-brand)",
-                    }}
-                    onChange={(e) => {
-                      const label = e.target.closest("label");
-                      if (e.target.checked) {
-                        label.style.borderColor = "var(--p-color-border-brand)";
-                        label.style.boxShadow =
-                          "0 0 0 1px var(--p-color-border-brand)";
-                      } else {
-                        label.style.borderColor = "var(--p-color-border)";
-                        label.style.boxShadow = "none";
-                      }
-                    }}
-                  />
-                  {imgUrl ? (
-                    <img
-                      src={imgUrl}
-                      alt={p.title}
-                      style={{
-                        width: "100%",
-                        aspectRatio: "1",
-                        objectFit: "cover",
-                      }}
-                    />
-                  ) : (
-                    <s-box
-                      padding="large-300"
-                      background="subdued"
-                      inlineSize="100%"
-                    >
-                      <s-stack direction="block" align="center">
-                        <s-icon type="image" />
-                        <s-text tone="subdued" variant="bodySm">
-                          No image
-                        </s-text>
-                      </s-stack>
-                    </s-box>
-                  )}
-                  <s-box padding="small">
-                    <s-text variant="bodySm" fontWeight="semibold">
-                      {p.title}
-                    </s-text>
-                    {price && (
-                      <s-text variant="bodySm" tone="subdued">
-                        ${price}
-                      </s-text>
-                    )}
-                  </s-box>
-                </label>
-              );
-            })}
-          </div>
-        </s-section>
-
-        <s-section>
-          <s-button submit variant="primary">
-            Create Livestream
-          </s-button>
+                  product={p}
+                  selected={selectedProducts.has(p.id)}
+                  onToggle={() => toggleProduct(p.id)}
+                />
+              ))}
+            </s-grid>
+          </s-stack>
         </s-section>
       </s-page>
     </Form>
