@@ -4,6 +4,7 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { endLiveStream } from "../features/feature-5/utils/mux.server";
 import { getProductsByIds } from "../features/feature-5/utils/products.server";
+import BrowserStream from "../features/feature-5/components/BrowserStream";
 
 export const loader = async ({ request, params }) => {
   const { admin } = await authenticate.admin(request);
@@ -118,7 +119,13 @@ export default function ManageSession() {
             : "Ready"}
       </s-badge>
 
-      <s-section heading="Stream Configuration">
+      {session.status !== "ended" && (
+        <s-section heading="Go Live from Browser">
+          <BrowserStream streamKey={session.muxStreamKey} />
+        </s-section>
+      )}
+
+      <s-section heading="Stream Configuration (OBS)">
         <s-card>
           <s-box padding="base">
             <CopyField label="RTMP URL" value={rtmpUrl} />
