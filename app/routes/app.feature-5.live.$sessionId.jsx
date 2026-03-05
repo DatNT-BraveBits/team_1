@@ -62,6 +62,8 @@ export default function ViewerPage() {
               streamType="live"
               autoPlay
               muted
+              lowLatency
+              preferCmaf
               style={{ width: "100%", aspectRatio: "16/9" }}
             />
           ) : (

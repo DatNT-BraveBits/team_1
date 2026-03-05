@@ -9,18 +9,13 @@ export function startStream(streamKey) {
 
   const rtmpUrl = `rtmp://global-live.mux.com:5222/app/${streamKey}`;
 
+  // Try to copy H.264 directly (if browser sent it), fall back to re-encode VP8→H.264
+  // -fflags +genpts+discardcorrupt handles chunked pipe missing keyframes
   const ffmpeg = spawn("ffmpeg", [
-    "-fflags", "nobuffer",
+    "-fflags", "+genpts+discardcorrupt+nobuffer",
     "-flags", "low_delay",
     "-i", "pipe:0",
-    "-c:v", "libx264",
-    "-preset", "ultrafast",
-    "-tune", "zerolatency",
-    "-g", "30",
-    "-keyint_min", "30",
-    "-b:v", "2500k",
-    "-maxrate", "2500k",
-    "-bufsize", "1250k",
+    "-c:v", "copy",
     "-c:a", "aac",
     "-ar", "44100",
     "-b:a", "128k",

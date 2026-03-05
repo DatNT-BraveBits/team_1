@@ -48,10 +48,12 @@ export default function StreamingStudio() {
         throw new Error(startData.message || "Failed to start relay");
       }
 
-      // Start MediaRecorder
-      const mimeType = MediaRecorder.isTypeSupported("video/webm;codecs=vp8,opus")
-        ? "video/webm;codecs=vp8,opus"
-        : "video/webm";
+      // Prefer H.264 so ffmpeg can copy without re-encoding (faster, no keyframe issues)
+      const mimeType = MediaRecorder.isTypeSupported("video/webm;codecs=h264,opus")
+        ? "video/webm;codecs=h264,opus"
+        : MediaRecorder.isTypeSupported("video/webm;codecs=vp8,opus")
+          ? "video/webm;codecs=vp8,opus"
+          : "video/webm";
 
       const recorder = new MediaRecorder(streamRef.current, {
         mimeType,

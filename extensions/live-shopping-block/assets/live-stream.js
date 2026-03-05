@@ -37,7 +37,12 @@
       if (placeholder) placeholder.classList.add("ls-gone");
     } else if (window.Hls && Hls.isSupported()) {
       if (hlsInstance) hlsInstance.destroy();
-      hlsInstance = new Hls();
+      hlsInstance = new Hls({
+        lowLatencyMode: true,
+        liveSyncDuration: 3,
+        liveMaxLatencyDuration: 10,
+        backBufferLength: 3,
+      });
       hlsInstance.loadSource(src);
       hlsInstance.attachMedia(videoEl);
       videoEl.classList.add("ls-active");
@@ -48,7 +53,12 @@
         "https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js";
       script.onload = function () {
         if (Hls.isSupported()) {
-          hlsInstance = new Hls();
+          hlsInstance = new Hls({
+        lowLatencyMode: true,
+        liveSyncDuration: 3,
+        liveMaxLatencyDuration: 10,
+        backBufferLength: 3,
+      });
           hlsInstance.loadSource(src);
           hlsInstance.attachMedia(videoEl);
           videoEl.classList.add("ls-active");
