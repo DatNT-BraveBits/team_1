@@ -1,0 +1,12 @@
+{
+  "feature1": {
+    "labels": {
+      "preview_title": "Product card preview",
+      "preview_desc": "Badge style comes from app settings"
+    },
+    "messages": {
+      "no_settings": "No app settings found yet. Please save data in /app/feature-1 first.",
+      "no_images": "No image placement matches this section target yet."
+    }
+  }
+}

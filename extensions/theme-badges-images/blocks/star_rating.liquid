@@ -1,0 +1,386 @@
+{% liquid
+  assign app_settings = app.metafields.app_ai.feature_1_settings.value
+  assign shop_settings = shop.metafields.app_ai.feature_1_settings.value
+  assign feature_settings = app_settings | default: shop_settings
+  assign trust = feature_settings.trustBadges
+  assign trust_enabled = trust.enabled
+  if trust_enabled == blank
+    assign trust_enabled = true
+  endif
+%}
+
+{% comment %}
+  Silent app block:
+  - Do not render preview/image markup inside product card.
+  - Keep only JS badge injection so UI is clean.
+{% endcomment %}
+
+{% if trust_enabled %}
+  <style>
+    .app-ai-injected-badge-wrap {
+      position: absolute;
+      z-index: 20;
+      pointer-events: none;
+      max-width: 80%;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .app-ai-injected-badge {
+      display: inline-block;
+      white-space: nowrap;
+      line-height: 1.1;
+      font-weight: 700;
+      text-align: center;
+    }
+    .app-ai-badge-label {
+      display: block;
+      white-space: nowrap;
+    }
+    .app-ai-badge-countdown {
+      display: block;
+      white-space: nowrap;
+      margin-top: 2px;
+      opacity: 0.95;
+    }
+  </style>
+  <script>
+    (() => {
+      const runtimeKey = '__APP_AI_BADGE_RUNTIME__';
+      if (window[runtimeKey] && typeof window[runtimeKey].stop === 'function') {
+        window[runtimeKey].stop();
+      }
+
+      const settings = {
+        textBadge: {
+          enabled: {{ trust.textBadge.enabled | default: trust.showNewProduct | default: true | json }},
+          label: {{ trust.textBadge.label | default: trust.newLabel | default: 'New' | json }},
+          position: {{ trust.textBadge.position | default: trust.position | default: 'top-left' | json }},
+          productTargetMode: {{ trust.textBadge.productTargetMode | default: trust.productTargetMode | default: 'all' | json }},
+          selectedProductHandles: {{ trust.textBadge.selectedProductHandles | default: trust.selectedProductHandles | default: blank | json }},
+          borderRadius: {{ trust.textBadge.borderRadius | default: trust.borderRadius | default: 999 | json }},
+          badgeHeight: {{ trust.textBadge.badgeHeight | default: trust.badgeHeight | default: 28 | json }},
+          fontSize: {{ trust.textBadge.fontSize | default: trust.fontSize | default: 12 | json }},
+          paddingX: {{ trust.textBadge.paddingX | default: trust.paddingX | default: 10 | json }},
+          paddingY: {{ trust.textBadge.paddingY | default: trust.paddingY | default: 4 | json }},
+          textColor: {{ trust.textBadge.textColor | default: trust.textColor | default: '#FFFFFF' | json }},
+          backgroundColor: {{ trust.textBadge.backgroundColor | default: trust.newBackground | default: '#0F766E' | json }},
+          backgroundImageUrl: {{ trust.textBadge.backgroundImageUrl | default: trust.newBackgroundImageUrl | default: '' | json }},
+          backgroundSize: {{ trust.textBadge.backgroundSize | default: trust.backgroundSize | default: 'cover' | json }},
+          backgroundPosition: {{ trust.textBadge.backgroundPosition | default: trust.backgroundPosition | default: 'center' | json }}
+        },
+        countdownBadge: {
+          enabled: {{ trust.countdownBadge.enabled | default: trust.countdownEnabled | default: false | json }},
+          prefix: {{ trust.countdownBadge.prefix | default: trust.countdownPrefix | default: 'Ends in' | json }},
+          endAt: {{ trust.countdownBadge.endAt | default: trust.countdownEndAt | default: '' | json }},
+          timeMode: {{ trust.countdownBadge.timeMode | default: 'global' | json }},
+          perProductEndAt: {{ trust.countdownBadge.perProductEndAt | default: blank | json }},
+          position: {{ trust.countdownBadge.position | default: trust.position | default: 'top-right' | json }},
+          productTargetMode: {{ trust.countdownBadge.productTargetMode | default: trust.productTargetMode | default: 'all' | json }},
+          selectedProductHandles: {{ trust.countdownBadge.selectedProductHandles | default: trust.selectedProductHandles | default: blank | json }},
+          borderRadius: {{ trust.countdownBadge.borderRadius | default: trust.borderRadius | default: 999 | json }},
+          badgeHeight: {{ trust.countdownBadge.badgeHeight | default: trust.badgeHeight | default: 28 | json }},
+          fontSize: {{ trust.countdownBadge.fontSize | default: trust.fontSize | default: 12 | json }},
+          paddingX: {{ trust.countdownBadge.paddingX | default: trust.paddingX | default: 10 | json }},
+          paddingY: {{ trust.countdownBadge.paddingY | default: trust.paddingY | default: 4 | json }},
+          textColor: {{ trust.countdownBadge.textColor | default: trust.textColor | default: '#FFFFFF' | json }},
+          backgroundColor: {{ trust.countdownBadge.backgroundColor | default: trust.newBackground | default: '#7C3AED' | json }},
+          backgroundImageUrl: {{ trust.countdownBadge.backgroundImageUrl | default: trust.newBackgroundImageUrl | default: '' | json }},
+          backgroundSize: {{ trust.countdownBadge.backgroundSize | default: trust.backgroundSize | default: 'cover' | json }},
+          backgroundPosition: {{ trust.countdownBadge.backgroundPosition | default: trust.backgroundPosition | default: 'center' | json }}
+        }
+      };
+
+      const cardSelectors = [
+        '.card-wrapper .card',
+        '.product-card-wrapper .card',
+        '[data-product-card]',
+        '.grid__item .card',
+        '.card-wrapper',
+        '.product-card'
+      ];
+
+      const markerClass = 'app-ai-badge-initialized';
+      let observer = null;
+      let countdownInterval = null;
+      let injectDebounce = null;
+      const getPositionStyle = (position) => {
+        const map = {
+          'top-left': 'top: 12px; left: 12px;',
+          'top-center': 'top: 12px; left: 50%; transform: translateX(-50%);',
+          'top-right': 'top: 12px; right: 12px;',
+          'center-left': 'top: 50%; left: 12px; transform: translateY(-50%);',
+          'center': 'top: 50%; left: 50%; transform: translate(-50%, -50%);',
+          'center-right': 'top: 50%; right: 12px; transform: translateY(-50%);',
+          'bottom-left': 'bottom: 12px; left: 12px;',
+          'bottom-center': 'bottom: 12px; left: 50%; transform: translateX(-50%);',
+          'bottom-right': 'bottom: 12px; right: 12px;'
+        };
+        return map[position] || map['top-left'];
+      };
+
+      const formatDuration = (ms) => {
+        const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      };
+
+      const createBadge = ({
+        text,
+        textColor,
+        borderRadius,
+        badgeHeight,
+        fontSize,
+        paddingX,
+        paddingY,
+        backgroundColor,
+        backgroundImage,
+        backgroundSize,
+        backgroundPosition,
+        countdownConfig,
+      }) => {
+        const badge = document.createElement('span');
+        badge.className = 'app-ai-injected-badge';
+        const label = document.createElement('span');
+        label.className = 'app-ai-badge-label';
+        label.textContent = text;
+        badge.appendChild(label);
+        badge.style.backgroundColor = backgroundColor;
+        if (backgroundImage) {
+          badge.style.backgroundImage = `url(${backgroundImage})`;
+          badge.style.backgroundSize = backgroundSize || 'cover';
+          badge.style.backgroundPosition = backgroundPosition || 'center';
+        }
+        badge.style.color = textColor || '#FFFFFF';
+        badge.style.borderRadius = `${borderRadius ?? 999}px`;
+        badge.style.height = `${badgeHeight ?? 28}px`;
+        badge.style.display = 'inline-flex';
+        badge.style.alignItems = 'center';
+        badge.style.justifyContent = 'center';
+        badge.style.flexDirection = 'column';
+        badge.style.fontSize = `${fontSize ?? 12}px`;
+        badge.style.padding = `${paddingY ?? 4}px ${paddingX ?? 10}px`;
+        if (countdownConfig?.enabled && countdownConfig?.endAt) {
+          const countdown = document.createElement('small');
+          countdown.className = 'app-ai-badge-countdown';
+          countdown.dataset.endAt = countdownConfig.endAt;
+          countdown.dataset.prefix = countdownConfig.prefix || 'Ends in';
+          countdown.style.fontSize = `${Math.max(10, (fontSize ?? 12) - 2)}px`;
+          badge.appendChild(countdown);
+        }
+        return badge;
+      };
+
+      const updateCountdowns = () => {
+        const timers = document.querySelectorAll('.app-ai-badge-countdown');
+        timers.forEach((timer) => {
+          const endAt = timer.dataset.endAt;
+          const prefix = timer.dataset.prefix || 'Ends in';
+          const endTime = new Date(endAt).getTime();
+          if (Number.isNaN(endTime)) {
+            timer.textContent = '';
+            return;
+          }
+          const diff = endTime - Date.now();
+          timer.textContent = diff <= 0 ? 'Ended' : `${prefix} ${formatDuration(diff)}`;
+        });
+      };
+
+      const resolveCards = () => {
+        const cards = [];
+        for (const selector of cardSelectors) {
+          document.querySelectorAll(selector).forEach((el) => cards.push(el));
+        }
+        return [...new Set(cards)];
+      };
+
+      const extractHandleFromCard = (card) => {
+        const links = card.querySelectorAll('a[href*="/products/"]');
+        for (const link of links) {
+          try {
+            const url = new URL(link.getAttribute('href'), window.location.origin);
+            const parts = url.pathname.split('/').filter(Boolean);
+            const productsIndex = parts.indexOf('products');
+            if (productsIndex !== -1 && parts[productsIndex + 1]) {
+              return parts[productsIndex + 1].toLowerCase();
+            }
+          } catch (_error) {
+            // Ignore malformed links.
+          }
+        }
+        return '';
+      };
+
+      const normalizeHandles = (handles) =>
+        new Set(
+          Array.isArray(handles)
+            ? handles.map((handle) => String(handle || '').toLowerCase())
+            : [],
+        );
+
+      const shouldInjectForCard = (badgeSettings, handle, selectedHandleSet) => {
+        if (!badgeSettings?.enabled) return false;
+        if (badgeSettings.productTargetMode !== 'selected') return true;
+        return Boolean(handle && selectedHandleSet.has(handle));
+      };
+
+      const resolveCountdownEndAt = (handle) => {
+        if (!settings.countdownBadge?.enabled) return '';
+        if (settings.countdownBadge?.timeMode !== 'per_product') {
+          return settings.countdownBadge?.endAt || '';
+        }
+        const perProductMap = settings.countdownBadge?.perProductEndAt;
+        if (!perProductMap || typeof perProductMap !== 'object') return '';
+        return String(perProductMap[handle] || '').trim();
+      };
+
+      const clearInjectedBadges = () => {
+        document.querySelectorAll('.app-ai-injected-badge-wrap').forEach((node) => {
+          node.remove();
+        });
+        document.querySelectorAll(`.${markerClass}`).forEach((node) => {
+          node.classList.remove(markerClass);
+        });
+      };
+
+      const injectBadges = () => {
+        const textSelectedHandleSet = normalizeHandles(
+          settings.textBadge?.selectedProductHandles,
+        );
+        const countdownSelectedHandleSet = normalizeHandles(
+          settings.countdownBadge?.selectedProductHandles,
+        );
+        const cards = resolveCards();
+        cards.forEach((card) => {
+          if (card.classList.contains(markerClass)) return;
+          const handle = extractHandleFromCard(card);
+
+          const style = window.getComputedStyle(card);
+          if (style.position === 'static') card.style.position = 'relative';
+
+          const canInjectText = shouldInjectForCard(
+            settings.textBadge,
+            handle,
+            textSelectedHandleSet,
+          );
+          const countdownEndAt = resolveCountdownEndAt(handle);
+          const countdownEndTime = new Date(countdownEndAt || '').getTime();
+          const canInjectCountdown = shouldInjectForCard(
+            settings.countdownBadge,
+            handle,
+            countdownSelectedHandleSet,
+          ) && !Number.isNaN(countdownEndTime);
+
+          if (canInjectText) {
+            const textWrap = document.createElement('div');
+            textWrap.className = 'app-ai-injected-badge-wrap';
+            textWrap.style.cssText += getPositionStyle(settings.textBadge.position);
+            textWrap.appendChild(
+              createBadge({
+                text: settings.textBadge.label || 'New',
+                textColor: settings.textBadge.textColor || '#FFFFFF',
+                borderRadius: settings.textBadge.borderRadius ?? 999,
+                badgeHeight: settings.textBadge.badgeHeight ?? 28,
+                fontSize: settings.textBadge.fontSize ?? 12,
+                paddingX: settings.textBadge.paddingX ?? 10,
+                paddingY: settings.textBadge.paddingY ?? 4,
+                backgroundColor: settings.textBadge.backgroundColor || '#0F766E',
+                backgroundImage: settings.textBadge.backgroundImageUrl || '',
+                backgroundSize: settings.textBadge.backgroundSize || 'cover',
+                backgroundPosition: settings.textBadge.backgroundPosition || 'center',
+              }),
+            );
+            card.appendChild(textWrap);
+          }
+
+          if (canInjectCountdown) {
+            const countdownWrap = document.createElement('div');
+            countdownWrap.className = 'app-ai-injected-badge-wrap';
+            countdownWrap.style.cssText += getPositionStyle(settings.countdownBadge.position);
+            countdownWrap.appendChild(
+              createBadge({
+                text: 'Flash Sale',
+                textColor: settings.countdownBadge.textColor || '#FFFFFF',
+                borderRadius: settings.countdownBadge.borderRadius ?? 999,
+                badgeHeight: settings.countdownBadge.badgeHeight ?? 28,
+                fontSize: settings.countdownBadge.fontSize ?? 12,
+                paddingX: settings.countdownBadge.paddingX ?? 10,
+                paddingY: settings.countdownBadge.paddingY ?? 4,
+                backgroundColor: settings.countdownBadge.backgroundColor || '#7C3AED',
+                backgroundImage: settings.countdownBadge.backgroundImageUrl || '',
+                backgroundSize: settings.countdownBadge.backgroundSize || 'cover',
+                backgroundPosition: settings.countdownBadge.backgroundPosition || 'center',
+                countdownConfig: {
+                  enabled: true,
+                  endAt: countdownEndAt,
+                  prefix: settings.countdownBadge.prefix || 'Ends in',
+                },
+              }),
+            );
+            card.appendChild(countdownWrap);
+          }
+
+          if (canInjectText || canInjectCountdown) card.classList.add(markerClass);
+        });
+      };
+
+      const runInjection = () => {
+        injectBadges();
+        updateCountdowns();
+      };
+
+      const scheduleInjection = () => {
+        if (injectDebounce) return;
+        injectDebounce = setTimeout(() => {
+          injectDebounce = null;
+          runInjection();
+        }, 120);
+      };
+
+      const onSectionLoad = () => {
+        runInjection();
+      };
+
+      clearInjectedBadges();
+      runInjection();
+      document.addEventListener('shopify:section:load', onSectionLoad);
+      setTimeout(runInjection, 600);
+      setTimeout(runInjection, 1500);
+      setTimeout(runInjection, 3000);
+
+      const hasValidCountdown =
+        settings.countdownBadge?.enabled;
+      if (hasValidCountdown) {
+        countdownInterval = setInterval(updateCountdowns, 1000);
+      }
+
+      observer = new MutationObserver(() => {
+        scheduleInjection();
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      window[runtimeKey] = {
+        stop() {
+          clearInjectedBadges();
+          if (observer) observer.disconnect();
+          observer = null;
+          if (countdownInterval) clearInterval(countdownInterval);
+          countdownInterval = null;
+          if (injectDebounce) clearTimeout(injectDebounce);
+          injectDebounce = null;
+          document.removeEventListener('shopify:section:load', onSectionLoad);
+        },
+      };
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Trust Badge",
+  "target": "section",
+  "settings": []
+}
+{% endschema %}
