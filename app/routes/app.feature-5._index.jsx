@@ -112,9 +112,9 @@ export default function Feature5Dashboard() {
 
   return (
     <s-page heading="Live Shopping" inlineSize="large">
-      <s-button slot="primary-action" variant="primary" href="/app/feature-5/create">
+      <s-link slot="primary-action" href="/app/feature-5/create">
         Create Livestream
-      </s-button>
+      </s-link>
 
       {sessions.length === 0 ? (
         <EmptyState />

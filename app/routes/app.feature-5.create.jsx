@@ -109,10 +109,6 @@ export default function CreateSession() {
       ))}
 
       <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
-        <s-button slot="primary-action" variant="primary" submit>
-          Create Livestream
-        </s-button>
-
         <s-section heading="Stream Details">
           <s-text-field
             label="Title"
@@ -152,6 +148,12 @@ export default function CreateSession() {
               ))}
             </s-grid>
           </s-stack>
+        </s-section>
+
+        <s-section>
+          <s-button submit variant="primary">
+            Create Livestream
+          </s-button>
         </s-section>
       </s-page>
     </Form>
