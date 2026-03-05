@@ -58,12 +58,23 @@ export default function CreateSession() {
       <Form method="post">
         <s-section heading="Stream Details">
           <s-stack direction="block" gap="base">
-            <s-text-field
-              label="Title"
-              name="title"
-              required
-              placeholder="My Live Shopping Event"
-            />
+            <label>
+              <s-text fontWeight="bold">Title</s-text>
+              <input
+                type="text"
+                name="title"
+                required
+                placeholder="My Live Shopping Event"
+                style={{
+                  width: "100%",
+                  padding: "8px 12px",
+                  borderRadius: "8px",
+                  border: "1px solid #ccc",
+                  fontSize: "14px",
+                  marginTop: "4px",
+                }}
+              />
+            </label>
           </s-stack>
         </s-section>
 
@@ -82,9 +93,21 @@ export default function CreateSession() {
         </s-section>
 
         <s-box padding="base">
-          <s-button variant="primary" submit>
+          <button
+            type="submit"
+            style={{
+              padding: "8px 16px",
+              borderRadius: "8px",
+              border: "none",
+              background: "#008060",
+              color: "#fff",
+              fontWeight: "bold",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
             Create Livestream
-          </s-button>
+          </button>
         </s-box>
       </Form>
     </s-page>
