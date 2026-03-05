@@ -1,4 +1,4 @@
-import { useLoaderData, useFetcher } from "react-router";
+import { useLoaderData, useFetcher, Link } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
@@ -59,6 +59,40 @@ export const action = async ({ request, params }) => {
   return { ok: true };
 };
 
+function CopyField({ label, value }) {
+  return (
+    <div style={{ marginBottom: "8px" }}>
+      <s-text variant="bodySm" fontWeight="bold">
+        {label}
+      </s-text>
+      <div
+        style={{
+          display: "flex",
+          gap: "8px",
+          marginTop: "4px",
+          alignItems: "center",
+        }}
+      >
+        <input
+          type="text"
+          value={value}
+          readOnly
+          style={{
+            flex: 1,
+            padding: "6px 10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc",
+            fontSize: "13px",
+            fontFamily: "monospace",
+            background: "#f9f9f9",
+          }}
+          onClick={(e) => e.target.select()}
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ManageSession() {
   const { session, products } = useLoaderData();
   const fetcher = useFetcher();
@@ -67,58 +101,120 @@ export default function ManageSession() {
 
   return (
     <s-page heading={session.title} backAction={{ url: "/app/feature-5" }}>
-      <s-section heading="Stream Setup">
-        <s-stack direction="block" gap="base">
-          <s-text-field label="RTMP URL" value={rtmpUrl} readOnly />
-          <s-text-field
-            label="Stream Key"
-            value={session.muxStreamKey || "N/A"}
-            readOnly
-          />
-          <s-text-field
-            label="Viewer Link"
-            value={`/app/feature-5/live/${session.id}`}
-            readOnly
-          />
-          <s-badge
-            tone={
-              session.status === "live"
-                ? "success"
-                : session.status === "ended"
-                  ? "default"
-                  : "info"
-            }
-          >
-            Status: {session.status}
-          </s-badge>
+      <s-badge
+        slot="title-metadata"
+        tone={
+          session.status === "live"
+            ? "success"
+            : session.status === "ended"
+              ? "default"
+              : "info"
+        }
+      >
+        {session.status === "live"
+          ? "LIVE"
+          : session.status === "ended"
+            ? "Ended"
+            : "Ready"}
+      </s-badge>
+
+      <s-section heading="Stream Configuration">
+        <s-card>
+          <s-box padding="base">
+            <CopyField label="RTMP URL" value={rtmpUrl} />
+            <CopyField
+              label="Stream Key"
+              value={session.muxStreamKey || "N/A"}
+            />
+            <CopyField label="Session ID (for theme block)" value={session.id} />
+          </s-box>
+        </s-card>
+      </s-section>
+
+      <s-section heading="Quick Links">
+        <s-stack direction="inline" gap="base">
+          <Link to={`/app/feature-5/live/${session.id}`}>
+            <s-button variant="tertiary">Preview Viewer Page</s-button>
+          </Link>
         </s-stack>
       </s-section>
 
-      <s-section heading="Products">
+      <s-section heading="Products ({products.length})">
         <s-stack direction="block" gap="base">
-          {products.map((p) => (
-            <s-card key={p.id}>
-              <s-box padding="base">
-                <s-stack direction="inline" gap="base" align="center">
-                  <s-text fontWeight="bold">{p.title}</s-text>
-                  {session.pinnedProductId === p.id ? (
-                    <fetcher.Form method="post">
-                      <input type="hidden" name="intent" value="unpin" />
-                      <s-button variant="primary" submit>
-                        Pinned — Unpin
-                      </s-button>
-                    </fetcher.Form>
-                  ) : (
-                    <fetcher.Form method="post">
-                      <input type="hidden" name="intent" value="pin" />
-                      <input type="hidden" name="productId" value={p.id} />
-                      <s-button submit>Pin</s-button>
-                    </fetcher.Form>
-                  )}
-                </s-stack>
-              </s-box>
-            </s-card>
-          ))}
+          {products.map((p) => {
+            const imgUrl = p.images?.edges[0]?.node?.url;
+            const isPinned = session.pinnedProductId === p.id;
+            return (
+              <s-card key={p.id}>
+                <s-box padding="base">
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                    }}
+                  >
+                    {imgUrl && (
+                      <img
+                        src={imgUrl}
+                        alt={p.title}
+                        style={{
+                          width: "48px",
+                          height: "48px",
+                          objectFit: "cover",
+                          borderRadius: "6px",
+                        }}
+                      />
+                    )}
+                    <div style={{ flex: 1 }}>
+                      <s-text fontWeight="bold">{p.title}</s-text>
+                      {isPinned && (
+                        <s-badge tone="success">Pinned</s-badge>
+                      )}
+                    </div>
+                    {isPinned ? (
+                      <fetcher.Form method="post">
+                        <input type="hidden" name="intent" value="unpin" />
+                        <button
+                          type="submit"
+                          style={{
+                            padding: "6px 12px",
+                            borderRadius: "6px",
+                            border: "1px solid #ccc",
+                            background: "#fff",
+                            cursor: "pointer",
+                            fontSize: "13px",
+                          }}
+                        >
+                          Unpin
+                        </button>
+                      </fetcher.Form>
+                    ) : (
+                      <fetcher.Form method="post">
+                        <input type="hidden" name="intent" value="pin" />
+                        <input type="hidden" name="productId" value={p.id} />
+                        <button
+                          type="submit"
+                          style={{
+                            padding: "6px 12px",
+                            borderRadius: "6px",
+                            border: "none",
+                            background: "#008060",
+                            color: "#fff",
+                            cursor: "pointer",
+                            fontSize: "13px",
+                            fontWeight: "600",
+                          }}
+                        >
+                          Pin
+                        </button>
+                      </fetcher.Form>
+                    )}
+                  </div>
+                </s-box>
+              </s-card>
+            );
+          })}
         </s-stack>
       </s-section>
 
@@ -126,9 +222,21 @@ export default function ManageSession() {
         <s-section>
           <fetcher.Form method="post">
             <input type="hidden" name="intent" value="end" />
-            <s-button variant="primary" tone="critical" submit>
+            <button
+              type="submit"
+              style={{
+                padding: "8px 16px",
+                borderRadius: "8px",
+                border: "none",
+                background: "#e53e3e",
+                color: "#fff",
+                fontWeight: "bold",
+                cursor: "pointer",
+                fontSize: "14px",
+              }}
+            >
               End Stream
-            </s-button>
+            </button>
           </fetcher.Form>
         </s-section>
       )}

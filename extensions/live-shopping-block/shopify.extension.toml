@@ -1,0 +1,9 @@
+api_version = "2024-07"
+type = "theme"
+
+[extensions.capabilities]
+auto_injection = false
+
+[[extensions.targeting]]
+module = "./blocks/live-stream.liquid"
+target = "section.custom.live-stream"
