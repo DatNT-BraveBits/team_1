@@ -17,9 +17,9 @@ export const features = [
     // owner: "Person 3"
   },
   {
-    label: "Feature 4",
+    label: "MirrorAI",
     href: "/app/feature-4",
-    // owner: "Person 4"
+    // owner: "Trang"
   },
   {
     label: "Feature 5",
