@@ -181,11 +181,9 @@ export default function ManageSession() {
 
       {/* Live Chat */}
       {!isEnded && (
-        <s-section heading="Live Chat">
-          <div style={{ height: "450px" }}>
-            <ChatPanel sessionId={session.id} isHost={true} />
-          </div>
-        </s-section>
+        <div style={{ height: "450px" }}>
+          <ChatPanel sessionId={session.id} isHost={true} />
+        </div>
       )}
 
       {/* Stream Configuration */}
