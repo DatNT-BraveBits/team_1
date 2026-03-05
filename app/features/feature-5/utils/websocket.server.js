@@ -44,9 +44,13 @@ function handleConnection(ws) {
     }
 
     if (data.type === "join") {
+      const joinNickname = (data.nickname || "").trim().slice(0, 30) || "Viewer";
+      const joinClientId = (data.clientId || "").trim().slice(0, 64);
+      if (!joinClientId) return;
+
       clientInfo = {
-        clientId: data.clientId,
-        nickname: data.nickname,
+        clientId: joinClientId,
+        nickname: joinNickname,
       };
 
       // Add to room

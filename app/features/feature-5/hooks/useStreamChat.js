@@ -25,9 +25,17 @@ export function useStreamChat(sessionId, { isHost = false } = {}) {
   const reconnectTimer = useRef(null);
   const reconnectDelay = useRef(1000);
   const clientId = useRef(generateClientId());
+  const nicknameRef = useRef(nickname);
+  nicknameRef.current = nickname;
 
   const connect = useCallback(() => {
-    if (wsRef.current?.readyState === WebSocket.OPEN) return;
+    // Close any existing socket (including CONNECTING state) to prevent orphans
+    if (wsRef.current) {
+      if (wsRef.current.readyState === WebSocket.OPEN) return;
+      if (wsRef.current.readyState === WebSocket.CONNECTING) {
+        wsRef.current.close();
+      }
+    }
 
     const protocol = window.location.protocol === "https:" ? "wss" : "ws";
     const ws = new WebSocket(
@@ -41,14 +49,19 @@ export function useStreamChat(sessionId, { isHost = false } = {}) {
       ws.send(
         JSON.stringify({
           type: "join",
-          nickname,
+          nickname: nicknameRef.current,
           clientId: clientId.current,
         }),
       );
     };
 
     ws.onmessage = (event) => {
-      const data = JSON.parse(event.data);
+      let data;
+      try {
+        data = JSON.parse(event.data);
+      } catch {
+        return;
+      }
 
       if (data.type === "history") {
         setMessages(
@@ -86,16 +99,19 @@ export function useStreamChat(sessionId, { isHost = false } = {}) {
 
     ws.onclose = () => {
       setIsConnected(false);
-      reconnectTimer.current = setTimeout(() => {
-        reconnectDelay.current = Math.min(reconnectDelay.current * 2, 10000);
-        connect();
-      }, reconnectDelay.current);
+      // Only reconnect if this is still the active socket
+      if (wsRef.current === ws) {
+        reconnectTimer.current = setTimeout(() => {
+          reconnectDelay.current = Math.min(reconnectDelay.current * 2, 10000);
+          connect();
+        }, reconnectDelay.current);
+      }
     };
 
     ws.onerror = () => {
       ws.close();
     };
-  }, [sessionId, nickname]);
+  }, [sessionId]);
 
   useEffect(() => {
     connect();
