@@ -66,7 +66,7 @@ const POSITION_OPTIONS = [
 const UI = {
   shell: {
     display: "grid",
-    gap: 14,
+    gap: 16,
   },
   sectionCard: {
     border: "1px solid #E5E7EB",
@@ -79,20 +79,23 @@ const UI = {
   },
   fieldGrid: {
     display: "grid",
-    gap: 24,
+    gap: 18,
   },
   actionBar: {
     position: "sticky",
     top: 10,
-    zIndex: 5,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 12,
-    border: "1px solid #E5E7EB",
+    zIndex: 10,
+    display: "grid",
+    gap: 10,
+    border: "1px solid #BFDBFE",
     borderRadius: 14,
-    background: "#FFFFFF",
+    background: "linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%)",
     padding: "10px 12px",
+    boxShadow: "0 6px 14px rgba(15, 23, 42, 0.08)",
+    width: "100%",
+    maxWidth: "100%",
+    boxSizing: "border-box",
+    overflow: "hidden",
   },
   actionTitle: {
     margin: 0,
@@ -114,11 +117,11 @@ const UI = {
   },
   groupCard: {
     display: "grid",
-    gap: 18,
+    gap: 14,
     border: "1px solid #E5E7EB",
     borderRadius: 14,
-    padding: 18,
-    background: "linear-gradient(180deg, #FBFDFF 0%, #F8FAFC 100%)",
+    padding: 16,
+    background: "#FFFFFF",
   },
   groupTitle: {
     margin: 0,
@@ -140,10 +143,8 @@ const UI = {
   },
   badgeCols: {
     display: "grid",
-    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-    columnGap: 20,
-    rowGap: 20,
-    alignItems: "start",
+    gridTemplateColumns: "minmax(0, 1fr)",
+    gap: 16,
   },
   threeCols: {
     display: "grid",
@@ -221,15 +222,42 @@ const UI = {
   },
   pageWide: {
     width: "100%",
-    maxWidth: "none",
+    maxWidth: 1320,
     margin: "0 auto",
+    padding: "0 12px 24px",
+  },
+  workspaceGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+    gap: 20,
+    alignItems: "start",
+  },
+  mainCol: {
+    display: "grid",
+    gap: 16,
+  },
+  sideCol: {
+    display: "grid",
+    gap: 12,
+  },
+  sideSticky: {
+    position: "static",
+    display: "grid",
+    gap: 12,
+    alignSelf: "start",
+  },
+  heroCard: {
+    border: "1px solid #E2E8F0",
+    borderRadius: 16,
+    padding: 16,
+    background: "#FFFFFF",
   },
   badgePanel: {
     display: "grid",
-    gap: 16,
-    border: "1px solid #DCE7F6",
+    gap: 12,
+    border: "1px solid #E2E8F0",
     borderRadius: 16,
-    background: "#F8FAFF",
+    background: "#F8FAFC",
     padding: 16,
   },
 };
@@ -1137,6 +1165,9 @@ export default function Feature1Route() {
   const { settings: loaderSettings, products } = useLoaderData();
   const fetcher = useFetcher();
   const [settings, setSettings] = useState(loaderSettings);
+  const [textTargetModeDraft, setTextTargetModeDraft] = useState(
+    loaderSettings.trustBadges.textBadge?.productTargetMode === "selected" ? "selected" : "all",
+  );
   const [countdownTargetModeDraft, setCountdownTargetModeDraft] = useState(
     loaderSettings.trustBadges.countdownBadge?.productTargetMode === "selected"
       ? "selected"
@@ -1145,6 +1176,11 @@ export default function Feature1Route() {
   const [countdownSelectedHandlesDraft, setCountdownSelectedHandlesDraft] = useState(
     loaderSettings.trustBadges.countdownBadge?.selectedProductHandles || [],
   );
+  const [countdownTimeModeDraft, setCountdownTimeModeDraft] = useState(
+    loaderSettings.trustBadges.countdownBadge?.timeMode === "per_product"
+      ? "per_product"
+      : "global",
+  );
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
 
@@ -1152,6 +1188,11 @@ export default function Feature1Route() {
     if (!fetcher.data) return;
     if (fetcher.data.ok && fetcher.data.settings) {
       setSettings(fetcher.data.settings);
+      setTextTargetModeDraft(
+        fetcher.data.settings.trustBadges.textBadge?.productTargetMode === "selected"
+          ? "selected"
+          : "all",
+      );
       setCountdownTargetModeDraft(
         fetcher.data.settings.trustBadges.countdownBadge?.productTargetMode ===
           "selected"
@@ -1160,6 +1201,11 @@ export default function Feature1Route() {
       );
       setCountdownSelectedHandlesDraft(
         fetcher.data.settings.trustBadges.countdownBadge?.selectedProductHandles || [],
+      );
+      setCountdownTimeModeDraft(
+        fetcher.data.settings.trustBadges.countdownBadge?.timeMode === "per_product"
+          ? "per_product"
+          : "global",
       );
       setNotice(fetcher.data.message || "Saved.");
       setError("");
@@ -1185,240 +1231,212 @@ export default function Feature1Route() {
         <s-banner tone="critical">{error}</s-banner>
       ) : null}
 
-      <div style={{ ...UI.shell, ...UI.pageWide }}>
-          <s-card>
-            <div style={UI.cardBody}>
-              <div style={{ display: "grid", gap: 6 }}>
-                <h2 style={{ margin: 0 }}>Trust Badge Settings</h2>
-                <p style={{ margin: 0, color: "#64748B", fontSize: 14 }}>
-                  Configure global visibility, text badge, and countdown badge.
-                </p>
+      <div style={UI.pageWide}>
+        <fetcher.Form method="post" encType="multipart/form-data">
+          <input type="hidden" name="intent" value="save_badges" />
+          <div style={UI.fieldGrid}>
+            <div style={UI.heroCard}>
+              <p style={UI.blockTitle}>Trust Badge Settings</p>
+              <p style={UI.blockDesc}>
+                Configure visibility, targeting, style, and background for Text Badge and
+                Countdown Badge.
+              </p>
+            </div>
+
+            <div style={UI.actionBar}>
+              <div>
+                <p style={UI.actionTitle}>Primary action</p>
+                <p style={UI.actionHint}>Save all updates after reviewing preview.</p>
+              </div>
+              <div style={{ justifySelf: "end" }}>
+                <s-button
+                  variant="primary"
+                  type="submit"
+                  loading={isSaving}
+                  disabled={isSaving}
+                >
+                  Save settings
+                </s-button>
               </div>
             </div>
-          </s-card>
-      </div>
 
-      <div style={UI.pageWide}>
-        <s-section style={{ width: "100%" }}>
-          <s-card style={{ width: "100%" }}>
-            <div style={{ ...UI.cardBody, ...UI.sectionCard }}>
-              <div style={{ marginBottom: 12 }}>
-                <p style={UI.blockTitle}>Badge Settings</p>
-              </div>
-              <fetcher.Form method="post" encType="multipart/form-data">
-                <input type="hidden" name="intent" value="save_badges" />
-                <div style={UI.fieldGrid}>
-                <div style={UI.actionBar}>
-                  <div>
-                    <p style={UI.actionTitle}>Important: Save your changes</p>
-                    <p style={UI.actionHint}>
-                      Update settings in both columns, review preview, then save.
-                    </p>
-                  </div>
-                  <s-button
-                    variant="primary"
-                    type="submit"
-                    loading={isSaving}
-                    disabled={isSaving}
-                  >
-                    Save settings
-                  </s-button>
-                </div>
-                <div style={UI.groupCard}>
-                  <p style={UI.groupTitle}>Visibility</p>
-                  <label style={UI.checkboxRow}>
-                    <input
-                      name="badge_enabled"
-                      type="checkbox"
-                      defaultChecked={settings.trustBadges.enabled}
-                    />
-                    Enable badge injection on product cards
-                  </label>
-                </div>
+            <div style={UI.groupCard}>
+              <p style={UI.groupTitle}>Visibility</p>
+              <label style={UI.checkboxRow}>
+                <input
+                  name="badge_enabled"
+                  type="checkbox"
+                  defaultChecked={settings.trustBadges.enabled}
+                />
+                Enable badge injection on product cards
+              </label>
+            </div>
 
-                <div style={UI.badgeCols}>
-                <div style={UI.badgePanel}>
-                <div style={UI.groupCard}>
-                  <p style={UI.groupTitle}>Text Badge</p>
-                  <label style={UI.checkboxRow}>
-                    <input
-                      name="text_badge_enabled"
-                      type="checkbox"
-                      defaultChecked={settings.trustBadges.textBadge?.enabled}
-                    />
-                    Enable normal text badge
-                  </label>
-                  <SettingField label="Badge label">
-                    <input
-                      style={UI.input}
-                      name="text_badge_label"
-                      defaultValue={settings.trustBadges.textBadge?.label || "New"}
-                    />
-                  </SettingField>
-                  <SettingField label="Badge position">
-                    <select
-                      style={UI.input}
-                      name="text_badge_position"
-                      defaultValue={settings.trustBadges.textBadge?.position || "top-left"}
-                    >
-                      {POSITION_OPTIONS.map((position) => (
-                        <option key={position} value={position}>
-                          {position}
-                        </option>
-                      ))}
-                    </select>
-                  </SettingField>
-                  <BadgeStyleFields
-                    fieldPrefix="text_badge"
-                    badge={settings.trustBadges.textBadge}
+            <div style={UI.badgePanel}>
+              <div style={UI.groupCard}>
+                <p style={UI.groupTitle}>Text Badge</p>
+                <label style={UI.checkboxRow}>
+                  <input
+                    name="text_badge_enabled"
+                    type="checkbox"
+                    defaultChecked={settings.trustBadges.textBadge?.enabled}
                   />
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Text badge targets</p>
-                    <p style={UI.helpText}>
-                      Choose where text badge is shown.
-                    </p>
-                    <div style={UI.twoCols}>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="text_product_target_mode"
-                          value="all"
-                          defaultChecked={
-                            settings.trustBadges.textBadge?.productTargetMode !== "selected"
-                          }
-                        />
-                        All products
-                      </label>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="text_product_target_mode"
-                          value="selected"
-                          defaultChecked={
-                            settings.trustBadges.textBadge?.productTargetMode === "selected"
-                          }
-                        />
-                        Only selected products
-                      </label>
-                    </div>
+                  Enable normal text badge
+                </label>
+                <SettingField label="Badge label">
+                  <input
+                    style={UI.input}
+                    name="text_badge_label"
+                    defaultValue={settings.trustBadges.textBadge?.label || "New"}
+                  />
+                </SettingField>
+                <SettingField label="Badge position">
+                  <select
+                    style={UI.input}
+                    name="text_badge_position"
+                    defaultValue={settings.trustBadges.textBadge?.position || "top-left"}
+                  >
+                    {POSITION_OPTIONS.map((position) => (
+                      <option key={position} value={position}>
+                        {position}
+                      </option>
+                    ))}
+                  </select>
+                </SettingField>
+                <div style={UI.groupCard}>
+                  <p style={{ ...UI.groupTitle, fontSize: 14 }}>Targets</p>
+                  <div style={UI.twoCols}>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="text_product_target_mode"
+                        value="all"
+                        checked={textTargetModeDraft !== "selected"}
+                        onChange={() => setTextTargetModeDraft("all")}
+                      />
+                      All products
+                    </label>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="text_product_target_mode"
+                        value="selected"
+                        checked={textTargetModeDraft === "selected"}
+                        onChange={() => setTextTargetModeDraft("selected")}
+                      />
+                      Only selected products
+                    </label>
+                  </div>
+                  {textTargetModeDraft === "selected" ? (
                     <ProductSelectionList
                       products={products}
                       inputName="text_selected_product_handles"
                       selectedHandles={settings.trustBadges.textBadge?.selectedProductHandles || []}
                     />
-                  </div>
-                  <BadgeBackgroundFields
-                    fieldPrefix="text_badge"
-                    badge={settings.trustBadges.textBadge}
-                    defaultColor="#0F766E"
-                    labelPrefix="text badge"
-                  />
+                  ) : null}
                 </div>
-                </div>
+                <BadgeStyleFields fieldPrefix="text_badge" badge={settings.trustBadges.textBadge} />
+                <BadgeBackgroundFields
+                  fieldPrefix="text_badge"
+                  badge={settings.trustBadges.textBadge}
+                  defaultColor="#0F766E"
+                  labelPrefix="text badge"
+                />
+              </div>
+            </div>
 
-                <div style={UI.badgePanel}>
-                <div style={UI.groupCard}>
-                  <p style={UI.groupTitle}>Countdown Badge (Flash Sale)</p>
-                  <label style={UI.checkboxRow}>
-                    <input
-                      name="countdown_badge_enabled"
-                      type="checkbox"
-                      defaultChecked={settings.trustBadges.countdownBadge?.enabled}
-                    />
-                    Enable countdown badge
-                  </label>
-                  <div style={UI.twoCols}>
-                    <SettingField label="Countdown prefix">
-                      <input
-                        style={UI.input}
-                        name="countdown_badge_prefix"
-                        defaultValue={settings.trustBadges.countdownBadge?.prefix || "Ends in"}
-                        placeholder="Ends in"
-                      />
-                    </SettingField>
-                    <SettingField label="Countdown end time">
-                      <input
-                        style={UI.input}
-                        type="datetime-local"
-                        name="countdown_badge_end_at"
-                        defaultValue={settings.trustBadges.countdownBadge?.endAt || ""}
-                      />
-                    </SettingField>
-                  </div>
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown time mode</p>
-                    <div style={UI.twoCols}>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="countdown_badge_time_mode"
-                          value="global"
-                          defaultChecked={
-                            settings.trustBadges.countdownBadge?.timeMode !== "per_product"
-                          }
-                        />
-                        One global countdown time
-                      </label>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="countdown_badge_time_mode"
-                          value="per_product"
-                          defaultChecked={
-                            settings.trustBadges.countdownBadge?.timeMode === "per_product"
-                          }
-                        />
-                        Per-product countdown time
-                      </label>
-                    </div>
-                    <p style={UI.helpText}>
-                      Per-product mode lets you set a different end time for each product.
-                    </p>
-                  </div>
-                  <SettingField label="Badge position">
-                    <select
-                      style={UI.input}
-                      name="countdown_badge_position"
-                      defaultValue={settings.trustBadges.countdownBadge?.position || "top-right"}
-                    >
-                      {POSITION_OPTIONS.map((position) => (
-                        <option key={`countdown-${position}`} value={position}>
-                          {position}
-                        </option>
-                      ))}
-                    </select>
-                  </SettingField>
-                  <BadgeStyleFields
-                    fieldPrefix="countdown_badge"
-                    badge={settings.trustBadges.countdownBadge}
+            <div style={UI.badgePanel}>
+              <div style={UI.groupCard}>
+                <p style={UI.groupTitle}>Countdown Badge (Flash Sale)</p>
+                <label style={UI.checkboxRow}>
+                  <input
+                    name="countdown_badge_enabled"
+                    type="checkbox"
+                    defaultChecked={settings.trustBadges.countdownBadge?.enabled}
                   />
-                  <div style={UI.groupCard}>
-                    <p style={{ ...UI.groupTitle, fontSize: 14 }}>Countdown badge targets</p>
-                    <p style={UI.helpText}>
-                      Choose where countdown badge is shown.
-                    </p>
-                    <div style={UI.twoCols}>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="countdown_product_target_mode"
-                          value="all"
-                          checked={countdownTargetModeDraft !== "selected"}
-                          onChange={() => setCountdownTargetModeDraft("all")}
-                        />
-                        All products
-                      </label>
-                      <label style={UI.checkboxRow}>
-                        <input
-                          type="radio"
-                          name="countdown_product_target_mode"
-                          value="selected"
-                          checked={countdownTargetModeDraft === "selected"}
-                          onChange={() => setCountdownTargetModeDraft("selected")}
-                        />
-                        Only selected products
-                      </label>
-                    </div>
+                  Enable countdown badge
+                </label>
+                <div style={UI.twoCols}>
+                  <SettingField label="Countdown prefix">
+                    <input
+                      style={UI.input}
+                      name="countdown_badge_prefix"
+                      defaultValue={settings.trustBadges.countdownBadge?.prefix || "Ends in"}
+                      placeholder="Ends in"
+                    />
+                  </SettingField>
+                  <SettingField label="Countdown end time">
+                    <input
+                      style={UI.input}
+                      type="datetime-local"
+                      name="countdown_badge_end_at"
+                      defaultValue={settings.trustBadges.countdownBadge?.endAt || ""}
+                    />
+                  </SettingField>
+                </div>
+                <div style={UI.groupCard}>
+                  <p style={{ ...UI.groupTitle, fontSize: 14 }}>Time mode</p>
+                  <div style={UI.twoCols}>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="countdown_badge_time_mode"
+                        value="global"
+                        checked={countdownTimeModeDraft !== "per_product"}
+                        onChange={() => setCountdownTimeModeDraft("global")}
+                      />
+                      One global countdown time
+                    </label>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="countdown_badge_time_mode"
+                        value="per_product"
+                        checked={countdownTimeModeDraft === "per_product"}
+                        onChange={() => setCountdownTimeModeDraft("per_product")}
+                      />
+                      Per-product countdown time
+                    </label>
+                  </div>
+                </div>
+                <SettingField label="Badge position">
+                  <select
+                    style={UI.input}
+                    name="countdown_badge_position"
+                    defaultValue={settings.trustBadges.countdownBadge?.position || "top-right"}
+                  >
+                    {POSITION_OPTIONS.map((position) => (
+                      <option key={`countdown-${position}`} value={position}>
+                        {position}
+                      </option>
+                    ))}
+                  </select>
+                </SettingField>
+                <div style={UI.groupCard}>
+                  <p style={{ ...UI.groupTitle, fontSize: 14 }}>Targets</p>
+                  <div style={UI.twoCols}>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="countdown_product_target_mode"
+                        value="all"
+                        checked={countdownTargetModeDraft !== "selected"}
+                        onChange={() => setCountdownTargetModeDraft("all")}
+                      />
+                      All products
+                    </label>
+                    <label style={UI.checkboxRow}>
+                      <input
+                        type="radio"
+                        name="countdown_product_target_mode"
+                        value="selected"
+                        checked={countdownTargetModeDraft === "selected"}
+                        onChange={() => setCountdownTargetModeDraft("selected")}
+                      />
+                      Only selected products
+                    </label>
+                  </div>
+                  {countdownTargetModeDraft === "selected" ? (
                     <ProductSelectionList
                       products={products}
                       inputName="countdown_selected_product_handles"
@@ -1434,13 +1452,10 @@ export default function Feature1Route() {
                         });
                       }}
                     />
+                  ) : null}
+                  {countdownTimeModeDraft === "per_product" ? (
                     <div style={UI.groupCard}>
-                      <p style={{ ...UI.groupTitle, fontSize: 14 }}>
-                        Per-product countdown end time
-                      </p>
-                      <p style={UI.helpText}>
-                        Set specific end time for each selected product.
-                      </p>
+                      <p style={{ ...UI.groupTitle, fontSize: 14 }}>Per-product countdown end time</p>
                       {countdownPreviewHandles.length === 0 ? (
                         <p style={{ margin: 0, color: "#64748B", fontSize: 13 }}>
                           Select products first to configure per-product times.
@@ -1457,9 +1472,7 @@ export default function Feature1Route() {
                                   type="datetime-local"
                                   name={`countdown_badge_product_end_at__${handle}`}
                                   defaultValue={
-                                    settings.trustBadges.countdownBadge?.perProductEndAt?.[
-                                      handle
-                                    ] || ""
+                                    settings.trustBadges.countdownBadge?.perProductEndAt?.[handle] || ""
                                   }
                                 />
                               </label>
@@ -1468,26 +1481,28 @@ export default function Feature1Route() {
                         </div>
                       )}
                     </div>
-                  </div>
-                  <BadgeBackgroundFields
-                    fieldPrefix="countdown_badge"
-                    badge={settings.trustBadges.countdownBadge}
-                    defaultColor="#7C3AED"
-                    labelPrefix="countdown badge"
-                  />
+                  ) : null}
                 </div>
-                </div>
-                </div>
-
-                <div style={UI.groupCard}>
-                  <p style={UI.groupTitle}>Preview</p>
-                  <BadgePreview settings={settings.trustBadges} />
-                </div>
-                </div>
-              </fetcher.Form>
+                <BadgeStyleFields
+                  fieldPrefix="countdown_badge"
+                  badge={settings.trustBadges.countdownBadge}
+                />
+                <BadgeBackgroundFields
+                  fieldPrefix="countdown_badge"
+                  badge={settings.trustBadges.countdownBadge}
+                  defaultColor="#7C3AED"
+                  labelPrefix="countdown badge"
+                />
+              </div>
             </div>
-          </s-card>
-        </s-section>
+
+            <div style={UI.groupCard}>
+              <p style={UI.groupTitle}>Live preview</p>
+              <p style={UI.helpText}>See how text and countdown badge render on product card.</p>
+              <BadgePreview settings={settings.trustBadges} />
+            </div>
+          </div>
+        </fetcher.Form>
       </div>
 
     </s-page>
