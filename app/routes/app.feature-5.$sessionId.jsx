@@ -1,5 +1,4 @@
-import { useLoaderData, useFetcher, useNavigate } from "react-router";
-import { useEffect } from "react";
+import { useLoaderData, useFetcher, Form, redirect } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
@@ -58,7 +57,7 @@ export const action = async ({ request, params }) => {
     await prisma.feature5_LiveSession.delete({
       where: { id: params.sessionId },
     });
-    return { deleted: true };
+    return redirect("/app/feature-5");
   }
 
   if (intent === "unpin") {
@@ -104,13 +103,6 @@ function StatusBadge({ status }) {
 export default function ManageSession() {
   const { session, products } = useLoaderData();
   const fetcher = useFetcher();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (fetcher.data?.deleted) {
-      navigate("/app/feature-5");
-    }
-  }, [fetcher.data, navigate]);
 
   const rtmpUrl = "rtmp://global-live.mux.com:5222/app";
   const isEnded = session.status === "ended";
@@ -125,44 +117,47 @@ export default function ManageSession() {
         </s-link>
       )}
 
-      {/* Aside sidebar - status */}
-      <s-section heading="Status" slot="aside">
-        <s-stack direction="block" gap="base">
-          <fetcher.Form method="post">
-            <input type="hidden" name="intent" value="status" />
-            <s-stack direction="block" gap="small">
-              <s-select label="Status" labelHidden name="status" value={session.status}>
-                <s-option value="idle" selected={session.status === "idle"}>Standby</s-option>
-                <s-option value="live" selected={session.status === "live"}>Live</s-option>
-                <s-option value="ended" selected={session.status === "ended"}>Ended</s-option>
-              </s-select>
-              <s-button submit variant="primary" fullWidth>
-                Save
-              </s-button>
+      {/* Aside sidebar - status with save bar */}
+      <Form method="post" data-save-bar slot="aside">
+        <input type="hidden" name="intent" value="status" />
+        <s-section heading="Status">
+          <s-select label="Status" labelHidden name="status" value={session.status}>
+            <s-option value="idle" selected={session.status === "idle"}>Standby</s-option>
+            <s-option value="live" selected={session.status === "live"}>Live</s-option>
+            <s-option value="ended" selected={session.status === "ended"}>Ended</s-option>
+          </s-select>
+        </s-section>
+
+        <s-section heading="Summary">
+          <s-stack direction="block" gap="small">
+            <s-stack direction="inline" gap="small" justifyContent="space-between">
+              <s-text tone="subdued" variant="bodySm">Products</s-text>
+              <s-text fontWeight="semibold">{products.length}</s-text>
             </s-stack>
-          </fetcher.Form>
-
-          <s-stack direction="inline" gap="small" justifyContent="space-between">
-            <s-text tone="subdued" variant="bodySm">Products</s-text>
-            <s-text fontWeight="semibold">{products.length}</s-text>
+            <s-stack direction="inline" gap="small" justifyContent="space-between">
+              <s-text tone="subdued" variant="bodySm">Pinned</s-text>
+              <s-text fontWeight="semibold">{pinnedCount}</s-text>
+            </s-stack>
           </s-stack>
-          <s-stack direction="inline" gap="small" justifyContent="space-between">
-            <s-text tone="subdued" variant="bodySm">Pinned</s-text>
-            <s-text fontWeight="semibold">{pinnedCount}</s-text>
-          </s-stack>
+        </s-section>
+      </Form>
 
-          <fetcher.Form method="post">
-            <input type="hidden" name="intent" value="delete" />
-            <s-button
-              variant="tertiary"
-              tone="critical"
-              fullWidth
-              submit
-            >
-              Delete stream
-            </s-button>
-          </fetcher.Form>
-        </s-stack>
+      <s-section slot="aside">
+        <s-button
+          variant="tertiary"
+          tone="critical"
+          fullWidth
+          onClick={() => {
+            if (confirm("Are you sure you want to delete this stream?")) {
+              fetcher.submit(
+                { intent: "delete" },
+                { method: "post" },
+              );
+            }
+          }}
+        >
+          Delete stream
+        </s-button>
       </s-section>
 
       {/* Page-level banner */}
