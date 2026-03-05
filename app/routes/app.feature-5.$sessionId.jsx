@@ -181,7 +181,7 @@ export default function ManageSession() {
 
       {/* Live Chat */}
       {!isEnded && (
-        <div style={{ height: "450px" }}>
+        <div style={{ height: "450px", marginBottom: "16px" }}>
           <ChatPanel sessionId={session.id} isHost={true} />
         </div>
       )}
