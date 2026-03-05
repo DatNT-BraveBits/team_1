@@ -72,7 +72,7 @@ export default function StreamingStudio() {
         }
       };
 
-      recorder.start(1000); // send chunk every 1 second
+      recorder.start(250); // send chunk every 250ms for lower latency
       setStatus("live");
     } catch (e) {
       setStatus("previewing");

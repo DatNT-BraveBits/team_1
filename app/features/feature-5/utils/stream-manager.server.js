@@ -10,12 +10,21 @@ export function startStream(streamKey) {
   const rtmpUrl = `rtmp://global-live.mux.com:5222/app/${streamKey}`;
 
   const ffmpeg = spawn("ffmpeg", [
+    "-fflags", "nobuffer",
+    "-flags", "low_delay",
     "-i", "pipe:0",
     "-c:v", "libx264",
     "-preset", "ultrafast",
     "-tune", "zerolatency",
+    "-g", "30",
+    "-keyint_min", "30",
+    "-b:v", "2500k",
+    "-maxrate", "2500k",
+    "-bufsize", "1250k",
     "-c:a", "aac",
     "-ar", "44100",
+    "-b:a", "128k",
+    "-flush_packets", "1",
     "-f", "flv",
     rtmpUrl,
   ], { stdio: ["pipe", "pipe", "pipe"] });

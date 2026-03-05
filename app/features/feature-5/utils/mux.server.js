@@ -9,6 +9,8 @@ export async function createLiveStream() {
   const stream = await mux.video.liveStreams.create({
     playback_policy: ["public"],
     new_asset_settings: { playback_policy: ["public"] },
+    latency_mode: "low",
+    reconnect_window: 60,
   });
   return {
     streamId: stream.id,
