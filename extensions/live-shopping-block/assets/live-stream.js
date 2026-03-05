@@ -156,14 +156,23 @@
       initPlayer(data.playbackId);
     }
 
+    var liveDot = document.getElementById("ls-live-dot");
+    var productsHeading = document.getElementById("ls-products-heading");
+
     if (data.status === "live" || data.status === "idle") {
       liveBadge.classList.remove("ls-badge--hidden");
+      if (liveDot) liveDot.classList.add("ls-active");
     } else {
       liveBadge.classList.add("ls-badge--hidden");
+      if (liveDot) liveDot.classList.remove("ls-active");
     }
 
     renderPinned(data.pinnedProduct);
     renderProducts(data.products);
+
+    if (productsHeading && data.products && data.products.length > 0) {
+      productsHeading.style.display = "block";
+    }
   }
 
   update();

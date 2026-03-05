@@ -3,16 +3,32 @@
   Displays a Mux livestream with product panel for customers
 {% endcomment %}
 
-<div id="live-shopping-app" data-session-id="{{ block.settings.session_id }}" data-shop="{{ shop.permanent_domain }}">
+<div id="live-shopping-app" data-session-id="{{ block.settings.session_id }}" data-shop="{{ shop.permanent_domain }}" data-refresh-interval="{{ block.settings.refresh_interval }}">
   <div class="ls-container">
+    <!-- Heading -->
+    {% if block.settings.heading != blank %}
+      <div class="ls-heading">
+        <span class="ls-live-dot" id="ls-live-dot"></span>
+        {{ block.settings.heading }}
+      </div>
+    {% endif %}
+
     <!-- Video Player -->
     <div class="ls-player">
       <div id="ls-video-wrapper">
-        <div class="ls-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        <div class="ls-placeholder" id="ls-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <polygon points="10 8 16 12 10 16 10 8" fill="#555" stroke="none"></polygon>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
           </svg>
-          <p>Stream starting soon...</p>
+          <p>Stream starting soon</p>
+          <div class="ls-waiting-animation">
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+          </div>
         </div>
         <video id="ls-video" playsinline autoplay muted></video>
       </div>
@@ -23,7 +39,10 @@
     <div id="ls-pinned" class="ls-pinned ls-hidden"></div>
 
     <!-- Product Grid -->
-    <div id="ls-products" class="ls-products"></div>
+    <div id="ls-products-section">
+      <div class="ls-products-heading" id="ls-products-heading" style="display:none;">Featured Products</div>
+      <div id="ls-products" class="ls-products"></div>
+    </div>
   </div>
 </div>
 
