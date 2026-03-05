@@ -1,7 +1,16 @@
+#live-shopping-app {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
 .ls-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 24px 20px;
   font-family: inherit;
 }
 
