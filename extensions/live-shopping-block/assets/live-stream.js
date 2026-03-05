@@ -34,14 +34,14 @@
     if (videoEl.canPlayType("application/vnd.apple.mpegurl")) {
       videoEl.src = src;
       videoEl.classList.add("ls-active");
-      if (placeholder) placeholder.style.display = "none";
+      if (placeholder) placeholder.classList.add("ls-gone");
     } else if (window.Hls && Hls.isSupported()) {
       if (hlsInstance) hlsInstance.destroy();
       hlsInstance = new Hls();
       hlsInstance.loadSource(src);
       hlsInstance.attachMedia(videoEl);
       videoEl.classList.add("ls-active");
-      if (placeholder) placeholder.style.display = "none";
+      if (placeholder) placeholder.classList.add("ls-gone");
     } else {
       var script = document.createElement("script");
       script.src =
@@ -52,7 +52,7 @@
           hlsInstance.loadSource(src);
           hlsInstance.attachMedia(videoEl);
           videoEl.classList.add("ls-active");
-          if (placeholder) placeholder.style.display = "none";
+          if (placeholder) placeholder.classList.add("ls-gone");
         }
       };
       document.head.appendChild(script);

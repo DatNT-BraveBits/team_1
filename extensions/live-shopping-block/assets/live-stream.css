@@ -53,14 +53,24 @@
 }
 
 .ls-player video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .ls-player video.ls-active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ls-player video.ls-active + .ls-placeholder,
+.ls-player .ls-placeholder.ls-gone {
+  display: none;
 }
 
 .ls-placeholder {
@@ -68,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   height: 100%;
   color: #666;
   gap: 16px;
