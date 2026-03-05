@@ -21,11 +21,16 @@ export const loader = async ({ params }) => {
     ? products.find((p) => p.id === session.pinnedProductId) || null
     : null;
 
+  const appUrl = process.env.SHOPIFY_APP_URL || "";
+  const wsProtocol = appUrl.startsWith("https") ? "wss" : "ws";
+  const wsHost = appUrl.replace(/^https?:\/\//, "");
+
   const data = {
     id: session.id,
     title: session.title,
     status: session.status,
     playbackId: session.muxPlaybackId,
+    wsUrl: `${wsProtocol}://${wsHost}/ws/chat/${session.id}`,
     pinnedProduct,
     products: products.filter((p) => p.id !== session.pinnedProductId),
   };

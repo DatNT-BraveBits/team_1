@@ -189,4 +189,152 @@
 
   var interval = parseInt(container.dataset.refreshInterval || "10", 10);
   setInterval(update, interval * 1000);
+
+  // ========== Live Chat ==========
+  var chatMessages = document.getElementById("ls-chat-messages");
+  var chatForm = document.getElementById("ls-chat-form");
+  var chatInput = document.getElementById("ls-chat-input");
+  var chatEmpty = document.getElementById("ls-chat-empty");
+  var viewerCountEl = document.getElementById("ls-viewer-count");
+  var nicknameDisplay = document.getElementById("ls-nickname-display");
+  var nicknameEditBtn = document.getElementById("ls-nickname-edit-btn");
+  var nicknameSection = document.getElementById("ls-chat-nickname");
+  var nicknameEditSection = document.getElementById("ls-chat-nickname-edit");
+  var nicknameInput = document.getElementById("ls-nickname-input");
+  var nicknameSaveBtn = document.getElementById("ls-nickname-save-btn");
+
+  if (!chatMessages) return;
+
+  // Client identity
+  function getOrCreate(key, generator) {
+    var val = localStorage.getItem(key);
+    if (val) return val;
+    val = generator();
+    localStorage.setItem(key, val);
+    return val;
+  }
+
+  var chatClientId = getOrCreate("livechat_clientId", function () {
+    return crypto.randomUUID();
+  });
+  var chatNickname = getOrCreate("livechat_nickname", function () {
+    return "Viewer_" + Math.floor(1000 + Math.random() * 9000);
+  });
+
+  nicknameDisplay.textContent = chatNickname;
+
+  // Nickname editing
+  nicknameEditBtn.addEventListener("click", function () {
+    nicknameInput.value = chatNickname;
+    nicknameSection.classList.add("ls-hidden");
+    nicknameEditSection.classList.remove("ls-hidden");
+    nicknameInput.focus();
+  });
+
+  nicknameSaveBtn.addEventListener("click", function () {
+    var val = nicknameInput.value.trim();
+    if (val && val !== chatNickname) {
+      chatNickname = val;
+      localStorage.setItem("livechat_nickname", chatNickname);
+      nicknameDisplay.textContent = chatNickname;
+      if (chatWs && chatWs.readyState === WebSocket.OPEN) {
+        chatWs.send(JSON.stringify({ type: "update_nickname", nickname: chatNickname }));
+      }
+    }
+    nicknameEditSection.classList.add("ls-hidden");
+    nicknameSection.classList.remove("ls-hidden");
+  });
+
+  // Chat message rendering
+  function appendChatMsg(data) {
+    if (chatEmpty) chatEmpty.style.display = "none";
+    var div = document.createElement("div");
+    div.className = "ls-chat-msg";
+    var name = document.createElement("span");
+    name.className = "ls-chat-msg-name";
+    name.textContent = data.nickname;
+    div.appendChild(name);
+    var text = document.createElement("span");
+    text.textContent = data.text || data.message;
+    div.appendChild(text);
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // WebSocket connection
+  var chatWs = null;
+  var chatWsUrl = null;
+  var reconnectDelay = 1000;
+  var reconnectTimer = null;
+
+  function connectChat(wsUrl) {
+    if (!wsUrl) return;
+    chatWsUrl = wsUrl;
+
+    try {
+      chatWs = new WebSocket(wsUrl);
+    } catch (e) {
+      return;
+    }
+
+    chatWs.onopen = function () {
+      reconnectDelay = 1000;
+      chatWs.send(JSON.stringify({
+        type: "join",
+        nickname: chatNickname,
+        clientId: chatClientId,
+      }));
+    };
+
+    chatWs.onmessage = function (event) {
+      var data;
+      try { data = JSON.parse(event.data); } catch (e) { return; }
+
+      if (data.type === "history" && data.messages) {
+        data.messages.forEach(function (m) {
+          appendChatMsg(m);
+        });
+      }
+
+      if (data.type === "message") {
+        appendChatMsg(data);
+      }
+
+      if (data.type === "user_joined" || data.type === "user_left") {
+        viewerCountEl.textContent = data.viewerCount;
+      }
+
+      if (data.type === "viewer_count") {
+        viewerCountEl.textContent = data.count;
+      }
+    };
+
+    chatWs.onclose = function () {
+      reconnectTimer = setTimeout(function () {
+        reconnectDelay = Math.min(reconnectDelay * 2, 10000);
+        connectChat(chatWsUrl);
+      }, reconnectDelay);
+    };
+
+    chatWs.onerror = function () {
+      chatWs.close();
+    };
+  }
+
+  // Send message
+  chatForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var text = chatInput.value.trim();
+    if (!text || !chatWs || chatWs.readyState !== WebSocket.OPEN) return;
+    chatWs.send(JSON.stringify({ type: "message", text: text }));
+    chatInput.value = "";
+  });
+
+  // Get wsUrl from first API fetch and connect
+  (async function initChat() {
+    var data = await fetchSessionData();
+    if (data && data.wsUrl) {
+      connectChat(data.wsUrl);
+    }
+  })();
 })();
