@@ -24,15 +24,25 @@ export function useStreamChat(sessionId, { isHost = false } = {}) {
   const [messages, setMessages] = useState([]);
   const [viewerCount, setViewerCount] = useState(0);
   const [isConnected, setIsConnected] = useState(false);
-  const [nickname, setNickname] = useState(() => generateNickname());
+  const [nickname, setNickname] = useState("Viewer");
   const wsRef = useRef(null);
   const reconnectTimer = useRef(null);
   const reconnectDelay = useRef(1000);
-  const clientId = useRef(generateClientId());
+  const clientId = useRef(null);
   const nicknameRef = useRef(nickname);
   nicknameRef.current = nickname;
 
+  // Initialize from localStorage on client only (avoid SSR hydration mismatch)
+  useEffect(() => {
+    clientId.current = generateClientId();
+    const storedNickname = generateNickname();
+    setNickname(storedNickname);
+    nicknameRef.current = storedNickname;
+  }, []);
+
   const connect = useCallback(() => {
+    if (!isBrowser || !clientId.current) return;
+
     // Close any existing socket (including CONNECTING state) to prevent orphans
     if (wsRef.current) {
       if (wsRef.current.readyState === WebSocket.OPEN) return;
