@@ -1,4 +1,4 @@
-export default function BrowserStream({ streamKey, sessionId }) {
+export default function BrowserStream({ streamKey, sessionId, title }) {
   if (!streamKey) {
     return (
       <s-card>
@@ -12,7 +12,8 @@ export default function BrowserStream({ streamKey, sessionId }) {
   }
 
   const openStudio = () => {
-    const url = `/app/feature-5/studio/${sessionId}`;
+    const params = new URLSearchParams({ key: streamKey, title: title || "Live Stream" });
+    const url = `/streaming-studio?${params.toString()}`;
     window.open(url, "live-studio", "width=900,height=700");
   };
 

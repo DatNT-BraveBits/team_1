@@ -1,19 +1,11 @@
-import { useLoaderData } from "react-router";
+import { useSearchParams } from "react-router";
 import { useState, useRef, useCallback, useEffect } from "react";
-import { authenticate } from "../shopify.server";
-import prisma from "../db.server";
-
-export const loader = async ({ request, params }) => {
-  await authenticate.admin(request);
-  const session = await prisma.feature5_LiveSession.findUnique({
-    where: { id: params.sessionId },
-  });
-  if (!session) throw new Response("Not found", { status: 404 });
-  return { streamKey: session.muxStreamKey, title: session.title };
-};
 
 export default function StreamingStudio() {
-  const { streamKey, title } = useLoaderData();
+  const [searchParams] = useSearchParams();
+  const streamKey = searchParams.get("key");
+  const title = searchParams.get("title") || "Live Stream";
+
   const videoRef = useRef(null);
   const pcRef = useRef(null);
   const streamRef = useRef(null);
@@ -115,20 +107,30 @@ export default function StreamingStudio() {
     };
   }, []);
 
+  if (!streamKey) {
+    return (
+      <div style={pageStyle}>
+        <div style={containerStyle}>
+          <h1 style={{ fontSize: "20px" }}>Missing stream key</h1>
+          <p style={{ color: "#a0aec0" }}>This page should be opened from the Live Shopping manage page.</p>
+        </div>
+      </div>
+    );
+  }
+
   const statusConfig = {
-    idle: { label: "Not connected", color: "#718096", bg: "#f7fafc" },
-    previewing: { label: "Camera ready", color: "#2b6cb0", bg: "#ebf8ff" },
-    connecting: { label: "Connecting...", color: "#b7791f", bg: "#fefcbf" },
+    idle: { label: "Not connected", color: "#718096", bg: "#2d3748" },
+    previewing: { label: "Camera ready", color: "#63b3ed", bg: "#2a4365" },
+    connecting: { label: "Connecting...", color: "#ecc94b", bg: "#744210" },
     live: { label: "LIVE", color: "#fff", bg: "#e53e3e" },
-    stopped: { label: "Stopped", color: "#718096", bg: "#f7fafc" },
+    stopped: { label: "Stopped", color: "#a0aec0", bg: "#2d3748" },
   };
 
   const s = statusConfig[status];
 
   return (
-    <div style={{ margin: 0, padding: 0, fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", background: "#1a1a2e", color: "#fff", minHeight: "100vh" }}>
-      <div style={{ maxWidth: "860px", margin: "0 auto", padding: "20px" }}>
-        {/* Header */}
+    <div style={pageStyle}>
+      <div style={containerStyle}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
           <div>
             <h1 style={{ margin: 0, fontSize: "20px", fontWeight: 700 }}>
@@ -140,7 +142,7 @@ export default function StreamingStudio() {
           </div>
           <span
             style={{
-              padding: "4px 14px",
+              padding: "5px 14px",
               borderRadius: "20px",
               fontSize: "13px",
               fontWeight: 700,
@@ -153,13 +155,12 @@ export default function StreamingStudio() {
           </span>
         </div>
 
-        {/* Video Preview */}
         <div
           style={{
             position: "relative",
             width: "100%",
             aspectRatio: "16/9",
-            background: "#111",
+            background: "#000",
             borderRadius: "12px",
             overflow: "hidden",
             marginBottom: "16px",
@@ -179,17 +180,7 @@ export default function StreamingStudio() {
             }}
           />
           {(status === "idle" || status === "stopped") && (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "100%",
-                height: "100%",
-                color: "#555",
-                fontSize: "16px",
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%", color: "#555", fontSize: "16px" }}>
               Camera off
             </div>
           )}
@@ -212,91 +203,82 @@ export default function StreamingStudio() {
                 boxShadow: "0 2px 8px rgba(229,62,62,0.4)",
               }}
             >
-              <span
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  background: "#fff",
-                  borderRadius: "50%",
-                  animation: "blink 1.5s infinite",
-                }}
-              />
+              <span style={{ width: "8px", height: "8px", background: "#fff", borderRadius: "50%", animation: "blink 1.5s infinite" }} />
               LIVE
             </div>
           )}
         </div>
 
-        {/* Error */}
         {error && (
-          <div
-            style={{
-              background: "rgba(229,62,62,0.15)",
-              border: "1px solid rgba(229,62,62,0.3)",
-              borderRadius: "8px",
-              padding: "10px 14px",
-              marginBottom: "12px",
-              fontSize: "14px",
-              color: "#fc8181",
-            }}
-          >
+          <div style={{ background: "rgba(229,62,62,0.15)", border: "1px solid rgba(229,62,62,0.3)", borderRadius: "8px", padding: "10px 14px", marginBottom: "12px", fontSize: "14px", color: "#fc8181" }}>
             {error}
           </div>
         )}
 
-        {/* Controls */}
         <div style={{ display: "flex", gap: "10px" }}>
           {status === "idle" && (
-            <button type="button" onClick={startWebcam} style={btnStyle("#008060")}>
+            <button type="button" onClick={startWebcam} style={btnGreen}>
               Start Webcam
             </button>
           )}
           {status === "previewing" && (
             <>
-              <button type="button" onClick={goLive} style={btnStyle("#e53e3e")}>
+              <button type="button" onClick={goLive} style={btnRed}>
                 Go Live
               </button>
-              <button type="button" onClick={stop} style={btnStyle("#4a5568")}>
+              <button type="button" onClick={stop} style={btnGray}>
                 Cancel
               </button>
             </>
           )}
           {status === "connecting" && (
-            <button type="button" disabled style={btnStyle("#718096")}>
+            <button type="button" disabled style={btnGray}>
               Connecting...
             </button>
           )}
           {status === "live" && (
-            <button type="button" onClick={stop} style={btnStyle("#e53e3e")}>
+            <button type="button" onClick={stop} style={btnRed}>
               Stop Streaming
             </button>
           )}
           {status === "stopped" && (
-            <button type="button" onClick={startWebcam} style={btnStyle("#008060")}>
+            <button type="button" onClick={startWebcam} style={btnGreen}>
               Restart Webcam
             </button>
           )}
         </div>
       </div>
 
-      <style>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.3; }
-        }
-      `}</style>
+      <style>{`@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }`}</style>
     </div>
   );
 }
 
-function btnStyle(bg) {
-  return {
-    padding: "10px 24px",
-    borderRadius: "8px",
-    border: "none",
-    background: bg,
-    color: "#fff",
-    fontWeight: 600,
-    cursor: "pointer",
-    fontSize: "15px",
-  };
-}
+const pageStyle = {
+  margin: 0,
+  padding: 0,
+  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+  background: "#1a1a2e",
+  color: "#fff",
+  minHeight: "100vh",
+};
+
+const containerStyle = {
+  maxWidth: "860px",
+  margin: "0 auto",
+  padding: "20px",
+};
+
+const btnBase = {
+  padding: "10px 24px",
+  borderRadius: "8px",
+  border: "none",
+  color: "#fff",
+  fontWeight: 600,
+  cursor: "pointer",
+  fontSize: "15px",
+};
+
+const btnGreen = { ...btnBase, background: "#008060" };
+const btnRed = { ...btnBase, background: "#e53e3e" };
+const btnGray = { ...btnBase, background: "#4a5568" };

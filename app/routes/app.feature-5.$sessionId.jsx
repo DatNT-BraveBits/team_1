@@ -121,7 +121,7 @@ export default function ManageSession() {
 
       {session.status !== "ended" && (
         <s-section heading="Go Live from Browser">
-          <BrowserStream streamKey={session.muxStreamKey} sessionId={session.id} />
+          <BrowserStream streamKey={session.muxStreamKey} sessionId={session.id} title={session.title} />
         </s-section>
       )}
 
