@@ -49,9 +49,70 @@ model Session {
 // ============================================
 
 // ============================================
-// FEATURE 4 — Person 4
-// Add your models below with Feature4_ prefix
+// FEATURE 4 — Trang (MirrorAI: See It On Me)
 // ============================================
+
+model Feature4_Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  imageUrl    String
+  category    String   @default("clothing")
+  createdAt   DateTime @default(now())
+  sizeCharts  Feature4_SizeChart[]
+  tryOnSessions Feature4_TryOnSession[]
+  ugcPhotos     Feature4_UgcPhoto[]
+  purchaseHistory Feature4_PurchaseHistory[]
+}
+
+model Feature4_SizeChart {
+  id        String @id @default(uuid())
+  productId String
+  size      String
+  chest     Float
+  waist     Float
+  hips      Float
+  shoulder  Float
+  notes     String @default("")
+  product   Feature4_Product @relation(fields: [productId], references: [id])
+}
+
+model Feature4_TryOnSession {
+  id          String   @id @default(uuid())
+  productId   String
+  photoUrl    String
+  resultUrl   String?
+  height      Float?
+  weight      Float?
+  sizeAdvice  String?
+  savedAsUgc  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  product     Feature4_Product @relation(fields: [productId], references: [id])
+}
+
+model Feature4_UgcPhoto {
+  id           String   @id @default(uuid())
+  productId    String
+  imageUrl     String
+  customerName String   @default("Anonymous")
+  approved     Boolean  @default(false)
+  consentGiven Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  product      Feature4_Product @relation(fields: [productId], references: [id])
+}
+
+model Feature4_PurchaseHistory {
+  id          String   @id @default(uuid())
+  customerId  String
+  productId   String
+  productName String
+  size        String
+  fitFeedback String?
+  returned    Boolean  @default(false)
+  returnReason String?
+  createdAt   DateTime @default(now())
+  product     Feature4_Product @relation(fields: [productId], references: [id])
+}
 
 // ============================================
 // FEATURE 5 — Person 5
