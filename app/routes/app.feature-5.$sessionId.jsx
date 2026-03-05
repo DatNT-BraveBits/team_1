@@ -5,6 +5,7 @@ import prisma from "../db.server";
 import { endLiveStream } from "../features/feature-5/utils/mux.server";
 import { getProductsByIds } from "../features/feature-5/utils/products.server";
 import BrowserStream from "../features/feature-5/components/BrowserStream";
+import ChatPanel from "../features/feature-5/components/ChatPanel";
 
 export const loader = async ({ request, params }) => {
   const { admin } = await authenticate.admin(request);
@@ -160,6 +161,15 @@ export default function ManageSession() {
           Delete stream
         </s-button>
       </s-section>
+
+      {/* Live Chat */}
+      {!isEnded && (
+        <s-section heading="Live Chat" slot="aside">
+          <s-box blockSize="400px">
+            <ChatPanel sessionId={session.id} isHost={true} />
+          </s-box>
+        </s-section>
+      )}
 
       {/* Page-level banner */}
       <s-banner>

@@ -5,6 +5,7 @@ import prisma from "../db.server";
 import { getProductsByIds } from "../features/feature-5/utils/products.server";
 import MuxPlayer from "@mux/mux-player-react";
 import LiveChat from "../features/feature-5/components/LiveChat";
+import ChatPanel from "../features/feature-5/components/ChatPanel";
 
 export const loader = async ({ request, params }) => {
   const { admin } = await authenticate.admin(request);
@@ -48,7 +49,14 @@ export default function ViewerPage() {
         {session.status === "live" ? "LIVE" : "Preview"}
       </s-badge>
 
-      {/* Chat sidebar via aside slot */}
+      {/* Live Chat sidebar */}
+      <s-section heading="Live Chat" slot="aside">
+        <s-box blockSize="400px">
+          <ChatPanel sessionId={session.id} />
+        </s-box>
+      </s-section>
+
+      {/* AI Chat sidebar via aside slot */}
       <s-section heading="AI Shopping Assistant" slot="aside">
         <LiveChat sessionId={session.id} />
       </s-section>
