@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+const isBrowser = typeof window !== "undefined";
+
 function generateClientId() {
+  if (!isBrowser) return "server";
   const stored = localStorage.getItem("livechat_clientId");
   if (stored) return stored;
   const id = crypto.randomUUID();
@@ -9,6 +12,7 @@ function generateClientId() {
 }
 
 function generateNickname() {
+  if (!isBrowser) return "Viewer";
   const stored = localStorage.getItem("livechat_nickname");
   if (stored) return stored;
   const name = `Viewer_${Math.floor(1000 + Math.random() * 9000)}`;
