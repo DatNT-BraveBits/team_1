@@ -1,0 +1,107 @@
+{% comment %}
+  Live Shopping Block — Feature 5
+  Displays a Mux livestream with product panel for customers
+{% endcomment %}
+
+<div id="live-shopping-app" data-session-id="{{ block.settings.session_id }}" data-shop="{{ shop.permanent_domain }}" data-refresh-interval="{{ block.settings.refresh_interval }}">
+  <div class="ls-container">
+    <!-- Heading -->
+    {% if block.settings.heading != blank %}
+      <div class="ls-heading">
+        <span class="ls-live-dot" id="ls-live-dot"></span>
+        {{ block.settings.heading }}
+      </div>
+    {% endif %}
+
+    <!-- Video + Chat Row -->
+    <div class="ls-main-row">
+      <!-- Video Player -->
+      <div class="ls-player">
+        <video id="ls-video" playsinline autoplay muted></video>
+        <div class="ls-placeholder" id="ls-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <polygon points="10 8 16 12 10 16 10 8" fill="#555" stroke="none"></polygon>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <p>Stream starting soon</p>
+          <div class="ls-waiting-animation">
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+          </div>
+        </div>
+        <div id="ls-live-badge" class="ls-badge ls-badge--hidden">LIVE</div>
+      </div>
+
+      <!-- Live Chat -->
+      <div class="ls-chat" id="ls-chat">
+        <div class="ls-chat-header">
+          <span class="ls-chat-title">Live Chat</span>
+          <span class="ls-chat-viewers" id="ls-chat-viewers">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span id="ls-viewer-count">0</span>
+          </span>
+        </div>
+        <div class="ls-chat-nickname" id="ls-chat-nickname">
+          <span>Chatting as <b id="ls-nickname-display"></b></span>
+          <button class="ls-chat-edit-btn" id="ls-nickname-edit-btn">Edit</button>
+        </div>
+        <div class="ls-chat-nickname ls-hidden" id="ls-chat-nickname-edit">
+          <input type="text" id="ls-nickname-input" class="ls-chat-input-field" maxlength="30" />
+          <button class="ls-btn ls-btn--primary ls-btn--small" id="ls-nickname-save-btn">Save</button>
+        </div>
+        <div class="ls-chat-messages" id="ls-chat-messages">
+          <div class="ls-chat-empty" id="ls-chat-empty">No messages yet. Say hi!</div>
+        </div>
+        <form class="ls-chat-form" id="ls-chat-form">
+          <input type="text" id="ls-chat-input" class="ls-chat-input-field" placeholder="Type a message..." maxlength="500" autocomplete="off" />
+          <button type="submit" class="ls-btn ls-btn--primary ls-btn--small">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Pinned Product -->
+    <div id="ls-pinned" class="ls-pinned ls-hidden"></div>
+
+    <!-- Product Grid -->
+    <div id="ls-products-section">
+      <div class="ls-products-heading" id="ls-products-heading" style="display:none;">Featured Products</div>
+      <div id="ls-products" class="ls-products"></div>
+    </div>
+  </div>
+</div>
+
+{{ 'live-stream.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'live-stream.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Live Shopping",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "session_id",
+      "label": "Livestream Session ID",
+      "info": "Paste the session ID from your Live Shopping dashboard"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Live Shopping"
+    },
+    {
+      "type": "range",
+      "id": "refresh_interval",
+      "label": "Refresh interval (seconds)",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "default": 10
+    }
+  ]
+}
+{% endschema %}

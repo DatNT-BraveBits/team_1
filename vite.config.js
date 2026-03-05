@@ -35,6 +35,26 @@ if (host === "localhost") {
   };
 }
 
+function webSocketPlugin() {
+  return {
+    name: "live-chat-websocket",
+    configureServer(server) {
+      import("./app/features/feature-5/utils/websocket.server.js").then(
+        ({ handleUpgrade }) => {
+          server.httpServer.on("upgrade", (request, socket, head) => {
+            // Don't intercept Vite HMR WebSocket
+            if (request.headers["sec-websocket-protocol"] === "vite-hmr") return;
+            const url = new URL(request.url, `http://${request.headers.host}`);
+            if (url.pathname.startsWith("/ws/chat/")) {
+              handleUpgrade(request, socket, head);
+            }
+          });
+        },
+      );
+    },
+  };
+}
+
 export default defineConfig({
   server: {
     allowedHosts: [host],
@@ -48,7 +68,7 @@ export default defineConfig({
       allow: ["app", "node_modules"],
     },
   },
-  plugins: [reactRouter(), tsconfigPaths()],
+  plugins: [reactRouter(), tsconfigPaths(), webSocketPlugin()],
   build: {
     assetsInlineLimit: 0,
   },

@@ -57,3 +57,29 @@ model Session {
 // FEATURE 5 — Person 5
 // Add your models below with Feature5_ prefix
 // ============================================
+
+model Feature5_LiveSession {
+  id              String   @id @default(cuid())
+  shop            String
+  title           String
+  muxStreamId     String?
+  muxPlaybackId   String?
+  muxStreamKey    String?
+  status          String   @default("idle")
+  productIds      String   @default("[]")
+  productData     String   @default("[]")
+  pinnedProductId String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  messages        Feature5_ChatMessage[]
+}
+
+model Feature5_ChatMessage {
+  id        String               @id @default(cuid())
+  sessionId String
+  session   Feature5_LiveSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  nickname  String
+  clientId  String
+  message   String
+  createdAt DateTime             @default(now())
+}
