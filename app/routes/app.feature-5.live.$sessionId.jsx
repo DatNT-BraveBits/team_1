@@ -48,7 +48,7 @@ export default function ViewerPage() {
         }}
       >
         {/* Left: Video + Products */}
-        <div>
+        <s-stack direction="block" gap="base">
           <div
             style={{
               borderRadius: "12px",
@@ -85,68 +85,71 @@ export default function ViewerPage() {
             <s-card>
               <s-box padding="base">
                 <s-stack direction="inline" gap="base" align="center">
-                  <s-badge tone="success">LIVE</s-badge>
-                  <s-text fontWeight="bold">{pinnedProduct.title}</s-text>
-                  <s-text>
-                    ${pinnedProduct.variants.edges[0]?.node.price || "N/A"}
-                  </s-text>
+                  {pinnedProduct.images?.edges[0]?.node?.url && (
+                    <s-thumbnail
+                      src={pinnedProduct.images.edges[0].node.url}
+                      alt={pinnedProduct.title}
+                      size="small-200"
+                    />
+                  )}
+                  <s-stack direction="block" gap="small-200" style={{ flex: 1 }}>
+                    <s-stack direction="inline" gap="small-200" align="center">
+                      <s-badge tone="success">NOW SHOWING</s-badge>
+                      <s-text fontWeight="bold">{pinnedProduct.title}</s-text>
+                    </s-stack>
+                    <s-text variant="headingSm">
+                      ${pinnedProduct.variants?.edges[0]?.node.price || "N/A"}
+                    </s-text>
+                  </s-stack>
                   <s-button variant="primary">Buy Now</s-button>
                 </s-stack>
               </s-box>
             </s-card>
           )}
 
-          <s-section heading="Products">
-            <s-grid columns="2">
-              {otherProducts.map((p) => (
-                <s-card key={p.id}>
-                  <s-box padding="base">
-                    <s-stack direction="block" gap="tight">
-                      {p.images.edges[0]?.node.url && (
-                        <img
-                          src={p.images.edges[0].node.url}
-                          alt={p.title}
-                          style={{
-                            width: "100%",
-                            borderRadius: "8px",
-                            aspectRatio: "1",
-                            objectFit: "cover",
-                          }}
-                        />
-                      )}
-                      <s-text fontWeight="bold">{p.title}</s-text>
-                      <s-text>
-                        ${p.variants.edges[0]?.node.price || "N/A"}
-                      </s-text>
-                      <s-button>Buy Now</s-button>
-                    </s-stack>
-                  </s-box>
-                </s-card>
-              ))}
-            </s-grid>
-          </s-section>
-        </div>
+          {otherProducts.length > 0 && (
+            <s-section heading="Products">
+              <s-grid columns="2">
+                {otherProducts.map((p) => (
+                  <s-card key={p.id}>
+                    <s-box padding="base">
+                      <s-stack direction="block" gap="small-200">
+                        {p.images?.edges[0]?.node?.url && (
+                          <s-image
+                            src={p.images.edges[0].node.url}
+                            alt={p.title}
+                            aspectRatio="1/1"
+                            objectFit="cover"
+                            borderRadius="base"
+                            inlineSize="fill"
+                          />
+                        )}
+                        <s-text fontWeight="bold">{p.title}</s-text>
+                        <s-text>
+                          ${p.variants?.edges[0]?.node.price || "N/A"}
+                        </s-text>
+                        <s-button>View Product</s-button>
+                      </s-stack>
+                    </s-box>
+                  </s-card>
+                ))}
+              </s-grid>
+            </s-section>
+          )}
+        </s-stack>
 
         {/* Right: Chat */}
-        <div
-          style={{
-            border: "1px solid #e0e0e0",
-            borderRadius: "12px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div
-            style={{
-              padding: "12px",
-              borderBottom: "1px solid #e0e0e0",
-              fontWeight: "bold",
-            }}
-          >
-            AI Shopping Assistant
-          </div>
-          <LiveChat sessionId={session.id} />
-        </div>
+        <s-card>
+          <s-box padding="base">
+            <s-stack direction="block" gap="base">
+              <s-text variant="headingSm" fontWeight="bold">
+                AI Shopping Assistant
+              </s-text>
+              <s-divider />
+              <LiveChat sessionId={session.id} />
+            </s-stack>
+          </s-box>
+        </s-card>
       </div>
     </s-page>
   );

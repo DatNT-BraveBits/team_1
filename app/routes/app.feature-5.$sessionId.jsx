@@ -60,40 +60,6 @@ export const action = async ({ request, params }) => {
   return { ok: true };
 };
 
-function CopyField({ label, value }) {
-  return (
-    <div style={{ marginBottom: "8px" }}>
-      <s-text variant="bodySm" fontWeight="bold">
-        {label}
-      </s-text>
-      <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          marginTop: "4px",
-          alignItems: "center",
-        }}
-      >
-        <input
-          type="text"
-          value={value}
-          readOnly
-          style={{
-            flex: 1,
-            padding: "6px 10px",
-            borderRadius: "6px",
-            border: "1px solid #ccc",
-            fontSize: "13px",
-            fontFamily: "monospace",
-            background: "#f9f9f9",
-          }}
-          onClick={(e) => e.target.select()}
-        />
-      </div>
-    </div>
-  );
-}
-
 export default function ManageSession() {
   const { session, products } = useLoaderData();
   const fetcher = useFetcher();
@@ -121,19 +87,37 @@ export default function ManageSession() {
 
       {session.status !== "ended" && (
         <s-section heading="Go Live from Browser">
-          <BrowserStream streamKey={session.muxStreamKey} sessionId={session.id} title={session.title} />
+          <BrowserStream
+            streamKey={session.muxStreamKey}
+            sessionId={session.id}
+            title={session.title}
+          />
         </s-section>
       )}
 
       <s-section heading="Stream Configuration (OBS)">
         <s-card>
           <s-box padding="base">
-            <CopyField label="RTMP URL" value={rtmpUrl} />
-            <CopyField
-              label="Stream Key"
-              value={session.muxStreamKey || "N/A"}
-            />
-            <CopyField label="Session ID (for theme block)" value={session.id} />
+            <s-stack direction="block" gap="base">
+              <s-text-field
+                label="RTMP URL"
+                value={rtmpUrl}
+                readOnly
+                selectOnFocus
+              />
+              <s-text-field
+                label="Stream Key"
+                value={session.muxStreamKey || "N/A"}
+                readOnly
+                selectOnFocus
+              />
+              <s-text-field
+                label="Session ID (for theme block)"
+                value={session.id}
+                readOnly
+                selectOnFocus
+              />
+            </s-stack>
           </s-box>
         </s-card>
       </s-section>
@@ -146,7 +130,7 @@ export default function ManageSession() {
         </s-stack>
       </s-section>
 
-      <s-section heading="Products ({products.length})">
+      <s-section heading={`Products (${products.length})`}>
         <s-stack direction="block" gap="base">
           {products.map((p) => {
             const imgUrl = p.images?.edges[0]?.node?.url;
@@ -154,70 +138,29 @@ export default function ManageSession() {
             return (
               <s-card key={p.id}>
                 <s-box padding="base">
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "12px",
-                    }}
-                  >
+                  <s-stack direction="inline" gap="base" align="center">
                     {imgUrl && (
-                      <img
-                        src={imgUrl}
-                        alt={p.title}
-                        style={{
-                          width: "48px",
-                          height: "48px",
-                          objectFit: "cover",
-                          borderRadius: "6px",
-                        }}
-                      />
+                      <s-thumbnail src={imgUrl} alt={p.title} size="small-200" />
                     )}
-                    <div style={{ flex: 1 }}>
+                    <s-stack direction="block" gap="small-200" style={{ flex: 1 }}>
                       <s-text fontWeight="bold">{p.title}</s-text>
-                      {isPinned && (
-                        <s-badge tone="success">Pinned</s-badge>
-                      )}
-                    </div>
+                      {isPinned && <s-badge tone="success">Pinned</s-badge>}
+                    </s-stack>
                     {isPinned ? (
                       <fetcher.Form method="post">
                         <input type="hidden" name="intent" value="unpin" />
-                        <button
-                          type="submit"
-                          style={{
-                            padding: "6px 12px",
-                            borderRadius: "6px",
-                            border: "1px solid #ccc",
-                            background: "#fff",
-                            cursor: "pointer",
-                            fontSize: "13px",
-                          }}
-                        >
-                          Unpin
-                        </button>
+                        <s-button type="submit">Unpin</s-button>
                       </fetcher.Form>
                     ) : (
                       <fetcher.Form method="post">
                         <input type="hidden" name="intent" value="pin" />
                         <input type="hidden" name="productId" value={p.id} />
-                        <button
-                          type="submit"
-                          style={{
-                            padding: "6px 12px",
-                            borderRadius: "6px",
-                            border: "none",
-                            background: "#008060",
-                            color: "#fff",
-                            cursor: "pointer",
-                            fontSize: "13px",
-                            fontWeight: "600",
-                          }}
-                        >
+                        <s-button type="submit" variant="primary">
                           Pin
-                        </button>
+                        </s-button>
                       </fetcher.Form>
                     )}
-                  </div>
+                  </s-stack>
                 </s-box>
               </s-card>
             );
@@ -229,21 +172,9 @@ export default function ManageSession() {
         <s-section>
           <fetcher.Form method="post">
             <input type="hidden" name="intent" value="end" />
-            <button
-              type="submit"
-              style={{
-                padding: "8px 16px",
-                borderRadius: "8px",
-                border: "none",
-                background: "#e53e3e",
-                color: "#fff",
-                fontWeight: "bold",
-                cursor: "pointer",
-                fontSize: "14px",
-              }}
-            >
+            <s-button type="submit" tone="critical">
               End Stream
-            </button>
+            </s-button>
           </fetcher.Form>
         </s-section>
       )}

@@ -1,8 +1,10 @@
-import { useLoaderData, Form, redirect } from "react-router";
+import { useState } from "react";
+import { useLoaderData, useFetcher } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { createLiveStream } from "../features/feature-5/utils/mux.server";
+import { redirect } from "react-router";
 
 const PRODUCTS_LIST_QUERY = `#graphql
   query listProducts {
@@ -55,141 +57,93 @@ export const action = async ({ request }) => {
 
 export default function CreateSession() {
   const { products } = useLoaderData();
+  const fetcher = useFetcher();
+  const [title, setTitle] = useState("");
+  const [selected, setSelected] = useState([]);
+  const isSubmitting = fetcher.state !== "idle";
+
+  const toggleProduct = (id) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
+    );
+  };
+
+  const handleSubmit = () => {
+    const formData = new FormData();
+    formData.set("title", title);
+    selected.forEach((id) => formData.append("products", id));
+    fetcher.submit(formData, { method: "post" });
+  };
 
   return (
     <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
-      <Form method="post">
-        <s-section heading="Stream Details">
-          <s-stack direction="block" gap="base">
-            <label>
-              <s-text fontWeight="bold">Title</s-text>
-              <input
-                type="text"
-                name="title"
-                required
-                placeholder="My Live Shopping Event"
-                style={{
-                  width: "100%",
-                  padding: "8px 12px",
-                  borderRadius: "8px",
-                  border: "1px solid #ccc",
-                  fontSize: "14px",
-                  marginTop: "4px",
-                  boxSizing: "border-box",
-                }}
-              />
-            </label>
-          </s-stack>
-        </s-section>
+      <s-button
+        slot="primary-action"
+        variant="primary"
+        onClick={handleSubmit}
+        disabled={!title.trim() || isSubmitting}
+        loading={isSubmitting}
+      >
+        Create Livestream
+      </s-button>
 
-        <s-section heading="Select Products to Showcase">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-              gap: "12px",
-            }}
-          >
-            {products.map((p) => {
-              const imgUrl = p.images.edges[0]?.node.url;
-              const price = p.variants.edges[0]?.node.price;
-              return (
-                <label
-                  key={p.id}
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    border: "1px solid #e0e0e0",
-                    borderRadius: "10px",
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    position: "relative",
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    name="products"
-                    value={p.id}
-                    style={{
-                      position: "absolute",
-                      top: "8px",
-                      left: "8px",
-                      width: "18px",
-                      height: "18px",
-                      zIndex: 1,
-                    }}
-                  />
-                  {imgUrl ? (
-                    <img
-                      src={imgUrl}
-                      alt={p.title}
-                      style={{
-                        width: "100%",
-                        aspectRatio: "1",
-                        objectFit: "cover",
-                      }}
+      <s-section heading="Stream Details">
+        <s-card>
+          <s-box padding="base">
+            <s-text-field
+              label="Title"
+              placeholder="My Live Shopping Event"
+              value={title}
+              required
+              onChange={(e) => setTitle(e.currentTarget.value)}
+            />
+          </s-box>
+        </s-card>
+      </s-section>
+
+      <s-section heading={`Select Products (${selected.length} selected)`}>
+        <s-grid columns="4">
+          {products.map((p) => {
+            const imgUrl = p.images.edges[0]?.node.url;
+            const price = p.variants.edges[0]?.node.price;
+            const isSelected = selected.includes(p.id);
+            return (
+              <s-card
+                key={p.id}
+                onClick={() => toggleProduct(p.id)}
+                style={{ cursor: "pointer" }}
+              >
+                <s-box padding="small-200">
+                  <s-stack direction="block" gap="small-200">
+                    <s-checkbox
+                      label=""
+                      checked={isSelected}
+                      onChange={() => toggleProduct(p.id)}
                     />
-                  ) : (
-                    <div
-                      style={{
-                        width: "100%",
-                        aspectRatio: "1",
-                        background: "#f5f5f5",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        color: "#999",
-                      }}
-                    >
-                      No image
-                    </div>
-                  )}
-                  <div style={{ padding: "8px" }}>
-                    <div
-                      style={{
-                        fontSize: "13px",
-                        fontWeight: "600",
-                        lineHeight: "1.3",
-                      }}
-                    >
-                      {p.title}
-                    </div>
-                    {price && (
-                      <div
-                        style={{
-                          fontSize: "13px",
-                          color: "#666",
-                          marginTop: "2px",
-                        }}
-                      >
-                        ${price}
-                      </div>
+                    {imgUrl ? (
+                      <s-thumbnail
+                        src={imgUrl}
+                        alt={p.title}
+                        size="large"
+                      />
+                    ) : (
+                      <s-box padding="large-100" background="subdued">
+                        <s-text tone="subdued" alignment="center">
+                          No image
+                        </s-text>
+                      </s-box>
                     )}
-                  </div>
-                </label>
-              );
-            })}
-          </div>
-        </s-section>
-
-        <s-box padding="base">
-          <button
-            type="submit"
-            style={{
-              padding: "10px 20px",
-              borderRadius: "8px",
-              border: "none",
-              background: "#008060",
-              color: "#fff",
-              fontWeight: "bold",
-              cursor: "pointer",
-              fontSize: "14px",
-            }}
-          >
-            Create Livestream
-          </button>
-        </s-box>
-      </Form>
+                    <s-text fontWeight="semibold" truncate>
+                      {p.title}
+                    </s-text>
+                    {price && <s-text tone="subdued">${price}</s-text>}
+                  </s-stack>
+                </s-box>
+              </s-card>
+            );
+          })}
+        </s-grid>
+      </s-section>
     </s-page>
   );
 }
