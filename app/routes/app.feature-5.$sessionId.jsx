@@ -1,4 +1,5 @@
-import { useLoaderData, useFetcher } from "react-router";
+import { useLoaderData, useFetcher, useNavigate } from "react-router";
+import { useEffect } from "react";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
@@ -25,20 +26,23 @@ export const action = async ({ request, params }) => {
   const formData = await request.formData();
   const intent = formData.get("intent");
 
-  if (intent === "end") {
-    const session = await prisma.feature5_LiveSession.findUnique({
-      where: { id: params.sessionId },
-    });
-    if (session?.muxStreamId) {
-      try {
-        await endLiveStream(session.muxStreamId);
-      } catch (e) {
-        /* stream may already be ended */
+  if (intent === "status") {
+    const status = formData.get("status");
+    if (status === "ended") {
+      const session = await prisma.feature5_LiveSession.findUnique({
+        where: { id: params.sessionId },
+      });
+      if (session?.muxStreamId) {
+        try {
+          await endLiveStream(session.muxStreamId);
+        } catch (e) {
+          /* stream may already be ended */
+        }
       }
     }
     await prisma.feature5_LiveSession.update({
       where: { id: params.sessionId },
-      data: { status: "ended" },
+      data: { status },
     });
   }
 
@@ -48,6 +52,13 @@ export const action = async ({ request, params }) => {
       where: { id: params.sessionId },
       data: { pinnedProductId: productId },
     });
+  }
+
+  if (intent === "delete") {
+    await prisma.feature5_LiveSession.delete({
+      where: { id: params.sessionId },
+    });
+    return { deleted: true };
   }
 
   if (intent === "unpin") {
@@ -93,6 +104,13 @@ function StatusBadge({ status }) {
 export default function ManageSession() {
   const { session, products } = useLoaderData();
   const fetcher = useFetcher();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (fetcher.data?.deleted) {
+      navigate("/app/feature-5");
+    }
+  }, [fetcher.data, navigate]);
 
   const rtmpUrl = "rtmp://global-live.mux.com:5222/app";
   const isEnded = session.status === "ended";
@@ -100,7 +118,6 @@ export default function ManageSession() {
 
   return (
     <s-page heading={session.title} backAction={{ url: "/app/feature-5" }}>
-      <StatusBadge status={session.status} slot="title-metadata" />
 
       {!isEnded && (
         <s-link slot="secondary-actions" href={`/app/feature-5/live/${session.id}`}>
@@ -108,29 +125,43 @@ export default function ManageSession() {
         </s-link>
       )}
 
-      {/* Aside sidebar - stream status */}
-      <s-section heading="Stream Status" slot="aside">
+      {/* Aside sidebar - status */}
+      <s-section heading="Status" slot="aside">
         <s-stack direction="block" gap="base">
-          <s-stack direction="block" gap="small">
-            <s-text tone="subdued" variant="bodySm">Status</s-text>
-            <StatusBadge status={session.status} />
-          </s-stack>
-          <s-stack direction="block" gap="small">
+          <fetcher.Form method="post">
+            <input type="hidden" name="intent" value="status" />
+            <s-stack direction="block" gap="small">
+              <s-select label="Status" labelHidden name="status" value={session.status}>
+                <s-option value="idle" selected={session.status === "idle"}>Standby</s-option>
+                <s-option value="live" selected={session.status === "live"}>Live</s-option>
+                <s-option value="ended" selected={session.status === "ended"}>Ended</s-option>
+              </s-select>
+              <s-button submit variant="primary" fullWidth>
+                Save
+              </s-button>
+            </s-stack>
+          </fetcher.Form>
+
+          <s-stack direction="inline" gap="small" justifyContent="space-between">
             <s-text tone="subdued" variant="bodySm">Products</s-text>
             <s-text fontWeight="semibold">{products.length}</s-text>
           </s-stack>
-          <s-stack direction="block" gap="small">
+          <s-stack direction="inline" gap="small" justifyContent="space-between">
             <s-text tone="subdued" variant="bodySm">Pinned</s-text>
             <s-text fontWeight="semibold">{pinnedCount}</s-text>
           </s-stack>
-          {!isEnded && (
-            <fetcher.Form method="post">
-              <input type="hidden" name="intent" value="end" />
-              <s-button submit variant="primary" tone="critical" fullWidth>
-                End Stream
-              </s-button>
-            </fetcher.Form>
-          )}
+
+          <fetcher.Form method="post">
+            <input type="hidden" name="intent" value="delete" />
+            <s-button
+              variant="tertiary"
+              tone="critical"
+              fullWidth
+              submit
+            >
+              Delete stream
+            </s-button>
+          </fetcher.Form>
         </s-stack>
       </s-section>
 
@@ -161,67 +192,76 @@ export default function ManageSession() {
       </s-section>
 
       {/* Products */}
-      <s-section heading={`Products (${products.length})`}>
+      <s-section padding="none" accessibilityLabel="Products table section">
         {products.length === 0 ? (
-          <s-text tone="subdued">No products added to this livestream.</s-text>
+          <s-box padding="base">
+            <s-text tone="subdued">No products added to this livestream.</s-text>
+          </s-box>
         ) : (
           <s-table>
             <s-table-header-row>
-              <s-table-header>Product</s-table-header>
-              <s-table-header>Status</s-table-header>
+              <s-table-header listSlot="primary">Product</s-table-header>
+              <s-table-header listSlot="labeled">Price</s-table-header>
+              <s-table-header listSlot="inline">Status</s-table-header>
               <s-table-header>
                 <s-stack alignItems="end">Action</s-stack>
               </s-table-header>
             </s-table-header-row>
-            {products.map((p) => {
-              const imgUrl = p.images?.edges[0]?.node?.url;
-              const isPinned = session.pinnedProductId === p.id;
-              return (
-                <s-table-row key={p.id}>
-                  <s-table-cell>
-                    <s-stack direction="inline" gap="small" alignItems="center">
-                      <s-box
-                        border="base"
-                        borderRadius="base"
-                        overflow="hidden"
-                        inlineSize="40px"
-                        blockSize="40px"
-                      >
-                        {imgUrl ? (
-                          <s-image src={imgUrl} alt={p.title} objectFit="cover" />
-                        ) : (
-                          <s-icon type="image" />
-                        )}
-                      </s-box>
-                      <s-text fontWeight="semibold">{p.title}</s-text>
-                    </s-stack>
-                  </s-table-cell>
-                  <s-table-cell>
-                    {isPinned && (
-                      <s-badge tone="success" icon="pin">Pinned</s-badge>
-                    )}
-                  </s-table-cell>
-                  <s-table-cell>
-                    {!isEnded && (
-                      <s-stack direction="inline" alignItems="end">
-                        {isPinned ? (
-                          <fetcher.Form method="post">
-                            <input type="hidden" name="intent" value="unpin" />
-                            <s-button submit>Unpin</s-button>
-                          </fetcher.Form>
-                        ) : (
-                          <fetcher.Form method="post">
-                            <input type="hidden" name="intent" value="pin" />
-                            <input type="hidden" name="productId" value={p.id} />
-                            <s-button submit variant="primary">Pin</s-button>
-                          </fetcher.Form>
+            <s-table-body>
+              {products.map((p) => {
+                const imgUrl = p.images?.edges?.[0]?.node?.url;
+                const price = p.variants?.edges?.[0]?.node?.price;
+                const isPinned = session.pinnedProductId === p.id;
+                return (
+                  <s-table-row key={p.id}>
+                    <s-table-cell>
+                      <s-stack direction="inline" gap="small" alignItems="center">
+                        <s-box
+                          border="base"
+                          borderRadius="base"
+                          overflow="hidden"
+                          inlineSize="40px"
+                          blockSize="40px"
+                        >
+                          {imgUrl ? (
+                            <s-image src={imgUrl} alt={p.title} objectFit="cover" />
+                          ) : (
+                            <s-icon type="image" />
+                          )}
+                        </s-box>
+                        <s-text fontWeight="semibold">{p.title}</s-text>
+                      </s-stack>
+                    </s-table-cell>
+                    <s-table-cell>{price ? `$${price}` : "—"}</s-table-cell>
+                    <s-table-cell>
+                      {isPinned ? (
+                        <s-badge tone="success">Pinned</s-badge>
+                      ) : (
+                        <s-badge tone="neutral">Available</s-badge>
+                      )}
+                    </s-table-cell>
+                    <s-table-cell>
+                      <s-stack alignItems="end">
+                        {!isEnded && (
+                          isPinned ? (
+                            <fetcher.Form method="post">
+                              <input type="hidden" name="intent" value="unpin" />
+                              <s-button submit variant="tertiary">Unpin</s-button>
+                            </fetcher.Form>
+                          ) : (
+                            <fetcher.Form method="post">
+                              <input type="hidden" name="intent" value="pin" />
+                              <input type="hidden" name="productId" value={p.id} />
+                              <s-button submit variant="secondary">Pin</s-button>
+                            </fetcher.Form>
+                          )
                         )}
                       </s-stack>
-                    )}
-                  </s-table-cell>
-                </s-table-row>
-              );
-            })}
+                    </s-table-cell>
+                  </s-table-row>
+                );
+              })}
+            </s-table-body>
           </s-table>
         )}
       </s-section>
