@@ -220,6 +220,20 @@ function getPositionStyle(position) {
   return map[position] ?? map["top-left"];
 }
 
+function getShiftedPreviewPosition(position, shiftPx) {
+  const base = getPositionStyle(position);
+  const next = { ...base };
+  if (typeof next.top === "number") {
+    next.top += shiftPx;
+    return next;
+  }
+  if (typeof next.bottom === "number") {
+    next.bottom += shiftPx;
+    return next;
+  }
+  return { ...next, marginTop: shiftPx };
+}
+
 function BadgePreview({ settings }) {
   const previewEndAt =
     settings.countdownBadge?.timeMode === "per_product"
@@ -232,6 +246,16 @@ function BadgePreview({ settings }) {
   const previewTimer = `${String(Math.floor(countdownSeconds / 3600)).padStart(2, "0")}:${String(
     Math.floor((countdownSeconds % 3600) / 60),
   ).padStart(2, "0")}:${String(countdownSeconds % 60).padStart(2, "0")}`;
+  const badgesSharePosition =
+    settings.textBadge?.enabled &&
+    settings.countdownBadge?.enabled &&
+    settings.textBadge?.position === settings.countdownBadge?.position;
+  const countdownPositionStyle = badgesSharePosition
+    ? getShiftedPreviewPosition(
+        settings.countdownBadge?.position || "top-right",
+        (settings.textBadge?.badgeHeight ?? 28) + 10,
+      )
+    : getPositionStyle(settings.countdownBadge?.position || "top-right");
 
   return (
     <div
@@ -245,7 +269,7 @@ function BadgePreview({ settings }) {
         overflow: "hidden",
       }}
     >
-      <div style={{ padding: 14 }}>
+      <div style={{ padding: 14, paddingTop: 64 }}>
         <p style={{ margin: 0, color: "#1E3A8A", fontWeight: 700 }}>
           Product card preview
         </p>
@@ -259,6 +283,7 @@ function BadgePreview({ settings }) {
           style={{
             position: "absolute",
             ...getPositionStyle(settings.textBadge.position),
+            zIndex: 2,
             height: settings.textBadge?.badgeHeight ?? 28,
             display: "inline-flex",
             alignItems: "center",
@@ -286,7 +311,8 @@ function BadgePreview({ settings }) {
         <span
           style={{
             position: "absolute",
-            ...getPositionStyle(settings.countdownBadge.position),
+            ...countdownPositionStyle,
+            zIndex: 2,
             height: settings.countdownBadge?.badgeHeight ?? 28,
             display: "inline-flex",
             alignItems: "center",

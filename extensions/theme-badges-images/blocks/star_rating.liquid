@@ -97,7 +97,11 @@
         '[data-product-card]',
         '.grid__item .card',
         '.card-wrapper',
-        '.product-card'
+        '.product-card',
+        '.product-item',
+        '.product-grid-item',
+        'article.card',
+        'li.grid__item'
       ];
 
       const markerClass = 'app-ai-badge-initialized';
@@ -193,10 +197,49 @@
         for (const selector of cardSelectors) {
           document.querySelectorAll(selector).forEach((el) => cards.push(el));
         }
+
+        // Fallback: discover product-card-like containers by product links.
+        document.querySelectorAll('a[href*="/products/"]').forEach((link) => {
+          const container =
+            link.closest('[data-product-card]') ||
+            link.closest('.card-wrapper') ||
+            link.closest('.product-card-wrapper') ||
+            link.closest('.product-card') ||
+            link.closest('.product-item') ||
+            link.closest('.grid__item') ||
+            link.closest('article') ||
+            link.closest('li');
+          if (container) cards.push(container);
+        });
+
         return [...new Set(cards)];
       };
 
       const extractHandleFromCard = (card) => {
+        const dataHandle =
+          card.getAttribute('data-product-handle') ||
+          card.getAttribute('data-handle') ||
+          card.getAttribute('data-product') ||
+          '';
+        if (dataHandle) return String(dataHandle).toLowerCase();
+
+        const hint =
+          card.querySelector('[data-product-url]')?.getAttribute('data-product-url') ||
+          card.querySelector('a[href*="/products/"]')?.getAttribute('href') ||
+          '';
+        if (hint) {
+          try {
+            const hintUrl = new URL(hint, window.location.origin);
+            const hintParts = hintUrl.pathname.split('/').filter(Boolean);
+            const productsIndex = hintParts.indexOf('products');
+            if (productsIndex !== -1 && hintParts[productsIndex + 1]) {
+              return hintParts[productsIndex + 1].toLowerCase();
+            }
+          } catch (_error) {
+            // Ignore malformed URLs.
+          }
+        }
+
         const links = card.querySelectorAll('a[href*="/products/"]');
         for (const link of links) {
           try {
@@ -223,7 +266,27 @@
       const shouldInjectForCard = (badgeSettings, handle, selectedHandleSet) => {
         if (!badgeSettings?.enabled) return false;
         if (badgeSettings.productTargetMode !== 'selected') return true;
-        return Boolean(handle && selectedHandleSet.has(handle));
+        if (!selectedHandleSet || selectedHandleSet.size === 0) return true;
+        if (!handle) return true;
+        return selectedHandleSet.has(handle);
+      };
+
+      const resolveBadgeHost = (card) => {
+        return (
+          card.querySelector('.card__content') ||
+          card.querySelector('.card__inner') ||
+          card.querySelector('.media') ||
+          card.querySelector('.card__media') ||
+          card
+        );
+      };
+
+      const maybeShiftFromSoldOut = (host, positionStyle) => {
+        const hasNativeBadge = host.querySelector(
+          '.badge, .card__badge, .badge--sold-out, [class*="sold"]',
+        );
+        if (!hasNativeBadge) return positionStyle;
+        return positionStyle.replace('top: 12px;', 'top: 46px;');
       };
 
       const resolveCountdownEndAt = (handle) => {
@@ -256,9 +319,11 @@
         cards.forEach((card) => {
           if (card.classList.contains(markerClass)) return;
           const handle = extractHandleFromCard(card);
+          const host = resolveBadgeHost(card);
+          if (!host) return;
 
-          const style = window.getComputedStyle(card);
-          if (style.position === 'static') card.style.position = 'relative';
+          const style = window.getComputedStyle(host);
+          if (style.position === 'static') host.style.position = 'relative';
 
           const canInjectText = shouldInjectForCard(
             settings.textBadge,
@@ -276,7 +341,11 @@
           if (canInjectText) {
             const textWrap = document.createElement('div');
             textWrap.className = 'app-ai-injected-badge-wrap';
-            textWrap.style.cssText += getPositionStyle(settings.textBadge.position);
+            textWrap.style.cssText += maybeShiftFromSoldOut(
+              host,
+              getPositionStyle(settings.textBadge.position),
+            );
+            textWrap.style.zIndex = '9999';
             textWrap.appendChild(
               createBadge({
                 text: settings.textBadge.label || 'New',
@@ -292,13 +361,17 @@
                 backgroundPosition: settings.textBadge.backgroundPosition || 'center',
               }),
             );
-            card.appendChild(textWrap);
+            host.appendChild(textWrap);
           }
 
           if (canInjectCountdown) {
             const countdownWrap = document.createElement('div');
             countdownWrap.className = 'app-ai-injected-badge-wrap';
-            countdownWrap.style.cssText += getPositionStyle(settings.countdownBadge.position);
+            countdownWrap.style.cssText += maybeShiftFromSoldOut(
+              host,
+              getPositionStyle(settings.countdownBadge.position),
+            );
+            countdownWrap.style.zIndex = '9999';
             countdownWrap.appendChild(
               createBadge({
                 text: 'Flash Sale',
@@ -319,7 +392,7 @@
                 },
               }),
             );
-            card.appendChild(countdownWrap);
+            host.appendChild(countdownWrap);
           }
 
           if (canInjectText || canInjectCountdown) card.classList.add(markerClass);
@@ -345,6 +418,10 @@
 
       clearInjectedBadges();
       runInjection();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runInjection, { once: true });
+      }
+      window.addEventListener('load', runInjection, { once: true });
       document.addEventListener('shopify:section:load', onSectionLoad);
       setTimeout(runInjection, 600);
       setTimeout(runInjection, 1500);
