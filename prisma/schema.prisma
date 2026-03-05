@@ -67,6 +67,7 @@ model Feature5_LiveSession {
   muxStreamKey    String?
   status          String   @default("idle")
   productIds      String   @default("[]")
+  productData     String   @default("[]")
   pinnedProductId String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

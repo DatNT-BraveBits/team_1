@@ -15,6 +15,7 @@ export const action = async ({ request }) => {
   const formData = await request.formData();
   const title = formData.get("title");
   const productIds = formData.getAll("products");
+  const productDataRaw = formData.get("productData");
   const mux = await createLiveStream();
 
   const liveSession = await prisma.feature5_LiveSession.create({
@@ -25,6 +26,7 @@ export const action = async ({ request }) => {
       muxPlaybackId: mux.playbackId,
       muxStreamKey: mux.streamKey,
       productIds: JSON.stringify(productIds),
+      productData: productDataRaw || "[]",
     },
   });
 
@@ -62,6 +64,19 @@ export default function CreateSession() {
       {selectedProducts.map((p) => (
         <input key={p.id} type="hidden" name="products" value={p.id} />
       ))}
+      <input
+        type="hidden"
+        name="productData"
+        value={JSON.stringify(
+          selectedProducts.map((p) => ({
+            id: p.id,
+            title: p.title,
+            price: p.price || "0.00",
+            image: p.imageUrl || "",
+            handle: p.id.split("/").pop(),
+          })),
+        )}
+      />
 
       <s-page heading="Create Livestream" backAction={{ url: "/app/feature-5" }}>
         <s-section heading="Stream Details">

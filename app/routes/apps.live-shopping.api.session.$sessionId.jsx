@@ -15,25 +15,19 @@ export const loader = async ({ params }) => {
     });
   }
 
-  const productIds = JSON.parse(session.productIds || "[]");
+  const products = JSON.parse(session.productData || "[]");
 
-  // Build a simplified product list for the storefront
-  // In production, you'd cache this or use metafields
-  const products = productIds.map((id) => ({
-    id,
-    title: "Product",
-    price: "0.00",
-    image: "",
-    handle: "",
-  }));
+  const pinnedProduct = session.pinnedProductId
+    ? products.find((p) => p.id === session.pinnedProductId) || null
+    : null;
 
   const data = {
     id: session.id,
     title: session.title,
     status: session.status,
     playbackId: session.muxPlaybackId,
-    pinnedProduct: null,
-    products,
+    pinnedProduct,
+    products: products.filter((p) => p.id !== session.pinnedProductId),
   };
 
   return new Response(JSON.stringify(data), {
