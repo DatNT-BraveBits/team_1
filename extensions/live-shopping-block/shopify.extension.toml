@@ -1,7 +1,0 @@
-api_version = "2024-07"
-uid = "b5a52345-3d81-ece3-935a-a7b957b5c2811d1f7797"
-type = "theme"
-name = "Live Shopping"
-
-[settings]
-auto_injection = false
