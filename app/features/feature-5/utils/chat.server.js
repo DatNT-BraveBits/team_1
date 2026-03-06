@@ -1,4 +1,7 @@
-import prisma from "../../../db.server.js";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = global.__chatPrisma ?? new PrismaClient();
+if (process.env.NODE_ENV !== "production") global.__chatPrisma = prisma;
 
 export async function saveMessage({ sessionId, nickname, clientId, message }) {
   return prisma.feature5_ChatMessage.create({
