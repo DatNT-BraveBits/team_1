@@ -1,4 +1,5 @@
 FROM node:20-alpine
+# Force rebuild
 RUN apk add --no-cache openssl
 
 EXPOSE 3000
