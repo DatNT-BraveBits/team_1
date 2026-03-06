@@ -1,102 +1,102 @@
-# Live Shopping — Market Research & Strategy
+# Live Shopping — Nghien cuu thi truong & Chien luoc
 
-## Market Opportunity
+## Co hoi thi truong
 
-### The Problem
+### Van de
 
-E-commerce conversion rates average **2-3%**. Product pages are static — customers can't ask questions, see products in action, or feel the urgency to buy. Meanwhile, social commerce (TikTok Shop, Instagram Live) is pulling customers away from Shopify stores.
+Ty le chuyen doi e-commerce trung binh chi **2-3%**. Trang san pham thi tinh — khach hang khong the hoi, khong thay san pham thuc te, khong co cam giac gap. Trong khi do, social commerce (TikTok Shop, Instagram Live) dang keo khach ra khoi cua hang Shopify.
 
-### Market Size
+### Quy mo thi truong
 
-- Live commerce generated **$512B in China (2023)** and is projected to reach **$55B in the US by 2026** (Coresight Research).
-- **72% of consumers** prefer video over text when learning about products (Wyzowl).
-- Shopify merchants currently have **no native live shopping solution** — they rely on third-party apps or external platforms.
+- Live commerce dat **$512B tai Trung Quoc (2023)**, du kien dat **$55B tai My vao 2026** (Coresight Research).
+- **72% nguoi tieu dung** thich video hon van ban khi tim hieu san pham (Wyzowl).
+- Shopify hien **khong co giai phap live shopping native** — merchant phai dung app ben thu ba hoac platform ngoai.
 
-### Who Needs This
+### Ai can tinh nang nay
 
-| Segment | Pain Point |
-|---------|-----------|
-| Fashion & beauty brands | Need to show fit, texture, swatches live |
-| Small brands without social following | Can't rely on TikTok/IG — need to sell on their own store |
-| High-ticket / complex products | Customers need Q&A before buying |
-| Brands running drops/launches | Need urgency + real-time engagement |
-
----
-
-## Our Solution
-
-A **native live shopping experience** built directly into Shopify stores — no redirects, no third-party platforms.
-
-### Core Capabilities
-
-**For Merchants (Admin)**
-- Create livestream sessions with product catalog
-- Stream directly from browser (webcam) — no OBS needed
-- Pin/highlight products during the stream
-- Real-time chat with viewers
-- RTMP support for professional setups
-
-**For Customers (Storefront)**
-- Watch livestream embedded on the store (theme block)
-- Live chat with the host and other viewers
-- AI shopping assistant — ask questions about products mid-stream
-- See pinned products with one-click "Buy Now"
-- Browse full product grid during the stream
-
-### Technical Edge
-
-- **Low-latency HLS** via Mux — 1-4 second delay (near real-time)
-- **Browser-based streaming** — ffmpeg relay handles encoding, merchant just clicks "Go Live"
-- **AI-powered Q&A** — Vercel AI SDK with full product context, answers sizing, pricing, availability
-- **Theme extension** — drops into any Shopify theme, no code required
+| Phan khuc | Van de gap phai |
+|-----------|----------------|
+| Thuong hieu thoi trang & lam dep | Can show chat lieu, mau sac, form dang truc tiep |
+| Thuong hieu nho chua co follower | Khong the dua vao TikTok/IG — can ban ngay tren store cua minh |
+| San pham gia cao / phuc tap | Khach can hoi dap truoc khi mua |
+| Brand chay drop/launch | Can su gap gap + tuong tac real-time |
 
 ---
 
-## Competitive Landscape
+## Giai phap cua chung toi
 
-| Feature | Our Solution | Livescale | CommentSold | TikTok Shop |
-|---------|-------------|-----------|-------------|-------------|
-| Native Shopify integration | Yes (theme block) | Partial | No | No |
-| Browser streaming | Yes | No (OBS only) | No | Mobile app |
-| AI shopping assistant | Yes | No | No | No |
-| No redirect needed | Yes | Yes | No | No |
-| Pricing | Included in app | $49-299/mo | $49-499/mo | Free (but you lose your customer) |
+**Live shopping tich hop truc tiep vao cua hang Shopify** — khong redirect, khong platform ben ngoai.
 
-**Key differentiator:** AI shopping assistant + zero-friction browser streaming + native storefront embed. No other Shopify live shopping app has all three.
+### Tinh nang chinh
+
+**Cho Merchant (Admin)**
+- Tao phien livestream voi danh muc san pham
+- Stream truc tiep tu trinh duyet (webcam) — khong can OBS
+- Ghim/highlight san pham trong luc stream
+- Chat real-time voi nguoi xem
+- Ho tro RTMP cho setup chuyen nghiep
+
+**Cho Khach hang (Storefront)**
+- Xem livestream ngay tren cua hang (theme block)
+- Chat truc tiep voi host va nguoi xem khac
+- **Tro ly mua sam AI** — hoi bat ky cau hoi nao ve san pham ngay trong stream
+- Thay san pham duoc ghim voi nut "Mua ngay"
+- Duyet toan bo san pham trong phien stream
+
+### Loi the ky thuat
+
+- **Low-latency HLS** qua Mux — do tre chi 1-4 giay (gan real-time)
+- **Stream tu trinh duyet** — ffmpeg xu ly encoding, merchant chi can bam "Go Live"
+- **AI Q&A** — Vercel AI SDK voi day du thong tin san pham, tra loi ve size, gia, ton kho
+- **Theme extension** — keo tha vao bat ky theme Shopify nao, khong can code
 
 ---
 
-## Marketing Strategy
+## So sanh doi thu
 
-### Positioning
+| Tinh nang | Giai phap cua chung toi | Livescale | CommentSold | TikTok Shop |
+|-----------|------------------------|-----------|-------------|-------------|
+| Tich hop native Shopify | Co (theme block) | 1 phan | Khong | Khong |
+| Stream tu trinh duyet | Co | Khong (can OBS) | Khong | Chi mobile app |
+| Tro ly AI | Co | Khong | Khong | Khong |
+| Khong can redirect | Co | Co | Khong | Khong |
+| Gia | Gom trong app | $49-299/thang | $49-499/thang | Mien phi (nhung mat khach hang) |
 
-> "Turn your Shopify store into a live shopping channel — stream from your browser, sell in real-time, let AI answer your customers."
+**Diem khac biet cot loi:** Tro ly AI + stream tu trinh duyet + embed native vao storefront. Khong app live shopping nao tren Shopify co du ca 3.
 
-### Target Launch Channels
+---
 
-1. **Shopify App Store listing** — optimize for "live shopping", "live selling", "live stream" keywords
-2. **Shopify community forums** — post case study / demo video
-3. **Twitter/X & LinkedIn** — short demo clips showing browser → live stream → customer purchase flow
-4. **YouTube** — "How to add live shopping to your Shopify store in 2 minutes" tutorial
+## Chien luoc Marketing
 
-### Content Angles
+### Dinh vi
 
-- "Stop losing customers to TikTok Shop — sell live on YOUR store"
-- "No OBS, no setup, no tech skills — just click Go Live"
-- "Your AI sales assistant works 24/7 during every livestream"
+> "Bien cua hang Shopify thanh kenh live shopping — stream tu trinh duyet, ban hang real-time, de AI tra loi khach hang."
 
-### Launch Playbook
+### Kenh trien khai
 
-| Week | Action |
-|------|--------|
-| 1 | Demo video + App Store listing live |
-| 2 | Reach out to 20 Shopify merchants for beta feedback |
-| 3 | Publish tutorial content (YouTube + blog) |
-| 4 | Collect testimonials, iterate on feedback |
+1. **Shopify App Store** — toi uu keyword: "live shopping", "live selling", "live stream"
+2. **Shopify community forums** — dang case study / video demo
+3. **Twitter/X & LinkedIn** — clip ngan demo: trinh duyet -> livestream -> khach mua hang
+4. **YouTube** — "Cach them live shopping vao Shopify store trong 2 phut"
 
-### Success Metrics
+### Goc noi dung
 
-- **Conversion rate during live sessions** vs. standard product pages
-- **Average watch time** per viewer
-- **Chat engagement rate** (messages per viewer)
-- **AI assistant usage** (questions asked per session)
+- "Dung de mat khach vao TikTok Shop — ban live ngay tren store CUA BAN"
+- "Khong OBS, khong setup, khong can biet ky thuat — chi can bam Go Live"
+- "Tro ly AI ban hang hoat dong suot phien live"
+
+### Lo trinh ra mat
+
+| Tuan | Hanh dong |
+|------|-----------|
+| 1 | Quay video demo + dang App Store listing |
+| 2 | Lien he 20 merchant Shopify de test va lay feedback |
+| 3 | Xuat ban noi dung huong dan (YouTube + blog) |
+| 4 | Thu thap danh gia, cap nhat theo feedback |
+
+### Chi so do luong
+
+- **Ty le chuyen doi trong phien live** so voi trang san pham thuong
+- **Thoi gian xem trung binh** moi nguoi xem
+- **Ty le tuong tac chat** (so tin nhan / nguoi xem)
+- **Muc do su dung AI** (so cau hoi / phien)
