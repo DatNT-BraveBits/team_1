@@ -1,4 +1,4 @@
-import prisma from "../../../db.server";
+import prisma from "../../../db.server.js";
 
 export async function saveMessage({ sessionId, nickname, clientId, message }) {
   return prisma.feature5_ChatMessage.create({
