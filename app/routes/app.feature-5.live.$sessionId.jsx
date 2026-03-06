@@ -67,10 +67,9 @@ export default function ViewerPage() {
           {session.muxPlaybackId ? (
             <MuxPlayer
               playbackId={session.muxPlaybackId}
-              streamType="live"
+              streamType="ll-live"
               autoPlay
               muted
-              lowLatency
               preferCmaf
               style={{ width: "100%", aspectRatio: "16/9" }}
             />
