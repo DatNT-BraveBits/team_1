@@ -1,0 +1,169 @@
+{% comment %}
+  Live Shopping Block — Feature 5
+  Displays a Mux livestream with product panel for customers
+{% endcomment %}
+
+<div id="live-shopping-app" data-session-id="{{ block.settings.session_id }}" data-shop="{{ shop.permanent_domain }}" data-refresh-interval="{{ block.settings.refresh_interval }}">
+  <div class="ls-container">
+    <!-- Heading -->
+    {% if block.settings.heading != blank %}
+      <div class="ls-heading">
+        <span class="ls-live-dot" id="ls-live-dot"></span>
+        {{ block.settings.heading }}
+      </div>
+    {% endif %}
+
+    <!-- Video + Chat Row -->
+    <div class="ls-main-row">
+      <!-- Video Player -->
+      <div class="ls-player">
+        <video id="ls-video" playsinline autoplay muted></video>
+        <div class="ls-placeholder" id="ls-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <polygon points="10 8 16 12 10 16 10 8" fill="#555" stroke="none"></polygon>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <p>Stream starting soon</p>
+          <div class="ls-waiting-animation">
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+            <div class="ls-dot"></div>
+          </div>
+        </div>
+        <div id="ls-live-badge" class="ls-badge ls-badge--hidden">LIVE</div>
+      </div>
+
+      <!-- Live Chat -->
+      <div class="ls-chat" id="ls-chat">
+        <div class="ls-chat-header">
+          <span class="ls-chat-title">Live Chat</span>
+          <span class="ls-chat-viewers" id="ls-chat-viewers">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span id="ls-viewer-count">0</span>
+          </span>
+        </div>
+        <div class="ls-chat-nickname" id="ls-chat-nickname">
+          <span>Chatting as <b id="ls-nickname-display"></b></span>
+          <button class="ls-chat-edit-btn" id="ls-nickname-edit-btn">Edit</button>
+        </div>
+        <div class="ls-chat-nickname ls-hidden" id="ls-chat-nickname-edit">
+          <input type="text" id="ls-nickname-input" class="ls-chat-input-field" maxlength="30" />
+          <button class="ls-btn ls-btn--primary ls-btn--small" id="ls-nickname-save-btn">Save</button>
+        </div>
+        <div class="ls-chat-messages" id="ls-chat-messages">
+          <div class="ls-chat-empty" id="ls-chat-empty">No messages yet. Say hi!</div>
+        </div>
+        <form class="ls-chat-form" id="ls-chat-form">
+          <input type="text" id="ls-chat-input" class="ls-chat-input-field" placeholder="Type a message..." maxlength="500" autocomplete="off" />
+          <button type="submit" class="ls-btn ls-btn--primary ls-btn--small">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Pinned Product -->
+    <div id="ls-pinned" class="ls-pinned ls-hidden"></div>
+
+    <!-- Product Grid -->
+    <div id="ls-products-section">
+      <div class="ls-products-heading" id="ls-products-heading" style="display:none;">Featured Products</div>
+      <div id="ls-products" class="ls-products"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+#live-shopping-app{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
+.ls-container{max-width:1200px;margin:0 auto;padding:24px 20px;font-family:inherit}
+.ls-heading{font-size:24px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ls-heading .ls-live-dot{width:10px;height:10px;background:#e53e3e;border-radius:50%;animation:ls-blink 1.5s infinite;display:none}
+.ls-heading .ls-live-dot.ls-active{display:inline-block}
+@keyframes ls-blink{0%,100%{opacity:1}50%{opacity:.3}}
+.ls-main-row{display:flex;gap:16px;margin-bottom:20px}
+.ls-player{position:relative;flex:1;min-width:0;border-radius:16px;overflow:hidden;background:#0a0a0a;aspect-ratio:16/9}
+.ls-player video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none}
+.ls-player video.ls-active{opacity:1;pointer-events:auto}
+.ls-player video.ls-active+.ls-placeholder,.ls-player .ls-placeholder.ls-gone{display:none}
+.ls-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;color:#666;gap:16px;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)}
+.ls-placeholder svg{opacity:.5}
+.ls-placeholder p{margin:0;font-size:16px;color:#888;font-weight:500}
+.ls-placeholder .ls-waiting-animation{display:flex;gap:6px;margin-top:4px}
+.ls-placeholder .ls-dot{width:8px;height:8px;background:#555;border-radius:50%;animation:ls-bounce 1.4s infinite ease-in-out both}
+.ls-placeholder .ls-dot:nth-child(1){animation-delay:-.32s}
+.ls-placeholder .ls-dot:nth-child(2){animation-delay:-.16s}
+@keyframes ls-bounce{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.ls-badge{position:absolute;top:16px;left:16px;background:#e53e3e;color:#fff;padding:6px 14px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:1px;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(229,62,62,.4)}
+.ls-badge::before{content:"";width:8px;height:8px;background:#fff;border-radius:50%;animation:ls-blink 1.5s infinite}
+.ls-badge--hidden{display:none}
+.ls-pinned{background:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 100%);border:2px solid #86efac;border-radius:14px;padding:20px;margin-bottom:20px;display:flex;align-items:center;gap:20px;box-shadow:0 2px 12px rgba(34,197,94,.1)}
+.ls-pinned.ls-hidden{display:none}
+.ls-pinned img{width:100px;height:100px;object-fit:cover;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.ls-pinned-info{flex:1}
+.ls-pinned-info h3{margin:0 0 6px;font-size:18px;font-weight:700}
+.ls-pinned-info .ls-price{font-size:22px;font-weight:800;color:#16a34a}
+.ls-pinned-badge{background:#22c55e;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:6px;display:inline-block;letter-spacing:.5px;text-transform:uppercase}
+.ls-products-heading{font-size:18px;font-weight:700;margin-bottom:14px}
+.ls-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.ls-product-card{border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s;background:#fff}
+.ls-product-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.ls-product-card img{width:100%;aspect-ratio:1;object-fit:cover}
+.ls-product-card-body{padding:14px}
+.ls-product-card-body h4{margin:0 0 6px;font-size:14px;font-weight:600;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ls-product-card-body .ls-price{font-weight:700;font-size:16px;margin-bottom:10px}
+.ls-btn{display:inline-block;padding:10px 20px;border-radius:10px;border:none;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;text-align:center;width:100%;box-sizing:border-box;transition:background .2s,transform .1s}
+.ls-btn:active{transform:scale(.98)}
+.ls-btn--primary{background:#111;color:#fff}
+.ls-btn--primary:hover{background:#333}
+.ls-btn--accent{background:#22c55e;color:#fff;padding:12px 28px;font-size:15px;border-radius:12px;white-space:nowrap;width:auto}
+.ls-btn--accent:hover{background:#16a34a}
+.ls-chat{width:340px;flex-shrink:0;display:flex;flex-direction:column;border:1px solid #e5e7eb;border-radius:16px;background:#fff;overflow:hidden}
+.ls-chat-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #e5e7eb;background:#fafafa}
+.ls-chat-title{font-weight:700;font-size:15px}
+.ls-chat-viewers{display:flex;align-items:center;gap:4px;font-size:13px;color:#666}
+.ls-chat-nickname{display:flex;align-items:center;gap:8px;padding:8px 16px;font-size:12px;color:#888;border-bottom:1px solid #f0f0f0}
+.ls-chat-nickname.ls-hidden{display:none}
+.ls-chat-edit-btn{background:none;border:none;color:#2563eb;font-size:12px;cursor:pointer;padding:0}
+.ls-chat-edit-btn:hover{text-decoration:underline}
+.ls-chat-messages{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:6px;min-height:200px;max-height:400px}
+.ls-chat-empty{color:#aaa;text-align:center;padding:40px 0;font-size:14px}
+.ls-chat-msg{font-size:14px;line-height:1.4;word-break:break-word}
+.ls-chat-msg-name{font-weight:700;margin-right:6px}
+.ls-chat-form{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #e5e7eb;background:#fafafa}
+.ls-chat-input-field{flex:1;border:1px solid #d1d5db;border-radius:8px;padding:8px 12px;font-size:14px;outline:none;font-family:inherit}
+.ls-chat-input-field:focus{border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,.1)}
+.ls-btn--small{padding:8px 16px;font-size:13px;border-radius:8px;width:auto;white-space:nowrap}
+@media(max-width:768px){.ls-main-row{flex-direction:column}.ls-chat{width:100%}.ls-chat-messages{max-height:300px}}
+@media(max-width:640px){.ls-pinned{flex-direction:column;text-align:center}.ls-pinned img{width:80px;height:80px}.ls-products{grid-template-columns:repeat(2,1fr);gap:10px}.ls-btn--accent{width:100%}}
+</style>
+<script src="{{ 'live-stream.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Live Shopping",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "session_id",
+      "label": "Livestream Session ID",
+      "info": "Paste the session ID from your Live Shopping dashboard"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Live Shopping"
+    },
+    {
+      "type": "range",
+      "id": "refresh_interval",
+      "label": "Refresh interval (seconds)",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "default": 10
+    }
+  ]
+}
+{% endschema %}

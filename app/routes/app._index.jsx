@@ -64,7 +64,7 @@ export default function Dashboard() {
             {features.map((f, i) => {
               const stat = f.statModel ? stats[f.statModel] : null;
               return (
-                <a
+                <s-link
                   key={f.href}
                   href={f.href}
                   className="db-card"
@@ -90,7 +90,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </div>
-                </a>
+                </s-link>
               );
             })}
           </div>
@@ -178,6 +178,9 @@ const styles = `
     transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
     animation: db-in 0.35s ease both;
     animation-delay: calc(var(--i) * 0.06s);
+    display: block;
+    --s-link-text-decoration: none;
+    --s-link-color: inherit;
   }
 
   @keyframes db-in {
