@@ -1,6 +1,5 @@
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
-import { features } from "../nav-config";
 
 export const loader = async ({ request }) => {
   await authenticate.admin(request);
@@ -9,22 +8,19 @@ export const loader = async ({ request }) => {
 
 export default function Dashboard() {
   return (
-    <s-page heading="Dashboard">
-      <s-section heading="Features">
-        <s-grid columns="2">
-          {features.map((f) => (
-            <s-card key={f.href}>
-              <s-box padding="base">
-                <s-stack direction="block" gap="base">
-                  <s-heading>{f.label}</s-heading>
-                  <s-link href={f.href}>
-                    <s-button>Open</s-button>
-                  </s-link>
-                </s-stack>
-              </s-box>
-            </s-card>
-          ))}
-        </s-grid>
+    <s-page heading="App-AI Dashboard">
+      <s-section heading="Trust Badges">
+        <s-card>
+          <s-box padding="base">
+            <s-stack direction="block" gap="base">
+              <s-heading>Trust Badges</s-heading>
+              <s-text>Configure product badges, countdown timers, and scheduling for your storefront.</s-text>
+              <s-link href="/app/feature-1">
+                <s-button variant="primary">Open Settings</s-button>
+              </s-link>
+            </s-stack>
+          </s-box>
+        </s-card>
       </s-section>
     </s-page>
   );
