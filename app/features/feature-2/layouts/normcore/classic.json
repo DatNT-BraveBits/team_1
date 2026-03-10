@@ -1,0 +1,1104 @@
+{
+  "sections": {
+    "running_image_link_CKnqWB": {
+      "type": "running-image-link",
+      "blocks": {
+        "product_dcGt7d": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "item_size": "small",
+            "show_product_title": true,
+            "show_price": false,
+            "show_variant_swatches": false,
+            "limited_variants_to_show": 5,
+            "image": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "#ffffff",
+            "price_color": ""
+          }
+        },
+        "collection_776YaH": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "regular",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "#000000",
+            "block_content_overlay_color": "#ffffff"
+          }
+        },
+        "collection_X8YX8z": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "large",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "#000000"
+          }
+        },
+        "collection_N8H9jX": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "regular",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 40,
+            "block_mask_overlay_color": "#000000",
+            "block_content_overlay_color": "#ffffff"
+          }
+        },
+        "collection_6KRkdT": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "small",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "#ffffff"
+          }
+        },
+        "collection_6grLhz": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "large",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "#ffffff"
+          }
+        },
+        "collection_jCxXic": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "regular",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "image": "",
+            "overlay_opacity": 20,
+            "block_mask_overlay_color": "#000000",
+            "block_content_overlay_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "product_dcGt7d",
+        "collection_776YaH",
+        "collection_X8YX8z",
+        "collection_N8H9jX",
+        "collection_6KRkdT",
+        "collection_6grLhz",
+        "collection_jCxXic"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "",
+        "heading_size": "h3-regular",
+        "description": "",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "list_alignment": "top-xs",
+        "item_shape": "2/3",
+        "content_position": "end-xs",
+        "content_alignment": "ta-left top-xs",
+        "button_text": "",
+        "button_link": "",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "collection_list_kiVDim": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_hEdNTQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        },
+        "collection_hWfjRP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "rgba(0,0,0,0)",
+            "custom_color": ""
+          }
+        },
+        "collection_ypeRze": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        },
+        "collection_kNTVEL": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        },
+        "collection_JkFqLf": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "rgba(0,0,0,0)",
+            "custom_color": ""
+          }
+        },
+        "collection_Ntt6mW": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "rgba(0,0,0,0)",
+            "custom_color": ""
+          }
+        },
+        "collection_zUNG8z": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "rgba(0,0,0,0)",
+            "custom_color": ""
+          }
+        },
+        "collection_6nR7gg": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_hEdNTQ",
+        "collection_hWfjRP",
+        "collection_ypeRze",
+        "collection_kNTVEL",
+        "collection_JkFqLf",
+        "collection_Ntt6mW",
+        "collection_zUNG8z",
+        "collection_6nR7gg"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Shop by Category – Find the perfect toys for every age and interest.",
+        "heading_size": "h3-regular",
+        "description": "",
+        "image_ratio": "1/1",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true,
+        "button_text": "Explore more",
+        "button_position": "above-listing"
+      }
+    },
+    "content_collage_8Yyt68": {
+      "type": "content-collage",
+      "blocks": {
+        "collection_arjBBk": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "show_title": true,
+            "title_size": "h2",
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "background_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_QLHpe6": {
+          "type": "image",
+          "settings": {
+            "heading": "New Arrival: Building Blocks Adventure – Create & Explore!",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "2",
+            "button_label": "Explore more",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_V3rBcc": {
+          "type": "image",
+          "settings": {
+            "heading": "Meet Our Makers – Quality, Creativity, and Fun",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Read more about us",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 20,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "collection_arjBBk",
+        "image_QLHpe6",
+        "image_V3rBcc"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_fullwidth": false,
+        "show_layout_grid": false,
+        "desktop_row_height": 250,
+        "mobile_row_height": 300
+      }
+    },
+    "collection_browsing_eewajq": {
+      "type": "collection-browsing",
+      "blocks": {
+        "collection_DGRXB9": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "🧸 POPULAR TOYS",
+            "selected_collection": ""
+          }
+        },
+        "collection_YyxUmF": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "🎨 CREATIVE PLAY",
+            "selected_collection": ""
+          }
+        },
+        "collection_dmgkaq": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "🚀 ADVENTURE TOYS",
+            "selected_collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_DGRXB9",
+        "collection_YyxUmF",
+        "collection_dmgkaq"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h3-regular",
+        "description": "",
+        "max_items": 12,
+        "show_vendor": false,
+        "enable_quick_view": false,
+        "quick_buy": "standard",
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": false,
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    },
+    "featured_product_list_JRAfE9": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_EJ9JaG": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "vendor_qkmt9q": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_hbHyin": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_dkKFg8": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_GbGgGX": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_PWjTxT": {
+          "type": "variants",
+          "disabled": true,
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_EJ9JaG",
+        "vendor_qkmt9q",
+        "title_hbHyin",
+        "product_type_dkKFg8",
+        "price_GbGgGX",
+        "variants_PWjTxT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "🎉 Featured toys for today's playtime!",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 13,
+        "product_list": [],
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": true,
+        "hide_on_end": true,
+        "end_date": "2025-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "#fadec9",
+        "countdown_number_color": "#000000"
+      }
+    },
+    "rich_text_fbPVft": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cH8frL": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "Supporting Creative Makers for Unique & Fun Toy Collections",
+            "heading_size": "h3",
+            "enable_h1_tag": false
+          }
+        },
+        "description_VekFgT": {
+          "type": "description",
+          "settings": {
+            "description_text": "<p>We believe that great toys come from creativity, and by collaborating with talented makers, we deliver products that spark imagination and bring joy to children's playtime.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cH8frL",
+        "description_VekFgT"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "mobile_content_alignment": "ta-left top-xs"
+      }
+    },
+    "icon_with_text_kBtXDz": {
+      "type": "icon-with-text",
+      "blocks": {
+        "icon_with_text_item_rNdNgc": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Playful Creations",
+            "description": "<p>Toy Store — Bringing imagination to life</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_pmgLan": {
+          "type": "icon_with_text_item",
+          "disabled": true,
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Wonder Workshop",
+            "description": "<p>Educational toy makers focused on learning through play.</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_yGcQzx": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Ohquao",
+            "description": "<p>A space dedicated to homegrown creatives & their products.</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_B7NnYP": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Randome_fun",
+            "description": "<p>Grocery Store</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_Pjki6j": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Wameo",
+            "description": "<p>A full-time artist in Saigon - Vietnam</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_4C4XMM": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Im not Ngok",
+            "description": "<p>Merchandise store</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_zJpYCd": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "image",
+            "theme_library_icon": "truck",
+            "icon_image": "",
+            "custom_code": "",
+            "title": "Leather Mate",
+            "description": "<p>Arts & Crafts Store — Creates genuine leather goods designed for everyday life.</p>",
+            "label": "EXPLORE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_with_text_item_rNdNgc",
+        "icon_with_text_item_pmgLan",
+        "icon_with_text_item_yGcQzx",
+        "icon_with_text_item_B7NnYP",
+        "icon_with_text_item_Pjki6j",
+        "icon_with_text_item_4C4XMM",
+        "icon_with_text_item_zJpYCd"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h3-regular",
+        "description": "",
+        "text_position": "fd-column",
+        "icon_size": "icon-scale-5xl",
+        "icon_color": "",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "divider_JtGbjj": {
+      "type": "divider",
+      "settings": {
+        "divider_color": "#d6d6d6"
+      }
+    },
+    "divider_RLGjMd": {
+      "type": "divider",
+      "settings": {
+        "divider_color": "#ffffff"
+      }
+    },
+    "running_content_aPPgTP": {
+      "type": "running-content",
+      "blocks": {
+        "text_f3yNR4": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Mix and match toys to create your perfect play bundle.</p>",
+            "color_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_f3yNR4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "item_size": "extra",
+        "image_ratio": "1/1"
+      }
+    },
+    "product_bundle_RQ7yLR": {
+      "type": "product-bundle",
+      "blocks": {
+        "product_attributes_bxJRcx": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "title_ttaAjb": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_EVEDNN": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_ixiPT7": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_bxJRcx",
+        "title_ttaAjb",
+        "price_EVEDNN",
+        "variants_ixiPT7"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 4,
+        "product_list": [],
+        "bundle_description": "Add 2 toys to create a play bundle",
+        "min_products": 2,
+        "enable_unlimited_add": true,
+        "custom_panel_background": "",
+        "custom_panel_color": "",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "show_quick_view": true,
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "divider_zBd9Xc": {
+      "type": "divider",
+      "settings": {
+        "divider_color": "#d6d6d6"
+      }
+    },
+    "divider_YrfLiM": {
+      "type": "divider",
+      "settings": {
+        "divider_color": "#ffffff"
+      }
+    },
+    "featured_product_list_RgcgzX": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_nfArHT": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "title_R8YKQn": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_8jYNhp": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_QE3fam": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_nfArHT",
+        "title_R8YKQn",
+        "price_8jYNhp",
+        "variants_QE3fam"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "STAFF picks® – All of best items, selected by us carefully",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 5,
+        "product_list": [],
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "recently_viewed_products_kQqdpP": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Last Seen, Still Want It?",
+        "heading_size": "h5",
+        "products_to_show": 8,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "standard",
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2"
+      }
+    },
+    "image_banner_4cTYhw": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_7BLjUy": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "Spring SummerSS/2025",
+            "heading_size": "h2",
+            "enable_h1_tag": false
+          }
+        },
+        "button_r84dyW": {
+          "type": "button",
+          "settings": {
+            "button_primary_label": "Explore more",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "View details",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_7BLjUy",
+        "button_r84dyW"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_transparent_header": false,
+        "section_overlay_opacity": 0,
+        "section_mask_overlay_color": "",
+        "section_content_overlay_color": "",
+        "desktop_image": "",
+        "section_image_width": "stretch",
+        "height_desktop": "50vh",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "height_mobile": "70vh",
+        "mobile_content_position": "start-xs",
+        "mobile_content_alignment": "ta-left top-xs",
+        "image_banner_link": ""
+      }
+    },
+    "video_banner_Tc9nyb": {
+      "type": "video-banner",
+      "blocks": {
+        "heading_MpzgJf": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "Fresh Finds – Just In!",
+            "heading_size": "h1",
+            "enable_h1_tag": false
+          }
+        },
+        "countdown_timer_F7a3AH": {
+          "type": "countdown_timer",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2027-05-05",
+            "end_time": "",
+            "end_text": "<p>Event is finished</p>",
+            "countdown_background": "#000000",
+            "countdown_number_color": "#ffffff"
+          }
+        },
+        "button_Bgimnb": {
+          "type": "button",
+          "settings": {
+            "button_primary_label": "Explore more",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_MpzgJf",
+        "countdown_timer_F7a3AH",
+        "button_Bgimnb"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_transparent_header": false,
+        "section_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "video_source": "video_external",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "enable_controller": true,
+        "enable_loop": true,
+        "video_control_color": "transparent",
+        "section_image_width": "stretch",
+        "height_desktop": "70vh",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "height_mobile": "50vh",
+        "mobile_content_position": "start-xs",
+        "mobile_content_alignment": "ta-left top-xs",
+        "image_banner_link": ""
+      }
+    },
+    "testimonials_A4DmrR": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_9qnddc": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 4,
+            "review_content": "<p>The hobby kits are incredibly well-made, and the customer service is fantastic. I've completed three kits already.<br/></p>",
+            "author_name": "Ethan Parker",
+            "author_description": "DIY Enthusiast"
+          }
+        },
+        "testimonial_ydVPqn": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>Shopping here was so easy, and the delivery was super fast. The hobby sets are perfect for my weekend projects.<br/></p>",
+            "author_name": "Sophia Johnson",
+            "author_description": "Entrepreneur"
+          }
+        },
+        "testimonial_h4EPHy": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 4,
+            "review_content": "<p>The model kits are perfect for keeping me engaged and creative. I love the variety they offer.<br/></p>",
+            "author_name": "Liam Smith",
+            "author_description": "Teacher"
+          }
+        },
+        "testimonial_TTyawK": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The quality of these hobby kits is amazing for the price. I'll definitely be buying more.<br/></p>",
+            "author_name": "Olivia Brown",
+            "author_description": "Collector"
+          }
+        },
+        "testimonial_C3yRrA": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The hobby kits are not only fun but also easy to follow for beginners like me. Highly recommend.</p>",
+            "author_name": "Noah Davis",
+            "author_description": "Architect"
+          }
+        },
+        "testimonial_j7XJXz": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>I've been telling all my friends about this store. The hobby kits are unique and so much fun to build.<br/></p>",
+            "author_name": "Emma Wilson",
+            "author_description": "Content Creator"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_9qnddc",
+        "testimonial_ydVPqn",
+        "testimonial_h4EPHy",
+        "testimonial_TTyawK",
+        "testimonial_C3yRrA",
+        "testimonial_j7XJXz"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "What Our Customers Are Saying",
+        "heading_size": "h3-regular",
+        "description": "",
+        "heading_size_item": "f-body fs-body-xl",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "regular",
+        "show_rating": true,
+        "color_rating": "#1daaff",
+        "carousel_desktop": "true",
+        "columns_per_row": "3",
+        "carousel_mobile": "false",
+        "label": "",
+        "link": ""
+      }
+    },
+    "shop_the_look_rhLm6Y": {
+      "type": "shop-the-look",
+      "blocks": {
+        "item_shop_the_look_JBx8kg": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_BYEmDR": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_G3tcb7": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_gLLmPp": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_7Wn8DJ": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_WiMHn6": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        }
+      },
+      "block_order": [
+        "item_shop_the_look_JBx8kg",
+        "item_shop_the_look_BYEmDR",
+        "item_shop_the_look_G3tcb7",
+        "item_shop_the_look_gLLmPp",
+        "item_shop_the_look_7Wn8DJ",
+        "item_shop_the_look_WiMHn6"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Shop the Look – Your Style, Your Way!",
+        "heading_size": "h3-regular",
+        "description": "",
+        "image_ratio": "auto",
+        "show_vendor": true,
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "blog_post_list_kYhYfM": {
+      "type": "blog-post-list",
+      "blocks": {
+        "tags_NMibFy": {
+          "type": "tags",
+          "settings": {}
+        },
+        "title_C6RRVJ": {
+          "type": "title",
+          "settings": {}
+        },
+        "excerpt_htUw3J": {
+          "type": "excerpt",
+          "disabled": true,
+          "settings": {
+            "truncate_text": true
+          }
+        }
+      },
+      "block_order": [
+        "tags_NMibFy",
+        "title_C6RRVJ",
+        "excerpt_htUw3J"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "blog": "news",
+        "heading": "What's Buzzing – Stories We Love",
+        "heading_size": "h3-regular",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": true,
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "enable_button": true,
+        "button_text": "View all",
+        "button_position": "last-item"
+      }
+    }
+  },
+  "order": [
+    "running_image_link_CKnqWB",
+    "collection_list_kiVDim",
+    "content_collage_8Yyt68",
+    "collection_browsing_eewajq",
+    "featured_product_list_JRAfE9",
+    "rich_text_fbPVft",
+    "icon_with_text_kBtXDz",
+    "divider_JtGbjj",
+    "divider_RLGjMd",
+    "running_content_aPPgTP",
+    "product_bundle_RQ7yLR",
+    "divider_zBd9Xc",
+    "divider_YrfLiM",
+    "featured_product_list_RgcgzX",
+    "recently_viewed_products_kQqdpP",
+    "image_banner_4cTYhw",
+    "video_banner_Tc9nyb",
+    "testimonials_A4DmrR",
+    "shop_the_look_rhLm6Y",
+    "blog_post_list_kYhYfM"
+  ]
+}

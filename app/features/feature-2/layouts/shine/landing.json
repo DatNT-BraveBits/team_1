@@ -1,0 +1,867 @@
+{
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_AFAyYw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get Ready To [Elevate Your Beauty Ritual]",
+            "heading_size": "h2"
+          }
+        },
+        "description_3zd8eJ": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Enjoy a bunch of exclusive deals with every purchase you make</p>"
+          }
+        },
+        "button_Awy4Yt": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Explore Our Lipsticks",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "Explore All",
+            "button_sub_style": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AFAyYw",
+        "description_3zd8eJ",
+        "button_Awy4Yt"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "height_desktop": "100vh",
+        "content_position_desktop": "center-md bottom-md ta-center-md",
+        "height_mobile": "100vh",
+        "content_position_mobile": "center-xs bottom-xs ta-center",
+        "link": "",
+        "section_mask_overlay_color": "rgba(0,0,0,0)",
+        "section_overlay_opacity": 0,
+        "section_content_overlay_color": ""
+      }
+    },
+    "featured_collection_YzXYUb": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "[Trending] Items Now",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 12,
+        "show_vendor": false,
+        "show_color_swatch": true,
+        "quick_shop_action": "quick_add",
+        "content_align_desktop": "ta-center-md",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-center",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": false,
+        "button_text": "Explore this collection",
+        "style_button": "btn-primary"
+      }
+    },
+    "content_collage_z7gJ3z": {
+      "type": "content-collage",
+      "blocks": {
+        "video_Tmx6t6": {
+          "type": "video",
+          "settings": {
+            "heading": "[20%] OFF for Face Collection",
+            "heading_size": "h4",
+            "button_label": "Shop Face",
+            "button_style": "btn-primary",
+            "video_source": "video_external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "content_position_desktop": "end-md middle-md ta-center-md",
+            "column_desktop": "2",
+            "row_desktop": "2",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "column_mobile": "2",
+            "row_mobile": "1",
+            "block_mask_overlay_color": "",
+            "block_overlay_opacity": 30,
+            "block_content_overlay_color": ""
+          }
+        },
+        "image_7YcmHP": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "heading_size": "h4",
+            "button_label": "New Arrival",
+            "button_style": "btn-primary",
+            "content_position_desktop": "end-md middle-md ta-center-md",
+            "column_desktop": "2",
+            "row_desktop": "1",
+            "content_position_mobile": "end-xs middle-xs ta-center",
+            "column_mobile": "2",
+            "row_mobile": "1",
+            "block_mask_overlay_color": "",
+            "block_overlay_opacity": 30,
+            "block_content_overlay_color": ""
+          }
+        },
+        "image_6ybPLH": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "heading_size": "h4",
+            "button_label": "Shop Foundation",
+            "button_style": "btn-primary",
+            "content_position_desktop": "end-md middle-md ta-center-md",
+            "column_desktop": "2",
+            "row_desktop": "1",
+            "content_position_mobile": "end-xs middle-xs ta-center",
+            "column_mobile": "2",
+            "row_mobile": "1",
+            "block_mask_overlay_color": "rgba(0,0,0,0)",
+            "block_overlay_opacity": 0,
+            "block_content_overlay_color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "video_Tmx6t6",
+        "image_7YcmHP",
+        "image_6ybPLH"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "Featured collections",
+        "heading": "What your skin needs",
+        "heading_size": "h3",
+        "description": "",
+        "content_align_desktop": "ta-center-md",
+        "desktop_row_height": 400,
+        "content_align_mobile": "ta-center",
+        "mobile_row_height": 260
+      }
+    },
+    "running_content_CqWG7B": {
+      "type": "running-content",
+      "blocks": {
+        "text_cVtGzE": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>100% vegan cosmetics for beauty</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_KURRfX": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        },
+        "text_jPcqJq": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>Nature's Beauty, Perfected by Science</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_xGbtQy": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        },
+        "text_jxTBmw": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>Pure Beauty, Powered by Nature</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_4NCexU": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "text_cVtGzE",
+        "image_KURRfX",
+        "text_jPcqJq",
+        "image_xGbtQy",
+        "text_jxTBmw",
+        "image_4NCexU"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": false,
+        "heading_size": "h2"
+      }
+    },
+    "image_collage_with_text_DfW68F": {
+      "type": "image-collage-with-text",
+      "blocks": {
+        "heading_DAPrti": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get started with our [Seasonal Beauty Bundle]",
+            "heading_size": "h3"
+          }
+        },
+        "description_wCGYBj": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Embrace the changing seasons with our exclusive Seasonal Beauty Bundle, thoughtfully curated to align with your skincare and beauty needs throughout the year.</p>"
+          }
+        },
+        "countdown_TBAPAF": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "17:00",
+            "end_text": "<p>Event is finished.</p>",
+            "countdown_background": "",
+            "countdown_number_color": "",
+            "color_end_text": "#ff0000"
+          }
+        },
+        "button_hawXtW": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "See Our Products",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_DAPrti",
+        "description_wCGYBj",
+        "countdown_TBAPAF",
+        "button_hawXtW"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "collage_alignment": "media-sticky",
+        "content_ordering_desktop": "fd-row-md",
+        "collage_width": "6",
+        "content_position_mobile": "ta-center",
+        "content_ordering_mobile": "text-first-mb"
+      }
+    },
+    "image_collage_with_text_geExJi": {
+      "type": "image-collage-with-text",
+      "blocks": {
+        "heading_xpQPHg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unveiling the Essence of True Beauty to [Makes Us Shine]",
+            "heading_size": "h3"
+          }
+        },
+        "description_pk8aK3": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Embracing ethical practices is at the heart of our brand. Every product in our range is 100% vegan and cruelty-free, ensuring that our beauty solutions are kind not only to your skin but also to all living beings and the planet. By choosing our brand, you are </p>"
+          }
+        },
+        "button_GWXHxT": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Read Our Story",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_xpQPHg",
+        "description_pk8aK3",
+        "button_GWXHxT"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-3",
+        "collage_alignment": "media-sticky",
+        "content_ordering_desktop": "fd-row-md",
+        "collage_width": "6",
+        "content_position_mobile": "ta-center",
+        "content_ordering_mobile": "text-first-mb"
+      }
+    },
+    "collection_list_bD8PFa": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Embrace Bold Elegance with Our [Exquisite Collections]",
+        "heading_size": "h3",
+        "description": "",
+        "content_align_desktop": "ta-center-md",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-center",
+        "carousel_mobile": "false",
+        "columns_per_row_mobile": "2",
+        "enable_button": false,
+        "button_text": "Explore all collections",
+        "style_button": "btn-primary"
+      }
+    },
+    "multiple_product_tabs_BUdnQh": {
+      "type": "multiple-product-tabs",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Dive into Our [Exclusive Lip Lines]",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 12,
+        "show_vendor": false,
+        "show_color_swatch": true,
+        "quick_shop_action": "quick_add",
+        "content_align_desktop": "ta-center-md center-md",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-center",
+        "carousel_mobile": "false",
+        "columns_per_row_mobile": "2",
+        "enable_button": true
+      }
+    },
+    "image_collage_with_text_q3yEDX": {
+      "type": "image-collage-with-text",
+      "blocks": {
+        "heading_LBt44y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get started with our [\"Seasonal Beauty Bundle\"]",
+            "heading_size": "h3"
+          }
+        },
+        "description_MU3iNJ": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Embrace the changing seasons with our exclusive Seasonal Beauty Bundle, thoughtfully curated to align with your skincare and beauty needs throughout the year.</p>"
+          }
+        },
+        "countdown_mAtx7k": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "17:00",
+            "end_text": "<p>Event is finished.</p>",
+            "countdown_background": "#ffffff",
+            "countdown_number_color": "",
+            "color_end_text": "#ff0000"
+          }
+        },
+        "button_XHHEbf": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "See Our Products",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_LBt44y",
+        "description_MU3iNJ",
+        "countdown_mAtx7k",
+        "button_XHHEbf"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "collage_alignment": "media-sticky",
+        "content_ordering_desktop": "fd-row-reverse-md",
+        "collage_width": "6",
+        "content_position_mobile": "ta-center",
+        "content_ordering_mobile": "text-first-mb"
+      }
+    },
+    "before_after_images_KRUHc7": {
+      "type": "before-after-images",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "[After the Power] of Our Product",
+        "heading_size": "h3",
+        "description": "<p>Every formulation is a meticulous blend of nature's artistry and cutting-edge skincare technology, inviting you to embark on a transformative journey.</p>",
+        "label_image_before": "Before",
+        "label_image_after": "After",
+        "content_align_desktop": "ta-center-md",
+        "content_ordering_desktop": "fd-column-md",
+        "content_align_mobile": "ta-left",
+        "content_ordering_mobile": "fd-column"
+      }
+    },
+    "image_banner_4tVdQL": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_p8Q8W4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Glow Begins with the [Perfect Base]",
+            "heading_size": "h2"
+          }
+        },
+        "description_egDELH": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Discover your perfect match with our Foundation collection—lightweight, buildable coverage that blends seamlessly for a natural, radiant finish.</p>"
+          }
+        },
+        "button_pDtbhD": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Shop Foundation",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_p8Q8W4",
+        "description_egDELH",
+        "button_pDtbhD"
+      ],
+      "name": "t:sections.image_banner.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "height_desktop": "70vh",
+        "content_position_desktop": "center-md bottom-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "center-xs middle-xs ta-center",
+        "link": "",
+        "section_mask_overlay_color": "",
+        "section_overlay_opacity": 30,
+        "section_content_overlay_color": ""
+      }
+    },
+    "info_tab_k7PWXb": {
+      "type": "info-tab",
+      "blocks": {
+        "tab_DC8Bxf": {
+          "type": "tab",
+          "settings": {
+            "heading": "Cleanse Your Skin",
+            "description": "<p>Take a warm shower or bath and gently cleanse your body using a mild soap or body wash. Pat your skin dry with a soft towel, leaving it slightly damp.</p>"
+          }
+        },
+        "tab_CiMmfC": {
+          "type": "tab",
+          "settings": {
+            "heading": "Exfoliate Gently",
+            "description": "<p>Use a mild exfoliant to remove dead skin cells and unclog pores. Over-exfoliating can lead to irritation, so limit this step to once or twice a week.</p>"
+          }
+        },
+        "tab_EHNjm4": {
+          "type": "tab",
+          "settings": {
+            "heading": "Apply Face Mask",
+            "description": "<p>Using clean fingers or a brush, apply the mask evenly over your face, avoiding the eye and lip areas.</p>"
+          }
+        },
+        "tab_9YP3n6": {
+          "type": "tab",
+          "settings": {
+            "heading": "Massage and Absorb",
+            "description": "<p>Apply your moisturizer in upward strokes, gently massaging it into your skin to boost circulation and absorption.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tab_DC8Bxf",
+        "tab_CiMmfC",
+        "tab_EHNjm4",
+        "tab_9YP3n6"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Radiant Skin with [Daily Beauty Ritual]",
+        "heading_size": "h3",
+        "description": "",
+        "image_ratio": "3/2",
+        "enable_autoplay": true,
+        "auto_play_time": 5,
+        "content_align": "ta-center-md",
+        "content_ordering_desktop": "fd-row-md",
+        "image_size_on_large": "8.4",
+        "content_align_mobile": "ta-left",
+        "content_ordering_mobile": "fd-column-reverse",
+        "button_text": "",
+        "style_button": "btn-primary",
+        "button_link": ""
+      }
+    },
+    "text_EeXCTk": {
+      "type": "text",
+      "blocks": {
+        "heading_Rq8iJY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Treat yourself with the [love] and [care] that reflects your [true worth].",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Rq8iJY"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "content_position_desktop": "center-md middle-md ta-center-md",
+        "content_position_mobile": "center-xs middle-xs ta-center"
+      }
+    },
+    "image_gallery_GiFKnH": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_item_WFJNE8": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_HixcmN": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_rP3Y6G": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_EKjGTL": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_tkVGb9": {
+          "type": "image_item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_item_WFJNE8",
+        "image_item_HixcmN",
+        "image_item_rP3Y6G",
+        "image_item_EKjGTL",
+        "image_item_tkVGb9"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_ratio": "2/3",
+        "product_image_ratio": "2/3",
+        "image_background": ""
+      }
+    },
+    "media_with_text_columns_qdexGp": {
+      "type": "media-with-text-columns",
+      "blocks": {
+        "image_Ghgjaa": {
+          "type": "image",
+          "settings": {
+            "heading": "Standing Bunny Program",
+            "description": "<p>Standing Bunny certified, cruelty-free, environmentally conscious, and kind to all living beings.</p>"
+          }
+        },
+        "image_WHJj9p": {
+          "type": "image",
+          "settings": {
+            "heading": "The Nature Social",
+            "description": "<p>Eco-friendly and socially conscious, certified by The Nature Social for sustainable, ethical, and natural ingredients.</p>"
+          }
+        },
+        "image_HcKeCc": {
+          "type": "image",
+          "settings": {
+            "heading": "Advocates for Animals",
+            "description": "<p>Championing animal welfare, our product is Advocates for Animals certified, ensuring ethical and humane practices.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_Ghgjaa",
+        "image_WHJj9p",
+        "image_HcKeCc"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Recognized by [international organizations]",
+        "heading_size": "h3",
+        "description": "",
+        "item_alignment": "ta-center",
+        "image_ratio": "16/9",
+        "column_heading_size": "h6",
+        "enable_item_background": false,
+        "background_content": "",
+        "color_content": "",
+        "content_align_desktop": "ta-center-md",
+        "columns_per_row": "3",
+        "content_align_mobile": "ta-center",
+        "list_style": "false",
+        "button_text": "",
+        "style_button": "btn-primary",
+        "button_link": ""
+      }
+    },
+    "value_list_FzccUL": {
+      "type": "value-list",
+      "blocks": {
+        "item_h6QHh3": {
+          "type": "item",
+          "settings": {
+            "value_text": "100%",
+            "text_color": "",
+            "text_color_gradient": "",
+            "subheading": "Skin-Safe",
+            "description": "<p>All products are dermatologically tested and proven safe for all skin types.</p>"
+          }
+        },
+        "item_DhDhAN": {
+          "type": "item",
+          "settings": {
+            "value_text": "50+",
+            "text_color": "",
+            "text_color_gradient": "",
+            "subheading": "Shades Available",
+            "description": "<p>Offering a diverse range of 50+ shades to celebrate every skin tone and personal style.</p>"
+          }
+        },
+        "item_tGx8gP": {
+          "type": "item",
+          "settings": {
+            "value_text": "30-Day",
+            "text_color": "",
+            "text_color_gradient": "",
+            "subheading": "Free",
+            "description": "<p>Enjoy risk-free shopping with a 30-day free return policy, no questions asked.</p>"
+          }
+        },
+        "item_9KxFPj": {
+          "type": "item",
+          "settings": {
+            "value_text": "90%",
+            "text_color": "",
+            "text_color_gradient": "",
+            "subheading": "Natural Ingredients",
+            "description": "<p>At least 90% of our products are made with natural, eco-friendly ingredients. Committed to sustainability and skin health.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_h6QHh3",
+        "item_DhDhAN",
+        "item_tGx8gP",
+        "item_9KxFPj"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Our core values",
+        "heading_size": "h2",
+        "description": "",
+        "item_alignment": "ta-center",
+        "value_text_size": "h3",
+        "enable_item_background": true,
+        "background_content": "#ffffff",
+        "color_content": "",
+        "content_align_desktop": "ta-center-md",
+        "columns_per_row": "4",
+        "content_align_mobile": "ta-center"
+      }
+    },
+    "spotlight_quotes_dKpLXk": {
+      "type": "spotlight-quotes",
+      "blocks": {
+        "quocte_nVVLeb": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>As someone who's always on the lookout for the latest in skincare, I've been incredibly impressed with the selection at this beauty store. Their range of organic and cruelty-free products is exactly what I've been searching for.</h4>",
+            "author": "Sophia, Age 28"
+          }
+        },
+        "quocte_JHHFzT": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>I never paid much attention to skincare or grooming products until I visited this store. The staff was super helpful, walking me through various options for my skin type. I've started using their recommended face wash and moisturizer, and I've noticed a significant improvement in my skin's texture.</h4>",
+            "author": "Michael, Age 35"
+          }
+        },
+        "quocte_fpTGex": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>I've been a loyal customer of this beauty store for years. What keeps me coming back is their impeccable customer service and the high-quality, diverse range of products they offer. Whether it's makeup, skincare, or haircare, I've always found what I need. </h4>",
+            "author": "Ava, Age 18"
+          }
+        }
+      },
+      "block_order": [
+        "quocte_nVVLeb",
+        "quocte_JHHFzT",
+        "quocte_fpTGex"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "content_alignment": "ta-center",
+        "show_quote_symbol": true,
+        "show_rating": false,
+        "star_rating_color": "#f8cc46",
+        "image_shape": "br-50p",
+        "show_pagination": false,
+        "show_navigation": true,
+        "enable_autoplay": true,
+        "delay": 5
+      }
+    },
+    "running_content_iwdgDT": {
+      "type": "running-content",
+      "blocks": {
+        "text_mRdTkV": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>100% vegan cosmetics for beauty</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_9bjAXn": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        },
+        "text_B37Bmg": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>Nature's Beauty, Perfected by Science</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_T6g9RA": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        },
+        "text_C3CKPC": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><em>Pure Beauty, Powered by Nature</em></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "image_MRQPnN": {
+          "type": "image",
+          "settings": {
+            "image_ratio": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "text_mRdTkV",
+        "image_9bjAXn",
+        "text_B37Bmg",
+        "image_T6g9RA",
+        "text_C3CKPC",
+        "image_MRQPnN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": "100",
+        "moving_direction": "animation-reverse",
+        "pause_when_hover": false,
+        "heading_size": "h2"
+      }
+    },
+    "blog_post_list_mJRUPz": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Read [our blogs]",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": true,
+        "show_blog_tags": true,
+        "show_published_date": true,
+        "show_author": true,
+        "show_excerpt": true,
+        "content_align_desktop": "ta-center-md",
+        "carousel_desktop": "true",
+        "columns_per_row": "3",
+        "content_align_mobile": "ta-center",
+        "carousel_mobile": "true",
+        "show_view_all_button": true,
+        "button_text": "",
+        "style_button": "btn-primary"
+      }
+    },
+    "newsletter_rgC9bX": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Meet our [dermatologists]",
+        "heading_size": "h3",
+        "description": "<p>We're proud to introduce our team of expert dermatologists, dedicated to ensuring that every product we offer meets the highest standards of skin care.</p>",
+        "button_label": "Subscribe",
+        "content_ordering_desktop": "fd-row-md",
+        "content_ordering_mobile": "image-first-mb"
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "featured_collection_YzXYUb",
+    "content_collage_z7gJ3z",
+    "running_content_CqWG7B",
+    "image_collage_with_text_DfW68F",
+    "image_collage_with_text_geExJi",
+    "collection_list_bD8PFa",
+    "multiple_product_tabs_BUdnQh",
+    "image_collage_with_text_q3yEDX",
+    "before_after_images_KRUHc7",
+    "image_banner_4tVdQL",
+    "info_tab_k7PWXb",
+    "text_EeXCTk",
+    "image_gallery_GiFKnH",
+    "media_with_text_columns_qdexGp",
+    "value_list_FzccUL",
+    "spotlight_quotes_dKpLXk",
+    "running_content_iwdgDT",
+    "blog_post_list_mJRUPz",
+    "newsletter_rgC9bX"
+  ]
+}

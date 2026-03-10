@@ -1,0 +1,680 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md middle-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "sub_heading": "",
+            "heading": "GOD'S ESSENTIALS",
+            "description": "<p>Built to grind, made to thrive. Shop apparel perfect for your ride.</p>",
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md middle-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "sub_heading": "",
+            "heading": "DECKED OUT",
+            "description": "<p>Explore premium skateboards built for performance and style.</p>",
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_2_label": "DISCOVER OUR COMMUNITY",
+            "button_2_style": "btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading_size": "h1",
+        "height_desktop": "100vh",
+        "height_mobile": "100vh",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 4
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "New ergonomic gear is flying off the shelves! ⚡",
+            "color_text": "#731eff",
+            "text_color_gradient": ""
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Grab yours before it's gone 🛒",
+            "color_text": "#000000",
+            "text_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h2",
+        "text_link": ""
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Collection"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Mouse"
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "heading": "Microphone"
+          }
+        },
+        "collection_4": {
+          "type": "collection",
+          "settings": {
+            "heading": "Home Audio"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Our collections",
+        "heading": "Find What You Need",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 8,
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_more": true,
+        "button_text": "View All"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 0,
+            "color_mask_overlay": "",
+            "color_text_overlay": "#ffffff",
+            "heading": "Gaming Space",
+            "button_text": "Read Articles"
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 0,
+            "color_mask_overlay": "",
+            "color_text_overlay": "#ffffff",
+            "heading": "Minimalism Space",
+            "button_text": "Shop now"
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "heading": "Productive Space",
+            "button_text": "Read Articles"
+          }
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "FOR YOUR WORK SPACE",
+        "heading": "Top #3 highly recommend setup styles",
+        "heading_size": "h2",
+        "description": "The gift of catching up. Bring it all together: family, friends and your favourite artists. With Beoplay A1, you'll never miss a beat – or a word.",
+        "content_alignment": "ta-left",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": false,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": true
+      }
+    },
+    "moving_image_banner": {
+      "type": "moving-image-banner",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "speed": "7",
+        "height_desktop": "70vh",
+        "content_position_desktop": "middle-md center-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "enable_countdown_timer": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background_color": "",
+        "countdown_number_color": "",
+        "countdown_end_text_color": "#ff0000",
+        "button_1_label": "",
+        "button_1_style": "btn-primary",
+        "button_1_link": "",
+        "button_2_label": "",
+        "button_2_style": "btn-secondary",
+        "button_2_link": ""
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Illuminate Your Workspace"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Luna LED Desk Lamp",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Light Up Your Space – Integrated with vibrant RGB LED strips featuring 20 distinctive effects.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Check Now",
+            "button_1_style": "btn-secondary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_ordering": "s-media-with-text__media--first",
+        "height": "70vh",
+        "image_ratio": "1/1"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience an immersive sound",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Immerse yourself in a world of captivating sound Immerse yourself in a world of captivating sound with our immersive audio experience.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "50vh",
+        "content_position_desktop": "top-md end-md mask--bottom ta-start-md",
+        "height_mobile": "50vh",
+        "content_position_mobile": "top-xs ta-start mask--top",
+        "video_url_mobile": ""
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "hotspot_1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 78,
+            "left_offset": 75
+          }
+        },
+        "hotspot_2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 40,
+            "left_offset": 60
+          }
+        },
+        "hotspot_3": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 56,
+            "left_offset": 22
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_1",
+        "hotspot_2",
+        "hotspot_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "WHAT'S HOT",
+        "heading": "A corner from Our Studio",
+        "heading_size": "h2",
+        "description": "<p>You'll find everything you need for your study, work, and entertainment space here!</p>",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-center",
+        "text": "",
+        "link": ""
+      }
+    },
+    "content_collage_2": {
+      "type": "content-collage",
+      "blocks": {
+        "block_1": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Built to Endure",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        },
+        "block_2": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Unparalleled Design",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        },
+        "block_3": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Seamless Connectivity",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "Our Signature Headphones",
+        "heading": "A Melody for Your Ears",
+        "heading_size": "h2",
+        "description": "",
+        "content_alignment": "ta-center",
+        "items_ordering": "big-last",
+        "enable_stacked_layout": false,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": false
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials_1": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Sarah T.",
+            "job_title": "Marketing Manager",
+            "text": "Audio has completely transformed my listening experience. The range of products and the quality is simply outstanding. The customer service was incredibly helpful, ensuring I found exactly what I needed. Highly recommend!"
+          }
+        },
+        "testimonials_2": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Jason L.",
+            "job_title": "Software Engineer",
+            "text": "Shopping at Audio was a breeze! The website is user-friendly, and the product descriptions are very detailed. My new headphones arrived quickly and were exactly as advertised. I'll definitely be coming back for more."
+          }
+        },
+        "testimonials_3": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Emily R.",
+            "job_title": "Financial Analyst",
+            "text": "The experience of buying from Audio was exceptional. From easy navigation on their site to the fast delivery and excellent packaging, everything was seamless. The new home theater system I bought has surpassed my expectations."
+          }
+        },
+        "testimonials_4": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Michael B.",
+            "job_title": "Teacher",
+            "text": "Audio is my go-to store for all electronic needs. Their customer service is fantastic, and the products are always reliable and high-quality. I recently purchased a pair of earbuds, and they are simply amazing. Kudos to the team at Audio!"
+          }
+        },
+        "testimonials_5": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Lisa W.",
+            "job_title": "Project Manager",
+            "text": "Audio has an impressive selection of electronic products, and their prices are unbeatable. The wireless speaker I bought delivers exceptional sound quality and was very easy to set up. Customer service was also very responsive and helpful."
+          }
+        },
+        "testimonials_6": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Robert K.",
+            "job_title": "IT Specialist",
+            "text": "I've been a loyal customer for years, and never disappoint. The quality of their products is high, and the shopping experience is seamless. My latest purchase, a noise-canceling headphone, has made my commute so much more enjoyable."
+          }
+        },
+        "testimonials_7": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Daniel M.",
+            "job_title": "Musician",
+            "text": "As a music enthusiast, finding the right equipment is crucial, and Audio never disappoints. The variety and quality of their products are second to none. Plus, their fast shipping is a huge bonus. Highly recommended!"
+          }
+        },
+        "testimonials_8": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Maria S.",
+            "job_title": "Graphic Designer",
+            "text": "Audio offers top-notch electronics at competitive prices. The sound quality of the speakers I purchased is phenomenal. Their support team answered all my questions promptly. Couldn't be happier!"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_1",
+        "testimonials_2",
+        "testimonials_3",
+        "testimonials_4",
+        "testimonials_5",
+        "testimonials_6",
+        "testimonials_7",
+        "testimonials_8"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "What our customers say",
+        "heading_size": "h3",
+        "description": "",
+        "show_bought_products": false,
+        "card_color_scheme": "scheme-2",
+        "show_rating": false,
+        "color_rating": "#f8cc46",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_progress_indicator": true
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "smart-home",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Seamless Experiences",
+            "description": "<p>Creating a hassle-free and enjoyable environment for users.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "leaf",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Environment Friendly",
+            "description": "<p>Designed to reduce energy consumption and minimize ecological impact.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "box",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Free Shipping",
+            "description": "<p>170 countries, almost all of which have a free shipping option and express delivery.</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "customer-support",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "24/7 Support",
+            "description": "<p>Plus our world-class customer support team are available 24 hours a day, 7 days a week.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "button_main_text": "",
+        "button_main_link": ""
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Shop by Category —",
+        "heading_size": "h4",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_all": true,
+        "button_main_text": "View all collections"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What's New"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>The gift of catching up. Bring it all together: family, friends and your favourite artists. With Beoplay A1, you’ll never miss a beat – or a word.</p>"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_style": "btn-primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "50vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "running_text",
+    "product_lists",
+    "content_collage",
+    "moving_image_banner",
+    "image_with_text",
+    "video_banner",
+    "product_hotspots",
+    "content_collage_2",
+    "testimonials",
+    "icon_with_text",
+    "collection_list",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,640 @@
+{
+  "sections": {
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Immerse Yourself in Pure Audio Bliss",
+            "heading_size": "h1"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Immerse yourself in pure music with SonicBlu. Exceptional sound. Modern, lightweight design. Innovative and sophisticated.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "17:00",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "#ffffff",
+            "countdown_number_color": "#1f1f21",
+            "countdown_end_text_color": "#ff0000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "video_url_mobile": ""
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Every day is an evolution",
+            "color_text": "rgba(0,0,0,0)",
+            "text_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h2",
+        "text_link": ""
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Browse our catalog",
+        "heading_size": "h3",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_all": false,
+        "button_main_text": "View all collections"
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "New Arrivals ✨"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Hot Items 🔥"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "POPULAR",
+        "heading": "Now in Stock",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 10,
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "enable_view_more": false,
+        "button_text": "View all products"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "content_alignment": "ta-center",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": true,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": true
+      }
+    },
+    "video_with_text": {
+      "type": "video-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Text block heading"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Up to 50% Off Sitewide",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Shop your favorites during the Early Black Friday Sale.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2025/02/20",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "#c3ebf0",
+            "countdown_number_color": "",
+            "countdown_end_text_color": "#000000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_1_link": "",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "content_ordering": "s-media-with-text__media--first",
+        "video": "",
+        "height": "70vh",
+        "enable_video_loop": true,
+        "enable_video_mute": true
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "hotspot-1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 31,
+            "left_offset": 43
+          }
+        },
+        "hotspot-2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 83,
+            "left_offset": 55
+          }
+        },
+        "hotspot-3": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 67,
+            "left_offset": 40
+          }
+        },
+        "hotspot-4": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 36,
+            "left_offset": 55
+          }
+        }
+      },
+      "block_order": [
+        "hotspot-1",
+        "hotspot-2",
+        "hotspot-3",
+        "hotspot-4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Works in harmony with leading smart home ecosystems",
+        "heading_size": "h2",
+        "description": "",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-left",
+        "text": "",
+        "link": ""
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "bluetooth",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Hi-Res Audio Wireless",
+            "description": "<p>High-resolution sound certified by the Japan Audio Society.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "global",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Bluetooth SIG Certificated",
+            "description": "<p>Stable, low-latency wireless connection across all devices.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "charger",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Conformité Européenne",
+            "description": "<p>Complies with strict EU safety and environmental standards.</p><p></p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "3d-model",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "TÜV Rheinland Certified",
+            "description": "<p>Tested for durability and safety by a leading global authority.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Certified for Quality. Trusted Worldwide.",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-center middle-xs",
+        "button_main_text": "",
+        "button_main_link": ""
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_AkgQFE": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Sarah Thompson",
+            "job_title": "Marketing Manager",
+            "text": "Since installing the security cameras from this store, I've never felt safer in my own home. The high-definition video quality and advanced motion detection have provided me with invaluable peace of mind. Kudos to the team for their exceptional customer service!"
+          }
+        },
+        "testimonial_M9Qnxc": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "John Anderson",
+            "job_title": "Small Business Owner",
+            "text": "These security cameras are a game-changer for our business. The remote viewing and playback feature allows us to monitor our premises even when we're away. The clarity of the footage is outstanding, and the night vision capability is impressive. Highly recommended!"
+          }
+        },
+        "testimonial_GGex8N": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Emily Chen",
+            "job_title": "IT Consultant",
+            "text": "I'm thoroughly impressed with the level of professionalism and expertise demonstrated by this security camera store. They helped me choose the perfect system for my needs and provided comprehensive installation support. The cameras have exceeded my expectations, and I feel much more secure now."
+          }
+        },
+        "testimonial_rqGKBx": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "David Roberts",
+            "job_title": "Accountant",
+            "text": "Having tried multiple security camera brands, I can confidently say that the ones from this store are top-notch. The image quality is superb, and the motion detection is spot-on. It's reassuring to know that my home is under constant surveillance. Thank you for an excellent product!"
+          }
+        },
+        "testimonial_wJCwKx": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Lisa Johnson",
+            "job_title": "Teacher",
+            "text": "As a concerned parent, I wanted to enhance the security around our home. The security cameras we purchased here have been a game-changer. I can keep an eye on my children playing in the yard and rest easy knowing that the advanced features of these cameras have our back."
+          }
+        },
+        "testimonial_QcjQmk": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Michael Ramirez",
+            "job_title": "Sales Executive",
+            "text": "Being a frequent traveler, I was always worried about the safety of my property. Thanks to the security cameras I purchased from this store, I can now monitor my home from anywhere in the world. The remote access feature is a game-changer, and the customer support has been exceptional."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_AkgQFE",
+        "testimonial_M9Qnxc",
+        "testimonial_GGex8N",
+        "testimonial_rqGKBx",
+        "testimonial_wJCwKx",
+        "testimonial_QcjQmk"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "heading": "Testimonials",
+        "heading_size": "h2",
+        "description": "",
+        "show_bought_products": true,
+        "card_color_scheme": "",
+        "show_rating": true,
+        "color_rating": "#f8cc46",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_progress_indicator": true
+      }
+    },
+    "logo_list": {
+      "type": "logo-list",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "As seen on",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "items_per_row_mobile": "6",
+        "content_alignment": "ta-center"
+      }
+    },
+    "collapsible_content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_jmQgyH": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "What is the warranty period for your cameras?",
+            "description": "<p>Our cameras come with a standard warranty of [insert warranty period, e.g., 1 year], covering manufacturing defects and hardware issues. Extended warranty options are also available.</p>",
+            "page": ""
+          }
+        },
+        "content_MxTHmM": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Do you provide customer support and repair services?",
+            "description": "<p>Yes, we offer dedicated customer support for troubleshooting, and authorized service centers for repairs. You can contact us through our website or support center for assistance.</p>",
+            "page": ""
+          }
+        },
+        "content_E8RHNz": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Do your cameras support Wi-Fi, Bluetooth, or other connectivity features?",
+            "description": "<p>Yes, All of our models include Wi-Fi, Bluetooth, and NFC capabilities for easy sharing and remote control via mobile devices.</p>",
+            "page": ""
+          }
+        },
+        "content_Bn6RPL": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Are there any accessories compatible with your cameras?",
+            "description": "<p>Absolutely! We offer a range of accessories including lenses, tripods, bags, filters, and batteries designed specifically for our camera models.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_jmQgyH",
+        "content_MxTHmM",
+        "content_E8RHNz",
+        "content_Bn6RPL"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "content_alignment": "ta-left",
+        "show_icon": false,
+        "expand_first_item_initially": true,
+        "card_color_scheme": "",
+        "image_ratio": "3/2",
+        "btn_text": ""
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "EXCLUSIVE COMMUNITY"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Be the first to know about new arrivals, sales, and promotions by subscribing to our newsletter today!</p>"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_style": "btn-primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "top-xs center-xs ta-start"
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "God's News —",
+        "heading_size": "h3",
+        "description": "",
+        "blog": "news",
+        "items_to_show": 4,
+        "items_per_row_on_desktop": "3",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "show_view_all_button": true,
+        "btn_text": "View all"
+      }
+    }
+  },
+  "order": [
+    "video_banner",
+    "running_text",
+    "collection_list",
+    "product_lists",
+    "content_collage",
+    "video_with_text",
+    "product_hotspots",
+    "icon_with_text",
+    "testimonials",
+    "logo_list",
+    "collapsible_content",
+    "newsletter",
+    "blog_post_list"
+  ]
+}

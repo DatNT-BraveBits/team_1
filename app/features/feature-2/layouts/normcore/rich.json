@@ -1,0 +1,1158 @@
+{
+  "sections": {
+    "multi_media_banner_bTeWkA": {
+      "type": "multi-media-banner",
+      "blocks": {
+        "image_WaXNPX": {
+          "type": "image",
+          "settings": {
+            "heading": "Best-seller 2024",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "",
+            "desktop_image": "",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "button_label": "Explore Now",
+            "button_style": "primary",
+            "button_link": ""
+          }
+        },
+        "video_6rJK4t": {
+          "type": "video",
+          "settings": {
+            "heading": "MODERN URBAN COLLECTION",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "",
+            "video_source": "video_external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "#ff4d00",
+            "content_overlay_color": "#ffffff",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_label": "Explore more",
+            "button_style": "primary",
+            "button_link": ""
+          }
+        },
+        "image_WXHcqg": {
+          "type": "image",
+          "settings": {
+            "heading": "STAFF Picks®",
+            "enable_h1_tag": false,
+            "heading_size": "headline",
+            "description": "",
+            "desktop_image": "",
+            "overlay_opacity": 90,
+            "mask_overlay_color": "#ff4d00",
+            "content_overlay_color": "#ffffff",
+            "desktop_content_position": "center-md",
+            "desktop_content_alignment": "ta-center-md middle-md",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_label": "VIEW ALL",
+            "button_style": "secondary",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_WaXNPX",
+        "video_6rJK4t",
+        "image_WXHcqg"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "section_image_width": "stretch",
+        "height_desktop": "100vh",
+        "desktop_layout": "desktop-stack desktop--first-emphasis",
+        "height_mobile": "100vh",
+        "mobile_layout": "mobile-column mobile--first-emphasis"
+      }
+    },
+    "running_content_znDFxF": {
+      "type": "running-content",
+      "blocks": {
+        "text_im8rdx": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Make a bundle</p>",
+            "color_text": "#000000"
+          }
+        },
+        "image_GTdrf3": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_pcq3ix": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>New Collection</p>",
+            "color_text": "#000000"
+          }
+        },
+        "image_GdUKPC": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_fg7HX7": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>New Arrivals</p>",
+            "color_text": "#000000"
+          }
+        },
+        "image_nDKtMD": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_im8rdx",
+        "image_GTdrf3",
+        "text_pcq3ix",
+        "image_GdUKPC",
+        "text_fg7HX7",
+        "image_nDKtMD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "item_size": "extra",
+        "image_ratio": "auto"
+      }
+    },
+    "running_image_link_48DNNN": {
+      "type": "running-image-link",
+      "blocks": {
+        "image_4A7U9d": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "item_size": "large",
+            "image": "",
+            "heading": "Womenwear",
+            "description": "<p>Selected items by Normcore</p>",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": ""
+          }
+        },
+        "product_Vm7myC": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "item_size": "large",
+            "show_product_title": true,
+            "show_price": true,
+            "show_variant_swatches": true,
+            "limited_variants_to_show": 6,
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "",
+            "price_color": ""
+          }
+        },
+        "collection_V4DcKU": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "large",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "separate_line",
+            "overlay_opacity": 30,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": ""
+          }
+        },
+        "image_yVh8rf": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "item_size": "large",
+            "image": "",
+            "heading": "STAFF picks",
+            "description": "<p>Selected items by Normcore</p>",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": ""
+          }
+        },
+        "collection_zrgkNb": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "large",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "separate_line",
+            "overlay_opacity": 30,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_4A7U9d",
+        "product_Vm7myC",
+        "collection_V4DcKU",
+        "image_yVh8rf",
+        "collection_zrgkNb"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h3-regular",
+        "description": "",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "list_alignment": "top-xs",
+        "item_shape": "1/1",
+        "content_position": "start-xs",
+        "content_alignment": "ta-left top-xs",
+        "button_text": "",
+        "button_link": "",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "product_bundle_Tkxb3M": {
+      "type": "product-bundle",
+      "blocks": {
+        "vendor_9qcLxH": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_tWgUcd": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_AfmXyt": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "product_attributes_AmJdgJ": {
+          "type": "product_attributes",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_9qcLxH",
+        "title_tWgUcd",
+        "price_AfmXyt",
+        "product_attributes_AmJdgJ"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "Create Your Perfect Bundle",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 14,
+        "product_list": [],
+        "bundle_description": "Mix and match your favorite pieces",
+        "min_products": 5,
+        "enable_unlimited_add": true,
+        "custom_panel_background": "#ffffff",
+        "custom_panel_color": "rgba(0,0,0,0)",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1",
+        "show_quick_view": true,
+        "enable_countdown": true,
+        "hide_on_end": true,
+        "end_date": "2025-12-20",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "rgba(0,0,0,0)",
+        "countdown_number_color": ""
+      }
+    },
+    "collection_list_JNGydh": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_qE6tUE": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#000000",
+            "custom_color": "#ffffff"
+          }
+        },
+        "collection_tKGQK7": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_aLFC3M": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_rmyjkP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_gTG7Ct": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_mcjNj3": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_DXm9nM": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        },
+        "collection_R6DUFa": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_qE6tUE",
+        "collection_tKGQK7",
+        "collection_aLFC3M",
+        "collection_rmyjkP",
+        "collection_gTG7Ct",
+        "collection_mcjNj3",
+        "collection_DXm9nM",
+        "collection_R6DUFa"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Shop by category",
+        "heading_size": "h5",
+        "description": "",
+        "image_ratio": "1/1",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": false,
+        "button_text": "Explore more",
+        "button_position": "above-listing"
+      }
+    },
+    "featured_product_list_Pw8LtF": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_type_FjRfTd": {
+          "type": "product_type",
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "title_AFjNYk": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_FcKd37": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_p7zVYe": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_type_FjRfTd",
+        "title_AFjNYk",
+        "price_FcKd37",
+        "variants_p7zVYe"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "New Arrivals",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 10,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": false,
+        "hide_on_end": false,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "content_collage_3EEHzW": {
+      "type": "content-collage",
+      "blocks": {
+        "image_ACCW9R": {
+          "type": "image",
+          "settings": {
+            "heading": "Spring Collection 2025",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "4",
+            "desktop_row": "2",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "mobile_column": "2",
+            "mobile_row": "2",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_dag6nF": {
+          "type": "image",
+          "settings": {
+            "heading": "Fall/Winter 2024 Essentials",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "video_gXp6pN": {
+          "type": "video",
+          "settings": {
+            "heading": "#LostInTokyo #FashionJourney",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "",
+            "video_source": "video_external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "1",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 10,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_xc3wHL": {
+          "type": "image",
+          "settings": {
+            "heading": "Urban Elegance Redefined",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "",
+            "desktop_image": "",
+            "mobile_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "text_Wgdhcr": {
+          "type": "text",
+          "settings": {
+            "heading": "AVAILABLE IN-STORE AND ONLINE 2025.06.05 (MON.)",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "end-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "1",
+            "mobile_content_position": "end-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Explore now",
+            "button_style": "secondary",
+            "button_link": "",
+            "background_color": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ACCW9R",
+        "image_dag6nF",
+        "video_gXp6pN",
+        "image_xc3wHL",
+        "text_Wgdhcr"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_fullwidth": false,
+        "show_layout_grid": false,
+        "desktop_row_height": 400,
+        "mobile_row_height": 300
+      }
+    },
+    "collection_browsing_DALLbE": {
+      "type": "collection-browsing",
+      "blocks": {
+        "collection_Hrez9T": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "",
+            "selected_collection": ""
+          }
+        },
+        "collection_7F4FXy": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Brand",
+            "selected_collection": ""
+          }
+        },
+        "collection_g3GAzH": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Brand",
+            "selected_collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_Hrez9T",
+        "collection_7F4FXy",
+        "collection_g3GAzH"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Shop by brand",
+        "heading_size": "h5",
+        "description": "",
+        "max_items": 12,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "bulk",
+        "show_variant_swatches": false,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    },
+    "featured_product_list_yWmtzw": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_WLwjNX": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "vendor_aTbNJz": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_P3mbqH": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_RNUttU": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_xihdDM": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_yemMkg": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_WLwjNX",
+        "vendor_aTbNJz",
+        "title_P3mbqH",
+        "product_type_RNUttU",
+        "price_xihdDM",
+        "variants_yemMkg"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "Featured products",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 3,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "spotlight_quotes_jqXfVN": {
+      "type": "spotlight-quotes",
+      "blocks": {
+        "quote_Tg4TN8": {
+          "type": "quote",
+          "settings": {
+            "avatar_image": "",
+            "star_rating": 5,
+            "review_content": "<p>This brand seamlessly blends timeless designs with modern craftsmanship, making it a must-have in every wardrobe.</p>",
+            "author_name": "",
+            "author_description": ""
+          }
+        },
+        "quote_8CEnqY": {
+          "type": "quote",
+          "settings": {
+            "avatar_image": "",
+            "star_rating": 5,
+            "review_content": "<p>Their commitment to eco-friendly practices and premium materials sets them apart in a competitive industry.</p>",
+            "author_name": "",
+            "author_description": ""
+          }
+        },
+        "quote_Lzkipw": {
+          "type": "quote",
+          "settings": {
+            "avatar_image": "",
+            "star_rating": 3,
+            "review_content": "<p>With a focus on wearable designs and attention to detail, this brand delivers exceptional value for modern consumers.</p>",
+            "author_name": "",
+            "author_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "quote_Tg4TN8",
+        "quote_8CEnqY",
+        "quote_Lzkipw"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "show_quote_icon": false,
+        "quote_text_size": "h1",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "auto",
+        "image_size": "64",
+        "show_rating": false,
+        "star_rating_color": "#ffb82d",
+        "show_pagination": true,
+        "show_navigation": true,
+        "enable_autoplay": false,
+        "change_slide_interval": 6,
+        "slide_style": "transparent"
+      }
+    },
+    "logo_list_hqjrYq": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_NXMCp7": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_dCKXBD": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_AAEFWN": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_NXMCp7",
+        "logo_dCKXBD",
+        "logo_AAEFWN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "list_style": "running",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "list_alignment": "center-xs",
+        "logo_size": "50px",
+        "label": "",
+        "link": ""
+      }
+    },
+    "running_content_MPyryG": {
+      "type": "running-content",
+      "blocks": {
+        "image_eDFrPJ": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_ENgWH3": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Midseason Collection</p>",
+            "color_text": "#000000"
+          }
+        },
+        "text_X7KtXg": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "promotion_text": "<p>Shop Now</p>",
+            "color_text": "#000000"
+          }
+        },
+        "image_FTDrnP": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_b8bgzH": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Explore Collection</p>",
+            "color_text": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "image_eDFrPJ",
+        "text_ENgWH3",
+        "text_X7KtXg",
+        "image_FTDrnP",
+        "text_b8bgzH"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "item_size": "regular",
+        "image_ratio": "1/1"
+      }
+    },
+    "shop_the_look_rq3Xg6": {
+      "type": "shop-the-look",
+      "blocks": {
+        "item_shop_the_look_FkHFfz": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_6UWamQ": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_jkhhhk": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_xx9ttq": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_X8jjjL": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_XKRFXA": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        }
+      },
+      "block_order": [
+        "item_shop_the_look_FkHFfz",
+        "item_shop_the_look_6UWamQ",
+        "item_shop_the_look_jkhhhk",
+        "item_shop_the_look_xx9ttq",
+        "item_shop_the_look_X8jjjL",
+        "item_shop_the_look_XKRFXA"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Shop the look",
+        "heading_size": "h6",
+        "description": "",
+        "image_ratio": "auto",
+        "show_vendor": true,
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2025-01-01",
+        "end_time": "00:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "testimonials_gzVV4T": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_bJBUtE": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The quality of these clothes is outstanding. They’ve become my go-to for every occasion!</p>",
+            "author_name": "Jessica Smith",
+            "author_description": "Marketing Manager"
+          }
+        },
+        "testimonial_8zN4Uy": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>I’ve never felt more confident in my outfits. Normcore™ nails the balance between comfort and style.<br/></p>",
+            "author_name": "Michael Johnson",
+            "author_description": "Graphic Designer"
+          }
+        },
+        "testimonial_PCDEdP": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The minimalist designs are exactly what I was looking for. Perfect for my everyday wardrobe.<br/></p>",
+            "author_name": "Sarah Williams",
+            "author_description": "Architect"
+          }
+        },
+        "testimonial_7c8XxD": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>I’m blown away by the attention to detail in every piece. These clothes are worth every penny.<br/></p>",
+            "author_name": "David Brown",
+            "author_description": "Photographer"
+          }
+        },
+        "testimonial_DctFiK": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>Normcore™ has completely elevated my wardrobe. I feel stylish and comfortable every day.<br/></p>",
+            "author_name": "Emily Davis",
+            "author_description": "Entrepreneur"
+          }
+        },
+        "testimonial_gihFbq": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 4,
+            "review_content": "<p>The fit is perfect, and the fabric feels amazing. I’ve already recommended this store to my friends!<br/></p>",
+            "author_name": "John Wilson",
+            "author_description": "Software Engineer"
+          }
+        },
+        "testimonial_LfgBCh": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 3,
+            "review_content": "<p>Finally, a brand that gets my style. Simple, timeless, and incredibly well-made.<br/></p>",
+            "author_name": "Ashley Taylor",
+            "author_description": "Fashion Blogger"
+          }
+        },
+        "testimonial_qtkVFe": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 1,
+            "review_content": "<p>These clothes are a game-changer. I’ve never received so many compliments on my outfits!<br/></p>",
+            "author_name": "Chris Anderson",
+            "author_description": "Creative Director"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_bJBUtE",
+        "testimonial_8zN4Uy",
+        "testimonial_PCDEdP",
+        "testimonial_7c8XxD",
+        "testimonial_DctFiK",
+        "testimonial_gihFbq",
+        "testimonial_LfgBCh",
+        "testimonial_qtkVFe"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Why Our Customers Love Us",
+        "heading_size": "h5",
+        "description": "",
+        "heading_size_item": "f-body fs-body-l",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "2/3",
+        "image_size": "regular",
+        "show_rating": true,
+        "color_rating": "#ffb82d",
+        "carousel_desktop": "false",
+        "columns_per_row": "4",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "blog_post_list_jazRPD": {
+      "type": "blog-post-list",
+      "blocks": {
+        "additional_information_8hBUyt": {
+          "type": "additional_information",
+          "settings": {
+            "info_to_show": "published_date"
+          }
+        },
+        "title_rBjXwR": {
+          "type": "title",
+          "settings": {}
+        },
+        "tags_KNpBep": {
+          "type": "tags",
+          "settings": {}
+        },
+        "excerpt_D3L7BG": {
+          "type": "excerpt",
+          "disabled": true,
+          "settings": {
+            "truncate_text": true
+          }
+        }
+      },
+      "block_order": [
+        "additional_information_8hBUyt",
+        "title_rBjXwR",
+        "tags_KNpBep",
+        "excerpt_D3L7BG"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "blog": "news",
+        "heading": "Articles",
+        "heading_size": "h6",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": true,
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "enable_button": true,
+        "button_text": "View all",
+        "button_position": "above-listing"
+      }
+    },
+    "video_BK9prM": {
+      "type": "video",
+      "blocks": {
+        "content_CjphCt": {
+          "type": "content",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Brand Edition",
+            "enable_h1_tag": false,
+            "heading_size": "headline",
+            "description_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_CjphCt"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "overlay_opacity": 10,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "video_source": "external",
+        "external_video_link": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "media_ratio": "1.778",
+        "video_thumbnail_image": "",
+        "video_width": "full-width",
+        "content_position": "middle-md",
+        "content_alignment": "ta-center-md middle-md",
+        "mobile_content_position": "middle-xs",
+        "mobile_content_alignment": "ta-center middle-xs"
+      }
+    }
+  },
+  "order": [
+    "multi_media_banner_bTeWkA",
+    "running_content_znDFxF",
+    "running_image_link_48DNNN",
+    "product_bundle_Tkxb3M",
+    "collection_list_JNGydh",
+    "featured_product_list_Pw8LtF",
+    "content_collage_3EEHzW",
+    "collection_browsing_DALLbE",
+    "featured_product_list_yWmtzw",
+    "spotlight_quotes_jqXfVN",
+    "logo_list_hqjrYq",
+    "running_content_MPyryG",
+    "shop_the_look_rq3Xg6",
+    "testimonials_gzVV4T",
+    "blog_post_list_jazRPD",
+    "video_BK9prM"
+  ]
+}

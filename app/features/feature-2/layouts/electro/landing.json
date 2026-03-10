@@ -1,0 +1,855 @@
+{
+  "sections": {
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Immerse Yourself in Pure Audio Bliss",
+            "heading_size": "h1"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Immerse yourself in pure music with SonicBlu. Exceptional sound. Modern, lightweight design. Innovative and sophisticated.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "17:00",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "#ffffff",
+            "countdown_number_color": "#1f1f21",
+            "countdown_end_text_color": "#ff0000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "video_url_mobile": ""
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "bluetooth",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Hi-Res Audio Wireless",
+            "description": "<p>High-resolution sound certified by the Japan Audio Society.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "global",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Bluetooth SIG Certificated",
+            "description": "<p>Stable, low-latency wireless connection across all devices.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "charger",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Conformité Européenne",
+            "description": "<p>Complies with strict EU safety and environmental standards.</p><p></p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon_source": "custom_img",
+            "options_icon": "3d-model",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "TÜV Rheinland Certified",
+            "description": "<p>Tested for durability and safety by a leading global authority.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Certified for Quality. Trusted Worldwide.",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-center middle-xs",
+        "button_main_text": "",
+        "button_main_link": ""
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Browse our catalog",
+        "heading_size": "h3",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_all": false,
+        "button_main_text": "View all collections"
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Collection"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Mouse"
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "heading": "Microphone"
+          }
+        },
+        "collection_4": {
+          "type": "collection",
+          "settings": {
+            "heading": "Home Audio"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Our collections",
+        "heading": "Find What You Need",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 8,
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_more": true,
+        "button_text": "View All"
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Elevate Your Audio",
+            "color_text": "",
+            "text_color_gradient": "linear-gradient(127deg, rgba(254, 209, 81, 1) 11%, rgba(254, 184, 105, 1) 81%)"
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Premium Audio Gear",
+            "color_text": "",
+            "text_color_gradient": "linear-gradient(127deg, rgba(254, 209, 81, 1) 11%, rgba(254, 184, 105, 1) 81%)"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": false,
+        "heading_size": "h2"
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Home audio collection"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sleek portables",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Introducing our all-new collection of portables designed to elevate your summer adventures. The latest in wireless technology, stunning visuals, and immersive sound, all packed into these summer-ready collection. Get ready to bask in the sun and enjoy seamless entertainment like never before.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_ordering": "s-media-with-text__media--first",
+        "height": "70vh",
+        "image_ratio": "1/1"
+      }
+    },
+    "video_with_text": {
+      "type": "video-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Headphone collection"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Best Choice for Audiophiles",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Designed with uncompromising attention to detail, this speaker is a sonic masterpiece that caters to the most discerning music enthusiasts. Immerse yourself in a world of pure sound, as our speaker delivers crystal-clear highs, rich midranges, and deep, resonating bass that captivate the senses</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_ordering": "s-media-with-text__media--last",
+        "video_alt_text": "",
+        "height": "70vh",
+        "enable_video_loop": true,
+        "enable_video_mute": true
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "content_alignment": "ta-center",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": true,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": true
+      }
+    },
+    "product_lists_2": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "The next generation of sound",
+        "heading": "Trending now",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 6,
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_more": true,
+        "button_text": "Explore all"
+      }
+    },
+    "video_banner_2": {
+      "type": "video-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Experience an immersive sound",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Immerse yourself in a world of captivating sound Immerse yourself in a world of captivating sound with our immersive audio experience.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "50vh",
+        "content_position_desktop": "top-md end-md mask--bottom ta-start-md",
+        "height_mobile": "50vh",
+        "content_position_mobile": "top-xs ta-start mask--top",
+        "video_url_mobile": ""
+      }
+    },
+    "content_collage_2": {
+      "type": "content-collage",
+      "blocks": {
+        "block_1": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Built to Endure",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        },
+        "block_2": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Unparalleled Design",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        },
+        "block_3": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "Seamless Connectivity",
+            "button_text": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "Our Signature Headphones",
+        "heading": "A Melody for Your Ears",
+        "heading_size": "h2",
+        "description": "",
+        "content_alignment": "ta-center",
+        "items_ordering": "big-last",
+        "enable_stacked_layout": false,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": false
+      }
+    },
+    "text_hotspots": {
+      "type": "text-hotspots",
+      "blocks": {
+        "text_hotspots-1": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "wireless-charge",
+            "html_code": "",
+            "heading": "Fast Wireless Charging",
+            "description": "SN7324 incorporates Power Delivery charging technology, along with high-capacity batteries and efficient charging circuitry.",
+            "top_offset": 16,
+            "left_offset": 44,
+            "content_position": "tt-htspt-left"
+          }
+        },
+        "text_hotspots-2": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "protect",
+            "html_code": "",
+            "heading": "Durable Sapphire Glass",
+            "description": "Built with Sapphire glass, engineered to resist shattering, provides unparalleled durability for long-lasting use.",
+            "top_offset": 67,
+            "left_offset": 42,
+            "content_position": "tt-htspt-left"
+          }
+        },
+        "text_hotspots-3": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "bluetooth",
+            "html_code": "",
+            "heading": "Advanced Antenna Technology",
+            "description": "Latest antenna technology, high-quality Bluetooth chipsets, and reliable signal amplifiers ensure a seamless and drop-free wireless experience.",
+            "top_offset": 63,
+            "left_offset": 63,
+            "content_position": "tt-htspt-right"
+          }
+        }
+      },
+      "block_order": [
+        "text_hotspots-1",
+        "text_hotspots-2",
+        "text_hotspots-3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "Hear the Difference",
+        "heading": "Our new earbuds: Empowering Mobility",
+        "heading_size": "h2",
+        "description": "<p>Crafted with durable shatter-resistant sapphire glass and Kevlar® fiber</p>",
+        "display_type": "list",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-center",
+        "card_color_scheme": "scheme-2",
+        "text": "",
+        "link": ""
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials_1": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Sarah T.",
+            "job_title": "Marketing Manager",
+            "text": "Audio has completely transformed my listening experience. The range of products and the quality is simply outstanding. The customer service was incredibly helpful, ensuring I found exactly what I needed. Highly recommend!"
+          }
+        },
+        "testimonials_2": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Jason L.",
+            "job_title": "Software Engineer",
+            "text": "Shopping at Audio was a breeze! The website is user-friendly, and the product descriptions are very detailed. My new headphones arrived quickly and were exactly as advertised. I'll definitely be coming back for more."
+          }
+        },
+        "testimonials_3": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Emily R.",
+            "job_title": "Financial Analyst",
+            "text": "The experience of buying from Audio was exceptional. From easy navigation on their site to the fast delivery and excellent packaging, everything was seamless. The new home theater system I bought has surpassed my expectations."
+          }
+        },
+        "testimonials_4": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Michael B.",
+            "job_title": "Teacher",
+            "text": "Audio is my go-to store for all electronic needs. Their customer service is fantastic, and the products are always reliable and high-quality. I recently purchased a pair of earbuds, and they are simply amazing. Kudos to the team at Audio!"
+          }
+        },
+        "testimonials_5": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Lisa W.",
+            "job_title": "Project Manager",
+            "text": "Audio has an impressive selection of electronic products, and their prices are unbeatable. The wireless speaker I bought delivers exceptional sound quality and was very easy to set up. Customer service was also very responsive and helpful."
+          }
+        },
+        "testimonials_6": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Robert K.",
+            "job_title": "IT Specialist",
+            "text": "I've been a loyal customer for years, and never disappoint. The quality of their products is high, and the shopping experience is seamless. My latest purchase, a noise-canceling headphone, has made my commute so much more enjoyable."
+          }
+        },
+        "testimonials_7": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Daniel M.",
+            "job_title": "Musician",
+            "text": "As a music enthusiast, finding the right equipment is crucial, and Audio never disappoints. The variety and quality of their products are second to none. Plus, their fast shipping is a huge bonus. Highly recommended!"
+          }
+        },
+        "testimonials_8": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Maria S.",
+            "job_title": "Graphic Designer",
+            "text": "Audio offers top-notch electronics at competitive prices. The sound quality of the speakers I purchased is phenomenal. Their support team answered all my questions promptly. Couldn't be happier!"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_1",
+        "testimonials_2",
+        "testimonials_3",
+        "testimonials_4",
+        "testimonials_5",
+        "testimonials_6",
+        "testimonials_7",
+        "testimonials_8"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "What our customers say",
+        "heading_size": "h3",
+        "description": "",
+        "show_bought_products": false,
+        "card_color_scheme": "scheme-2",
+        "show_rating": false,
+        "color_rating": "#f8cc46",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_progress_indicator": true
+      }
+    },
+    "logo_list": {
+      "type": "logo-list",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "As seen on",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "items_per_row_mobile": "6",
+        "content_alignment": "ta-center"
+      }
+    },
+    "collapsible_content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_content_1": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "How long does your shipping take?",
+            "description": "<p>Once your order is placed, we strive to process and dispatch it within 1-2 business days. The estimated delivery time may vary depending on your location and the shipping method selected at checkout.</p><p></p>",
+            "page": ""
+          }
+        },
+        "collapsible_content_2": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Are your audio products compatible with my device?",
+            "description": "<p>Our audio products are designed to be compatible with a wide range of devices, including smartphones, tablets, computers, and more. They utilize standard audio connectivity options such as Bluetooth, 3.5mm audio jack, and USB, ensuring compatibility with most modern devices.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_content_3": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "What is the warranty period for your audio products?",
+            "description": "<p>We offer a standard warranty period of 1 year on our audio products, covering any manufacturing defects or faulty components. Please refer to the warranty information provided with your specific product or contact our customer support for further details.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_content_4": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Can I return or exchange an audio product if I'm not satisfied?",
+            "description": "<p>Yes, we have a return and exchange policy in place. If you are not completely satisfied with your audio product, you can initiate a return or exchange within 30 days of purchase. Please ensure that the product is in its original packaging and in resalable condition. Refer to our Shipping & Returns page or contact our customer support for more information on the return process.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_content_1",
+        "collapsible_content_2",
+        "collapsible_content_3",
+        "collapsible_content_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Got questions? We've got answers!",
+        "heading_size": "h2",
+        "description": "<p>If you can't find the answer you're looking for, don't hesitate to reach out to our friendly customer support team. We're here to assist you and ensure you have the best experience with our products and services.</p>",
+        "content_alignment": "ta-left",
+        "show_icon": false,
+        "expand_first_item_initially": true,
+        "card_color_scheme": "scheme-2",
+        "image_ratio": "2/3",
+        "btn_text": "Contact us"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "EXCLUSIVE COMMUNITY"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Be the first to know about new arrivals, sales, and promotions by subscribing to our newsletter today!</p>"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_style": "btn-primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "top-xs center-xs ta-start"
+      }
+    },
+    "running_text_2": {
+      "type": "running-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "A question? Visit our contact page to send us a message",
+            "color_text": "",
+            "text_color_gradient": "linear-gradient(127deg, rgba(254, 209, 81, 1) 11%, rgba(254, 184, 105, 1) 81%)"
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h6"
+      }
+    }
+  },
+  "order": [
+    "video_banner",
+    "icon_with_text",
+    "collection_list",
+    "product_lists",
+    "running_text",
+    "image_with_text",
+    "video_with_text",
+    "content_collage",
+    "product_lists_2",
+    "video_banner_2",
+    "content_collage_2",
+    "text_hotspots",
+    "testimonials",
+    "logo_list",
+    "collapsible_content",
+    "newsletter",
+    "running_text_2"
+  ]
+}

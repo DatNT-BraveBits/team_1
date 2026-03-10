@@ -1,0 +1,690 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md middle-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "sub_heading": "",
+            "heading": "GOD'S ESSENTIALS",
+            "description": "<p>Built to grind, made to thrive. Shop apparel perfect for your ride.</p>",
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md middle-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "sub_heading": "",
+            "heading": "DECKED OUT",
+            "description": "<p>Explore premium skateboards built for performance and style.</p>",
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_2_label": "DISCOVER OUR COMMUNITY",
+            "button_2_style": "btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading_size": "h1",
+        "height_desktop": "100vh",
+        "height_mobile": "100vh",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 4
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Shop by Category —",
+        "heading_size": "h4",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_all": true,
+        "button_main_text": "View all collections"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "©GODMODE"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW DECK ARRIVALS",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Pushing limits, embracing challenges, and evolving with every move. Try our SKATEBOARDS collection built for movement and style.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "",
+            "countdown_number_color": "",
+            "countdown_end_text_color": "#ff0000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_1_label": "Check now",
+            "button_1_style": "btn-primary",
+            "button_1_link": "",
+            "button_2_label": "Check now",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "100vh",
+        "content_position_desktop": "middle-md center-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "video_url_mobile": ""
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Skateboard Decks"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Completes"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 8,
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_more": true,
+        "button_text": "View all products"
+      }
+    },
+    "video_with_text": {
+      "type": "video-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Text block heading"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Up to 50% Off Sitewide",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Shop your favorites during the Early Black Friday Sale.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2025/02/20",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "#c3ebf0",
+            "countdown_number_color": "",
+            "countdown_end_text_color": "#000000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "SHOP NOW",
+            "button_1_style": "btn-primary",
+            "button_1_link": "",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "content_ordering": "s-media-with-text__media--first",
+        "video": "",
+        "height": "70vh",
+        "enable_video_loop": true,
+        "enable_video_mute": true
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "New drop!",
+            "color_text": "#000000",
+            "text_color_gradient": ""
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Early birds — earn the perks of flash sales!",
+            "color_text": "#000000",
+            "text_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "speed": "150",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h4",
+        "text_link": ""
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Add a tagline"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Banner heading",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "description": "<p>Highlight your new collection or share content related to this image.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "",
+            "countdown_number_color": "",
+            "countdown_end_text_color": "#ff0000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_1_label": "Check now",
+            "button_1_style": "btn-primary",
+            "button_1_link": "",
+            "button_2_label": "View detail",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "adapt_img",
+        "content_position_desktop": "middle-md center-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "product_lists_2": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "New Arrivals"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Trending Now"
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "heading": "Low Stock!"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "HOT DEAL",
+        "heading": "Flash sales",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 10,
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "enable_view_more": true,
+        "button_text": "View all products"
+      }
+    },
+    "featured_product": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "product_title_size": "h2",
+            "enable_share": true
+          }
+        },
+        "variants": {
+          "type": "variants",
+          "settings": {
+            "show_stock_number": true,
+            "variant_picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_sale_badge": true,
+            "show_tax_and_shipping_policy": true
+          }
+        },
+        "purchasing": {
+          "type": "purchasing",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout_buttons": true
+          }
+        },
+        "sku": {
+          "type": "SKU",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "variants",
+        "price",
+        "purchasing",
+        "sku"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Best sellers —",
+        "heading_size": "h3",
+        "description": "",
+        "media_ratio": "auto",
+        "thumbnails_ratio": "1/1",
+        "enable_thumb_mobile": false,
+        "media_background": "",
+        "content_alignment": "ta-left"
+      }
+    },
+    "moving_image_banner": {
+      "type": "moving-image-banner",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {}
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "speed": "7",
+        "height_desktop": "70vh",
+        "content_position_desktop": "middle-md center-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "enable_countdown_timer": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background_color": "",
+        "countdown_number_color": "",
+        "countdown_end_text_color": "#ff0000",
+        "button_1_label": "",
+        "button_1_style": "btn-primary",
+        "button_1_link": "",
+        "button_2_label": "",
+        "button_2_style": "btn-secondary",
+        "button_2_link": ""
+      }
+    },
+    "text": {
+      "type": "text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "A-Trex"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "©GODMODE — meet the founder",
+            "heading_size": "headline"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>We aspire to create designs that are a blend of passion and love for our culture. We aim to help our community express and explore their inner street artist. We strive to encourage and uplift everyday artists by giving them the tools to overcome their challenges, and build a community of like-minded people. By helping one another, we believe our community has the power to change the world.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_1_label": "Check now",
+            "button_1_style": "btn-primary",
+            "button_1_link": "",
+            "button_2_label": "View details",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "content_alignment": "middle-xs ta-center"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "show_number_of_products": false,
+            "color_collection_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff"
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "color_product_opacity": 32,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff"
+          }
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 0,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "heading": "",
+            "button_text": "Check now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "product",
+        "image"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "content_alignment": "ta-center",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": true,
+        "item_heading_size": "h3",
+        "image_ratio": "4/5",
+        "show_items_button": false
+      }
+    },
+    "image_with_text_columns": {
+      "type": "image-with-text-columns",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "heading": "Central Park Skate Circle",
+            "description": "<p>72nd Street & Terrace Drive, New York, NY 10019</p>"
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "heading": "Les Coleman Skatepark",
+            "description": "<p>Monroe St & Pike St, New York, NY 10002</p>"
+          }
+        },
+        "text_3": {
+          "type": "text",
+          "settings": {
+            "heading": "McCarren Skatepark",
+            "description": "<p>61 Bayard St, Brooklyn, NY 11222</p>"
+          }
+        },
+        "text_4": {
+          "type": "text",
+          "settings": {
+            "heading": "Venice Beach Skatepark",
+            "description": "<p>1800 Ocean Front Walk, Venice, CA 90291</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2",
+        "text_3",
+        "text_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "JOIN OUR COMMUNITY",
+        "heading": "Our Planet —",
+        "heading_size": "h3",
+        "image_ratio": "3/4",
+        "items_per_row_on_desktop": "4",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "text": "",
+        "link": ""
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "God's News —",
+        "heading_size": "h3",
+        "description": "",
+        "blog": "news",
+        "items_to_show": 4,
+        "items_per_row_on_desktop": "3",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-left",
+        "show_view_all_button": true,
+        "btn_text": "View all"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "collection_list",
+    "video_banner",
+    "product_lists",
+    "video_with_text",
+    "running_text",
+    "image_banner",
+    "product_lists_2",
+    "featured_product",
+    "moving_image_banner",
+    "text",
+    "content_collage",
+    "image_with_text_columns",
+    "blog_post_list"
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "sections": {
+    "image_banner_xwGGAg": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_qWcHTe": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Conquer the Peaks with Style"
+          }
+        },
+        "heading_MCxffr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate Your [Snow Sport Game]",
+            "heading_size": "h2"
+          }
+        },
+        "button_dnhwyQ": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Shop Skis",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "Shop Snowboards",
+            "button_sub_style": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_qWcHTe",
+        "heading_MCxffr",
+        "button_dnhwyQ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "height_desktop": "100vh",
+        "content_position_desktop": "start-md top-md ta-left-md",
+        "height_mobile": "100vh",
+        "content_position_mobile": "start-xs top-xs ta-left",
+        "link": "",
+        "section_mask_overlay_color": "",
+        "section_overlay_opacity": 0,
+        "section_content_overlay_color": "#ffffff"
+      }
+    },
+    "featured_collection_ejTHRK": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Gear Up for [Your Next Adventure]",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 12,
+        "show_vendor": false,
+        "show_color_swatch": true,
+        "quick_shop_action": "none",
+        "content_align_desktop": "ta-left-md",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1",
+        "enable_button": true,
+        "button_text": "View all",
+        "style_button": "btn-primary"
+      }
+    },
+    "running_content_Xr8Pqx": {
+      "type": "running-content",
+      "blocks": {
+        "text_f94hWn": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><strong>Up To 50% Off Winter Favorites</strong></p>",
+            "color_text": "",
+            "text_color_gradient": "linear-gradient(310deg, rgba(19, 119, 155, 1) 15%, rgba(31, 113, 219, 1) 83%)"
+          }
+        },
+        "image_J93qzP": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_ratio": "auto"
+          }
+        },
+        "text_QDP79p": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><strong>Up To 50% Off Winter Favorites</strong></p>",
+            "color_text": "",
+            "text_color_gradient": "linear-gradient(310deg, rgba(19, 119, 155, 1) 15%, rgba(31, 113, 219, 1) 83%)"
+          }
+        },
+        "image_DNVKzV": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_ratio": "auto"
+          }
+        }
+      },
+      "block_order": [
+        "text_f94hWn",
+        "image_J93qzP",
+        "text_QDP79p",
+        "image_DNVKzV"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "speed": "150",
+        "moving_direction": "animation-reverse",
+        "pause_when_hover": true,
+        "heading_size": "h2"
+      }
+    },
+    "image_banner_eqUzfk": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_hap6jt": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Flash Deals"
+          }
+        },
+        "heading_7qFezi": {
+          "type": "heading",
+          "settings": {
+            "heading": "[Never] Stop Exploring",
+            "heading_size": "h2"
+          }
+        },
+        "countdown_3iGYMd": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "23:59",
+            "end_text": "<p>Event is finished</p>",
+            "countdown_background": "",
+            "countdown_number_color": "#202020",
+            "color_end_text": "#ff0000"
+          }
+        },
+        "button_mrMpgQ": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Explore now",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hap6jt",
+        "heading_7qFezi",
+        "countdown_3iGYMd",
+        "button_mrMpgQ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "height_desktop": "70vh",
+        "content_position_desktop": "start-md top-md ta-left-md",
+        "height_mobile": "100vh",
+        "content_position_mobile": "start-xs top-xs ta-left",
+        "link": "",
+        "section_mask_overlay_color": "",
+        "section_overlay_opacity": 0,
+        "section_content_overlay_color": "#ffffff"
+      }
+    },
+    "multiple_product_tabs_MQcjiy": {
+      "type": "multiple-product-tabs",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Discover Our [Exclusive Snow Sport Gear]",
+        "heading_size": "h3",
+        "description": "",
+        "items_to_show": 8,
+        "show_vendor": false,
+        "show_color_swatch": true,
+        "quick_shop_action": "none",
+        "content_align_desktop": "ta-left-md",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true
+      }
+    },
+    "running_content_jcPBdp": {
+      "type": "running-content",
+      "blocks": {
+        "text_mNxKAB": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><strong>End of season sales</strong></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "icon_PQTUTE": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "star",
+            "html_code": "",
+            "color_content": ""
+          }
+        },
+        "text_xDKRVT": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p><strong>End of season sales</strong></p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "icon_GHVDHA": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "star",
+            "html_code": "",
+            "color_content": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_mNxKAB",
+        "icon_PQTUTE",
+        "text_xDKRVT",
+        "icon_GHVDHA"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "speed": "150",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": false,
+        "heading_size": "h2"
+      }
+    },
+    "collection_list_wAcYfn": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Explore our [collections]",
+        "heading_size": "h3",
+        "description": "",
+        "content_align_desktop": "inline",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": false,
+        "button_text": "",
+        "style_button": "btn-primary"
+      }
+    },
+    "customer_reviews_qH8jjf": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_Xrx8c7": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Jordan Lee",
+            "author_title": "",
+            "description": "<p><strong>I found the perfect ski gear at great prices, plus the customer service was top-notch.</strong></p>"
+          }
+        },
+        "review_PMhwzV": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Chris Johnson",
+            "author_title": "",
+            "description": "<p><strong>Quick, efficient, and friendly service made my shopping experience a breeze for this ski.</strong></p>"
+          }
+        },
+        "review_zHht63": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Emily Turne",
+            "author_title": "",
+            "description": "<p><strong>The selection of snowboards is unbeatable, and the staff really knew their stuff!</strong></p>"
+          }
+        },
+        "review_JQCxQ8": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "John Carter",
+            "author_title": "",
+            "description": "<p><strong>I discovered the ideal skiing equipment, and the customer support was exceptional.</strong></p>"
+          }
+        },
+        "review_wwUBPa": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Sara Bell",
+            "author_title": "",
+            "description": "<p><strong>I located the best ski gear at fantastic prices, coupled with outstanding customer service.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_Xrx8c7",
+        "review_PMhwzV",
+        "review_zHht63",
+        "review_JQCxQ8",
+        "review_wwUBPa"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "[Our community] speaks",
+        "heading_size": "h3",
+        "description": "",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "enable_play": false,
+        "content_font": "heading",
+        "content_size": "1.2",
+        "enable_block_background": true,
+        "background_content": "#ffffff",
+        "color_content": "#202020",
+        "show_rating": false,
+        "color_star": "#f8cc46",
+        "content_align_desktop": "ta-left-md",
+        "content_align_mobile": "ta-left"
+      }
+    }
+  },
+  "order": [
+    "image_banner_xwGGAg",
+    "featured_collection_ejTHRK",
+    "running_content_Xr8Pqx",
+    "image_banner_eqUzfk",
+    "multiple_product_tabs_MQcjiy",
+    "running_content_jcPBdp",
+    "collection_list_wAcYfn",
+    "customer_reviews_qH8jjf"
+  ]
+}

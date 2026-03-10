@@ -1,0 +1,737 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Safeguarding Your World",
+            "heading_size": "h2"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Explore bundle",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "buttons"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Safeguarding Your World",
+            "heading_size": "h1"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Protect your family with our camera, capturing moments safely and securely.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Explore bundle",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center",
+        "video_url_mobile": ""
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Every day is an evolution",
+            "color_text": "rgba(0,0,0,0)",
+            "text_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h2",
+        "text_link": ""
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "Complete House Guard",
+        "heading": "Comprehensive security for your family",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-center",
+        "enable_view_all": false,
+        "button_main_text": "View all collections"
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Indoor Cameras"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Outdoor Cameras"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Explore our products",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 6,
+        "items_per_row_on_desktop": "3",
+        "items_per_row_on_mobile": "1",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-center",
+        "enable_view_more": true,
+        "button_text": "View all products"
+      }
+    },
+    "image_with_text_columns": {
+      "type": "image-with-text-columns",
+      "blocks": {
+        "text-1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-3": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "text-1",
+        "text-2",
+        "text-3",
+        "text-4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "image_ratio": "auto",
+        "items_per_row_on_desktop": "4",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-center",
+        "text": "",
+        "link": ""
+      }
+    },
+    "image_banner_2": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Protect and Save Now"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Home Security Sale",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>HD home camera on sale - easy setup, real-time alerts. Limited-time offer.</p>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-05-30",
+            "end_time": "00:00",
+            "end_text": "<p>This event is finished</p>",
+            "countdown_background_color": "",
+            "countdown_number_color": "",
+            "countdown_end_text_color": "#ff0000"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop Now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "countdown",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "middle-md center-md ta-center-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "image_with_text_columns_2": {
+      "type": "image-with-text-columns",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "heading": "Averted 18.7 million tons of CO2.",
+            "description": "<p>So far, our customers have kept 18.7 million tons† of CO2 out of the atmosphere.</p>"
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "heading": "We repair and reuse our thermostats",
+            "description": "<p>Reducing e-waste and keeping them out of landfills.</p>"
+          }
+        },
+        "text_3": {
+          "type": "text",
+          "settings": {
+            "heading": "Delivered over 27.8 TWh of energy savings",
+            "description": "<p>Our thermostats have delivered over 27.8TWh of energy savings, which is like charging 2.3 trillion cellphones.</p>"
+          }
+        },
+        "text_4": {
+          "type": "text",
+          "settings": {
+            "heading": "High-tech smart security from future",
+            "description": "<p>Our devices can protect your home 24/7, with access to professional monitoring to reduce home insurance costs.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2",
+        "text_3",
+        "text_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Your home is truly sustainable with us",
+        "heading_size": "h2",
+        "image_ratio": "4/3",
+        "items_per_row_on_desktop": "4",
+        "enable_carousel": true,
+        "show_progress_indicator": true,
+        "content_alignment": "ta-center",
+        "text": "",
+        "link": ""
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "hotspot-1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 31,
+            "left_offset": 43
+          }
+        },
+        "hotspot-2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 83,
+            "left_offset": 55
+          }
+        },
+        "hotspot-3": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 67,
+            "left_offset": 40
+          }
+        },
+        "hotspot-4": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 36,
+            "left_offset": 55
+          }
+        }
+      },
+      "block_order": [
+        "hotspot-1",
+        "hotspot-2",
+        "hotspot-3",
+        "hotspot-4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "Works in harmony with leading smart home ecosystems",
+        "heading_size": "h2",
+        "description": "",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-left",
+        "text": "",
+        "link": ""
+      }
+    },
+    "image_with_text_columns_3": {
+      "type": "image-with-text-columns",
+      "blocks": {
+        "text-1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-3": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "text-1",
+        "text-2",
+        "text-3",
+        "text-4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "image_ratio": "auto",
+        "items_per_row_on_desktop": "4",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-center",
+        "text": "",
+        "link": ""
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our cameras named for one of EcoTech Excellence Award",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Proudly named in honor of the EcoTech Excellence Award, these cameras embody innovation, sustainability, and cutting-edge technology. </p><p>Designed with environmental responsibility, they deliver stunning visuals, superior performance, durability, and eco-conscious features—perfect for professionals and enthusiasts dedicated to preserving the planet.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Explore Collection",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "content_ordering": "s-media-with-text__media--first",
+        "height": "70vh",
+        "image_ratio": "3/4"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_AkgQFE": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "Sarah Thompson",
+            "job_title": "Marketing Manager",
+            "text": "Since installing the security cameras from this store, I've never felt safer in my own home. The high-definition video quality and advanced motion detection have provided me with invaluable peace of mind. Kudos to the team for their exceptional customer service!"
+          }
+        },
+        "testimonial_M9Qnxc": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "John Anderson",
+            "job_title": "Small Business Owner",
+            "text": "These security cameras are a game-changer for our business. The remote viewing and playback feature allows us to monitor our premises even when we're away. The clarity of the footage is outstanding, and the night vision capability is impressive. Highly recommended!"
+          }
+        },
+        "testimonial_GGex8N": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Emily Chen",
+            "job_title": "IT Consultant",
+            "text": "I'm thoroughly impressed with the level of professionalism and expertise demonstrated by this security camera store. They helped me choose the perfect system for my needs and provided comprehensive installation support. The cameras have exceeded my expectations, and I feel much more secure now."
+          }
+        },
+        "testimonial_rqGKBx": {
+          "type": "testimonial",
+          "settings": {
+            "star": 5,
+            "name": "David Roberts",
+            "job_title": "Accountant",
+            "text": "Having tried multiple security camera brands, I can confidently say that the ones from this store are top-notch. The image quality is superb, and the motion detection is spot-on. It's reassuring to know that my home is under constant surveillance. Thank you for an excellent product!"
+          }
+        },
+        "testimonial_wJCwKx": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Lisa Johnson",
+            "job_title": "Teacher",
+            "text": "As a concerned parent, I wanted to enhance the security around our home. The security cameras we purchased here have been a game-changer. I can keep an eye on my children playing in the yard and rest easy knowing that the advanced features of these cameras have our back."
+          }
+        },
+        "testimonial_QcjQmk": {
+          "type": "testimonial",
+          "settings": {
+            "star": 4,
+            "name": "Michael Ramirez",
+            "job_title": "Sales Executive",
+            "text": "Being a frequent traveler, I was always worried about the safety of my property. Thanks to the security cameras I purchased from this store, I can now monitor my home from anywhere in the world. The remote access feature is a game-changer, and the customer support has been exceptional."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_AkgQFE",
+        "testimonial_M9Qnxc",
+        "testimonial_GGex8N",
+        "testimonial_rqGKBx",
+        "testimonial_wJCwKx",
+        "testimonial_QcjQmk"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "heading": "Testimonials",
+        "heading_size": "h2",
+        "description": "",
+        "show_bought_products": true,
+        "card_color_scheme": "",
+        "show_rating": true,
+        "color_rating": "#f8cc46",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_progress_indicator": true
+      }
+    },
+    "collapsible_content": {
+      "type": "collapsible-content",
+      "blocks": {
+        "content_jmQgyH": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "What is the warranty period for your cameras?",
+            "description": "<p>Our cameras come with a standard warranty of [insert warranty period, e.g., 1 year], covering manufacturing defects and hardware issues. Extended warranty options are also available.</p>",
+            "page": ""
+          }
+        },
+        "content_MxTHmM": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Do you provide customer support and repair services?",
+            "description": "<p>Yes, we offer dedicated customer support for troubleshooting, and authorized service centers for repairs. You can contact us through our website or support center for assistance.</p>",
+            "page": ""
+          }
+        },
+        "content_E8RHNz": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Do your cameras support Wi-Fi, Bluetooth, or other connectivity features?",
+            "description": "<p>Yes, All of our models include Wi-Fi, Bluetooth, and NFC capabilities for easy sharing and remote control via mobile devices.</p>",
+            "page": ""
+          }
+        },
+        "content_Bn6RPL": {
+          "type": "content",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "html_code": "",
+            "block_heading": "Are there any accessories compatible with your cameras?",
+            "description": "<p>Absolutely! We offer a range of accessories including lenses, tripods, bags, filters, and batteries designed specifically for our camera models.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_jmQgyH",
+        "content_MxTHmM",
+        "content_E8RHNz",
+        "content_Bn6RPL"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "content_alignment": "ta-left",
+        "show_icon": false,
+        "expand_first_item_initially": true,
+        "card_color_scheme": "",
+        "image_ratio": "3/2",
+        "btn_text": ""
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Explore Collection",
+            "heading_size": "h2"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_style": "btn-primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "70vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "smart-home",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Seamless Experiences",
+            "description": "<p>Creating a hassle-free and enjoyable environment for users.</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "leaf",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Environment Friendly",
+            "description": "<p>Designed to reduce energy consumption and minimize ecological impact.</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "box",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "Free Shipping",
+            "description": "<p>170 countries, almost all of which have a free shipping option and express delivery.</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "customer-support",
+            "html_code": "",
+            "color_text_icon": "",
+            "heading": "24/7 Support",
+            "description": "<p>Plus our world-class customer support team are available 24 hours a day, 7 days a week.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "button_main_text": "",
+        "button_main_link": ""
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "video_banner",
+    "running_text",
+    "collection_list",
+    "product_lists",
+    "image_with_text_columns",
+    "image_banner_2",
+    "image_with_text_columns_2",
+    "product_hotspots",
+    "image_with_text_columns_3",
+    "image_with_text",
+    "testimonials",
+    "collapsible_content",
+    "newsletter",
+    "icon_with_text"
+  ]
+}

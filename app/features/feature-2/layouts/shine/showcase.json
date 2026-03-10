@@ -1,0 +1,590 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_AFAyYw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get Ready To [Elevate Your Beauty Ritual]",
+            "heading_size": "h2"
+          }
+        },
+        "description_3zd8eJ": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Enjoy a bunch of exclusive deals with every purchase you make</p>"
+          }
+        },
+        "button_Awy4Yt": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Explore Our Lipsticks",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "Explore All",
+            "button_sub_style": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AFAyYw",
+        "description_3zd8eJ",
+        "button_Awy4Yt"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "height_desktop": "100vh",
+        "content_position_desktop": "center-md bottom-md ta-center-md",
+        "height_mobile": "100vh",
+        "content_position_mobile": "center-xs bottom-xs ta-center",
+        "link": "",
+        "section_mask_overlay_color": "rgba(0,0,0,0)",
+        "section_overlay_opacity": 0,
+        "section_content_overlay_color": ""
+      }
+    },
+    "running_content": {
+      "type": "running-content",
+      "blocks": {
+        "text_EPaq8Y": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Connect to the natural world</p>",
+            "color_text": "",
+            "text_color_gradient": ""
+          }
+        },
+        "icon_Uq3yDc": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "hand",
+            "html_code": "",
+            "color_content": "#004288"
+          }
+        },
+        "text_WapQkW": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Leaping Bunny approved</p>",
+            "color_text": "#004288",
+            "text_color_gradient": ""
+          }
+        },
+        "icon_GwekzE": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "custom_svg",
+            "options_icon": "subscription",
+            "html_code": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M16.9399 3.74281L15.5005 9.50042H9.50047L8.06107 3.74281C7.74724 2.48748 6.50279 1.69996 5.23395 1.95372C3.78993 2.24253 2.93488 3.74159 3.42136 5.13154L6.00047 12.5004L5.0544 17.5461C4.72871 19.2831 5.62495 21.0194 7.22961 21.76C9.26574 22.6998 11.6713 21.7115 12.4588 19.6117L12.5005 19.5004L12.5422 19.6117C13.3297 21.7115 15.7352 22.6998 17.7714 21.76C19.376 21.0194 20.2723 19.2831 19.9466 17.5461L19.0005 12.5004L21.5796 5.13154C22.0661 3.74159 21.211 2.24253 19.767 1.95372C18.4982 1.69996 17.2537 2.48748 16.9399 3.74281Z\" stroke=\"#004288\" stroke-width=\"1.5\"></path>\n  <path d=\"M12.5 19.5312V17\" stroke=\"#004288\" stroke-width=\"1.5\"></path>\n  <path d=\"M10.5 17H14.5\" stroke=\"#004288\" stroke-width=\"1.5\"></path>\n  <path d=\"M9.5 13V15.5\" stroke=\"#004288\" stroke-width=\"1.5\"></path>\n  <path d=\"M15.5 13V15.5\" stroke=\"#004288\" stroke-width=\"1.5\"></path>\n</svg>",
+            "color_content": "#004288"
+          }
+        }
+      },
+      "block_order": [
+        "text_EPaq8Y",
+        "icon_Uq3yDc",
+        "text_WapQkW",
+        "icon_GwekzE"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "speed": "50",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": false,
+        "heading_size": "h5"
+      }
+    },
+    "image_gallery": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_item_WFJNE8": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_HixcmN": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_rP3Y6G": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_EKjGTL": {
+          "type": "image_item",
+          "settings": {}
+        },
+        "image_item_tkVGb9": {
+          "type": "image_item",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "image_item_WFJNE8",
+        "image_item_HixcmN",
+        "image_item_rP3Y6G",
+        "image_item_EKjGTL",
+        "image_item_tkVGb9"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_ratio": "2/3",
+        "product_image_ratio": "2/3",
+        "image_background": ""
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_waqTqM": {
+          "type": "collection",
+          "settings": {
+            "image_style_desktop": "100%",
+            "image_style_mobile": "30vh"
+          }
+        }
+      },
+      "block_order": [
+        "collection_waqTqM"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "HAND & BODY items",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 8,
+        "show_vendor": true,
+        "show_color_swatch": true,
+        "quick_shop_action": "quick_add",
+        "content_align_desktop": "ta-left-md",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true,
+        "button_text": "Explore more",
+        "style_button": "btn-primary"
+      }
+    },
+    "image_collage_with_text": {
+      "type": "image-collage-with-text",
+      "blocks": {
+        "heading_LBt44y": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get started with our [\"Seasonal Beauty Bundle\"]",
+            "heading_size": "h3"
+          }
+        },
+        "description_MU3iNJ": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Embrace the changing seasons with our exclusive Seasonal Beauty Bundle, thoughtfully curated to align with your skincare and beauty needs throughout the year.</p>"
+          }
+        },
+        "countdown_mAtx7k": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "17:00",
+            "end_text": "<p>Event is finished.</p>",
+            "countdown_background": "#ffffff",
+            "countdown_number_color": "",
+            "color_end_text": "#ff0000"
+          }
+        },
+        "button_XHHEbf": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "See Our Products",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_LBt44y",
+        "description_MU3iNJ",
+        "countdown_mAtx7k",
+        "button_XHHEbf"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "collage_alignment": "media-sticky",
+        "content_ordering_desktop": "fd-row-reverse-md",
+        "collage_width": "6",
+        "content_position_mobile": "ta-center",
+        "content_ordering_mobile": "text-first-mb"
+      }
+    },
+    "image_banner_2": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_hap6jt": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Flash Deals"
+          }
+        },
+        "heading_7qFezi": {
+          "type": "heading",
+          "settings": {
+            "heading": "[Never] Stop Exploring",
+            "heading_size": "h2"
+          }
+        },
+        "countdown_3iGYMd": {
+          "type": "countdown",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2026-04-30",
+            "end_time": "23:59",
+            "end_text": "<p>Event is finished</p>",
+            "countdown_background": "",
+            "countdown_number_color": "#202020",
+            "color_end_text": "#ff0000"
+          }
+        },
+        "button_mrMpgQ": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Explore now",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hap6jt",
+        "heading_7qFezi",
+        "countdown_3iGYMd",
+        "button_mrMpgQ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "height_desktop": "70vh",
+        "content_position_desktop": "start-md top-md ta-left-md",
+        "height_mobile": "100vh",
+        "content_position_mobile": "start-xs top-xs ta-left",
+        "link": "",
+        "section_mask_overlay_color": "",
+        "section_overlay_opacity": 0,
+        "section_content_overlay_color": "#ffffff"
+      }
+    },
+    "multiple_product_tabs": {
+      "type": "multiple-product-tabs",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Collection we love",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 11,
+        "show_vendor": true,
+        "show_color_swatch": true,
+        "quick_shop_action": "both",
+        "content_align_desktop": "ta-left-md",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true
+      }
+    },
+    "media_with_text_columns": {
+      "type": "media-with-text-columns",
+      "blocks": {
+        "image_Ghgjaa": {
+          "type": "image",
+          "settings": {
+            "heading": "Standing Bunny Program",
+            "description": "<p>Standing Bunny certified, cruelty-free, environmentally conscious, and kind to all living beings.</p>"
+          }
+        },
+        "image_WHJj9p": {
+          "type": "image",
+          "settings": {
+            "heading": "The Nature Social",
+            "description": "<p>Eco-friendly and socially conscious, certified by The Nature Social for sustainable, ethical, and natural ingredients.</p>"
+          }
+        },
+        "image_HcKeCc": {
+          "type": "image",
+          "settings": {
+            "heading": "Advocates for Animals",
+            "description": "<p>Championing animal welfare, our product is Advocates for Animals certified, ensuring ethical and humane practices.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "image_Ghgjaa",
+        "image_WHJj9p",
+        "image_HcKeCc"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Recognized by [international organizations]",
+        "heading_size": "h3",
+        "description": "",
+        "item_alignment": "ta-center",
+        "image_ratio": "16/9",
+        "column_heading_size": "h6",
+        "enable_item_background": false,
+        "background_content": "",
+        "color_content": "",
+        "content_align_desktop": "ta-center-md",
+        "columns_per_row": "3",
+        "content_align_mobile": "ta-center",
+        "list_style": "false",
+        "button_text": "",
+        "style_button": "btn-primary",
+        "button_link": ""
+      }
+    },
+    "image_collage_with_text_2": {
+      "type": "image-collage-with-text",
+      "blocks": {
+        "subheading_KfEik3": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "#GIFTSETS #FACECARE"
+          }
+        },
+        "heading_D8rLG4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Face Fitness Gift Sets for [Glowy Skin]",
+            "heading_size": "h2"
+          }
+        },
+        "description_xW8XJL": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Elevate your skincare routine with our Face Fitness Gift Sets for Radiant Skin. This thoughtfully curated pack includes everything you need to tone, sculpt, and rejuvenate your face. Designed to promote natural glow and improve elasticity, it's an ideal as a gift or a treat for yourself, and to achieve radiant, youthful skin effortlessly.</p>"
+          }
+        },
+        "button_ghyhAg": {
+          "type": "button",
+          "settings": {
+            "button_main_text": "Shop Now",
+            "button_main_style": "btn-primary",
+            "button_sub_text": "",
+            "button_sub_style": "btn-outline",
+            "button_sub_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_KfEik3",
+        "heading_D8rLG4",
+        "description_xW8XJL",
+        "button_ghyhAg"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "collage_alignment": "media-sticky",
+        "content_ordering_desktop": "fd-row-md",
+        "collage_width": "6",
+        "content_position_mobile": "ta-left",
+        "content_ordering_mobile": "text-first-mb"
+      }
+    },
+    "spotlight_quotes": {
+      "type": "spotlight-quotes",
+      "blocks": {
+        "quocte_nVVLeb": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>As someone who's always on the lookout for the latest in skincare, I've been incredibly impressed with the selection at this beauty store. Their range of organic and cruelty-free products is exactly what I've been searching for.</h4>",
+            "author": "Sophia, Age 28"
+          }
+        },
+        "quocte_JHHFzT": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>I never paid much attention to skincare or grooming products until I visited this store. The staff was super helpful, walking me through various options for my skin type. I've started using their recommended face wash and moisturizer, and I've noticed a significant improvement in my skin's texture.</h4>",
+            "author": "Michael, Age 35"
+          }
+        },
+        "quocte_fpTGex": {
+          "type": "quocte",
+          "settings": {
+            "avatar_width": 60,
+            "avatar_width_mobile": 40,
+            "star": 3,
+            "quote_label": "<h4>I've been a loyal customer of this beauty store for years. What keeps me coming back is their impeccable customer service and the high-quality, diverse range of products they offer. Whether it's makeup, skincare, or haircare, I've always found what I need. </h4>",
+            "author": "Ava, Age 18"
+          }
+        }
+      },
+      "block_order": [
+        "quocte_nVVLeb",
+        "quocte_JHHFzT",
+        "quocte_fpTGex"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "content_alignment": "ta-center",
+        "show_quote_symbol": true,
+        "show_rating": false,
+        "star_rating_color": "#f8cc46",
+        "image_shape": "br-50p",
+        "show_pagination": false,
+        "show_navigation": true,
+        "enable_autoplay": true,
+        "delay": 5
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Explore our [collections]",
+        "heading_size": "h3",
+        "description": "",
+        "content_align_desktop": "inline",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": false,
+        "button_text": "",
+        "style_button": "btn-primary"
+      }
+    },
+    "customer_reviews": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_Xrx8c7": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Jordan Lee",
+            "author_title": "",
+            "description": "<p><strong>I found the perfect ski gear at great prices, plus the customer service was top-notch.</strong></p>"
+          }
+        },
+        "review_PMhwzV": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Chris Johnson",
+            "author_title": "",
+            "description": "<p><strong>Quick, efficient, and friendly service made my shopping experience a breeze for this ski.</strong></p>"
+          }
+        },
+        "review_zHht63": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Emily Turne",
+            "author_title": "",
+            "description": "<p><strong>The selection of snowboards is unbeatable, and the staff really knew their stuff!</strong></p>"
+          }
+        },
+        "review_JQCxQ8": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "John Carter",
+            "author_title": "",
+            "description": "<p><strong>I discovered the ideal skiing equipment, and the customer support was exceptional.</strong></p>"
+          }
+        },
+        "review_wwUBPa": {
+          "type": "review",
+          "settings": {
+            "star": 3,
+            "author": "Sara Bell",
+            "author_title": "",
+            "description": "<p><strong>I located the best ski gear at fantastic prices, coupled with outstanding customer service.</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_Xrx8c7",
+        "review_PMhwzV",
+        "review_zHht63",
+        "review_JQCxQ8",
+        "review_wwUBPa"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "[Our community] speaks",
+        "heading_size": "h3",
+        "description": "",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "enable_play": false,
+        "content_font": "heading",
+        "content_size": "1.2",
+        "enable_block_background": true,
+        "background_content": "#ffffff",
+        "color_content": "#202020",
+        "show_rating": false,
+        "color_star": "#f8cc46",
+        "content_align_desktop": "ta-left-md",
+        "content_align_mobile": "ta-left"
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "Read our blogs",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": true,
+        "show_blog_tags": true,
+        "show_published_date": true,
+        "show_author": true,
+        "show_excerpt": true,
+        "content_align_desktop": "ta-left-md",
+        "carousel_desktop": "true",
+        "columns_per_row": "3",
+        "content_align_mobile": "ta-left",
+        "carousel_mobile": "true",
+        "show_view_all_button": false,
+        "button_text": "Read All",
+        "style_button": "btn-outline"
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "running_content",
+    "image_gallery",
+    "featured_collection",
+    "image_collage_with_text",
+    "image_banner_2",
+    "multiple_product_tabs",
+    "media_with_text_columns",
+    "image_collage_with_text_2",
+    "spotlight_quotes",
+    "collection_list",
+    "customer_reviews",
+    "blog_post_list"
+  ]
+}

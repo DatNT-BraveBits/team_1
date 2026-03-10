@@ -1,0 +1,603 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md bottom-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 30,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "sub_heading": "Monitor Arm",
+            "heading": "Free up your desk. Level up your posture.",
+            "description": "<p>Discover our best-selling monitor arms — built for flexibility, clean setups, and all-day comfort.</p>",
+            "button_1_label": "Shop Now",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md bottom-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 55,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "sub_heading": "Move freely. Work differently.",
+            "heading": "Break the Limits",
+            "description": "<p>Gear up with performance-first designs built to push your setup — and your workflow — further.</p>",
+            "button_1_label": "Shop",
+            "button_1_style": "btn-primary",
+            "button_2_label": "B2B #Collab",
+            "button_2_style": "btn-secondary"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "content_position_desktop": "center-md bottom-md ta-center",
+            "content_position_mobile": "center-xs middle-xs ta-center",
+            "image_overlay_opacity": 54,
+            "color_mask_overlay": "",
+            "color_text_overlay": "",
+            "sub_heading": "Cloud Chair",
+            "heading": "Sit smarter.",
+            "description": "<p>Support your back, reduce fatigue, and stay focused with our most comfortable ergonomic chairs.</p>",
+            "button_1_label": "Explore the Collection",
+            "button_1_style": "btn-secondary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2",
+        "slide_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "heading_size": "h2",
+        "height_desktop": "70vh",
+        "height_mobile": "70vh",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 4
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "",
+        "heading": "",
+        "heading_size": "h2",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "enable_view_all": false,
+        "button_main_text": "View all collections"
+      }
+    },
+    "product_lists": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "New Arrivals ✨"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Hot Items 🔥"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "POPULAR",
+        "heading": "Now in Stock",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 10,
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "enable_view_more": false,
+        "button_text": "View all products"
+      }
+    },
+    "running_text": {
+      "type": "running-text",
+      "blocks": {
+        "text_1": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "New ergonomic gear is flying off the shelves! ⚡",
+            "color_text": "#731eff",
+            "text_color_gradient": ""
+          }
+        },
+        "text_2": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "Grab yours before it's gone 🛒",
+            "color_text": "#000000",
+            "text_color_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_1",
+        "text_2"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "speed": "100",
+        "moving_direction": "animation-direction",
+        "pause_when_hover": true,
+        "heading_size": "h2",
+        "text_link": ""
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Illuminate Your Workspace"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Luna LED Desk Lamp",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Light Up Your Space – Integrated with vibrant RGB LED strips featuring 20 distinctive effects.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Check Now",
+            "button_1_style": "btn-secondary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_ordering": "s-media-with-text__media--first",
+        "height": "70vh",
+        "image_ratio": "1/1"
+      }
+    },
+    "image_with_text_2": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Work Elevated"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "HyperWork Atlas",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Perfect for spotlighting your latest collection, innovative setups, or curated content that redefines modern productivity.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "Shop Now",
+            "button_1_style": "btn-secondary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_ordering": "s-media-with-text__media--last",
+        "height": "70vh",
+        "image_ratio": "1/1"
+      }
+    },
+    "product_lists_2": {
+      "type": "product-lists",
+      "blocks": {
+        "collection_1": {
+          "type": "collection",
+          "settings": {
+            "heading": "Single Monitor Arm"
+          }
+        },
+        "collection_2": {
+          "type": "collection",
+          "settings": {
+            "heading": "Dual Monitor Arm"
+          }
+        },
+        "collection_3": {
+          "type": "collection",
+          "settings": {
+            "heading": "Chairs"
+          }
+        },
+        "collection_4": {
+          "type": "collection",
+          "settings": {
+            "heading": "Desks"
+          }
+        }
+      },
+      "block_order": [
+        "collection_1",
+        "collection_2",
+        "collection_3",
+        "collection_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "#TOP 1",
+        "heading": "Best Sellers",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 12,
+        "items_per_row_on_desktop": "5",
+        "items_per_row_on_mobile": "2",
+        "enable_carousel": true,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "enable_view_more": false
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "HURRY UP"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover Our Distinctive Design",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>Experience innovation in design in our products, each offering a unique and distinctive aesthetic to elevate your everyday.</p>"
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "button_1_label": "EXPLORE COLLECTION",
+            "button_1_style": "btn-primary",
+            "button_2_label": "",
+            "button_2_style": "btn-secondary",
+            "button_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "buttons"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "image_overlay_opacity": 30,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "50vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "text_hotspots": {
+      "type": "text-hotspots",
+      "blocks": {
+        "text_hotspot_1": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "plus",
+            "html_code": "",
+            "heading": "FORWARD & BACK",
+            "description": "High-performance wireless noise cancelling headphones",
+            "top_offset": 30,
+            "left_offset": 36,
+            "content_position": "tt-htspt-left"
+          }
+        },
+        "text_hotspot_2": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "plus",
+            "html_code": "",
+            "heading": "SCROLL WHELL",
+            "description": "High-performance wireless noise cancelling headphones",
+            "top_offset": 25,
+            "left_offset": 60,
+            "content_position": "tt-htspt-right"
+          }
+        },
+        "text_hotspot_3": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "plus",
+            "html_code": "",
+            "heading": "SUPPORTS SPATIAL AUDIO",
+            "description": "High-performance wireless noise cancelling headphones",
+            "top_offset": 61,
+            "left_offset": 43,
+            "content_position": "tt-htspt-left"
+          }
+        },
+        "text_hotspot_4": {
+          "type": "text_hotspot",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "plus",
+            "html_code": "",
+            "heading": "DPI SETTINGS",
+            "description": "High-performance wireless noise cancelling headphones",
+            "top_offset": 51,
+            "left_offset": 62,
+            "content_position": "tt-htspt-right"
+          }
+        }
+      },
+      "block_order": [
+        "text_hotspot_1",
+        "text_hotspot_2",
+        "text_hotspot_3",
+        "text_hotspot_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "Silentium Wireless Mouse",
+        "heading": "Silent Switch creates the perfect concentration!",
+        "heading_size": "h2",
+        "description": "<p>With its unique Silent Switch technology and an ergonomic design, the Silentium Wireless Mouse ensures maximum comfort. This design allows you to use the mouse naturally, reducing wrist and finger strain, while helping you maintain focus on your tasks without any noise distractions.</p>",
+        "display_type": "list",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-center",
+        "card_color_scheme": "scheme-1",
+        "text": ""
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 0,
+            "color_mask_overlay": "",
+            "color_text_overlay": "#ffffff",
+            "heading": "Gaming Space",
+            "button_text": "Read Articles"
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 0,
+            "color_mask_overlay": "",
+            "color_text_overlay": "#ffffff",
+            "heading": "Minimalism Space",
+            "button_text": "Shop now"
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+            "color_image_opacity": 30,
+            "color_mask_overlay": "#000000",
+            "color_text_overlay": "#ffffff",
+            "heading": "Productive Space",
+            "button_text": "Read Articles"
+          }
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "FOR YOUR WORK SPACE",
+        "heading": "Top #3 highly recommend setup styles",
+        "heading_size": "h2",
+        "description": "The gift of catching up. Bring it all together: family, friends and your favourite artists. With Beoplay A1, you'll never miss a beat – or a word.",
+        "content_alignment": "ta-left",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": false,
+        "item_heading_size": "h5",
+        "image_ratio": "4/5",
+        "show_items_button": true
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "hotspot_1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 78,
+            "left_offset": 75
+          }
+        },
+        "hotspot_2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 40,
+            "left_offset": 60
+          }
+        },
+        "hotspot_3": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 56,
+            "left_offset": 22
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_1",
+        "hotspot_2",
+        "hotspot_3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "WHAT'S HOT",
+        "heading": "A corner from Our Studio",
+        "heading_size": "h2",
+        "description": "<p>You'll find everything you need for your study, work, and entertainment space here!</p>",
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "content_alignment": "ta-center",
+        "text": "",
+        "link": ""
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "What's New"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "description": "<p>The gift of catching up. Bring it all together: family, friends and your favourite artists. With Beoplay A1, you’ll never miss a beat – or a word.</p>"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "button_text": "Subscribe",
+            "button_style": "btn-primary"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "description",
+        "newsletter"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "image_overlay_opacity": 0,
+        "color_mask_overlay": "",
+        "color_text_overlay": "",
+        "height_desktop": "50vh",
+        "content_position_desktop": "top-md center-md ta-start-md",
+        "height_mobile": "70vh",
+        "content_position_mobile": "middle-xs center-xs ta-center"
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "subheading": "What's New",
+        "heading": "Read our Articles",
+        "heading_size": "h2",
+        "description": "",
+        "items_to_show": 4,
+        "items_per_row_on_desktop": "4",
+        "enable_carousel": false,
+        "show_progress_indicator": false,
+        "content_alignment": "ta-left",
+        "show_view_all_button": false,
+        "btn_text": "View all"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "collection_list",
+    "product_lists",
+    "running_text",
+    "image_with_text",
+    "image_with_text_2",
+    "product_lists_2",
+    "image_banner",
+    "text_hotspots",
+    "content_collage",
+    "product_hotspots",
+    "newsletter",
+    "blog_post_list"
+  ]
+}

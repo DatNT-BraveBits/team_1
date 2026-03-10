@@ -1,0 +1,939 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Wq8nPf": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Glow with Confidence",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description_text": "<p>Nourish your skin with our premium beauty essentials. Hydration, care, and radiance in every touch.</p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "middle-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_primary_label": "Shop more",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "Discover more",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 0,
+            "section_mask_overlay_color": "",
+            "section_content_overlay_color": ""
+          }
+        },
+        "slide_YVQg9n": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Effortless Perfection with Matte",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description_text": "<p>Matte is designed for those who crave balance—deep moisture without the shine. </p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "middle-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_primary_label": "Shop Matte",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "Discover more",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 10,
+            "section_mask_overlay_color": "#000000",
+            "section_content_overlay_color": "#fdfbf2"
+          }
+        },
+        "slide_LMzYyp": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Pure Radience, Effortless Beauty",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description_text": "<p>Discover the essence of radiant beauty with Normcore. Our skincare and beauty essentials are crafted to nourish, hydrate, and enhance your skin’s natural brilliance. </p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "middle-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_primary_label": "Explore more",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "View Details",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 0,
+            "section_mask_overlay_color": "#fdfbf2",
+            "section_content_overlay_color": "#fdfbf2"
+          }
+        }
+      },
+      "block_order": [
+        "slide_Wq8nPf",
+        "slide_YVQg9n",
+        "slide_LMzYyp"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_transparent_header": false,
+        "show_pagination": true,
+        "show_navigation": true,
+        "enable_autoplay": true,
+        "change_slide_interval": 6,
+        "slide_style": "secondary",
+        "slideshow_width": "stretch",
+        "slideshow_height": "70vh",
+        "mobile_slideshow_height": "70vh",
+        "slideshow_description": ""
+      }
+    },
+    "running_content": {
+      "type": "running-content",
+      "blocks": {
+        "text_f3yNR4": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Mix and match toys to create your perfect play bundle.</p>",
+            "color_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_f3yNR4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "item_size": "extra",
+        "image_ratio": "1/1"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "text_ABacDP": {
+          "type": "text",
+          "settings": {
+            "heading": "Discover the Power of Natural Ingredients in Skincare",
+            "enable_h1_tag": true,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "1",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Explore Our Collection",
+            "button_style": "secondary",
+            "button_link": "",
+            "background_color": "#ffffff",
+            "text_color": "#000000"
+          }
+        },
+        "image_FWfgak": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "1",
+            "desktop_row": "2",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "2",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": ""
+          }
+        },
+        "image_LydX8W": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_ABacDP",
+        "image_FWfgak",
+        "image_LydX8W"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_fullwidth": true,
+        "show_layout_grid": false,
+        "desktop_row_height": 300,
+        "mobile_row_height": 300
+      }
+    },
+    "image_with_hotspot": {
+      "type": "image-with-hotspot",
+      "blocks": {
+        "product_hotspot_UaLLwj": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 89,
+            "left_offset": 44,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_FE89jm": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 45,
+            "left_offset": 64,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_VCGXpe": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 60,
+            "left_offset": 46,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_TWdYkq": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 60,
+            "left_offset": 57,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_m6zN4r": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 73,
+            "left_offset": 69,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        }
+      },
+      "block_order": [
+        "product_hotspot_UaLLwj",
+        "product_hotspot_FE89jm",
+        "product_hotspot_VCGXpe",
+        "product_hotspot_TWdYkq",
+        "product_hotspot_m6zN4r"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading_text": "",
+        "heading": "Inspired Living: Ideas for Every Space",
+        "heading_size": "h2",
+        "enable_h1_tag": false,
+        "description": "<p>Discover endless inspiration in our model home, where each product showcases thoughtful design and creativity. Let these ideas guide you in transforming your own space with furniture that blends style and functionality seamlessly.</p>",
+        "desktop_image": "",
+        "section_image_width": "max-width",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "section_overlay_opacity": 10,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "mobile_content_alignment": "ta-left top-xs",
+        "hotspot_background": "#ffffff",
+        "hotspot_color": "#000000"
+      }
+    },
+    "featured_product_list": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_type_FjRfTd": {
+          "type": "product_type",
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "title_AFjNYk": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_FcKd37": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_p7zVYe": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_type_FjRfTd",
+        "title_AFjNYk",
+        "price_FcKd37",
+        "variants_p7zVYe"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "New Arrivals",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 10,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": false,
+        "hide_on_end": false,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "image_gallery": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_rfmBVj": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_pLbzGJ": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_7aYYVg": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_dEPQGW": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_8btXC8": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_Vi4YhD": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_bDddwY": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_an9zgC": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_qefBgx": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_jag3YB": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_rfmBVj",
+        "image_pLbzGJ",
+        "image_7aYYVg",
+        "image_dEPQGW",
+        "image_8btXC8",
+        "image_Vi4YhD",
+        "image_bDddwY",
+        "image_an9zgC",
+        "image_qefBgx",
+        "image_jag3YB"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "More ideas & inspirations from Normcore",
+        "heading_size": "h3-regular",
+        "description": "",
+        "enable_offset_columns": true,
+        "image_ratio": "auto",
+        "desktop_column": "5",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "heading_MpzgJf": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "Fresh Finds – Just In!",
+            "heading_size": "h1",
+            "enable_h1_tag": false
+          }
+        },
+        "countdown_timer_F7a3AH": {
+          "type": "countdown_timer",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "2027-05-05",
+            "end_time": "",
+            "end_text": "<p>Event is finished</p>",
+            "countdown_background": "#000000",
+            "countdown_number_color": "#ffffff"
+          }
+        },
+        "button_Bgimnb": {
+          "type": "button",
+          "settings": {
+            "button_primary_label": "Explore more",
+            "button_primary_style": "primary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_MpzgJf",
+        "countdown_timer_F7a3AH",
+        "button_Bgimnb"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_transparent_header": false,
+        "section_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "video_source": "video_external",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "enable_controller": true,
+        "enable_loop": true,
+        "video_control_color": "transparent",
+        "section_image_width": "stretch",
+        "height_desktop": "70vh",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "height_mobile": "50vh",
+        "mobile_content_position": "start-xs",
+        "mobile_content_alignment": "ta-left top-xs",
+        "image_banner_link": ""
+      }
+    },
+    "before_after_images": {
+      "type": "before-after-images",
+      "settings": {
+        "color_scheme": "",
+        "heading": "Proven by science",
+        "heading_size": "h3",
+        "description": "<p>ION* Gut Support has been scientifically proven to strengthen the gut lining by sealing cell junctions, even in the presence of harmful toxins. This helps to combat intestinal permeability, thereby protecting the immune system, improving digestion, and supporting a healthy microbiome</p>",
+        "desktop_image_before": "",
+        "label_image_before": "Before",
+        "desktop_image_after": "",
+        "label_image_after": "After",
+        "heading_alignment_desktop": "ta-left-md top-md",
+        "heading_alignment_mobile": "ta-left top-xs"
+      }
+    },
+    "spotlight_quotes": {
+      "type": "spotlight-quotes",
+      "blocks": {
+        "quote_ejRdyp": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 5,
+            "review_content": "<p>\"The fruits, vegetables, and meats are always incredibly fresh. You can really taste the quality in every meal!\"</p>",
+            "author_name": "Jake T.",
+            "author_description": "Food Blogger & Home Cook"
+          }
+        },
+        "quote_kzJJUW": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"I've been shopping here for months, and the freshness of the produce and meats is unmatched. Plus, their kitchenware selection is super handy!\"</p>",
+            "author_name": "Emma R.",
+            "author_description": "Home Chef & Food Enthusiast"
+          }
+        },
+        "quote_tP73V7": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"I love that I can find everything from everyday essentials to gourmet ingredients here. Cooking at home has never been this fun and easy!\"</p>",
+            "author_name": "Olivia S.",
+            "author_description": "Aspiring Chef"
+          }
+        },
+        "quote_wyEmEA": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"From pantry staples to premium cookware, this store has everything I need. Shopping here makes meal prep so much easier!\"</p>",
+            "author_name": "Daniel M.",
+            "author_description": "Homemaker"
+          }
+        },
+        "quote_ELj4NN": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 5,
+            "review_content": "<p>\"I love how quickly my orders arrive, and the ingredients are always fresh. The kitchen tools I bought are also top-notch!\"</p>",
+            "author_name": "Sophia L.",
+            "author_description": "Busy Parent & Home Cook"
+          }
+        }
+      },
+      "block_order": [
+        "quote_ejRdyp",
+        "quote_kzJJUW",
+        "quote_tP73V7",
+        "quote_wyEmEA",
+        "quote_ELj4NN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "show_quote_icon": false,
+        "quote_text_size": "h1",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "30",
+        "show_rating": true,
+        "star_rating_color": "#ff611d",
+        "show_pagination": true,
+        "show_navigation": true,
+        "enable_autoplay": false,
+        "change_slide_interval": 5,
+        "slide_style": "primary"
+      }
+    },
+    "logo_list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_NXMCp7": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_dCKXBD": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_AAEFWN": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_NXMCp7",
+        "logo_dCKXBD",
+        "logo_AAEFWN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "list_style": "running",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "list_alignment": "center-xs",
+        "logo_size": "50px",
+        "label": "",
+        "link": ""
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "icon_with_text_item_AzrFHL": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "heart",
+            "custom_code": "",
+            "title": "Crafted to Last",
+            "description": "<p>Every piece is built with premium materials and meticulous attention to detail, ensuring durability and timeless appeal.</p>",
+            "label": "",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_mqEbkb": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "tools",
+            "custom_code": "",
+            "title": "Design with Purpose",
+            "description": "<p>Clean, versatile designs that complement any space, enhancing both style and functionality.</p>",
+            "label": "",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_JwxEja": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "recycle",
+            "custom_code": "",
+            "title": "Sustainability at Heart",
+            "description": "<p>Committed to eco-friendly practices, we create furniture that not only elevates your home but also cares for the planet.</p>",
+            "label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_with_text_item_AzrFHL",
+        "icon_with_text_item_mqEbkb",
+        "icon_with_text_item_JwxEja"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "The Normcore Promise",
+        "heading_size": "h5",
+        "description": "",
+        "text_position": "fd-column",
+        "icon_size": "icon-scale-3xl",
+        "icon_color": "",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "shop_the_look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "item_shop_the_look_FkHFfz": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_6UWamQ": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_jkhhhk": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_xx9ttq": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_X8jjjL": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        },
+        "item_shop_the_look_XKRFXA": {
+          "type": "item_shop_the_look",
+          "settings": {
+            "image": "",
+            "product_list": []
+          }
+        }
+      },
+      "block_order": [
+        "item_shop_the_look_FkHFfz",
+        "item_shop_the_look_6UWamQ",
+        "item_shop_the_look_jkhhhk",
+        "item_shop_the_look_xx9ttq",
+        "item_shop_the_look_X8jjjL",
+        "item_shop_the_look_XKRFXA"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Shop the look",
+        "heading_size": "h6",
+        "description": "",
+        "image_ratio": "auto",
+        "show_vendor": true,
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2025-01-01",
+        "end_time": "00:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_PFMYJe": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "review_content": "<p>I’ve tried so many skincare brands, but this one truly stands out! The texture is lightweight yet deeply hydrating, and the scent is so refreshing. Definitely a must-have in my routine!</p>",
+            "author_name": "Anna Le",
+            "author_description": "Skincare Enthusiast"
+          }
+        },
+        "testimonial_3rw9mX": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "review_content": "<p>This serum is a miracle! My skin feels softer, looks brighter, and the glow is real. I’m obsessed!</p>",
+            "author_name": "Emma Nguyen",
+            "author_description": "Beauty Blogger"
+          }
+        },
+        "testimonial_rn6nkd": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "review_content": "<p>I’ve been searching for the perfect lipstick, and I finally found it! The formula is long-lasting without feeling dry, and the pigmentation is stunning. I love how it stays on throughout the day, even after meals.</p>",
+            "author_name": "Sophia Tran",
+            "author_description": "Makeup Lover"
+          }
+        },
+        "testimonial_9e4i8Q": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "review_content": "<p>Self-care is a huge part of my daily routine, and these products make it even more enjoyable I’ve already recommended it to all my friends!</p>",
+            "author_name": "Lisa Pham",
+            "author_description": "Self-Care Advocate"
+          }
+        },
+        "testimonial_mMzVNF": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>The perfect moisturizer! Lightweight, super hydrating, and smells amazing. My skin has never felt better.</p>",
+            "author_name": "Emily Nguyen",
+            "author_description": "Beauty Addict"
+          }
+        },
+        "testimonial_azVwHt": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 4,
+            "review_content": "<p>This serum is a miracle! My skin feels softer, looks brighter, and the glow is real. I’m obsessed!</p>",
+            "author_name": "Lily Pham",
+            "author_description": "Skincare Lover"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_PFMYJe",
+        "testimonial_3rw9mX",
+        "testimonial_rn6nkd",
+        "testimonial_9e4i8Q",
+        "testimonial_mMzVNF",
+        "testimonial_azVwHt"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Hear from our happy customers",
+        "heading_size": "h3-regular",
+        "description": "",
+        "heading_size_item": "f-body fs-body-xl",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "large",
+        "show_rating": true,
+        "color_rating": "#f1d198",
+        "carousel_desktop": "true",
+        "columns_per_row": "3",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "blocks": {
+        "tags_NMibFy": {
+          "type": "tags",
+          "settings": {}
+        },
+        "title_C6RRVJ": {
+          "type": "title",
+          "settings": {}
+        },
+        "excerpt_htUw3J": {
+          "type": "excerpt",
+          "disabled": true,
+          "settings": {
+            "truncate_text": true
+          }
+        }
+      },
+      "block_order": [
+        "tags_NMibFy",
+        "title_C6RRVJ",
+        "excerpt_htUw3J"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "blog": "news",
+        "heading": "What's Buzzing – Stories We Love",
+        "heading_size": "h3-regular",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": true,
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "enable_button": true,
+        "button_text": "View all",
+        "button_position": "last-item"
+      }
+    },
+    "recently_viewed_products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Recently Viewed Products",
+        "heading_size": "h5",
+        "products_to_show": 8,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "standard",
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "running_content",
+    "content_collage",
+    "image_with_hotspot",
+    "featured_product_list",
+    "image_gallery",
+    "video_banner",
+    "before_after_images",
+    "spotlight_quotes",
+    "logo_list",
+    "icon_with_text",
+    "shop_the_look",
+    "testimonials",
+    "blog_post_list",
+    "recently_viewed_products"
+  ]
+}

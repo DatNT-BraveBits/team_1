@@ -16,7 +16,8 @@
       "Bash(curl:*)",
       "mcp__shopify-dev-mcp__learn_shopify_api",
       "mcp__shopify-dev-mcp__search_docs_chunks",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(mkdir:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

@@ -2,11 +2,11 @@ import { useEffect, useState, useCallback } from "react";
 import { useFetcher, useLoaderData } from "react-router";
 import { boundary } from "@shopify/shopify-app-react-router/server";
 import { authenticate } from "../shopify.server";
-import { LAYOUTS } from "../features/feature-2/layouts/index";
+import { THEMES, getTheme } from "../features/feature-2/layouts/index";
 
 // ─── Constants ──────────────────────────────────────────────────────────────────
 
-const THEME_NAME = "Blum";
+const SUPPORTED_THEMES = ["Blum", "Shine", "Electro", "Normcore"];
 const TEMPLATE_FILE = "templates/index.json";
 
 // ─── Section wireframe config ────────────────────────────────────────────────
@@ -147,6 +147,11 @@ const S = {
     border: "1px solid #BBF7D0",
     color: "#166534",
   },
+  themeTabs: {
+    display: "flex",
+    gap: 6,
+    marginBottom: 20,
+  },
   themeInfo: {
     display: "flex",
     alignItems: "center",
@@ -264,6 +269,7 @@ const S = {
   },
   btnPrimaryDisabled: {
     background: "#93C5FD",
+    borderColor: "#93C5FD",
     cursor: "not-allowed",
   },
   btnSecondary: {
@@ -368,7 +374,7 @@ const S = {
 
 // ─── Server: Theme helpers via GraphQL ───────────────────────────────────────
 
-async function findBlumTheme(admin) {
+async function findThemes(admin) {
   const response = await admin.graphql(
     `#graphql
       query FindThemes {
@@ -379,11 +385,17 @@ async function findBlumTheme(admin) {
     `,
   );
   const json = await response.json();
-  const themes = json?.data?.themes?.nodes ?? [];
-  const blumThemes = themes.filter(
-    (t) => t.name && t.name.toLowerCase().includes(THEME_NAME.toLowerCase()),
-  );
-  return blumThemes.find((t) => t.role === "MAIN") || blumThemes[0] || null;
+  const allThemes = json?.data?.themes?.nodes ?? [];
+
+  const result = {};
+  for (const themeName of SUPPORTED_THEMES) {
+    const matches = allThemes.filter(
+      (t) => t.name && t.name.toLowerCase().includes(themeName.toLowerCase()),
+    );
+    const best = matches.find((t) => t.role === "MAIN") || matches[0] || null;
+    result[themeName.toLowerCase()] = best;
+  }
+  return result;
 }
 
 async function readTemplateFile(admin, themeId) {
@@ -444,12 +456,12 @@ async function writeTemplateFile(session, themeGid, jsonContent) {
 
 // ─── Detect active preset ───────────────────────────────────────────────────────
 
-function detectActivePreset(currentJson) {
+function detectActivePreset(currentJson, layouts) {
   if (!currentJson) return null;
   try {
     const current = JSON.parse(currentJson);
     const currentOrder = JSON.stringify(current.order ?? []);
-    for (const layout of LAYOUTS) {
+    for (const layout of layouts) {
       const presetOrder = JSON.stringify(layout.template.order);
       if (currentOrder === presetOrder) {
         const currentTypes = (current.order ?? []).map(
@@ -474,48 +486,58 @@ function detectActivePreset(currentJson) {
 export const loader = async ({ request }) => {
   const { admin, session } = await authenticate.admin(request);
 
-  try {
-    const theme = await findBlumTheme(admin);
+  const mapLayouts = (layouts) => layouts.map(({ id, name, description, thumbnail, template }) => ({
+    id, name, description, thumbnail,
+    sectionOrder: template.order,
+    sectionTypes: template.order.map((key) => template.sections[key]?.type ?? key),
+  }));
 
-    if (!theme) {
-      return {
-        error: `Theme "${THEME_NAME}" not found. Please install the ${THEME_NAME} theme first.`,
-        theme: null,
-        currentTemplate: null,
-        activePreset: null,
-        layouts: LAYOUTS.map(({ id, name, description, thumbnail, template }) => ({
-          id, name, description, thumbnail,
-          sectionOrder: template.order,
-          sectionTypes: template.order.map((key) => template.sections[key]?.type ?? key),
-        })),
+  try {
+    const shopThemes = await findThemes(admin);
+
+    // Build per-theme data (read template for each installed theme)
+    const themesData = {};
+    for (const t of THEMES) {
+      const shopTheme = shopThemes[t.key] || null;
+      let currentTemplate = null;
+      let activePreset = null;
+      if (shopTheme) {
+        currentTemplate = await readTemplateFile(admin, shopTheme.id);
+        activePreset = detectActivePreset(currentTemplate, t.layouts);
+      }
+      themesData[t.key] = {
+        key: t.key,
+        name: t.name,
+        installed: !!shopTheme,
+        shopifyTheme: shopTheme ? { id: shopTheme.id, name: shopTheme.name, role: shopTheme.role } : null,
+        currentTemplate,
+        activePreset,
+        layouts: mapLayouts(t.layouts),
       };
     }
 
-    const currentTemplate = await readTemplateFile(admin, theme.id);
-    const activePreset = detectActivePreset(currentTemplate);
-
     return {
       error: null,
-      theme: { id: theme.id, name: theme.name, role: theme.role },
-      currentTemplate,
-      activePreset,
-      layouts: LAYOUTS.map(({ id, name, description, thumbnail, template }) => ({
-        id, name, description, thumbnail,
-        sectionOrder: template.order,
-        sectionTypes: template.order.map((key) => template.sections[key]?.type ?? key),
-      })),
+      themes: themesData,
+      themeKeys: THEMES.map((t) => t.key),
     };
   } catch (err) {
+    const themesData = {};
+    for (const t of THEMES) {
+      themesData[t.key] = {
+        key: t.key,
+        name: t.name,
+        installed: false,
+        shopifyTheme: null,
+        currentTemplate: null,
+        activePreset: null,
+        layouts: mapLayouts(t.layouts),
+      };
+    }
     return {
       error: err?.message || "Failed to load theme data.",
-      theme: null,
-      currentTemplate: null,
-      activePreset: null,
-      layouts: LAYOUTS.map(({ id, name, description, thumbnail, template }) => ({
-        id, name, description, thumbnail,
-        sectionOrder: template.order,
-        sectionTypes: template.order.map((key) => template.sections[key]?.type ?? key),
-      })),
+      themes: themesData,
+      themeKeys: THEMES.map((t) => t.key),
     };
   }
 };
@@ -526,21 +548,25 @@ export const action = async ({ request }) => {
   const { admin, session } = await authenticate.admin(request);
   const formData = await request.formData();
   const intent = String(formData.get("intent") ?? "");
+  const themeKey = String(formData.get("theme") ?? "blum");
 
   try {
-    const theme = await findBlumTheme(admin);
-    if (!theme) {
-      return { ok: false, error: `Theme "${THEME_NAME}" not found.` };
+    const shopThemes = await findThemes(admin);
+    const shopTheme = shopThemes[themeKey];
+    if (!shopTheme) {
+      return { ok: false, error: `Theme "${themeKey}" not found on your store.` };
     }
+
+    const themeConfig = getTheme(themeKey);
 
     if (intent === "apply_preset") {
       const layoutId = String(formData.get("layout_id") ?? "");
-      const layout = LAYOUTS.find((l) => l.id === layoutId);
+      const layout = themeConfig.layouts.find((l) => l.id === layoutId);
       if (!layout) {
         return { ok: false, error: "Invalid layout selected." };
       }
       const jsonContent = JSON.stringify(layout.template, null, 2);
-      await writeTemplateFile(session, theme.id, jsonContent);
+      await writeTemplateFile(session, shopTheme.id, jsonContent);
       return { ok: true, appliedLayout: layoutId };
     }
 
@@ -555,7 +581,7 @@ export const action = async ({ request }) => {
         return { ok: false, error: "Invalid JSON format." };
       }
       const formatted = JSON.stringify(JSON.parse(customJson), null, 2);
-      await writeTemplateFile(session, theme.id, formatted);
+      await writeTemplateFile(session, shopTheme.id, formatted);
       return { ok: true, appliedLayout: "custom" };
     }
 
@@ -570,6 +596,7 @@ export const action = async ({ request }) => {
 export default function Feature2Page() {
   const loaderData = useLoaderData();
   const fetcher = useFetcher();
+  const [selectedTheme, setSelectedTheme] = useState("blum");
   const [selectedLayout, setSelectedLayout] = useState(null);
   const [activeTab, setActiveTab] = useState("presets");
   const [customJson, setCustomJson] = useState("");
@@ -577,17 +604,23 @@ export default function Feature2Page() {
   const [confetti, setConfetti] = useState([]);
 
   const isSubmitting = fetcher.state !== "idle";
-  const { error, theme, currentTemplate, activePreset, layouts } = loaderData ?? {};
+  const { error, themes, themeKeys } = loaderData ?? {};
+
+  // Current theme data (client-side, instant switch)
+  const themeData = themes?.[selectedTheme] || {};
+  const { installed, shopifyTheme: theme, currentTemplate, activePreset, layouts } = themeData;
 
   useEffect(() => {
-    if (currentTemplate && !customJson) {
+    if (currentTemplate) {
       try {
         setCustomJson(JSON.stringify(JSON.parse(currentTemplate), null, 2));
       } catch {
         setCustomJson(currentTemplate || "");
       }
+    } else {
+      setCustomJson("");
     }
-  }, [currentTemplate]);
+  }, [selectedTheme, currentTemplate]);
 
   const fireConfetti = useCallback(() => {
     const colors = ["#2563EB", "#F59E0B", "#EF4444", "#22C55E", "#A855F7", "#EC4899", "#06B6D4", "#F97316"];
@@ -623,20 +656,27 @@ export default function Feature2Page() {
     return () => clearTimeout(timer);
   }, [toast]);
 
+  const handleSwitchTheme = useCallback((themeKey) => {
+    setSelectedTheme(themeKey);
+    setSelectedLayout(null);
+  }, []);
+
   const handleApplyPreset = useCallback(() => {
     if (!selectedLayout) return;
     const fd = new FormData();
     fd.set("intent", "apply_preset");
+    fd.set("theme", selectedTheme);
     fd.set("layout_id", selectedLayout);
     fetcher.submit(fd, { method: "POST" });
-  }, [selectedLayout, fetcher]);
+  }, [selectedLayout, selectedTheme, fetcher]);
 
   const handleApplyCustom = useCallback(() => {
     const fd = new FormData();
     fd.set("intent", "apply_custom");
+    fd.set("theme", selectedTheme);
     fd.set("custom_json", customJson);
     fetcher.submit(fd, { method: "POST" });
-  }, [customJson, fetcher]);
+  }, [customJson, selectedTheme, fetcher]);
 
   return (
     <div style={S.page}>
@@ -682,7 +722,7 @@ export default function Feature2Page() {
         Switch Homepage Layout
       </h1>
       <p style={{ fontSize: 14, color: "#6B7280", margin: "0 0 20px" }}>
-        Choose a preset layout or customize the homepage template for your {THEME_NAME} theme.
+        Choose a theme and preset layout to customize your store homepage.
       </p>
 
       {toast && (
@@ -695,6 +735,30 @@ export default function Feature2Page() {
         <div style={{ ...S.banner, ...S.bannerError }}>{error}</div>
       )}
 
+      {/* Theme selector - same style as tabs */}
+      <div style={S.themeTabs}>
+        {(themeKeys ?? []).map((key) => {
+          const t = themes?.[key] || {};
+          const isActive = selectedTheme === key;
+          return (
+            <button
+              key={key}
+              onClick={() => t.installed !== false && handleSwitchTheme(key)}
+              style={{
+                ...S.tab,
+                ...(isActive ? S.tabActive : {}),
+                ...(t.installed === false ? { opacity: 0.4, cursor: "not-allowed" } : {}),
+              }}
+              title={t.installed ? (t.shopifyTheme?.name || t.name) : `${t.name} - not installed`}
+            >
+              {t.name}
+              {t.installed === false && <span style={{ fontSize: 10, marginLeft: 4 }}>(N/A)</span>}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Theme info */}
       {theme && (
         <div style={S.themeInfo}>
           <div>

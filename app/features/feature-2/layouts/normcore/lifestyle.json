@@ -1,0 +1,1453 @@
+{
+  "sections": {
+    "slideshow_ew9nBd": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_ymjEiR": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Essentials For A Sustainable Lifestyle",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description_text": "<p>Explore eco-friendly essentials designed to elevate your home with sustainable style.</p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "middle-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_primary_label": "Explore more",
+            "button_primary_style": "secondary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 10,
+            "section_mask_overlay_color": "#000000",
+            "section_content_overlay_color": "#ffffff"
+          }
+        },
+        "slide_AQPyDt": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "STAFF picks®",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description_text": "<p>Curated by our team: Discover handpicked favorites from our Home & Decor collection for timeless style and comfort.</p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "bottom-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "button_primary_label": "Explore more",
+            "button_primary_style": "secondary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 0,
+            "section_mask_overlay_color": "#000000",
+            "section_content_overlay_color": "#ffffff"
+          }
+        },
+        "slide_389HHU": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Transform Your Space",
+            "enable_h1_tag": true,
+            "heading_size": "h2",
+            "description_text": "<p>Shop our decor, blending functionality, style, and timeless beauty to elevate your home.</p>",
+            "background_image": "",
+            "content_position": "bottom-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "bottom-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "button_primary_label": "Explore more",
+            "button_primary_style": "secondary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 60,
+            "section_mask_overlay_color": "#ffffff",
+            "section_content_overlay_color": "#000000"
+          }
+        },
+        "slide_n7a8UV": {
+          "type": "slide",
+          "settings": {
+            "subheading_text": "",
+            "heading_text": "Small Details, Big Impact",
+            "enable_h1_tag": true,
+            "heading_size": "h2",
+            "description_text": "<p>Add charm and warmth to your space with thoughtful accents.</p>",
+            "background_image": "",
+            "content_position": "top-md",
+            "content_alignment": "ta-left-md top-md",
+            "mobile_content_position": "bottom-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "button_primary_label": "Explore more",
+            "button_primary_style": "secondary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": "",
+            "image_banner_link": "",
+            "overlay_opacity": 40,
+            "section_mask_overlay_color": "#000000",
+            "section_content_overlay_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ymjEiR",
+        "slide_AQPyDt",
+        "slide_389HHU",
+        "slide_n7a8UV"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "enable_transparent_header": false,
+        "show_pagination": true,
+        "show_navigation": true,
+        "enable_autoplay": true,
+        "change_slide_interval": 7,
+        "slide_style": "secondary",
+        "slideshow_width": "max-width",
+        "slideshow_height": "50vh",
+        "mobile_slideshow_height": "50vh",
+        "slideshow_description": ""
+      }
+    },
+    "collection_list_HmMCN7": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_LWtEDL": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f1e6d6",
+            "custom_color": "#805816"
+          }
+        },
+        "collection_GGdqpt": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        },
+        "collection_RmQtHP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#6b6760",
+            "custom_color": "#ffffff"
+          }
+        },
+        "collection_DMixfB": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#805816",
+            "custom_color": "#ffffff"
+          }
+        },
+        "collection_xCEXax": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "",
+            "custom_color": ""
+          }
+        },
+        "collection_Dq9d7q": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#3d3924",
+            "custom_color": "#ffffff"
+          }
+        },
+        "collection_DPLmbR": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#86827e",
+            "custom_color": "#ffffff"
+          }
+        },
+        "collection_7jtJH8": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "collection_image": "",
+            "custom_background": "#f3f3f3",
+            "custom_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_LWtEDL",
+        "collection_GGdqpt",
+        "collection_RmQtHP",
+        "collection_DMixfB",
+        "collection_xCEXax",
+        "collection_Dq9d7q",
+        "collection_DPLmbR",
+        "collection_7jtJH8"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h6",
+        "description": "",
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true,
+        "button_text": "Explore more",
+        "button_position": "last-item"
+      }
+    },
+    "featured_product_list_fUaEaQ": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_rRPqB9": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "vendor_CUxETc": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_nMdfG6": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_mrd4zY": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_P83WGj": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_PYkWwR": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_rRPqB9",
+        "vendor_CUxETc",
+        "title_nMdfG6",
+        "product_type_mrd4zY",
+        "price_P83WGj",
+        "variants_PYkWwR"
+      ],
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "Best Sellers",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 12,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "image_banner_47cVjk": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_WgwnrC": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "The Normcore Promise",
+            "heading_size": "h2",
+            "enable_h1_tag": false
+          }
+        },
+        "description_qKUXjU": {
+          "type": "description",
+          "settings": {
+            "description_text": "<p>At Normcore, we redefine modern living with furniture that blends minimalist elegance, exceptional quality, and sustainable values. Each piece is thoughtfully crafted with premium materials and meticulous attention to detail, ensuring durability and timeless appeal. Our designs are clean and versatile, effortlessly complementing any space while enhancing both style and functionality. Committed to eco-friendly practices, we create furniture that not only elevates your home but also contributes to a healthier planet. Choose Normcore—where quality meets simplicity, for a better way of living.</p>"
+          }
+        },
+        "button_MLewpn": {
+          "type": "button",
+          "settings": {
+            "button_primary_label": "More about our products",
+            "button_primary_style": "secondary",
+            "button_primary_link": "",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_WgwnrC",
+        "description_qKUXjU",
+        "button_MLewpn"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "enable_transparent_header": false,
+        "section_overlay_opacity": 30,
+        "section_mask_overlay_color": "",
+        "section_content_overlay_color": "",
+        "section_image_width": "max-width",
+        "height_desktop": "70vh",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "height_mobile": "70vh",
+        "mobile_content_position": "center-xs",
+        "mobile_content_alignment": "ta-center middle-xs",
+        "image_banner_link": ""
+      }
+    },
+    "content_collage_VyzfAh": {
+      "type": "content-collage",
+      "blocks": {
+        "video_VzbV4k": {
+          "type": "video",
+          "settings": {
+            "heading": "The Normcore Promise",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "<p>Normcore offers timeless, eco-friendly designs that bring elegance and sustainability to your home.</p>",
+            "video_source": "video_external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "3",
+            "desktop_row": "3",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "More About Us",
+            "button_style": "secondary",
+            "button_link": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "collection_H7zmBg": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "show_title": true,
+            "title_size": "h2",
+            "show_collection_quantity": true,
+            "quantity_style": "superscript",
+            "background_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "1",
+            "desktop_row": "3",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_wxkDX6": {
+          "type": "image",
+          "settings": {
+            "heading": "Quality You Can Feel",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "<p>Every piece is meticulously crafted to bring elegance and resilience to your home</p>",
+            "desktop_image": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "secondary",
+            "button_link": "",
+            "overlay_opacity": 20,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        },
+        "image_Vjd94A": {
+          "type": "image",
+          "settings": {
+            "heading": "Comfort Redefined",
+            "enable_h1_tag": false,
+            "heading_size": "h3",
+            "description": "<p>Ergonomic, functional, and stylish—designed to elevate your everyday living.</p>",
+            "desktop_image": "",
+            "desktop_content_position": "end-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "",
+            "button_style": "secondary",
+            "button_link": "",
+            "overlay_opacity": 10,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "video_VzbV4k",
+        "collection_H7zmBg",
+        "image_wxkDX6",
+        "image_Vjd94A"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_fullwidth": false,
+        "show_layout_grid": false,
+        "desktop_row_height": 220,
+        "mobile_row_height": 300
+      }
+    },
+    "collection_browsing_Gkc6jW": {
+      "type": "collection-browsing",
+      "blocks": {
+        "collection_UbGpAb": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "All products",
+            "selected_collection": ""
+          }
+        },
+        "collection_jBHDVR": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Sofa",
+            "selected_collection": ""
+          }
+        },
+        "collection_f9bqEg": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Chair",
+            "selected_collection": ""
+          }
+        },
+        "collection_Yy9E3j": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Table",
+            "selected_collection": ""
+          }
+        },
+        "collection_8hRGRt": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Lamp",
+            "selected_collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_UbGpAb",
+        "collection_jBHDVR",
+        "collection_f9bqEg",
+        "collection_Yy9E3j",
+        "collection_8hRGRt"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Recommend for you",
+        "heading_size": "h3-regular",
+        "description": "",
+        "max_items": 8,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "bulk",
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": false,
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    },
+    "featured_product_list_Cckcty": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_kETByK": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "vendor_aLJ8DN": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_gQJ3XM": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_zYx3BF": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_aM4XHb": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_Dd4qHQ": {
+          "type": "variants",
+          "disabled": true,
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_kETByK",
+        "vendor_aLJ8DN",
+        "title_gQJ3XM",
+        "product_type_zYx3BF",
+        "price_aM4XHb",
+        "variants_Dd4qHQ"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "⚡ Flash deal today, don’t miss them!",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 5,
+        "product_list": [],
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": true,
+        "hide_on_end": true,
+        "end_date": "2027-03-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "#fadec9",
+        "countdown_number_color": "#171717"
+      }
+    },
+    "icon_with_text_nUgDUh": {
+      "type": "icon-with-text",
+      "blocks": {
+        "icon_with_text_item_AzrFHL": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "heart",
+            "custom_code": "",
+            "title": "Crafted to Last",
+            "description": "<p>Every piece is built with premium materials and meticulous attention to detail, ensuring durability and timeless appeal.</p>",
+            "label": "",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_mqEbkb": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "tools",
+            "custom_code": "",
+            "title": "Design with Purpose",
+            "description": "<p>Clean, versatile designs that complement any space, enhancing both style and functionality.</p>",
+            "label": "",
+            "link": ""
+          }
+        },
+        "icon_with_text_item_JwxEja": {
+          "type": "icon_with_text_item",
+          "settings": {
+            "icon_source": "theme_library",
+            "theme_library_icon": "recycle",
+            "custom_code": "",
+            "title": "Sustainability at Heart",
+            "description": "<p>Committed to eco-friendly practices, we create furniture that not only elevates your home but also cares for the planet.</p>",
+            "label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_with_text_item_AzrFHL",
+        "icon_with_text_item_mqEbkb",
+        "icon_with_text_item_JwxEja"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "The Normcore Promise",
+        "heading_size": "h5",
+        "description": "",
+        "text_position": "fd-column",
+        "icon_size": "icon-scale-3xl",
+        "icon_color": "",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "testimonials_ENiqzk": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_WDqXpT": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        },
+        "testimonial_CcFwkA": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        },
+        "testimonial_MmpBKR": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        },
+        "testimonial_4kFTRj": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        },
+        "testimonial_wHkaEz": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        },
+        "testimonial_a9EwGe": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 3,
+            "review_content": "<p>Showcase your happy customers' stories</p>",
+            "author_name": "A happy customer",
+            "author_description": "Customer's description"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_WDqXpT",
+        "testimonial_CcFwkA",
+        "testimonial_MmpBKR",
+        "testimonial_4kFTRj",
+        "testimonial_wHkaEz",
+        "testimonial_a9EwGe"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "Our customers",
+        "heading_size": "h5",
+        "description": "",
+        "heading_size_item": "f-body fs-body-xl",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "large",
+        "show_rating": true,
+        "color_rating": "#ffb82d",
+        "carousel_desktop": "true",
+        "columns_per_row": "4",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "before_after_images_GNnDFP": {
+      "type": "before-after-images",
+      "settings": {
+        "color_scheme": "schema-1",
+        "heading": "Before experiencing the Normcore touch",
+        "heading_size": "h3",
+        "description": "<p>Transform clutter into elegance with Normcore's thoughtfully designed furniture.</p>",
+        "desktop_image_before": "",
+        "label_image_before": "Before",
+        "desktop_image_after": "",
+        "label_image_after": "After",
+        "heading_alignment_desktop": "ta-left-md top-md",
+        "heading_alignment_mobile": "ta-left top-xs"
+      }
+    },
+    "logo_list_hCN9Fy": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_d3aXdi": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_HBJVMq": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_GfnxEY": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_BjKLNA": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_dpHJCf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_XPUWxA": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_4WbwQr": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        },
+        "logo_qVHBd8": {
+          "type": "logo",
+          "settings": {
+            "logo_link": ""
+          }
+        },
+        "logo_CmByA8": {
+          "type": "logo",
+          "disabled": true,
+          "settings": {
+            "logo_image": "",
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_d3aXdi",
+        "logo_HBJVMq",
+        "logo_GfnxEY",
+        "logo_BjKLNA",
+        "logo_dpHJCf",
+        "logo_XPUWxA",
+        "logo_4WbwQr",
+        "logo_qVHBd8",
+        "logo_CmByA8"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "list_style": "running",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "list_alignment": "start-xs",
+        "logo_size": "50px",
+        "label": "",
+        "link": ""
+      }
+    },
+    "featured_product_list_g7AQjk": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_e97nnE": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "vendor_t6NbAf": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_W8zCVN": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_hMHqpw": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_hKNJth": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_gpHNqz": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_e97nnE",
+        "vendor_t6NbAf",
+        "title_W8zCVN",
+        "product_type_hMHqpw",
+        "price_hKNJth",
+        "variants_gpHNqz"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "STAFF picks®",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 22,
+        "product_list": [],
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "running_content_RDzfDG": {
+      "type": "running-content",
+      "blocks": {
+        "text_d3ezy9": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Pick 3 items</p>",
+            "color_text": ""
+          }
+        },
+        "image_jz6WdF": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_fBbczQ": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Make a bundle</p>",
+            "color_text": ""
+          }
+        },
+        "image_YyL6xt": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_84xBDF": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>New Arrivals</p>",
+            "color_text": ""
+          }
+        },
+        "image_TQjbKN": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        },
+        "text_TwV8q8": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Only for member</p>",
+            "color_text": ""
+          }
+        },
+        "image_zfU4Qe": {
+          "type": "image",
+          "settings": {
+            "image": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_d3ezy9",
+        "image_jz6WdF",
+        "text_fBbczQ",
+        "image_YyL6xt",
+        "text_84xBDF",
+        "image_TQjbKN",
+        "text_TwV8q8",
+        "image_zfU4Qe"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "running_direction": "animation-reverse",
+        "rotating_speed": "1",
+        "hover_interaction": "slow_down",
+        "item_size": "small",
+        "image_ratio": "1/1"
+      }
+    },
+    "product_bundle_zVmeGW": {
+      "type": "product-bundle",
+      "blocks": {
+        "title_ePgwrc": {
+          "type": "title",
+          "settings": {}
+        },
+        "product_type_FDrmPf": {
+          "type": "product_type",
+          "disabled": true,
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "price_79Lcqe": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "product_attributes_4FDnpG": {
+          "type": "product_attributes",
+          "disabled": true,
+          "settings": {}
+        },
+        "variants_ALwctD": {
+          "type": "variants",
+          "disabled": true,
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_ePgwrc",
+        "product_type_FDrmPf",
+        "price_79Lcqe",
+        "product_attributes_4FDnpG",
+        "variants_ALwctD"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 12,
+        "product_list": [],
+        "bundle_description": "Create your perfect home décor set",
+        "min_products": 3,
+        "enable_unlimited_add": true,
+        "custom_panel_background": "#ffffff",
+        "custom_panel_color": "#000000",
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "show_quick_view": true,
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "featured_product_list_qQ74EA": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_attributes_GwhdiT": {
+          "type": "product_attributes",
+          "settings": {}
+        },
+        "title_HLmL4f": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_tJqpJe": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_kGLcLP": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_attributes_GwhdiT",
+        "title_HLmL4f",
+        "price_tJqpJe",
+        "variants_kGLcLP"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Last stocks",
+        "heading_size": "h3-regular",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 6,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "button_link": "",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "2024-11-11",
+        "end_time": "17:00",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "image_with_hotspot_RkGmYG": {
+      "type": "image-with-hotspot",
+      "blocks": {
+        "product_hotspot_UaLLwj": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 89,
+            "left_offset": 44,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_FE89jm": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 45,
+            "left_offset": 64,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_VCGXpe": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 60,
+            "left_offset": 46,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_TWdYkq": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 60,
+            "left_offset": 57,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_m6zN4r": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 73,
+            "left_offset": 69,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        }
+      },
+      "block_order": [
+        "product_hotspot_UaLLwj",
+        "product_hotspot_FE89jm",
+        "product_hotspot_VCGXpe",
+        "product_hotspot_TWdYkq",
+        "product_hotspot_m6zN4r"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading_text": "",
+        "heading": "Inspired Living: Ideas for Every Space",
+        "heading_size": "h2",
+        "enable_h1_tag": false,
+        "description": "<p>Discover endless inspiration in our model home, where each product showcases thoughtful design and creativity. Let these ideas guide you in transforming your own space with furniture that blends style and functionality seamlessly.</p>",
+        "desktop_image": "",
+        "section_image_width": "max-width",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "section_overlay_opacity": 10,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "mobile_content_alignment": "ta-left top-xs",
+        "hotspot_background": "#ffffff",
+        "hotspot_color": "#000000"
+      }
+    },
+    "testimonials_TDkFDP": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_m4VtLw": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>NORMCORE™ Fundamental has completely transformed my wardrobe. The quality is unmatched, and the designs are timeless. As someone who values simplicity and functionality, this brand truly resonates with my lifestyle. Highly recommend to anyone looking for essentials that stand the test of time!</p>",
+            "author_name": "Alex Tran",
+            "author_description": "A passionate minimalist and coffee enthusiast"
+          }
+        },
+        "testimonial_737RNg": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 4,
+            "review_content": "<p>I love how versatile and comfortable the pieces are. They fit seamlessly into my daily routine, whether I'm running errands or heading to yoga class. NORMCORE™ Fundamental is my go-to for stylish yet practical clothing.</p>",
+            "author_name": "Sarah N.",
+            "author_description": "A busy mom and yoga enthusiast"
+          }
+        },
+        "testimonial_hqrRUn": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The attention to detail and craftsmanship is incredible. Every piece feels like it was made just for me. NORMCORE™ Fundamental is redefining what it means to have a wardrobe of essential</p>",
+            "author_name": "Michael Le",
+            "author_description": "A tech entrepreneur and sneaker collector"
+          }
+        },
+        "testimonial_K3wr8m": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>I’ve never felt more confident in my everyday outfits. The clean lines and neutral tones make it so easy to mix and match. NORMCORE™ Fundamental is a game-changer for anyone who loves effortless style.</p>",
+            "author_name": "Emily P.",
+            "author_description": "A freelance graphic designer and coffee shop hopper."
+          }
+        },
+        "testimonial_8Mb4Kk": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>The durability of these clothes is amazing. I’ve worn them hiking, to the gym, and even to casual dinners. They hold up so well and still look great. NORMCORE™ Fundamental is the real deal!</p>",
+            "author_name": "Rosie",
+            "author_description": "Artist - A Creative Visionary"
+          }
+        },
+        "testimonial_R3JBpE": {
+          "type": "testimonial",
+          "settings": {
+            "icon_image": "",
+            "rating": 5,
+            "review_content": "<p>As a student, I need interrior that are affordable, durable, and stylish. NORMCORE™ Fundamental checks all the boxes.</p>",
+            "author_name": "Kevin",
+            "author_description": "Aspiring Professional & Lifelong Learner"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_m4VtLw",
+        "testimonial_737RNg",
+        "testimonial_hqrRUn",
+        "testimonial_K3wr8m",
+        "testimonial_8Mb4Kk",
+        "testimonial_R3JBpE"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Our customers",
+        "heading_size": "h3-regular",
+        "description": "",
+        "heading_size_item": "f-body fs-body-xl",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "small",
+        "show_rating": true,
+        "color_rating": "#ffb82d",
+        "carousel_desktop": "true",
+        "columns_per_row": "4",
+        "carousel_mobile": "true",
+        "label": "",
+        "link": ""
+      }
+    },
+    "image_gallery_wtFhX3": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_rfmBVj": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_pLbzGJ": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_7aYYVg": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_dEPQGW": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_8btXC8": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_Vi4YhD": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_bDddwY": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_an9zgC": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_qefBgx": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        },
+        "image_jag3YB": {
+          "type": "image",
+          "settings": {
+            "item_image": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_rfmBVj",
+        "image_pLbzGJ",
+        "image_7aYYVg",
+        "image_dEPQGW",
+        "image_8btXC8",
+        "image_Vi4YhD",
+        "image_bDddwY",
+        "image_an9zgC",
+        "image_qefBgx",
+        "image_jag3YB"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "More ideas & inspirations from Normcore",
+        "heading_size": "h3-regular",
+        "description": "",
+        "enable_offset_columns": true,
+        "image_ratio": "auto",
+        "desktop_column": "5",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "blog_post_list_YKyPdD": {
+      "type": "blog-post-list",
+      "blocks": {
+        "additional_information_dndFRh": {
+          "type": "additional_information",
+          "settings": {
+            "info_to_show": "published_date"
+          }
+        },
+        "tags_k6jbWU": {
+          "type": "tags",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_g7V9Xm": {
+          "type": "title",
+          "settings": {}
+        },
+        "excerpt_AhkQcM": {
+          "type": "excerpt",
+          "settings": {
+            "truncate_text": true
+          }
+        }
+      },
+      "block_order": [
+        "additional_information_dndFRh",
+        "tags_k6jbWU",
+        "title_g7V9Xm",
+        "excerpt_AhkQcM"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "blog": "news",
+        "heading": "Articles",
+        "heading_size": "h3-regular",
+        "description": "",
+        "items_to_show": 5,
+        "show_featured_image": true,
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "enable_button": true,
+        "button_text": "Explore more",
+        "button_position": "above-listing"
+      }
+    }
+  },
+  "order": [
+    "slideshow_ew9nBd",
+    "collection_list_HmMCN7",
+    "featured_product_list_fUaEaQ",
+    "image_banner_47cVjk",
+    "content_collage_VyzfAh",
+    "collection_browsing_Gkc6jW",
+    "featured_product_list_Cckcty",
+    "icon_with_text_nUgDUh",
+    "testimonials_ENiqzk",
+    "before_after_images_GNnDFP",
+    "logo_list_hCN9Fy",
+    "featured_product_list_g7AQjk",
+    "running_content_RDzfDG",
+    "product_bundle_zVmeGW",
+    "featured_product_list_qQ74EA",
+    "image_with_hotspot_RkGmYG",
+    "testimonials_TDkFDP",
+    "image_gallery_wtFhX3",
+    "blog_post_list_YKyPdD"
+  ]
+}

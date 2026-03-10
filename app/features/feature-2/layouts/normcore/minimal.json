@@ -1,0 +1,1297 @@
+{
+  "sections": {
+    "content_collage_J3Lik6": {
+      "type": "content-collage",
+      "blocks": {
+        "video_F3hBMj": {
+          "type": "video",
+          "settings": {
+            "heading": "Fresh Picks, Happy Smiles!",
+            "enable_h1_tag": true,
+            "heading_size": "h2",
+            "description": "",
+            "video_source": "video_external",
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Go for a Fresh Basket!",
+            "button_style": "primary",
+            "overlay_opacity": 60,
+            "mask_overlay_color": "#520303",
+            "content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_4bdKX3": {
+          "type": "image",
+          "settings": {
+            "heading": "The Secret to Perfect Steaks!",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Shop Now!",
+            "button_style": "primary",
+            "overlay_opacity": 70,
+            "mask_overlay_color": "#520303",
+            "content_overlay_color": "#ffedcb"
+          }
+        }
+      },
+      "block_order": [
+        "video_F3hBMj",
+        "image_4bdKX3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_fullwidth": false,
+        "show_layout_grid": false,
+        "desktop_row_height": 210,
+        "mobile_row_height": 300
+      }
+    },
+    "featured_product_list_WzyYep": {
+      "type": "featured-product-list",
+      "blocks": {
+        "price_eYNJdH": {
+          "type": "price",
+          "settings": {
+            "color_product_price": "#ff611d"
+          }
+        }
+      },
+      "block_order": [
+        "price_eYNJdH"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Featured Products",
+        "heading_size": "h4",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 5,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "false",
+        "columns_per_row_mobile": "1",
+        "button_text": "View all",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": true,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "rgba(0,0,0,0)",
+        "countdown_number_color": ""
+      }
+    },
+    "collection_list_AQxXQK": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_KAJEfm": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#ff5624",
+            "custom_color": "#ffedcb"
+          }
+        },
+        "collection_Dj3URc": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#c1d721",
+            "custom_color": "#520303"
+          }
+        },
+        "collection_9CREbn": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#feba31",
+            "custom_color": "#3e1929"
+          }
+        },
+        "collection_DjFPtC": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#238dfb",
+            "custom_color": "#ffedcb"
+          }
+        },
+        "collection_t7X6Jx": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#ffa4c6",
+            "custom_color": "#520303"
+          }
+        },
+        "collection_GMbTi4": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "custom_background": "#ffedcb",
+            "custom_color": "#520303"
+          }
+        }
+      },
+      "block_order": [
+        "collection_KAJEfm",
+        "collection_Dj3URc",
+        "collection_9CREbn",
+        "collection_DjFPtC",
+        "collection_t7X6Jx",
+        "collection_GMbTi4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Shop by Category",
+        "heading_size": "h4",
+        "description": "",
+        "image_ratio": "1/1",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "enable_button": true,
+        "button_text": "View All",
+        "button_position": "last-item"
+      }
+    },
+    "featured_product_list_pGRMMm": {
+      "type": "featured-product-list",
+      "blocks": {
+        "vendor_RaNrdD": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_zwziV3": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_ihe7kW": {
+          "type": "price",
+          "settings": {
+            "color_product_price": "rgba(0,0,0,0)"
+          }
+        },
+        "variants_gnNGbd": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": "Color, Material, Size"
+          }
+        }
+      },
+      "block_order": [
+        "vendor_RaNrdD",
+        "title_zwziV3",
+        "price_ihe7kW",
+        "variants_gnNGbd"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Fresh Selections",
+        "heading_size": "h4",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 12,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "show_quick_view": true,
+        "quick_buy": "standard",
+        "enable_countdown": true,
+        "hide_on_end": true,
+        "end_date": "2026-05-20",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "#feba31",
+        "countdown_number_color": "#520303"
+      }
+    },
+    "collection_browsing_nii8kV": {
+      "type": "collection-browsing",
+      "blocks": {
+        "collection_4EGib4": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Beverage",
+            "selected_collection": "beverages"
+          }
+        },
+        "collection_YxMh7n": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Bread & Bakery",
+            "selected_collection": "bakery"
+          }
+        },
+        "collection_frAVEz": {
+          "type": "collection",
+          "settings": {
+            "collection_heading": "Cheese & Milk",
+            "selected_collection": "cheese-milk"
+          }
+        }
+      },
+      "block_order": [
+        "collection_4EGib4",
+        "collection_YxMh7n",
+        "collection_frAVEz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Best Seller",
+        "heading_size": "h4",
+        "description": "",
+        "max_items": 8,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "standard",
+        "show_variant_swatches": false,
+        "show_price": true,
+        "show_badge": false,
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    },
+    "logo_list_GA9f9V": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_JChbYQ": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_qQPnwY": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_cqtQyH": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_tgPYew": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_8k4HNa": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_Q4X4GU": {
+          "type": "logo",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "logo_JChbYQ",
+        "logo_qQPnwY",
+        "logo_cqtQyH",
+        "logo_tgPYew",
+        "logo_8k4HNa",
+        "logo_Q4X4GU"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Trusted Suppliers",
+        "heading_size": "h4",
+        "description": "",
+        "list_style": "running",
+        "running_direction": "animation-direction",
+        "rotating_speed": "3",
+        "hover_interaction": "pause",
+        "list_alignment": "center-xs",
+        "logo_size": "70px",
+        "label": "",
+        "link": ""
+      }
+    },
+    "multi_media_banner_EF39ka": {
+      "type": "multi-media-banner",
+      "blocks": {
+        "image_rWiGwq": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "enable_h1_tag": false,
+            "heading_size": "headline",
+            "description": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": "",
+            "desktop_content_position": "center-md",
+            "desktop_content_alignment": "ta-center-md middle-md",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": ""
+          }
+        },
+        "image_LjX6Mp": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "enable_h1_tag": false,
+            "heading_size": "headline",
+            "description": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": "",
+            "desktop_content_position": "center-md",
+            "desktop_content_alignment": "ta-center-md middle-md",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": ""
+          }
+        },
+        "image_zBFEDB": {
+          "type": "image",
+          "settings": {
+            "heading": "",
+            "enable_h1_tag": false,
+            "heading_size": "headline",
+            "description": "",
+            "overlay_opacity": 0,
+            "mask_overlay_color": "",
+            "content_overlay_color": "",
+            "desktop_content_position": "center-md",
+            "desktop_content_alignment": "ta-center-md middle-md",
+            "mobile_content_position": "center-xs",
+            "mobile_content_alignment": "ta-center middle-xs",
+            "button_label": "",
+            "button_style": "primary",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_rWiGwq",
+        "image_LjX6Mp",
+        "image_zBFEDB"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "section_image_width": "max-width",
+        "height_desktop": "50vh",
+        "desktop_layout": "desktop-column-equal",
+        "height_mobile": "50vh",
+        "mobile_layout": "mobile-column-equal"
+      }
+    },
+    "running_content_BatUpa": {
+      "type": "running-content",
+      "blocks": {
+        "image_FmjVXi": {
+          "type": "image",
+          "settings": {}
+        },
+        "text_r8VffK": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Fresh Ingredients</p>",
+            "color_text": ""
+          }
+        },
+        "image_z7q4jy": {
+          "type": "image",
+          "settings": {}
+        },
+        "text_rzQ6fc": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Quality Guaranteed</p>",
+            "color_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_FmjVXi",
+        "text_r8VffK",
+        "image_z7q4jy",
+        "text_rzQ6fc"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "running_direction": "animation-direction",
+        "rotating_speed": "3",
+        "hover_interaction": "slow_down",
+        "item_size": "small",
+        "image_ratio": "1/1"
+      }
+    },
+    "product_bundle_PfinY4": {
+      "type": "product-bundle",
+      "blocks": {
+        "vendor_tNVrd6": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_pMBwKY": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_n3EUGA": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_U68p4J": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": "Material, Size"
+          }
+        }
+      },
+      "block_order": [
+        "vendor_tNVrd6",
+        "title_pMBwKY",
+        "price_n3EUGA",
+        "variants_U68p4J"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 10,
+        "product_list": [],
+        "bundle_description": "Discover our curated ingredient bundles",
+        "min_products": 3,
+        "enable_unlimited_add": false,
+        "custom_panel_background": "",
+        "custom_panel_color": "",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1",
+        "show_quick_view": false,
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "featured_product_list_gyVBDG": {
+      "type": "featured-product-list",
+      "blocks": {
+        "title_Pa3tci": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_RDXKkp": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_QANcrx": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": "Color, Material, Size"
+          }
+        },
+        "product_attributes_FpDtrN": {
+          "type": "product_attributes",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_Pa3tci",
+        "price_RDXKkp",
+        "variants_QANcrx",
+        "product_attributes_FpDtrN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Vegan's Ready!",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 3,
+        "product_list": [],
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "3",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": false,
+        "hide_on_end": false,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "content_collage_wzFgVp": {
+      "type": "content-collage",
+      "blocks": {
+        "image_DX4Hxk": {
+          "type": "image",
+          "settings": {
+            "heading": "Staff Picks: Kitchen Must-Haves",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "2",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "show now",
+            "button_style": "primary",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#520303",
+            "content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_RaCbEc": {
+          "type": "image",
+          "settings": {
+            "heading": "Cook with Easet",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "1",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Shop now",
+            "button_style": "primary",
+            "overlay_opacity": 10,
+            "mask_overlay_color": "#000000",
+            "content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_t4xmt4": {
+          "type": "image",
+          "settings": {
+            "heading": "Dine in Style",
+            "enable_h1_tag": false,
+            "heading_size": "h2",
+            "description": "",
+            "desktop_content_position": "start-md",
+            "desktop_content_alignment": "ta-left-md top-md",
+            "desktop_column": "2",
+            "desktop_row": "1",
+            "mobile_content_position": "start-xs",
+            "mobile_content_alignment": "ta-left top-xs",
+            "mobile_column": "2",
+            "mobile_row": "1",
+            "button_label": "Shop now",
+            "button_style": "primary",
+            "overlay_opacity": 30,
+            "mask_overlay_color": "#520303",
+            "content_overlay_color": "#ffedcb"
+          }
+        }
+      },
+      "block_order": [
+        "image_DX4Hxk",
+        "image_RaCbEc",
+        "image_t4xmt4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_fullwidth": false,
+        "show_layout_grid": false,
+        "desktop_row_height": 310,
+        "mobile_row_height": 300
+      }
+    },
+    "featured_product_list_A8y3VX": {
+      "type": "featured-product-list",
+      "blocks": {
+        "product_type_NqAaxy": {
+          "type": "product_type",
+          "settings": {
+            "color_product_type": ""
+          }
+        },
+        "title_VdBdEt": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_mVUxrC": {
+          "type": "price",
+          "settings": {
+            "color_product_price": ""
+          }
+        },
+        "variants_zfTyU9": {
+          "type": "variants",
+          "settings": {
+            "card_product_variants": "Color, Material, Size"
+          }
+        },
+        "product_attributes_rtU9pC": {
+          "type": "product_attributes",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_type_NqAaxy",
+        "title_VdBdEt",
+        "price_mVUxrC",
+        "variants_zfTyU9",
+        "product_attributes_rtU9pC"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Kitchen Essentials",
+        "heading_size": "h5",
+        "description": "",
+        "collection": "",
+        "products_to_shows": 6,
+        "product_list": [],
+        "carousel_desktop": "false",
+        "columns_per_row_desktop": "6",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "2",
+        "button_text": "View all",
+        "show_quick_view": true,
+        "quick_buy": "bulk",
+        "enable_countdown": false,
+        "hide_on_end": false,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "image_banner_VYEkTk": {
+      "type": "image-banner",
+      "blocks": {
+        "countdown_timer_wfbgt4": {
+          "type": "countdown_timer",
+          "settings": {
+            "hide_on_end": true,
+            "end_date": "",
+            "end_time": "",
+            "end_text": "<p>Event is finished</p>",
+            "countdown_background": "rgba(0,0,0,0)",
+            "countdown_number_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading_G8tMUY": {
+          "type": "heading",
+          "settings": {
+            "heading_text": "Artisanal Sauces Collection",
+            "heading_size": "h2",
+            "enable_h1_tag": false
+          }
+        },
+        "description_8DU9x3": {
+          "type": "description",
+          "settings": {
+            "description_text": "<p>Discover our curated selection of premium sauces crafted with the finest ingredients for exceptional flavor.</p>"
+          }
+        },
+        "button_43DK3V": {
+          "type": "button",
+          "settings": {
+            "button_primary_label": "View category",
+            "button_primary_style": "primary",
+            "button_secondary_label": "",
+            "button_secondary_style": "secondary",
+            "button_secondary_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "countdown_timer_wfbgt4",
+        "heading_G8tMUY",
+        "description_8DU9x3",
+        "button_43DK3V"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_transparent_header": false,
+        "section_overlay_opacity": 20,
+        "section_mask_overlay_color": "#ff611d",
+        "section_content_overlay_color": "#ffedcb",
+        "section_image_width": "max-width",
+        "height_desktop": "50vh",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "height_mobile": "50vh",
+        "mobile_content_position": "start-xs",
+        "mobile_content_alignment": "ta-left top-xs",
+        "image_banner_link": ""
+      }
+    },
+    "running_content_NmxzV9": {
+      "type": "running-content",
+      "blocks": {
+        "image_HYDyTf": {
+          "type": "image",
+          "settings": {}
+        },
+        "text_TmHHFe": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Sauces You Can't Resist!</p>",
+            "color_text": ""
+          }
+        },
+        "image_JjYtYU": {
+          "type": "image",
+          "settings": {}
+        },
+        "text_V4XqjM": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Chef-Approved Taste!</p>",
+            "color_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_HYDyTf",
+        "text_TmHHFe",
+        "image_JjYtYU",
+        "text_V4XqjM"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "running_direction": "animation-direction",
+        "rotating_speed": "3",
+        "hover_interaction": "slow_down",
+        "item_size": "small",
+        "image_ratio": "1/1"
+      }
+    },
+    "featured_product_9CJRUL": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_Lkhnzm": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_874qpA": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "variant_selector_CaxG46": {
+          "type": "variant_selector",
+          "settings": {
+            "show_low_stock": true,
+            "show_stock_counter": true,
+            "selector_style": "block",
+            "show_variant_swatches": true,
+            "enable_size_guide": false,
+            "size_label_heading": "Size chart",
+            "size_guide_content": ""
+          }
+        },
+        "price_XJhjKW": {
+          "type": "price",
+          "settings": {
+            "heading_size": "h2",
+            "color_product_price": "rgba(0,0,0,0)",
+            "show_tax_and_shipping_policy": true,
+            "show_sold_out_badge": true,
+            "show_sale_badge": "text_only",
+            "show_new_in_badge": true
+          }
+        },
+        "buy_buttons_my6hFb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout_buttons": true,
+            "show_gift_card_form": true,
+            "enable_pre_order": false,
+            "note": "",
+            "show_payment_method": true,
+            "payment_heading": "We accept"
+          }
+        }
+      },
+      "block_order": [
+        "vendor_Lkhnzm",
+        "title_874qpA",
+        "variant_selector_CaxG46",
+        "price_XJhjKW",
+        "buy_buttons_my6hFb"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Our Signature Formula!",
+        "description": "",
+        "product": "",
+        "show_link_to_product_details": true,
+        "main_media_ratio": "1/1",
+        "thumbnails_ratio": "1/1 fill",
+        "media_background_color": "rgba(0,0,0,0)",
+        "section_ordering": "fd-row-md",
+        "media_layout": "layout-grid-2-columns",
+        "media_width_on_desktop": "2/3",
+        "enable_sticky_media": true,
+        "show_media_thumbnails": true
+      }
+    },
+    "image_with_hotspot_ETGQmg": {
+      "type": "image-with-hotspot",
+      "blocks": {
+        "product_hotspot_ENaXYF": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 53,
+            "left_offset": 18,
+            "top_offset_mobile": 60,
+            "left_offset_mobile": 60,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "product_hotspot_AahHFW": {
+          "type": "product_hotspot",
+          "settings": {
+            "top_offset": 68,
+            "left_offset": 90,
+            "top_offset_mobile": 40,
+            "left_offset_mobile": 40,
+            "product": "",
+            "show_vendor": true,
+            "show_price": true
+          }
+        },
+        "text_hotspot_KPecMc": {
+          "type": "text_hotspot",
+          "settings": {
+            "top_offset": 60,
+            "left_offset": 60,
+            "top_offset_mobile": 50,
+            "left_offset_mobile": 50,
+            "heading": "CHEFF Picks: Shrimp and Eggs Bento",
+            "description": "<p>Light and fluffy couscous combined with chopped vegetables, chickpeas, and fresh herbs, ideal as a side or light meal.</p>",
+            "button_label": "Details"
+          }
+        }
+      },
+      "block_order": [
+        "product_hotspot_ENaXYF",
+        "product_hotspot_AahHFW",
+        "text_hotspot_KPecMc"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading_text": "",
+        "heading": "Discover the Flavors",
+        "heading_size": "h2",
+        "enable_h1_tag": false,
+        "description": "<p>Hover over each dish to explore the ingredients and shop your favorites —featuring a delightful dessert to complete your meal!</p>",
+        "section_image_width": "max-width",
+        "desktop_content_position": "start-md",
+        "desktop_content_alignment": "ta-left-md top-md",
+        "section_overlay_opacity": 0,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "mobile_content_alignment": "ta-left top-xs",
+        "hotspot_background": "#ffffff",
+        "hotspot_color": "#000000"
+      }
+    },
+    "running_image_link_Cba78b": {
+      "type": "running-image-link",
+      "blocks": {
+        "image_jyPxQU": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "",
+            "description": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "#000000",
+            "block_content_overlay_color": "#ffffff"
+          }
+        },
+        "image_APCUeY": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "Milk of the Month: A new taste to enjoy!",
+            "description": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_mDzyQN": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "Farm-Fresh Picks",
+            "description": "",
+            "overlay_opacity": 20,
+            "block_mask_overlay_color": "#000000",
+            "block_content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_B7EMxK": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "",
+            "description": "",
+            "overlay_opacity": 0,
+            "block_mask_overlay_color": "",
+            "block_content_overlay_color": ""
+          }
+        },
+        "image_jXTyVp": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "Freshly Baked Delights",
+            "description": "",
+            "overlay_opacity": 40,
+            "block_mask_overlay_color": "#520303",
+            "block_content_overlay_color": "#ffedcb"
+          }
+        },
+        "image_RDE8yq": {
+          "type": "image",
+          "settings": {
+            "item_size": "large",
+            "heading": "Beverages",
+            "description": "",
+            "overlay_opacity": 30,
+            "block_mask_overlay_color": "#520303",
+            "block_content_overlay_color": "#ffedcb"
+          }
+        },
+        "collection_W9ijmz": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "item_size": "large",
+            "show_collection_title": true,
+            "show_collection_quantity": true,
+            "quantity_style": "separate_line",
+            "overlay_opacity": 30,
+            "block_mask_overlay_color": "#520303",
+            "block_content_overlay_color": "#ffedcb"
+          }
+        }
+      },
+      "block_order": [
+        "image_jyPxQU",
+        "image_APCUeY",
+        "image_mDzyQN",
+        "image_B7EMxK",
+        "image_jXTyVp",
+        "image_RDE8yq",
+        "collection_W9ijmz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "",
+        "heading_size": "h5",
+        "description": "",
+        "running_direction": "animation-direction",
+        "rotating_speed": "1",
+        "hover_interaction": "pause",
+        "list_alignment": "top-xs",
+        "item_shape": "auto",
+        "content_position": "start-xs",
+        "content_alignment": "ta-left top-xs",
+        "button_text": "",
+        "button_link": "",
+        "enable_countdown": false,
+        "hide_on_end": true,
+        "end_date": "",
+        "end_time": "",
+        "end_text": "<p>This event is finished</p>",
+        "countdown_background": "",
+        "countdown_number_color": ""
+      }
+    },
+    "blog_post_list_YDkmE3": {
+      "type": "blog-post-list",
+      "blocks": {
+        "additional_information_Vg9bHm": {
+          "type": "additional_information",
+          "settings": {
+            "info_to_show": "published_date"
+          }
+        },
+        "title_nhxhNf": {
+          "type": "title",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "additional_information_Vg9bHm",
+        "title_nhxhNf"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "blog": "news",
+        "heading": "Fresh Bites & Kitchen Insights",
+        "heading_size": "h5",
+        "description": "",
+        "items_to_show": 12,
+        "show_featured_image": true,
+        "image_ratio": "3/2",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "5",
+        "carousel_mobile": "true",
+        "enable_button": true,
+        "button_text": "Explore more",
+        "button_position": "above-listing"
+      }
+    },
+    "blog_post_list_kcjfA8": {
+      "type": "blog-post-list",
+      "blocks": {
+        "title_LcmfDc": {
+          "type": "title",
+          "settings": {}
+        },
+        "additional_information_YqNfFR": {
+          "type": "additional_information",
+          "settings": {
+            "info_to_show": "published_date"
+          }
+        },
+        "excerpt_3PDaxY": {
+          "type": "excerpt",
+          "settings": {
+            "truncate_text": true
+          }
+        }
+      },
+      "block_order": [
+        "title_LcmfDc",
+        "additional_information_YqNfFR",
+        "excerpt_3PDaxY"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "blog": "creamy-garlic-butter-pasta-with-shrimp",
+        "heading": "Easy & Tasty Recipes",
+        "heading_size": "h5",
+        "description": "",
+        "items_to_show": 8,
+        "show_featured_image": false,
+        "image_ratio": "1/1",
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "false",
+        "enable_button": true,
+        "button_text": "View all",
+        "button_position": "above-listing"
+      }
+    },
+    "running_content_VNMirX": {
+      "type": "running-content",
+      "blocks": {
+        "icon_U4wCAm": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "happy",
+            "custom_code": "",
+            "color_content": "#ffa4c6"
+          }
+        },
+        "text_HN7mCP": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Loved for Quality</p>",
+            "color_text": "#ffa4c6"
+          }
+        },
+        "icon_z7fXzM": {
+          "type": "icon",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "heart",
+            "custom_code": "",
+            "color_content": "#c1d721"
+          }
+        },
+        "text_heQmUb": {
+          "type": "text",
+          "settings": {
+            "promotion_text": "<p>Trusted by Customers</p>",
+            "color_text": "#c1d721"
+          }
+        }
+      },
+      "block_order": [
+        "icon_U4wCAm",
+        "text_HN7mCP",
+        "icon_z7fXzM",
+        "text_heQmUb"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "running_direction": "animation-direction",
+        "rotating_speed": "3",
+        "hover_interaction": "slow_down",
+        "item_size": "small",
+        "image_ratio": "1/1"
+      }
+    },
+    "spotlight_quotes_mP6Qqd": {
+      "type": "spotlight-quotes",
+      "blocks": {
+        "quote_ejRdyp": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 5,
+            "review_content": "<p>\"The fruits, vegetables, and meats are always incredibly fresh. You can really taste the quality in every meal!\"</p>",
+            "author_name": "Jake T.",
+            "author_description": "Food Blogger & Home Cook"
+          }
+        },
+        "quote_kzJJUW": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"I've been shopping here for months, and the freshness of the produce and meats is unmatched. Plus, their kitchenware selection is super handy!\"</p>",
+            "author_name": "Emma R.",
+            "author_description": "Home Chef & Food Enthusiast"
+          }
+        },
+        "quote_tP73V7": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"I love that I can find everything from everyday essentials to gourmet ingredients here. Cooking at home has never been this fun and easy!\"</p>",
+            "author_name": "Olivia S.",
+            "author_description": "Aspiring Chef"
+          }
+        },
+        "quote_wyEmEA": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 4,
+            "review_content": "<p>\"From pantry staples to premium cookware, this store has everything I need. Shopping here makes meal prep so much easier!\"</p>",
+            "author_name": "Daniel M.",
+            "author_description": "Homemaker"
+          }
+        },
+        "quote_ELj4NN": {
+          "type": "quote",
+          "settings": {
+            "star_rating": 5,
+            "review_content": "<p>\"I love how quickly my orders arrive, and the ingredients are always fresh. The kitchen tools I bought are also top-notch!\"</p>",
+            "author_name": "Sophia L.",
+            "author_description": "Busy Parent & Home Cook"
+          }
+        }
+      },
+      "block_order": [
+        "quote_ejRdyp",
+        "quote_kzJJUW",
+        "quote_tP73V7",
+        "quote_wyEmEA",
+        "quote_ELj4NN"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "show_quote_icon": false,
+        "quote_text_size": "h1",
+        "content_alignment": "ta-left top-xs",
+        "image_ratio": "1/1",
+        "image_size": "30",
+        "show_rating": true,
+        "star_rating_color": "#ff611d",
+        "show_pagination": true,
+        "show_navigation": true,
+        "enable_autoplay": false,
+        "change_slide_interval": 5,
+        "slide_style": "primary"
+      }
+    },
+    "recently_viewed_products_wprjEe": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "heading": "Recently Viewed Products",
+        "heading_size": "h5",
+        "products_to_show": 8,
+        "show_vendor": false,
+        "enable_quick_view": true,
+        "quick_buy": "standard",
+        "show_variant_swatches": true,
+        "show_price": true,
+        "show_badge": true,
+        "carousel_desktop": "true",
+        "columns_per_row_desktop": "4",
+        "carousel_mobile": "true",
+        "columns_per_row_mobile": "1"
+      }
+    }
+  },
+  "order": [
+    "content_collage_J3Lik6",
+    "featured_product_list_WzyYep",
+    "collection_list_AQxXQK",
+    "featured_product_list_pGRMMm",
+    "collection_browsing_nii8kV",
+    "logo_list_GA9f9V",
+    "multi_media_banner_EF39ka",
+    "running_content_BatUpa",
+    "product_bundle_PfinY4",
+    "featured_product_list_gyVBDG",
+    "content_collage_wzFgVp",
+    "featured_product_list_A8y3VX",
+    "image_banner_VYEkTk",
+    "running_content_NmxzV9",
+    "featured_product_9CJRUL",
+    "image_with_hotspot_ETGQmg",
+    "running_image_link_Cba78b",
+    "blog_post_list_YDkmE3",
+    "blog_post_list_kcjfA8",
+    "running_content_VNMirX",
+    "spotlight_quotes_mP6Qqd",
+    "recently_viewed_products_wprjEe"
+  ]
+}
