@@ -1,0 +1,345 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_e3eDXT": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 31,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "\u300cGREAT MINDS THINK ALIKE\u300d",
+            "description": "<p>\u6771\u4eac\u306e\u6d17\u7df4\u3055\u308c\u305f\u30e2\u30c0\u30f3\u306a\u90fd\u4f1a\u306e\u96f0\u56f2\u6c17\u306e\u3088\u3046\u306b\u3001\u3053\u306e\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u306f\u5909\u308f\u308a\u3086\u304f\u98a8\u666f\u306e\u4e2d\u3067\u4e88\u6e2c\u4e0d\u53ef\u80fd\u306a\u5192\u967a\u306e\u30bf\u30a4\u30e0\u30ec\u30b9\u306a\u9b45\u529b\u3092\u53cd\u6620\u3057\u3066\u3044\u307e\u3059\u3002</p>",
+            "primary_button_label": "",
+            "secondary_button_label": "",
+            "secondary_button_link": ""
+          }
+        },
+        "slide_KfVdzQ": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 33,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "\u300cHOME BODY\u300d",
+            "description": "<p>\u3059\u3063\u304d\u308a\u3068\u3057\u306a\u304c\u3089\u3082\u5370\u8c61\u7684\u306a\u30c7\u30b6\u30a4\u30f3\u304c\u7279\u5fb4\u306e\u3053\u306e\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u306f\u3001\u67d4\u3089\u304b\u304f\u901a\u6c17\u6027\u306e\u3042\u308b\u7d20\u6750\u3092\u4f7f\u7528\u3057\u3066\u3001\u30ea\u30e9\u30c3\u30af\u30b9\u3057\u305f\u96f0\u56f2\u6c17\u3092\u6f14\u51fa\u3057\u306a\u304c\u3089\u3082\u3001\u30ea\u30d3\u30f3\u30b0\u30b9\u30da\u30fc\u30b9\u306b\u5b58\u5728\u611f\u3092\u4e0e\u3048\u307e\u3059\u3002</p>",
+            "primary_button_label": "",
+            "secondary_button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_e3eDXT",
+        "slide_KfVdzQ"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "height_desktop": "100vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 4,
+        "content_position": "left-bottom",
+        "accessibility_content": "Slideshow about our brand"
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "\u30ab\u30c6\u30b4\u30ea\u30fc\u5225\u306b\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "content_align": "ta-center m-auto",
+        "enable_carousel": false,
+        "show_navigation": true,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "enable_view_all": true,
+        "button_main_text": "\u3059\u3079\u3066\u3092\u898b\u308b",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "featured_product_carousel": {
+      "type": "featured-product-carousel",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "\u4eba\u6c17\u5546\u54c1",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-center",
+        "show_navigation": true,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "product_list": [],
+        "show_ranking": true,
+        "ranking_badge_shape": "ribbon",
+        "ranking_badge_color": "color-accent-1",
+        "image_ratio": "auto",
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "star_rating_overlay": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "featured_collections_1": {
+      "type": "featured-collections",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "\u30b7\u30b0\u30cd\u30c1\u30e3\u30fc\u30d4\u30fc\u30b9",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "content_alignment": "ta-center",
+        "items_to_show": 8,
+        "enable_carousel": false,
+        "show_navigation": true,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "show_view_all_button": true,
+        "button_text": "\u3059\u3079\u3066\u3092\u898b\u308b",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "hotspot_bQwMdR": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 8,
+            "left_offset": 52
+          }
+        },
+        "hotspot_VbDkbd": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 43,
+            "left_offset": 43
+          }
+        },
+        "hotspot_RVRDyE": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 73,
+            "left_offset": 53
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_bQwMdR",
+        "hotspot_VbDkbd",
+        "hotspot_RVRDyE"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "subheading": "",
+        "heading": "\u304a\u3059\u3059\u3081\u5546\u54c1",
+        "description": "",
+        "show_navigation": true,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-left",
+        "badge_shape": "badge--star"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "\u300c???\u300d\u30a6\u30a3\u30f3\u30bf\u30fc \u201923 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+            "button_text": ""
+          }
+        },
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "\u300cHOMEBODY\u300d\u30b9\u30d7\u30ea\u30f3\u30b0\u30fb\u30b5\u30de\u30fc \u201924 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+            "button_text": ""
+          }
+        },
+        "image-0": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "\u300cLOST IN TOKYO\u300d\u30d5\u30a9\u30fc\u30eb\u30fb\u30a6\u30a3\u30f3\u30bf\u30fc \u201923 \u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "image-2",
+        "image-1",
+        "image-0"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "\u30b9\u30bf\u30a4\u30eb\u3092\u683c\u4e0a\u3052\u3057\u3088\u3046",
+        "description": "\u6771\u4eac\u306e\u6ca1\u5165\u611f\u3068\u63a2\u691c\u5fc3\u306b\u30a4\u30f3\u30b9\u30d1\u30a4\u30a2\u3055\u308c\u305f\u3001\u590f\u3068\u51ac\u306b\u6700\u9069\u306a\u8c4a\u5bcc\u306a\u30a2\u30a4\u30c6\u30e0\u3092\u53d6\u308a\u63c3\u3048\u3066\u3044\u307e\u3059\u3002\u30b9\u30bf\u30a4\u30ea\u30c3\u30b7\u30e5\u3067\u7740\u5fc3\u5730\u306e\u826f\u3044\u5168\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u3092\u305c\u3072\u3054\u89a7\u304f\u3060\u3055\u3044\u3002",
+        "collage_width_on_desktop": "wide",
+        "content_alignment": "ta-center",
+        "items_ordering": "equal",
+        "enable_stacked_layout": false,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "image_ratio": "4/5",
+        "show_items_button": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": false,
+        "content_alignment": "ta-right",
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "primary_image_ratio": "square",
+        "secondary_image_ratio": "square",
+        "subheading": "",
+        "heading": "\u300e???\u300f2023\u5e74\u79cb\u51ac\u30b3\u30ec\u30af\u30b7\u30e7\u30f3 \u30eb\u30c3\u30af\u30d6\u30c3\u30af",
+        "description": "<p>\u79c1\u305f\u3061\u306e\u53d6\u308a\u7d44\u307f\u306f\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3\u3092\u8d85\u3048\u3066\u3044\u307e\u3059\u3002\u30b9\u30bf\u30a4\u30eb\u3068\u6301\u7d9a\u53ef\u80fd\u6027\u3092\u30b7\u30fc\u30e0\u30ec\u30b9\u306b\u878d\u5408\u3055\u305b\u3001\u3059\u3079\u3066\u306e\u88fd\u54c1\u306b\u74b0\u5883\u3078\u306e\u914d\u616e\u3001\u502b\u7406\u7684\u306a\u52b4\u50cd\u6163\u884c\u3001\u305d\u3057\u3066\u30bf\u30a4\u30e0\u30ec\u30b9\u306a\u30c7\u30b6\u30a4\u30f3\u3078\u306e\u3053\u3060\u308f\u308a\u3092\u53cd\u6620\u3055\u305b\u308b\u3053\u3068\u3092\u76ee\u6307\u3057\u3066\u3044\u307e\u3059\u3002</p>",
+        "button_main_text": "\u30eb\u30c3\u30af\u30d6\u30c3\u30af\u3092\u30c1\u30a7\u30c3\u30af",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "content_nzUy7K": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "",
+            "heading": "\u300cGREAT MINDS THINK ALIKE\u300d\u30b3\u30ec\u30af\u30b7\u30e7\u30f3",
+            "description": "<p>\u300cGreat Minds Think Alike\u300d\u306f\u30012\u3064\u306e\u30d5\u30a1\u30c3\u30b7\u30e7\u30f3\u30d6\u30e9\u30f3\u30c9\u306e\u521d\u3081\u3066\u306e\u30b3\u30e9\u30dc\u30ec\u30fc\u30b7\u30e7\u30f3\u3067\u3059\u3002\u3053\u306e\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u306f\u3001\u5049\u5927\u306a\u7cbe\u795e\u304c\u4ea4\u308f\u308a\u3001\u4e92\u3044\u306b\u5354\u529b\u3059\u308b\u91cd\u8981\u306a\u7bc0\u76ee\u3068\u3082\u8a00\u3048\u307e\u3059\u3002</p>",
+            "primary_button_label": "\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u3092\u3054\u89a7\u304f\u3060\u3055\u3044",
+            "secondary_button_label": "",
+            "secondary_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_nzUy7K"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": false,
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70",
+        "height_mobile": "70",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "video_banner_link": ""
+      }
+    },
+    "featured_collections_2": {
+      "type": "featured-collections",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u3092\u63a2\u3059",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "content_alignment": "ta-center",
+        "items_to_show": 4,
+        "enable_carousel": true,
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_view_all_button": true,
+        "button_text": "\u3059\u3079\u3066\u3092\u898b\u308b",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "\u30cb\u30e5\u30fc\u30b9",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_alignment": "ta-center",
+        "items_to_show": 4,
+        "enable_carousel": true,
+        "show_navigation": true,
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "show_view_all_button": false,
+        "btn_text": "View all"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "collection_list",
+    "featured_product_carousel",
+    "featured_collections_1",
+    "product_hotspots",
+    "content_collage",
+    "image_with_text",
+    "video_banner",
+    "featured_collections_2",
+    "blog_post_list"
+  ]
+}

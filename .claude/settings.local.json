@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(lsof:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(xargs file:*)",
+      "Bash(git log:*)",
+      "mcp__shopify-dev-mcp__introspect_graphql_schema",
+      "Bash(grep:*)",
+      "Bash(python3:*)",
+      "Bash(node:*)",
+      "Bash(xargs cat:*)",
+      "Bash(npx prisma:*)",
+      "Bash(sqlite3:*)",
+      "Bash(grep \"\"version\"\":*)",
+      "Bash(curl:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

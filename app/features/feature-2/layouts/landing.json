@@ -1,0 +1,642 @@
+{
+  "sections": {
+    "hero_image_with_text": {
+      "type": "hero-image-with-text",
+      "settings": {
+        "color_scheme": "",
+        "content_align": "ta-left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": false,
+        "subheading": "A Style From Future",
+        "heading": "Rejecting Binary Fashion",
+        "description": "<p>From it-bags and shoes to coats and shirts, here are the unisex ready-to-wear pieces that are riding high in the fashion world right now.</p>",
+        "image_ratio": "auto",
+        "button_main_text": "Join The Movement",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "enable_collections": true,
+        "heading_collections": "Browse By Categories",
+        "collection_list": [
+          "new-arrivals",
+          "best-sellers",
+          "bottom",
+          "jacket",
+          "onefit",
+          "top",
+          "autumn-wardrobe",
+          "clearance-sale"
+        ],
+        "items_per_row_on_desktop": "5",
+        "enable_view_all": false,
+        "button_text": "See all collections",
+        "show_navigation": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "running_content_1": {
+      "type": "running-content",
+      "settings": {
+        "color_scheme": "",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "down",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      },
+      "blocks": {
+        "content_UWJx9G": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Express Your True Self",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UWJx9G"
+      ]
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": false,
+        "content_alignment": "ta-center",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "primary_image_ratio": "portrait",
+        "secondary_image_ratio": "square",
+        "subheading": "Behind The Success",
+        "heading": "Be Who You Are Without Having To Be Afraid",
+        "description": "<p>Having garnered some mileage in the recent years, Mondo\u2019s gender-neutral pieces shun all norms of dressing based on an individual\u2019s gender. It would be safe to say that people no longer want to be governed by the pre-conceived diktats of fashion.\u00a0</p>",
+        "button_main_text": "Read Our Story",
+        "button_sub_text": "View Collection",
+        "badge_text": "Back In Vogue",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "featured_collections": {
+      "type": "featured-collections",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Our Signature Catalogue",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "content_alignment": "ta-center",
+        "items_to_show": 4,
+        "enable_carousel": false,
+        "show_navigation": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_view_all_button": true,
+        "button_text": "View collection",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "shape--asterisk"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "template--14376692449419__d1c09f0b-6fe8-447d-b959-6b1c6db18b98-1688554449e106e8c2-0": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "",
+            "heading": "Jacket: The Fashion's Frontier",
+            "description": "<p>The go-to garment for various social and work situations, loved by all generations thanks to their comfort, durability, and great styling</p>",
+            "primary_button_label": "Check Now",
+            "secondary_button_label": "",
+            "secondary_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__d1c09f0b-6fe8-447d-b959-6b1c6db18b98-1688554449e106e8c2-0"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 50,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70",
+        "height_mobile": "70",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "video_banner_link": ""
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "template--14376692449419__bafec130-359b-4558-b041-760342abdf82-1665650718267af483-1": {
+          "type": "product",
+          "settings": {
+            "product": "crewneck-pullover-soft-knitted-sweaters",
+            "show_rating": false,
+            "product_overlay_opacity": 30,
+            "product_mask_overlay_color": "#000000",
+            "product_content_overlay_color": "#ffffff",
+            "star_rating_color": "#FFB82D"
+          }
+        },
+        "6a0174c0-0df5-45ed-bb42-a9749cabb867": {
+          "type": "product",
+          "settings": {
+            "product": "soft-long-sleeve-casual-loungewear",
+            "show_rating": false,
+            "product_overlay_opacity": 30,
+            "product_mask_overlay_color": "#000000",
+            "product_content_overlay_color": "#ffffff",
+            "star_rating_color": "#FFB82D"
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__bafec130-359b-4558-b041-760342abdf82-1665650718267af483-1",
+        "6a0174c0-0df5-45ed-bb42-a9749cabb867"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Editor's Spotlight",
+        "description": "Check out our best-selling collection on Mondo, picked up by fashionistas, fashion bloggers, celebrities, and influencers those who trademark genderless items as their personal style.",
+        "collage_width_on_desktop": "compacted",
+        "content_alignment": "ta-left",
+        "items_ordering": "equal",
+        "enable_stacked_layout": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "image_ratio": "1/1",
+        "show_items_button": false,
+        "badge_text": "Trending Now",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "countdown_banner": {
+      "type": "countdown-banner",
+      "blocks": {
+        "template--14376692449419__d50d2cd2-26f7-43c5-90c1-2392d0a880d1-content-1": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "",
+            "heading": "Summer sale",
+            "description": "<p>Don't miss out on our incredible summer sale! Get your favorite items before they're gone.</p>",
+            "enable_countdown_timer": true,
+            "hide_on_end": false,
+            "end_date": "2026-04-30",
+            "end_time": "",
+            "end_text": "<p>This event is finished.</p>",
+            "color_end_text": "#ff0000",
+            "primary_button_label": "Check now!"
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__d50d2cd2-26f7-43c5-90c1-2392d0a880d1-content-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "section_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "Get ready",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "image_banner_link": ""
+      }
+    },
+    "featured_product_carousel": {
+      "type": "featured-product-carousel",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Reserve before it runs out",
+        "heading": "Limited Edition Restock",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_ranking": false,
+        "ranking_badge_shape": "ribbon",
+        "ranking_badge_color": "color-accent-1",
+        "image_ratio": "2/3",
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "star_rating_overlay": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "template--14376692449419__4649a1f4-c283-460b-8ecd-52a4dd5f66ff-1665650977aba53ad2-0": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 59,
+            "left_offset": 50
+          }
+        },
+        "template--14376692449419__4649a1f4-c283-460b-8ecd-52a4dd5f66ff-1665650977aba53ad2-1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 51,
+            "left_offset": 87
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__4649a1f4-c283-460b-8ecd-52a4dd5f66ff-1665650977aba53ad2-0",
+        "template--14376692449419__4649a1f4-c283-460b-8ecd-52a4dd5f66ff-1665650977aba53ad2-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "get it now",
+        "heading": "Bright Canary For Your Autumn Closet",
+        "description": "",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "badge_text": "This September",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-1": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "Fall into Style",
+            "description": "<p>Embrace the warmth and richness of autumn hues as you browse through our handpicked ensembles, designed to keep you both comfortable and fashionable. Don't miss out on updating your fall wardrobe \u2013 explore our Autumn Catalog collection today</p>",
+            "primary_button_label": "Shop Now",
+            "secondary_button_label": "See All Products",
+            "slide_link": ""
+          }
+        },
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-0": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "End Of Season Clearance",
+            "description": "<p>Don't miss out on the chance to save big on high-quality products from top brands. Browse our Clearance Sales collection today and indulge in guilt-free shopping</p>",
+            "primary_button_label": "Shop Now",
+            "secondary_button_label": "See All Collections",
+            "slide_link": ""
+          }
+        },
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-2": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "Effortless Coordination",
+            "description": "<p>From casual daywear to formal attire, our collection features a range of patterns, colors, and designs to suit every occasion. Embrace the ease and sophistication of matching sets \u2013 browse our collection today.</p>",
+            "primary_button_label": "Shop Now",
+            "secondary_button_label": "See All Products",
+            "slide_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-1",
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-0",
+        "template--14376692449419__d956a8b4-1a0e-4050-abd1-02ce763702f6-1688607771dbd38bcf-2"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "height_desktop": "70vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 5,
+        "content_position": "center",
+        "accessibility_content": "Slideshow about our brand"
+      }
+    },
+    "icon_with_text": {
+      "type": "icon-with-text",
+      "blocks": {
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-0": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "leather",
+            "html_code": "",
+            "heading": "Fabric Sourcing",
+            "description": "<p>We directly select fabric samples from the factories and scrutinize them carefully to choose the best fabric</p>"
+          }
+        },
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-1": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "shirt",
+            "html_code": "",
+            "heading": "Conservation",
+            "description": "<p>We carefully arrange the fine fabric samples and sort them, preserve and create unique design accordingly.</p>"
+          }
+        },
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-2": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "leaf",
+            "html_code": "",
+            "heading": "Eco-friendly",
+            "description": "<p>Promised to always brought you the best products. Your life, your style, your beauty is our ultimate mission.</p>"
+          }
+        },
+        "23ad5722-4052-4e48-87db-f82ca22c41ef": {
+          "type": "item",
+          "settings": {
+            "icon_source": "theme_library",
+            "options_icon": "truck",
+            "html_code": "",
+            "heading": "Worldwide Shipping",
+            "description": "<p>Only 1-2 day of delivery inside Europe, and 2-3 day of international shipping</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-0",
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-1",
+        "template--14376692449419__3a79c51e-808c-4048-85e4-f9e39f2475cc-1665655357716d9b85-2",
+        "23ad5722-4052-4e48-87db-f82ca22c41ef"
+      ],
+      "settings": {
+        "color_scheme": "color-normal-1",
+        "subheading": "WHy us?",
+        "heading": "We Made It Unique",
+        "description": "We have an internal \"Eyes-On\" production policy - We visit every arm of our manufacturing processes at bare minimum once per week but in most cases, every single day.",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-center m-auto",
+        "enable_carousel": false,
+        "show_navigation": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "icon_color": "color-accent-bg-1",
+        "button_main_text": "",
+        "button_main_link": "",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "timeline": {
+      "type": "timeline",
+      "blocks": {
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-0": {
+          "type": "item",
+          "settings": {
+            "date": "2010",
+            "heading": "Empowerment Campaign",
+            "description": "<p>The campaign aims to promote inclusivity, diversity, and social empowerment by showcasing real experiences of people in the community</p>"
+          }
+        },
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-1": {
+          "type": "item",
+          "settings": {
+            "date": "2015",
+            "heading": "Collaborative Workshops",
+            "description": "<p>By partnering with local educational institutions, non-profit organizations, and industry experts, the brand empowers individuals to develop valuable skills</p>"
+          }
+        },
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-2": {
+          "type": "item",
+          "settings": {
+            "date": "2020",
+            "heading": "Environmental Awareness",
+            "description": "<p>Through partnerships with environmental organizations, we participates in clean-up drives, tree planting campaigns, and awareness events</p>"
+          }
+        },
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-4": {
+          "type": "item",
+          "settings": {
+            "date": "2025",
+            "heading": "Fashion Mentorship Program",
+            "description": "<p>Through workshops, portfolio reviews, and one-on-one mentorship sessions, the program aims to foster creativity, innovation, and growth within community</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-0",
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-1",
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-2",
+        "template--14376692449419__137befcb-afa5-4bfc-8bf2-d0d507950b8e-16886095803b0bd0c4-4"
+      ],
+      "settings": {
+        "color_scheme": "color-accent-1",
+        "subheading": "",
+        "heading": "Grow With Community",
+        "description": "At Mondo, we believe in not only creating stylish and innovative designs but also making a positive impact on the community we serve",
+        "enable_collapsible": false,
+        "accent_scheme": "color-accent-1",
+        "image_ratio": "auto",
+        "items_per_row_on_desktop": "4",
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false
+      }
+    },
+    "running_content_2": {
+      "type": "running-content",
+      "settings": {
+        "color_scheme": "",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "down",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      },
+      "blocks": {
+        "content_1": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Follow us on Instagram @mondo",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_1"
+      ]
+    },
+    "logo_list": {
+      "type": "logo-list",
+      "blocks": {
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-0": {
+          "type": "image",
+          "settings": {
+            "logo_link": ""
+          }
+        },
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-1": {
+          "type": "image",
+          "settings": {
+            "logo_link": ""
+          }
+        },
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-2": {
+          "type": "image",
+          "settings": {
+            "logo_link": ""
+          }
+        },
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-3": {
+          "type": "image",
+          "settings": {
+            "logo_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-0",
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-1",
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-2",
+        "template--14376692449419__f25534c9-fd6b-4ac6-b71a-2359d8135c99-16656562687f436267-3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Support The Movement",
+        "description": "For every product purchased, Mondo will donate $5 to responsive organization that urge the boundary for the right to EVERYBODY.",
+        "accent_scheme": "v-mt v-mt-md",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_mobile": "6",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false
+      }
+    },
+    "map": {
+      "type": "map",
+      "blocks": {
+        "template--14376692449419__5a2da941-1674-407e-a858-0e3b2f65b20c-1688611276149d98c4-0": {
+          "type": "content",
+          "settings": {
+            "subheading": "",
+            "heading": "We Are Nearby",
+            "description": "<p>Whether you prefer the in-person shopping experience or simply want to explore our products up close, this feature enables you to easily locate our stores in your area</p>",
+            "button_text": "Get direction"
+          }
+        }
+      },
+      "block_order": [
+        "template--14376692449419__5a2da941-1674-407e-a858-0e3b2f65b20c-1688611276149d98c4-0"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "map_address": "Brooklyn, NY, USA",
+        "content_ordering": "text-first",
+        "remove_padding_top": true,
+        "remove_padding_bottom": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "",
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "subheading": "",
+        "heading": "Subscribe And Save 10%",
+        "description": "Subcribe to get notified about product launches, special offers and company news.",
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    }
+  },
+  "order": [
+    "hero_image_with_text",
+    "running_content_1",
+    "image_with_text",
+    "featured_collections",
+    "video_banner",
+    "content_collage",
+    "countdown_banner",
+    "featured_product_carousel",
+    "product_hotspots",
+    "slideshow",
+    "icon_with_text",
+    "timeline",
+    "running_content_2",
+    "logo_list",
+    "map",
+    "newsletter"
+  ]
+}

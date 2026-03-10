@@ -22,6 +22,19 @@ export default function Dashboard() {
           </s-box>
         </s-card>
       </s-section>
+      <s-section heading="Switch Layout">
+        <s-card>
+          <s-box padding="base">
+            <s-stack direction="block" gap="base">
+              <s-heading>Switch Layout</s-heading>
+              <s-text>Change your homepage layout instantly. Choose from preset layouts or customize with your own JSON template.</s-text>
+              <s-link href="/app/feature-2">
+                <s-button variant="primary">Open Settings</s-button>
+              </s-link>
+            </s-stack>
+          </s-box>
+        </s-card>
+      </s-section>
     </s-page>
   );
 }

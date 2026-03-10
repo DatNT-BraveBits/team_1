@@ -1,0 +1,671 @@
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "template--14384155787317__d8e32dfc-cd9f-4845-ac3d-7e8055b0f233-166545775588ebe5bb-0": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "Relair fabric collection",
+            "description": "<p>Up-to 20% off on all items. Available in store. Spend less and get more.</p>",
+            "primary_button_label": "Shop now",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "slide_link": ""
+          }
+        },
+        "template--14384155787317__d8e32dfc-cd9f-4845-ac3d-7e8055b0f233-166545775588ebe5bb-1": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "slide_mask_overlay_color": "#000000",
+            "slide_content_overlay_color": "#ffffff",
+            "sub_heading": "",
+            "heading": "The Ultimate Leggings",
+            "description": "",
+            "primary_button_label": "Shop now",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "slide_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__d8e32dfc-cd9f-4845-ac3d-7e8055b0f233-166545775588ebe5bb-0",
+        "template--14384155787317__d8e32dfc-cd9f-4845-ac3d-7e8055b0f233-166545775588ebe5bb-1"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "height_desktop": "100vh",
+        "height_mobile": "100vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "enable_pagination": true,
+        "enable_navigation": true,
+        "enable_autoplay": true,
+        "delay": 6,
+        "content_position": "left-center",
+        "accessibility_content": "Slideshow about our brand"
+      }
+    },
+    "featured_product_carousel": {
+      "type": "featured-product-carousel",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "must have",
+        "heading": "Shop our signature items",
+        "description": "Lock in heat with this buttery-luxe faux leather puffer - finish with faux fur, lined with satin, and ready for the streets.",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-left",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_ranking": false,
+        "ranking_badge_shape": "ribbon",
+        "ranking_badge_color": "color-accent-1",
+        "image_ratio": "2/3",
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "star_rating_overlay": "",
+        "badge_text": "Get It Now",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "running_content_1": {
+      "type": "running-content",
+      "blocks": {
+        "content_gWRB48": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Free shipping all orders over $40",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_gWRB48"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "up",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Shop By Category",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "content_align": "ta-left",
+        "enable_carousel": false,
+        "show_navigation": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "enable_view_all": true,
+        "button_main_text": "View all collections",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14384155787317__2c773564-c111-4bb7-8066-af996b8af844-content-1": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs top-xs ta-left",
+            "subheading": "",
+            "heading": "Save Big: 30% Off Stylish Athleisure Favorites!",
+            "description": "",
+            "primary_button_label": "Check now",
+            "secondary_button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__2c773564-c111-4bb7-8066-af996b8af844-content-1"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_large_heading": false,
+        "enable_fullwidth_banner": true,
+        "section_overlay_opacity": 0,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#090c26",
+        "height_desktop": "30vh",
+        "height_mobile": "50vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-left",
+        "badge_shape": "badge--star",
+        "image_banner_link": ""
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_large_heading": false,
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "primary_image_ratio": "portrait",
+        "secondary_image_ratio": "portrait",
+        "subheading": "",
+        "heading": "Elevate Your Practice with Yoga Bliss Collection",
+        "description": "<p>Immerse yourself in tranquility and comfort. </p><p>Our Yoga Bliss Collection combines breathable fabrics with thoughtful designs, providing the perfect balance for your yoga journey. </p><p>Embrace every pose with confidence and style.</p>",
+        "button_main_text": "",
+        "button_sub_text": "Learn more",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "countdown_banner": {
+      "type": "countdown-banner",
+      "blocks": {
+        "template--14384155787317__12033fda-6bf7-4721-952a-0de27a9ab0d4-content-1": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs top-xs ta-left",
+            "subheading": "",
+            "heading": "Gear Up for Greatness",
+            "description": "<p>Our exclusive sale is on, and the clock is running. Dive into a world of savings on premium athleisure wear. Grab your favorites before time runs out.</p>",
+            "enable_countdown_timer": true,
+            "hide_on_end": false,
+            "end_date": "2026-04-30",
+            "end_time": "",
+            "end_text": "<p>This event is finished.</p>",
+            "color_end_text": "#ff0000",
+            "primary_button_label": "Discover now"
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__12033fda-6bf7-4721-952a-0de27a9ab0d4-content-1"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "enable_large_heading": false,
+        "enable_fullwidth_banner": true,
+        "section_overlay_opacity": 0,
+        "section_mask_overlay_color": "#090c26",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "50vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "image_banner_link": ""
+      }
+    },
+    "featured_collections": {
+      "type": "featured-collections",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "Must have",
+        "heading": "Best selling items",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "2",
+        "content_alignment": "ta-center",
+        "items_to_show": 8,
+        "enable_carousel": true,
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_view_all_button": true,
+        "button_text": "View collection",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "running_content_2": {
+      "type": "running-content",
+      "blocks": {
+        "content_gWRB48": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Unleash Your Potential",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_gWRB48"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "down",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 41,
+            "left_offset": 40
+          }
+        },
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-0": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 29,
+            "left_offset": 38
+          }
+        },
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 52,
+            "left_offset": 58
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-1",
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-0",
+        "template--14384155787317__6c787b83-15fe-4761-a6e1-fbabcfb8fcde-168834986939b663ec-2"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Our highlights",
+        "description": "",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-left",
+        "badge_shape": "badge--star"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "template--14384155787317__f7a090c5-a521-4fb7-a2c6-8ec71487d262-1665632965131c4025-0": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "Our mission",
+            "heading": "Our wish is to let you stretch your story everyday, everywhere",
+            "description": "",
+            "primary_button_label": "Read more",
+            "secondary_button_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__f7a090c5-a521-4fb7-a2c6-8ec71487d262-1665632965131c4025-0"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_large_heading": false,
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 0,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70",
+        "height_mobile": "70",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "video_banner_link": ""
+      }
+    },
+    "text": {
+      "type": "text",
+      "settings": {
+        "color_scheme": "",
+        "content_alignment": "ta-center m-auto",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "subheading": "",
+        "heading": "\u201cImpact is an essential part of our culture and our business. Our Impact Agenda is the ultimate opportunity to put our purpose into reality.\u201d",
+        "heading_size": "hdg-2",
+        "description": "",
+        "button_main_text": "",
+        "button_main_link": "",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "badge_text": "Get ready",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "timeline": {
+      "type": "timeline",
+      "blocks": {
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-0": {
+          "type": "item",
+          "settings": {
+            "date": "2007",
+            "heading": "Enter the market",
+            "description": "<p>While maintaining the outstanding feature and qualities of active sportswear, our designs are adequate for comfortable and casual moments in your everyday walks and strolls</p>"
+          }
+        },
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-1": {
+          "type": "item",
+          "settings": {
+            "date": "2012",
+            "heading": "Open our first store",
+            "description": "<p>Andar began in Los Angeles in 2007 because the founders wanted to spread good by bringing yoga to the world: to anyone who is experiencing the transformative power of yoga</p>"
+          }
+        },
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-2": {
+          "type": "item",
+          "settings": {
+            "date": "2014",
+            "heading": "Ambassador\u2019s programme",
+            "description": "<p>Our ambassador program creates ongoing partnerships with values-driven role models in our communities \u2013 from local influencers to professional athletes</p>"
+          }
+        },
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-3": {
+          "type": "item",
+          "settings": {
+            "date": "2022",
+            "heading": "100 stores worldwide",
+            "description": "<p>We continue to expand across North America, Europe, China, and Asia Pacific. We take a decentralized strategic approach to our stores and operations across markets, allowing for local community and consumer in each region</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-0",
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-1",
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-2",
+        "template--14384155787317__73d6b764-7d45-4bc2-b06a-79e32f05920e-1665460616a27f3b3f-3"
+      ],
+      "settings": {
+        "color_scheme": "color-accent-1",
+        "subheading": "",
+        "heading": "Remarkable milestones",
+        "description": "While maintaining the outstanding feature and qualities of active sportswear, our designs are adequate for comfortable and casual moments in your everyday walks and strolls",
+        "enable_collapsible": true,
+        "accent_scheme": "color-accent-1",
+        "image_ratio": "auto",
+        "items_per_row_on_desktop": "4",
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "template--14384155787317__c0b912b7-b248-47eb-96e7-72b18678fae8-1665460779f3ed7560-2": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 10,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "Air-cooling",
+            "button_text": "Shop now"
+          }
+        },
+        "b21ed535-bf86-45be-9fd9-b8e204fbd1ae": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 10,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "Air-warm",
+            "button_text": "Shop now"
+          }
+        },
+        "2ee37eef-3cae-49c8-9c20-048a6a6e6f4e": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 10,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "Relair",
+            "button_text": "Shop now"
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__c0b912b7-b248-47eb-96e7-72b18678fae8-1665460779f3ed7560-2",
+        "b21ed535-bf86-45be-9fd9-b8e204fbd1ae",
+        "2ee37eef-3cae-49c8-9c20-048a6a6e6f4e"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "",
+        "description": "",
+        "collage_width_on_desktop": "compacted",
+        "content_alignment": "ta-left",
+        "items_ordering": "big-first",
+        "enable_stacked_layout": false,
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "image_ratio": "4/5",
+        "show_items_button": false,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-0": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Carmella Rose",
+            "job_title": "She / Her\u2014California super model",
+            "text": "\u201cIt is so comfy, compared to lululemons, even better! If you want lululemon buy this, basically half off and even better. It arrived within 3-4 days very quick! It\u2019s not too thick...\u201d"
+          }
+        },
+        "8f559c73-98d8-4d3f-8bcb-d7ed1d825fc7": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Renee",
+            "job_title": "Youtuber",
+            "text": "\u201cHands down the comfiest shorts I own. They are so flattering and extremely comfortable. They hug my body but don\u2019t squeeze at all. I\u2019m OBSESSED!\u201d"
+          }
+        },
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Patricia J. Adams",
+            "job_title": "Professional yoga trainner",
+            "text": "\u201cI thought these would be too warm, but I recently wore them on a road trip to the desert and surprisingly they kept me warm when it was cool and cool when it was warm.\u201d"
+          }
+        },
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jessica Mayers",
+            "job_title": "Tennis medalist",
+            "text": "\u201cButtery smooth leggings, amazing fit, although great for yoga, might not be as suited for more intense workouts as i dont feel tight support around some muscles.\u201d"
+          }
+        },
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Jessie",
+            "job_title": "Fashion trend-setter",
+            "text": "\u201cVery satisfied. I ordered a 2 and it fit perfectly. No need to size up or size down. The pants are very cute and stretchy. Fit great over my boots and have nice shaping on my leg.\u201d"
+          }
+        },
+        "ab9f5b0c-ede0-4d38-8ea8-cb3156686ae7": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Emily Turner",
+            "job_title": "Loyal Customer",
+            "text": "Andar's athleisure wear is more than just clothing; it's a confidence boost. Whether I'm hitting the gym or running errands, I feel empowered and stylish. Andar truly elevates my active lifestyle."
+          }
+        },
+        "bf00317b-289e-4cc0-b220-d7b243ae2d8d": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Olivia Rodriguez",
+            "job_title": "Loyal Customer",
+            "text": "Andar's athleisure collection is a game-changer for me. The perfect blend of comfort and fashion makes every workout a breeze, and I love how effortlessly stylish I feel, even on my busiest days. Andar understands what active women need."
+          }
+        }
+      },
+      "block_order": [
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-0",
+        "8f559c73-98d8-4d3f-8bcb-d7ed1d825fc7",
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-2",
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-3",
+        "template--14384155787317__1c53075c-7301-4705-ab17-fdb9a8a1c300-166546207536798ab0-1",
+        "ab9f5b0c-ede0-4d38-8ea8-cb3156686ae7",
+        "bf00317b-289e-4cc0-b220-d7b243ae2d8d"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "What others say",
+        "description": "",
+        "items_per_row_on_desktop": "5",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "section_mask_overlay_color": "#ffffff",
+        "image_overlay_opacity": 19,
+        "icon_color": "color-normal-1",
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "running_content_3": {
+      "type": "running-content",
+      "blocks": {
+        "content_gWRB48": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "#solieoutfits",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_gWRB48"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "down",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true
+      }
+    },
+    "blog_post_list": {
+      "type": "blog-post-list",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "subheading": "",
+        "heading": "Our story",
+        "description": "",
+        "blog": "solie-story",
+        "items_per_row_on_desktop": "4",
+        "content_alignment": "ta-left",
+        "items_to_show": 4,
+        "enable_carousel": true,
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_view_all_button": true,
+        "btn_text": "Explore more"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "featured_product_carousel",
+    "running_content_1",
+    "collection_list",
+    "image_banner",
+    "image_with_text",
+    "countdown_banner",
+    "featured_collections",
+    "running_content_2",
+    "product_hotspots",
+    "video_banner",
+    "text",
+    "timeline",
+    "content_collage",
+    "testimonials",
+    "running_content_3",
+    "blog_post_list"
+  ]
+}

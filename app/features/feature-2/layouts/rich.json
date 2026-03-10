@@ -1,0 +1,537 @@
+{
+  "sections": {
+    "text": {
+      "type": "text",
+      "settings": {
+        "color_scheme": "",
+        "content_alignment": "ta-center m-auto",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "subheading": "",
+        "heading": "Elevate Your Space",
+        "heading_size": "headline",
+        "description": "<p>Enhance your space with unique, handcrafted art from Crafts. Each piece tells a story, each creation sparks imagination. </p>",
+        "button_main_text": "See latest products",
+        "button_sub_text": "",
+        "button_sub_link": "",
+        "badge_text": "Featured now",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--bottom-left",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "items_per_row_on_mobile": "1",
+        "content_align": "ta-left",
+        "enable_carousel": true,
+        "show_navigation": false,
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "enable_view_all": false,
+        "button_main_text": "View all collections",
+        "badge_text": "Featured mood",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--bottom-left",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "running_content_1": {
+      "type": "running-content",
+      "blocks": {
+        "content_KxbRGU": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Where Artistry and Craftsmanship Converge",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_KxbRGU"
+      ],
+      "settings": {
+        "color_scheme": "color-accent-1",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "none",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false
+      }
+    },
+    "timeline": {
+      "type": "timeline",
+      "blocks": {
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-1": {
+          "type": "item",
+          "settings": {
+            "date": "",
+            "heading": "Knead and Condition",
+            "description": ""
+          }
+        },
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-2": {
+          "type": "item",
+          "settings": {
+            "date": "",
+            "heading": "Roll and Slab Build",
+            "description": ""
+          }
+        },
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-3": {
+          "type": "item",
+          "settings": {
+            "date": "",
+            "heading": "Pinch and Coil",
+            "description": ""
+          }
+        },
+        "a39828b3-3942-4a34-9e14-2ebf1ddfa28b": {
+          "type": "item",
+          "settings": {
+            "date": "",
+            "heading": "Texture and Sculpt",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-1",
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-2",
+        "template--20358730383634__3e4dd971-ceb3-4064-859a-1da47afe480d-item-3",
+        "a39828b3-3942-4a34-9e14-2ebf1ddfa28b"
+      ],
+      "settings": {
+        "color_scheme": "color-accent-1",
+        "subheading": "",
+        "heading": "The Journey Of How We Craft",
+        "description": "Delve into the heart of our artistic process with a glimpse into how we bring each handmade product to life.",
+        "enable_collapsible": true,
+        "accent_scheme": "color-accent-1",
+        "image_ratio": "auto",
+        "items_per_row_on_desktop": "4",
+        "content_alignment": "ta-center",
+        "remove_padding_top": true,
+        "remove_padding_bottom": false
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "143c3c46-1b8e-4221-8307-6da347de720d": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "",
+            "heading": "With Passion",
+            "description": "<p>We assemble objects worthy of collecting for our future generations. Our humble collection, showcasing the best products of our times.</p>",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "secondary_button_label": "Our story"
+          }
+        }
+      },
+      "block_order": [
+        "143c3c46-1b8e-4221-8307-6da347de720d"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "section_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "image_banner_link": ""
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "enable_large_heading": false,
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "primary_image_ratio": "landscape",
+        "secondary_image_ratio": "portrait",
+        "subheading": "",
+        "heading": "Our Brand Story",
+        "description": "<p>At Crafts, we began with a vision to infuse artistry into everyday life, evolving into a thriving hub of creativity. Each brushstroke, detail, and product narrates a chapter of our story. Unfold the chapters that shaped us and explore the artistry that defines us. Welcome to Crafts, where our story intertwines with yours.</p>",
+        "button_main_text": "",
+        "button_main_link": "",
+        "button_sub_text": "Explore more",
+        "badge_text": "Soul of artistics",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--diamond"
+      }
+    },
+    "countdown_banner": {
+      "type": "countdown-banner",
+      "blocks": {
+        "template--20358730383634__a857286c-2eba-40a6-a582-c3e05b1b21ec-content-1": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs top-xs ta-left",
+            "subheading": "",
+            "heading": "Special discount",
+            "description": "<p>Get your favorite items at a lower price and don't miss out on this limited-time offer. Shop now and save!</p>",
+            "enable_countdown_timer": true,
+            "hide_on_end": false,
+            "end_date": "2026-04-30",
+            "end_time": "",
+            "end_text": "<p>This event is finished.</p>",
+            "color_end_text": "#ff0000",
+            "primary_button_label": "Explore now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__a857286c-2eba-40a6-a582-c3e05b1b21ec-content-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": true,
+        "enable_fullwidth_banner": true,
+        "section_overlay_opacity": 50,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "50vh",
+        "height_mobile": "70vh",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star",
+        "image_banner_link": ""
+      }
+    },
+    "featured_product_carousel": {
+      "type": "featured-product-carousel",
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Quality With Lower Price",
+        "description": "",
+        "items_per_row_on_desktop": "3",
+        "content_align": "ta-left",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "show_ranking": false,
+        "ranking_badge_shape": "ribbon",
+        "ranking_badge_color": "color-accent-1",
+        "image_ratio": "2/3",
+        "image_overlay_opacity": 0,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#1f231a",
+        "star_rating_overlay": "",
+        "badge_text": "",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--bottom-left",
+        "badge_shape": "badge--asterisk"
+      }
+    },
+    "content_collage": {
+      "type": "content-collage",
+      "blocks": {
+        "template--20358730383634__e7ed731f-4c7d-4b5f-8348-4ee984993b3f-image-1": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "The art of tastefulness",
+            "button_text": "Read now"
+          }
+        },
+        "7e7f1ffc-9bfb-450e-96ac-7716b61fbd6e": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "Towards organized living",
+            "button_text": "Read now"
+          }
+        },
+        "628ded27-26b7-4258-b304-cb1d41663325": {
+          "type": "image",
+          "settings": {
+            "image_overlay_opacity": 30,
+            "image_mask_overlay_color": "#000000",
+            "image_content_overlay_color": "#ffffff",
+            "heading": "Modern meets nature",
+            "button_text": "Read now"
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__e7ed731f-4c7d-4b5f-8348-4ee984993b3f-image-1",
+        "7e7f1ffc-9bfb-450e-96ac-7716b61fbd6e",
+        "628ded27-26b7-4258-b304-cb1d41663325"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Exquisite Craftsmanship For A Simpler Life",
+        "description": "",
+        "collage_width_on_desktop": "compacted",
+        "content_alignment": "ta-left",
+        "items_ordering": "equal",
+        "enable_stacked_layout": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "image_ratio": "4/5",
+        "show_items_button": false,
+        "badge_text": "",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--bottom-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "video_banner": {
+      "type": "video-banner",
+      "blocks": {
+        "template--20358730383634__6e123bf2-687f-4c3d-8e52-6be59e88f5e9-content-1": {
+          "type": "content",
+          "settings": {
+            "content_position": "center-xs middle-xs ta-center",
+            "subheading": "",
+            "heading": "Crafted With Earnestness",
+            "description": "<p>Each creation is crafted with an earnest desire to exceed expectations. This level of care and earnestness establishes a profound connection between the creators and those who appreciate their art, resulting in a truly exceptional and enriching experience.</p>",
+            "primary_button_label": "Explore Our Collections",
+            "secondary_button_label": "",
+            "secondary_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__6e123bf2-687f-4c3d-8e52-6be59e88f5e9-content-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "enable_large_heading": false,
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 50,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "height_desktop": "70",
+        "height_mobile": "70",
+        "remove_padding_top": true,
+        "remove_padding_bottom": true,
+        "video_url": "",
+        "badge_text": "Good service",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--asterisk",
+        "video_banner_link": ""
+      }
+    },
+    "product_hotspots": {
+      "type": "product-hotspots",
+      "blocks": {
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-2": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 45,
+            "left_offset": 40
+          }
+        },
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-3": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 69,
+            "left_offset": 75
+          }
+        },
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-1": {
+          "type": "hotspot",
+          "settings": {
+            "top_offset": 89,
+            "left_offset": 48
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-2",
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-3",
+        "template--20358730383634__0e50d9db-c43a-4014-8711-a978860f390b-hotspot-1"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Handpicked Favorites",
+        "description": "Introducing our product hotspots \u2013 a curated collection of our favorite creations. These gems have been chosen for their exceptional artistry, attention to detail, and the stories they tell. Each hotspot unveils a different facet of our craft, from timeless elegance to contemporary flair. Explore these highlights and connect with the heart and soul poured into each piece.",
+        "show_navigation": true,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "badge_text": "",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--top-left",
+        "badge_shape": "badge--star"
+      }
+    },
+    "running_content_2": {
+      "type": "running-content",
+      "blocks": {
+        "content_1": {
+          "type": "content",
+          "settings": {
+            "custom_text_color": "",
+            "custom_icon_color": "",
+            "enable_icon": false,
+            "text": "Get free shipping on orders of $100 or more",
+            "font_style": "marquee-font--heading",
+            "icon_source": "theme_library",
+            "options_icon": "check",
+            "custom_svg": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_1"
+      ],
+      "settings": {
+        "color_scheme": "color-accent-1",
+        "accent_scheme": "color-accent-1",
+        "custom_background_color": "",
+        "speed": "4",
+        "slope_style": "none",
+        "item_size": "h3",
+        "scroll_direction": "left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false
+      }
+    },
+    "address_list": {
+      "type": "address-list",
+      "blocks": {
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-1": {
+          "type": "address_item",
+          "settings": {
+            "heading": "Katsuyama, Osaka",
+            "address": "5-9, Katsuyama 3-chome, Tennoji-ku, Osaka, Osaka",
+            "text": "",
+            "button_text": "Get direction"
+          }
+        },
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-2": {
+          "type": "address_item",
+          "settings": {
+            "heading": "Ubi Ave, Singapore",
+            "address": "205 Ubi Ave 4, Singapore 408805",
+            "text": "",
+            "button_text": "Get direction"
+          }
+        },
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-3": {
+          "type": "address_item",
+          "settings": {
+            "heading": "Maddalena, Rome",
+            "address": "Via della Maddalena, 10, Rome, Lazio",
+            "text": "",
+            "button_text": "Get direction"
+          }
+        },
+        "27403ea0-97b2-440c-af7a-7461b938f971": {
+          "type": "address_item",
+          "settings": {
+            "heading": "Namgajwa, Seoul",
+            "address": "218-6, Namgajwa 1(il)-dong, Seodaemun-gu, Seoul",
+            "text": "",
+            "button_text": "Get direction"
+          }
+        }
+      },
+      "block_order": [
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-1",
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-2",
+        "template--20358730383634__aeeaebb8-0b93-4981-8a54-2bdc09b047c0-address_item-3",
+        "27403ea0-97b2-440c-af7a-7461b938f971"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "subheading": "",
+        "heading": "Visit A Store Near You",
+        "description": "",
+        "items_per_row_on_desktop": "4",
+        "content_align": "ta-center",
+        "enable_carousel": false,
+        "show_navigation": false,
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "image_ratio": "3/2",
+        "show_address_description": false,
+        "button_main_text": "",
+        "button_main_link": "",
+        "badge_text": "",
+        "badge_color": "color-accent-2",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "",
+        "enable_fullwidth_banner": true,
+        "image_overlay_opacity": 30,
+        "section_mask_overlay_color": "#000000",
+        "section_content_overlay_color": "#ffffff",
+        "subheading": "",
+        "heading": "Stay Inspired!",
+        "description": "Join our vibrant community and be the first to know about the latest artistic creations, exclusive offers, and creative insights.",
+        "content_alignment": "ta-left",
+        "remove_padding_top": false,
+        "remove_padding_bottom": false,
+        "badge_text": "",
+        "badge_color": "color-accent-1",
+        "badge_position": "p-badge--top-right",
+        "badge_shape": "badge--star"
+      }
+    }
+  },
+  "order": [
+    "text",
+    "collection_list",
+    "running_content_1",
+    "timeline",
+    "image_banner",
+    "image_with_text",
+    "countdown_banner",
+    "featured_product_carousel",
+    "content_collage",
+    "video_banner",
+    "product_hotspots",
+    "running_content_2",
+    "address_list",
+    "newsletter"
+  ]
+}

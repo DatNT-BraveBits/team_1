@@ -276,10 +276,9 @@
 
       const resolveBadgeHost = (card) => {
         return (
-          card.querySelector('.card__content') ||
-          card.querySelector('.card__inner') ||
-          card.querySelector('.media') ||
           card.querySelector('.card__media') ||
+          card.querySelector('.media') ||
+          card.querySelector('.card__inner') ||
           card
         );
       };
