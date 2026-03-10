@@ -574,6 +574,7 @@ export default function Feature2Page() {
   const [activeTab, setActiveTab] = useState("presets");
   const [customJson, setCustomJson] = useState("");
   const [toast, setToast] = useState(null);
+  const [confetti, setConfetti] = useState([]);
 
   const isSubmitting = fetcher.state !== "idle";
   const { error, theme, currentTemplate, activePreset, layouts } = loaderData ?? {};
@@ -588,10 +589,28 @@ export default function Feature2Page() {
     }
   }, [currentTemplate]);
 
+  const fireConfetti = useCallback(() => {
+    const colors = ["#2563EB", "#F59E0B", "#EF4444", "#22C55E", "#A855F7", "#EC4899", "#06B6D4", "#F97316"];
+    const particles = Array.from({ length: 80 }, (_, i) => ({
+      id: i,
+      x: 50 + (Math.random() - 0.5) * 10,
+      y: 50,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      angle: Math.random() * 360,
+      speed: 3 + Math.random() * 6,
+      spin: (Math.random() - 0.5) * 720,
+      size: 5 + Math.random() * 7,
+      shape: Math.random() > 0.5 ? "circle" : "rect",
+    }));
+    setConfetti(particles);
+    setTimeout(() => setConfetti([]), 3000);
+  }, []);
+
   useEffect(() => {
     if (fetcher.data) {
       if (fetcher.data.ok) {
         setToast({ type: "success", message: "Layout updated! Changes are live on your storefront." });
+        fireConfetti();
       } else if (fetcher.data.error) {
         setToast({ type: "error", message: fetcher.data.error });
       }
@@ -621,6 +640,44 @@ export default function Feature2Page() {
 
   return (
     <div style={S.page}>
+      {/* Confetti layer */}
+      {confetti.length > 0 && (
+        <>
+          <style>{`
+            @keyframes confetti-fall {
+              0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+              100% { transform: translate(var(--dx), var(--dy)) rotate(var(--spin)); opacity: 0; }
+            }
+          `}</style>
+          <div style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 9999, overflow: "hidden" }}>
+            {confetti.map((p) => {
+              const rad = (p.angle * Math.PI) / 180;
+              const dx = Math.cos(rad) * p.speed * 80;
+              const dy = Math.sin(rad) * p.speed * 80 - 200;
+              return (
+                <div
+                  key={p.id}
+                  style={{
+                    position: "absolute",
+                    left: `${p.x}%`,
+                    top: `${p.y}%`,
+                    width: p.size,
+                    height: p.shape === "circle" ? p.size : p.size * 0.6,
+                    borderRadius: p.shape === "circle" ? "50%" : 2,
+                    background: p.color,
+                    "--dx": `${dx}px`,
+                    "--dy": `${-dy}px`,
+                    "--spin": `${p.spin}deg`,
+                    animation: "confetti-fall 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards",
+                    animationDelay: `${Math.random() * 0.3}s`,
+                  }}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
+
       <h1 style={{ fontSize: 22, fontWeight: 700, color: "#111827", marginBottom: 8 }}>
         Switch Homepage Layout
       </h1>
