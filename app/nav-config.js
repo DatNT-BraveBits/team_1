@@ -1,10 +1,10 @@
 export const features = [
   {
-    label: "Trust Badges",
+    label: "Switch Layout",
     href: "/app/feature-1",
   },
   {
-    label: "Switch Layout",
+    label: "Trust Badges",
     href: "/app/feature-2",
   },
 ];
