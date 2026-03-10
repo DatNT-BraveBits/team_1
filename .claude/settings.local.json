@@ -19,7 +19,9 @@
       "Bash(git checkout:*)",
       "Bash(mkdir:*)",
       "Bash(mv:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "WebSearch",
+      "Bash(npx react-router:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

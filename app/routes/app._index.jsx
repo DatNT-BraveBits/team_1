@@ -110,6 +110,14 @@ const features = [
     iconBg: "#F0FDF4",
     iconBorder: "#BBF7D0",
   },
+  {
+    name: "Sonic Branding",
+    description: "Add sound effects to your storefront — add-to-cart clicks, checkout chimes, and more. Create a unique audio identity for your brand.",
+    href: "/app/feature-3",
+    icon: "🔊",
+    iconBg: "#FFF7ED",
+    iconBorder: "#FED7AA",
+  },
 ];
 
 export default function Dashboard() {

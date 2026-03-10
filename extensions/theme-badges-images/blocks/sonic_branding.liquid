@@ -1,0 +1,485 @@
+{% liquid
+  assign app_settings = app.metafields.app_ai.feature_3_settings.value
+  assign shop_settings = shop.metafields.app_ai.feature_3_settings.value
+  assign feature_settings = app_settings | default: shop_settings
+  assign sonic = feature_settings.sonic
+  assign sonic_enabled = sonic.enabled
+  if sonic_enabled == blank
+    assign sonic_enabled = false
+  endif
+%}
+
+{% comment %}
+  Sonic Branding — App embed block
+  Injects Web Audio API sound engine into the storefront.
+  Reads config from metafield app_ai.feature_3_settings.
+  Zero external audio files — all sounds synthesized in real-time.
+{% endcomment %}
+
+{% if sonic_enabled %}
+<script>
+(() => {
+  const runtimeKey = '__APP_AI_SONIC_RUNTIME__';
+  if (window[runtimeKey] && typeof window[runtimeKey].stop === 'function') {
+    window[runtimeKey].stop();
+  }
+
+  // ─── Settings from metafields ───────────────────────────────────────
+  const config = {
+    enabled: {{ sonic.enabled | default: false | json }},
+    theme: {{ sonic.theme | default: 'minimal' | json }},
+    volume: {{ sonic.volume | default: 70 | json }},
+    events: {
+      addToCart: {{ sonic.events.addToCart | default: true | json }},
+      removeFromCart: {{ sonic.events.removeFromCart | default: true | json }},
+      cartOpen: {{ sonic.events.cartOpen | default: true | json }},
+      checkout: {{ sonic.events.checkout | default: true | json }},
+      hover: {{ sonic.events.hover | default: false | json }},
+      pageTransition: {{ sonic.events.pageTransition | default: false | json }},
+      wishlistAdd: {{ sonic.events.wishlistAdd | default: true | json }},
+      notification: {{ sonic.events.notification | default: true | json }},
+      quantityChange: {{ sonic.events.quantityChange | default: false | json }},
+      scrollMilestone: {{ sonic.events.scrollMilestone | default: false | json }}
+    },
+    toggle: {
+      show: {{ sonic.toggle.show | default: true | json }},
+      position: {{ sonic.toggle.position | default: 'bottom-right' | json }},
+      style: {{ sonic.toggle.style | default: 'rounded' | json }}
+    },
+    defaultState: {{ sonic.defaultState | default: 'off' | json }}
+  };
+
+  if (!config.enabled) return;
+
+  // ─── Sound Library (Web Audio synthesis definitions) ─────────────────
+  const SOUNDS = {
+    minimal: {
+      addToCart:       { freq: 880, type: 'sine', duration: 0.12, gain: 0.3 },
+      removeFromCart:  { freq: 440, type: 'sine', duration: 0.1, gain: 0.2, bend: -100 },
+      cartOpen:        { freq: 660, type: 'sine', duration: 0.15, gain: 0.2 },
+      checkout:        { freq: [523, 659, 784], type: 'sine', duration: 0.6, gain: 0.3, stagger: 0.12 },
+      hover:           { freq: 1200, type: 'sine', duration: 0.05, gain: 0.08 },
+      pageTransition:  { freq: 600, type: 'sine', duration: 0.15, gain: 0.15, bend: 200 },
+      wishlistAdd:     { freq: [700, 900], type: 'sine', duration: 0.25, gain: 0.25, stagger: 0.1 },
+      notification:    { freq: [800, 1000], type: 'sine', duration: 0.3, gain: 0.2, stagger: 0.08 },
+      quantityChange:  { freq: 1000, type: 'sine', duration: 0.06, gain: 0.15 },
+      scrollMilestone: { freq: [500, 650, 800], type: 'sine', duration: 0.4, gain: 0.15, stagger: 0.1 }
+    },
+    luxury: {
+      addToCart:       { freq: 523, type: 'sine', duration: 0.25, gain: 0.3 },
+      removeFromCart:  { freq: 350, type: 'sine', duration: 0.2, gain: 0.2 },
+      cartOpen:        { freq: 440, type: 'sine', duration: 0.3, gain: 0.2 },
+      checkout:        { freq: [523, 659, 784, 1047], type: 'sine', duration: 0.8, gain: 0.3, stagger: 0.15 },
+      hover:           { freq: 1047, type: 'sine', duration: 0.08, gain: 0.06 },
+      pageTransition:  { freq: 440, type: 'sine', duration: 0.3, gain: 0.15, bend: 110 },
+      wishlistAdd:     { freq: [659, 880], type: 'sine', duration: 0.35, gain: 0.25, stagger: 0.12 },
+      notification:    { freq: [784, 1047], type: 'sine', duration: 0.35, gain: 0.2, stagger: 0.1 },
+      quantityChange:  { freq: 880, type: 'sine', duration: 0.1, gain: 0.12 },
+      scrollMilestone: { freq: [440, 554, 659], type: 'sine', duration: 0.5, gain: 0.15, stagger: 0.15 }
+    },
+    playful: {
+      addToCart:       { freq: 880, type: 'square', duration: 0.1, gain: 0.15, bend: 200 },
+      removeFromCart:  { freq: 600, type: 'square', duration: 0.1, gain: 0.1, bend: -300 },
+      cartOpen:        { freq: 700, type: 'square', duration: 0.12, gain: 0.12, bend: 150 },
+      checkout:        { freq: [523, 659, 784, 1047, 1319], type: 'square', duration: 0.6, gain: 0.15, stagger: 0.08 },
+      hover:           { freq: 1400, type: 'square', duration: 0.04, gain: 0.06 },
+      pageTransition:  { freq: 800, type: 'square', duration: 0.1, gain: 0.1, bend: 400 },
+      wishlistAdd:     { freq: [800, 1200], type: 'square', duration: 0.2, gain: 0.12, stagger: 0.06 },
+      notification:    { freq: [1000, 1400], type: 'square', duration: 0.2, gain: 0.12, stagger: 0.06 },
+      quantityChange:  { freq: 1100, type: 'square', duration: 0.05, gain: 0.1, bend: 300 },
+      scrollMilestone: { freq: [600, 800, 1000, 1200], type: 'square', duration: 0.4, gain: 0.1, stagger: 0.06 }
+    },
+    nature: {
+      addToCart:       { freq: 600, type: 'triangle', duration: 0.2, gain: 0.3 },
+      removeFromCart:  { freq: 400, type: 'triangle', duration: 0.15, gain: 0.2 },
+      cartOpen:        { freq: 500, type: 'triangle', duration: 0.2, gain: 0.2 },
+      checkout:        { freq: [400, 500, 600, 800], type: 'triangle', duration: 0.7, gain: 0.3, stagger: 0.15 },
+      hover:           { freq: 900, type: 'triangle', duration: 0.06, gain: 0.08 },
+      pageTransition:  { freq: 500, type: 'triangle', duration: 0.2, gain: 0.15, bend: 100 },
+      wishlistAdd:     { freq: [550, 700], type: 'triangle', duration: 0.3, gain: 0.25, stagger: 0.12 },
+      notification:    { freq: [600, 800], type: 'triangle', duration: 0.3, gain: 0.2, stagger: 0.1 },
+      quantityChange:  { freq: 800, type: 'triangle', duration: 0.08, gain: 0.15 },
+      scrollMilestone: { freq: [400, 500, 600], type: 'triangle', duration: 0.5, gain: 0.15, stagger: 0.15 }
+    },
+    tech: {
+      addToCart:       { freq: 1200, type: 'sawtooth', duration: 0.08, gain: 0.1, bend: -400 },
+      removeFromCart:  { freq: 800, type: 'sawtooth', duration: 0.08, gain: 0.08, bend: -600 },
+      cartOpen:        { freq: 1000, type: 'sawtooth', duration: 0.1, gain: 0.08, bend: -200 },
+      checkout:        { freq: [400, 600, 800, 1200], type: 'sawtooth', duration: 0.5, gain: 0.1, stagger: 0.08 },
+      hover:           { freq: 2000, type: 'sawtooth', duration: 0.03, gain: 0.04 },
+      pageTransition:  { freq: 1000, type: 'sawtooth', duration: 0.1, gain: 0.08, bend: 500 },
+      wishlistAdd:     { freq: [1000, 1400], type: 'sawtooth', duration: 0.15, gain: 0.08, stagger: 0.05 },
+      notification:    { freq: [1200, 1600], type: 'sawtooth', duration: 0.15, gain: 0.08, stagger: 0.05 },
+      quantityChange:  { freq: 1500, type: 'sawtooth', duration: 0.04, gain: 0.06 },
+      scrollMilestone: { freq: [600, 900, 1200], type: 'sawtooth', duration: 0.3, gain: 0.08, stagger: 0.06 }
+    },
+    retro: {
+      addToCart:       { freq: 660, type: 'square', duration: 0.15, gain: 0.12 },
+      removeFromCart:  { freq: 330, type: 'square', duration: 0.12, gain: 0.1 },
+      cartOpen:        { freq: 550, type: 'square', duration: 0.15, gain: 0.1 },
+      checkout:        { freq: [262, 330, 392, 523], type: 'square', duration: 0.7, gain: 0.12, stagger: 0.12 },
+      hover:           { freq: 880, type: 'square', duration: 0.04, gain: 0.06 },
+      pageTransition:  { freq: 440, type: 'square', duration: 0.12, gain: 0.1, bend: 220 },
+      wishlistAdd:     { freq: [440, 660], type: 'square', duration: 0.25, gain: 0.1, stagger: 0.1 },
+      notification:    { freq: [660, 880], type: 'square', duration: 0.25, gain: 0.1, stagger: 0.08 },
+      quantityChange:  { freq: 770, type: 'square', duration: 0.06, gain: 0.08 },
+      scrollMilestone: { freq: [330, 440, 550], type: 'square', duration: 0.4, gain: 0.1, stagger: 0.12 }
+    }
+  };
+
+  // ─── Audio Engine ───────────────────────────────────────────────────
+  let audioCtx = null;
+  let isMuted = config.defaultState !== 'on';
+  let userInteracted = false;
+
+  // Persist mute state
+  const STORAGE_KEY = 'app_ai_sonic_muted';
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored !== null) isMuted = stored === 'true';
+  } catch (_) {}
+
+  function getAudioCtx() {
+    if (!audioCtx || audioCtx.state === 'closed') {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume().catch(() => {});
+    }
+    return audioCtx;
+  }
+
+  function playSound(eventKey) {
+    if (isMuted || !userInteracted) return;
+    if (!config.events[eventKey]) return;
+
+    const themeSounds = SOUNDS[config.theme] || SOUNDS.minimal;
+    const def = themeSounds[eventKey];
+    if (!def) return;
+
+    try {
+      const ctx = getAudioCtx();
+      const masterGain = (config.volume / 100) * (def.gain || 0.3);
+      const freqs = Array.isArray(def.freq) ? def.freq : [def.freq];
+      const stagger = def.stagger || 0;
+
+      freqs.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gainNode = ctx.createGain();
+        const startTime = ctx.currentTime + i * stagger;
+        const endTime = startTime + (def.duration || 0.15);
+
+        osc.type = def.type || 'sine';
+        osc.frequency.setValueAtTime(freq, startTime);
+
+        if (def.bend) {
+          osc.frequency.linearRampToValueAtTime(freq + def.bend, endTime);
+        }
+
+        gainNode.gain.setValueAtTime(masterGain, startTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, endTime);
+
+        osc.connect(gainNode);
+        gainNode.connect(ctx.destination);
+        osc.start(startTime);
+        osc.stop(endTime + 0.05);
+      });
+    } catch (_) {}
+  }
+
+  // ─── User interaction gate (autoplay policy) ───────────────────────
+  function onFirstInteraction() {
+    userInteracted = true;
+    document.removeEventListener('click', onFirstInteraction);
+    document.removeEventListener('touchstart', onFirstInteraction);
+    document.removeEventListener('keydown', onFirstInteraction);
+  }
+  document.addEventListener('click', onFirstInteraction, { passive: true });
+  document.addEventListener('touchstart', onFirstInteraction, { passive: true });
+  document.addEventListener('keydown', onFirstInteraction, { passive: true });
+
+  // ─── Floating toggle button ────────────────────────────────────────
+  let toggleBtn = null;
+
+  function createToggle() {
+    if (!config.toggle.show) return;
+
+    toggleBtn = document.createElement('button');
+    toggleBtn.id = 'app-ai-sonic-toggle';
+    toggleBtn.setAttribute('aria-label', 'Toggle store sounds');
+    toggleBtn.setAttribute('type', 'button');
+
+    const posMap = {
+      'bottom-right': 'bottom:16px;right:16px;',
+      'bottom-left': 'bottom:16px;left:16px;',
+      'top-right': 'top:16px;right:16px;',
+      'top-left': 'top:16px;left:16px;'
+    };
+    const styleMap = {
+      minimal: 'border-radius:4px;width:36px;height:36px;',
+      rounded: 'border-radius:10px;width:40px;height:40px;',
+      pill: 'border-radius:999px;width:48px;height:36px;'
+    };
+
+    const pos = posMap[config.toggle.position] || posMap['bottom-right'];
+    const stl = styleMap[config.toggle.style] || styleMap['rounded'];
+
+    toggleBtn.style.cssText = `
+      position:fixed;${pos}${stl}
+      z-index:99999;
+      background:#111827;
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      box-shadow:0 2px 12px rgba(0,0,0,0.2);
+      transition:transform 0.15s,opacity 0.15s;
+      opacity:0.85;
+      line-height:1;
+      padding:0;
+    `;
+
+    toggleBtn.textContent = isMuted ? '\u{1F507}' : '\u{1F50A}';
+
+    toggleBtn.addEventListener('mouseenter', () => {
+      toggleBtn.style.opacity = '1';
+      toggleBtn.style.transform = 'scale(1.1)';
+    });
+    toggleBtn.addEventListener('mouseleave', () => {
+      toggleBtn.style.opacity = '0.85';
+      toggleBtn.style.transform = 'scale(1)';
+    });
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      userInteracted = true;
+      isMuted = !isMuted;
+      toggleBtn.textContent = isMuted ? '\u{1F507}' : '\u{1F50A}';
+      try { localStorage.setItem(STORAGE_KEY, String(isMuted)); } catch (_) {}
+
+      // Play a quick feedback sound when unmuting
+      if (!isMuted) {
+        playSound('notification');
+      }
+    });
+
+    document.body.appendChild(toggleBtn);
+  }
+
+  // ─── Event Listeners ───────────────────────────────────────────────
+
+  // 1. Add to cart — intercept form submissions and button clicks
+  function handleAddToCart(e) {
+    const target = e.target;
+    const btn = target.closest
+      ? target.closest('[name="add"], .product-form__submit, button[type="submit"][name="add"], .add-to-cart, [data-add-to-cart], .btn-addtocart, .shopify-payment-button button, form[action*="/cart/add"] button[type="submit"]')
+      : null;
+    if (btn) {
+      // Verify it's in a product form or add-to-cart context
+      const form = btn.closest('form[action*="/cart/add"], form[action*="/cart"], product-form, .product-form');
+      if (form || btn.matches('[name="add"], [data-add-to-cart], .add-to-cart')) {
+        playSound('addToCart');
+      }
+    }
+  }
+
+  // 2. Remove from cart
+  function handleRemoveFromCart(e) {
+    const target = e.target;
+    const removeBtn = target.closest
+      ? target.closest('a[href*="/cart/change"], .cart-item__remove, [data-cart-remove], .remove, cart-remove-button a, .cart__remove')
+      : null;
+    if (removeBtn) {
+      playSound('removeFromCart');
+    }
+  }
+
+  // 3. Cart open
+  function handleCartOpen(e) {
+    const target = e.target;
+    const cartTrigger = target.closest
+      ? target.closest('a[href="/cart"], .cart-icon-bubble, .cart-count-bubble, [data-cart-toggle], .header__icon--cart, #cart-icon-bubble, .cart-link, a[href*="/cart"]')
+      : null;
+    if (cartTrigger) {
+      playSound('cartOpen');
+    }
+  }
+
+  // 4. Quantity change
+  function handleQuantityChange(e) {
+    const target = e.target;
+    const qtyBtn = target.closest
+      ? target.closest('.quantity__button, [data-quantity-minus], [data-quantity-plus], .qty-btn, .js-qty-btn, quantity-popover button')
+      : null;
+    if (qtyBtn) {
+      playSound('quantityChange');
+    }
+  }
+
+  // 5. Wishlist add
+  function handleWishlistAdd(e) {
+    const target = e.target;
+    const wishBtn = target.closest
+      ? target.closest('[data-wishlist-add], .wishlist-btn, .wishlist-icon, .swym-button, [class*="wishlist"]')
+      : null;
+    if (wishBtn) {
+      playSound('wishlistAdd');
+    }
+  }
+
+  // Combined click handler
+  function handleClick(e) {
+    handleAddToCart(e);
+    handleRemoveFromCart(e);
+    handleCartOpen(e);
+    handleQuantityChange(e);
+    handleWishlistAdd(e);
+  }
+
+  document.addEventListener('click', handleClick, { capture: true, passive: true });
+
+  // 6. Product hover
+  let hoverTimeout = null;
+  function handleMouseOver(e) {
+    if (!config.events.hover) return;
+    const target = e.target;
+    const card = target.closest
+      ? target.closest('.card, .product-card, .product-item, [data-product-card], .grid__item .card')
+      : null;
+    if (card && !card.dataset.sonicHovered) {
+      card.dataset.sonicHovered = '1';
+      playSound('hover');
+      // Reset hover state after a short delay so repeat hovers work
+      clearTimeout(hoverTimeout);
+      hoverTimeout = setTimeout(() => {
+        document.querySelectorAll('[data-sonic-hovered]').forEach(el => {
+          delete el.dataset.sonicHovered;
+        });
+      }, 2000);
+    }
+  }
+  document.addEventListener('mouseover', handleMouseOver, { passive: true });
+
+  // 7. Scroll milestone
+  let scrollMilestones = { 50: false, 100: false };
+  function handleScroll() {
+    if (!config.events.scrollMilestone) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    const percent = (scrollTop / docHeight) * 100;
+
+    if (percent >= 50 && !scrollMilestones[50]) {
+      scrollMilestones[50] = true;
+      playSound('scrollMilestone');
+    }
+    if (percent >= 98 && !scrollMilestones[100]) {
+      scrollMilestones[100] = true;
+      playSound('scrollMilestone');
+    }
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Reset scroll milestones on page navigation
+  function resetScrollMilestones() {
+    scrollMilestones = { 50: false, 100: false };
+  }
+
+  // 8. Page transition — Shopify section events
+  function handlePageTransition() {
+    if (config.events.pageTransition) {
+      playSound('pageTransition');
+    }
+    resetScrollMilestones();
+  }
+  document.addEventListener('shopify:section:load', handlePageTransition);
+
+  // 9. Checkout success — detect thank_you page
+  if (config.events.checkout && window.location.pathname.includes('/thank_you')) {
+    // Wait for page to be interactive then play celebration
+    const playCheckout = () => { playSound('checkout'); };
+    if (document.readyState === 'complete') {
+      setTimeout(playCheckout, 500);
+    } else {
+      window.addEventListener('load', () => setTimeout(playCheckout, 500), { once: true });
+    }
+  }
+
+  // 10. Notification — observe for toast/popup elements
+  let notifObserver = null;
+  if (config.events.notification) {
+    notifObserver = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node.nodeType !== 1) continue;
+          const el = node;
+          const isNotif =
+            el.matches && (
+              el.matches('[role="alert"], [role="status"], .notification, .toast, .popup-notification, .cart-notification, [data-notification]') ||
+              el.classList.toString().includes('notification') ||
+              el.classList.toString().includes('toast')
+            );
+          if (isNotif) {
+            playSound('notification');
+            return; // only play once per batch
+          }
+        }
+      }
+    });
+    notifObserver.observe(document.body, { childList: true, subtree: true });
+  }
+
+  // 11. Intercept fetch/XHR to detect cart API calls
+  const origFetch = window.fetch;
+  window.fetch = function(...args) {
+    const url = typeof args[0] === 'string' ? args[0] : (args[0]?.url || '');
+    const method = (args[1]?.method || 'GET').toUpperCase();
+
+    if (url.includes('/cart/add') && method === 'POST') {
+      playSound('addToCart');
+    } else if (url.includes('/cart/change') || url.includes('/cart/update')) {
+      // Could be quantity change or remove — hard to distinguish, play generic
+      playSound('quantityChange');
+    }
+
+    return origFetch.apply(this, args);
+  };
+
+  // ─── Init ──────────────────────────────────────────────────────────
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createToggle, { once: true });
+  } else {
+    createToggle();
+  }
+
+  // ─── Cleanup ───────────────────────────────────────────────────────
+  window[runtimeKey] = {
+    stop() {
+      document.removeEventListener('click', handleClick, { capture: true });
+      document.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('shopify:section:load', handlePageTransition);
+      document.removeEventListener('click', onFirstInteraction);
+      document.removeEventListener('touchstart', onFirstInteraction);
+      document.removeEventListener('keydown', onFirstInteraction);
+      if (notifObserver) notifObserver.disconnect();
+      if (toggleBtn) toggleBtn.remove();
+      if (hoverTimeout) clearTimeout(hoverTimeout);
+      window.fetch = origFetch;
+      if (audioCtx) { try { audioCtx.close(); } catch(_) {} }
+    }
+  };
+})();
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Sonic Branding",
+  "target": "body",
+  "settings": []
+}
+{% endschema %}
