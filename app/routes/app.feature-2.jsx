@@ -9,6 +9,118 @@ import { LAYOUTS } from "../features/feature-2/layouts/index";
 const THEME_NAME = "Blum";
 const TEMPLATE_FILE = "templates/index.json";
 
+// ─── Section wireframe config ────────────────────────────────────────────────
+
+const SECTION_WIREFRAMES = {
+  "slideshow": { h: 120, bg: "#DBEAFE", label: "Slideshow", render: "hero" },
+  "hero-image-with-text": { h: 120, bg: "#E0E7FF", label: "Hero", render: "hero" },
+  "image-banner": { h: 100, bg: "#DBEAFE", label: "Image Banner", render: "hero" },
+  "video-banner": { h: 100, bg: "#1E293B", lc: "#FFF", label: "Video Banner", render: "video" },
+  "collection-list": { h: 80, bg: "#FEF3C7", label: "Collection List", render: "grid3" },
+  "featured-collections": { h: 80, bg: "#FEF9C3", label: "Featured Collections", render: "grid3" },
+  "featured-product-carousel": { h: 90, bg: "#ECFDF5", label: "Product Carousel", render: "grid4" },
+  "product-hotspots": { h: 90, bg: "#FFF1F2", label: "Product Hotspots", render: "hotspot" },
+  "content-collage": { h: 80, bg: "#F3E8FF", label: "Content Collage", render: "collage" },
+  "image-with-text": { h: 70, bg: "#F0F9FF", label: "Image With Text", render: "split" },
+  "icon-with-text": { h: 60, bg: "#F0FDF4", label: "Icon Features", render: "grid3" },
+  "countdown-banner": { h: 60, bg: "#FEF2F2", label: "Countdown", render: "countdown" },
+  "testimonials": { h: 60, bg: "#FFFBEB", label: "Testimonials", render: "grid3" },
+  "timeline": { h: 70, bg: "#F5F3FF", label: "Timeline", render: "timeline" },
+  "text": { h: 50, bg: "#F9FAFB", label: "Text", render: "default" },
+  "running-content": { h: 30, bg: "#111827", lc: "#FFF", label: "Marquee", render: "marquee" },
+  "newsletter": { h: 60, bg: "#EFF6FF", label: "Newsletter", render: "newsletter" },
+  "blog-post-list": { h: 80, bg: "#FFF7ED", label: "Blog Posts", render: "grid3" },
+  "logo-list": { h: 50, bg: "#F9FAFB", label: "Logo List", render: "grid4" },
+  "address-list": { h: 60, bg: "#F0FDF4", label: "Address List", render: "grid2" },
+  "map": { h: 80, bg: "#ECFDF5", label: "Map", render: "default" },
+};
+
+function SectionWireframe({ type }) {
+  const c = SECTION_WIREFRAMES[type] || { h: 60, bg: "#F3F4F6", label: type.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" "), render: "default" };
+  const tc = c.lc || "#374151";
+  const box = (w, h, bg) => ({ width: w, height: h, borderRadius: 4, background: bg || "rgba(0,0,0,0.08)" });
+
+  const inner = () => {
+    switch (c.render) {
+      case "hero": return (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, height: "100%" }}>
+          <div style={box("40%", "60%", "rgba(0,0,0,0.06)")} />
+          <div style={{ display: "flex", flexDirection: "column", gap: 4, width: "30%" }}>
+            <div style={box("100%", 8, "rgba(0,0,0,0.1)")} />
+            <div style={box("70%", 6, "rgba(0,0,0,0.06)")} />
+            <div style={box("50%", 14, "rgba(0,0,0,0.08)")} />
+          </div>
+        </div>
+      );
+      case "video": return (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
+          <div style={{ width: 36, height: 36, borderRadius: "50%", border: "2px solid rgba(255,255,255,0.5)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ fontSize: 16, color: "rgba(255,255,255,0.7)", marginLeft: 3 }}>{"\u25B6"}</span>
+          </div>
+        </div>
+      );
+      case "grid2": return (<div style={{ display: "flex", gap: 6, padding: "8px 12px", height: "100%", alignItems: "center" }}>{[1,2].map(i => <div key={i} style={{ ...box("50%", "70%"), flex: 1 }} />)}</div>);
+      case "grid3": return (<div style={{ display: "flex", gap: 6, padding: "8px 12px", height: "100%", alignItems: "center" }}>{[1,2,3].map(i => <div key={i} style={{ ...box("33%", "70%"), flex: 1 }} />)}</div>);
+      case "grid4": return (<div style={{ display: "flex", gap: 6, padding: "8px 12px", height: "100%", alignItems: "center" }}>{[1,2,3,4].map(i => <div key={i} style={{ ...box("25%", "70%"), flex: 1 }} />)}</div>);
+      case "split": return (
+        <div style={{ display: "flex", gap: 8, padding: "8px 12px", height: "100%", alignItems: "center" }}>
+          <div style={box("50%", "80%")} />
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 4 }}>
+            <div style={box("80%", 7, "rgba(0,0,0,0.1)")} /><div style={box("100%", 5, "rgba(0,0,0,0.06)")} /><div style={box("60%", 5, "rgba(0,0,0,0.06)")} />
+          </div>
+        </div>
+      );
+      case "collage": return (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 4, padding: "8px 12px", height: "100%" }}>
+          <div style={{ ...box("100%", "100%"), gridRow: "1/3" }} />
+          <div style={box("100%", "100%")} /><div style={box("100%", "100%")} />
+          <div style={{ ...box("100%", "100%"), gridColumn: "2/4" }} />
+        </div>
+      );
+      case "hotspot": return (
+        <div style={{ position: "relative", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={box("70%", "80%")} />
+          {[{top:"20%",left:"25%"},{top:"50%",left:"55%"},{top:"35%",left:"70%"}].map((p,i) => (
+            <div key={i} style={{ position: "absolute", ...p, width: 10, height: 10, borderRadius: "50%", background: "rgba(239,68,68,0.6)", border: "2px solid rgba(239,68,68,0.3)" }} />
+          ))}
+        </div>
+      );
+      case "countdown": return (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, height: "100%" }}>
+          {["00","00","00","00"].map((n,i) => (<div key={i} style={{ width: 28, height: 32, borderRadius: 4, background: "rgba(0,0,0,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: tc }}>{n}</div>))}
+        </div>
+      );
+      case "timeline": return (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4, padding: "8px 0", height: "100%", justifyContent: "center" }}>
+          {[1,2,3].map(i => (<div key={i} style={{ display: "flex", alignItems: "center", gap: 6, width: "80%" }}><div style={{ width: 8, height: 8, borderRadius: "50%", background: "rgba(0,0,0,0.15)", flexShrink: 0 }} /><div style={box("100%", 6, "rgba(0,0,0,0.06)")} /></div>))}
+        </div>
+      );
+      case "marquee": return (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", overflow: "hidden" }}>
+          <span style={{ fontSize: 10, color: c.lc || "#FFF", opacity: 0.5, whiteSpace: "nowrap" }}>{`\u2014\u2014 ${c.label} \u2014\u2014 ${c.label} \u2014\u2014 ${c.label} \u2014\u2014`}</span>
+        </div>
+      );
+      case "newsletter": return (
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 6, height: "100%" }}>
+          <div style={box("40%", 7, "rgba(0,0,0,0.1)")} />
+          <div style={{ display: "flex", gap: 4, width: "60%", alignItems: "center" }}>
+            <div style={{ ...box("70%", 20, "rgba(0,0,0,0.06)"), flex: 1 }} />
+            <div style={box("30%", 20, "rgba(0,0,0,0.12)")} />
+          </div>
+        </div>
+      );
+      default: return (<div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}><span style={{ fontSize: 11, color: tc, opacity: 0.5 }}>{c.label}</span></div>);
+    }
+  };
+
+  return (
+    <div style={{ height: c.h, background: c.bg, borderRadius: 6, overflow: "hidden", position: "relative", marginBottom: 3 }}>
+      {inner()}
+      <span style={{ position: "absolute", bottom: 4, left: 8, fontSize: 10, fontWeight: 600, color: tc, opacity: 0.7 }}>{c.label}</span>
+    </div>
+  );
+}
+
 // ─── Style System ───────────────────────────────────────────────────────────────
 
 const S = {
@@ -50,8 +162,8 @@ const S = {
   themeRole: {
     fontSize: 12,
     fontWeight: 600,
-    padding: "4px 10px",
-    borderRadius: 999,
+    padding: "4px 12px",
+    borderRadius: 6,
     background: "#DBEAFE",
     color: "#1E40AF",
   },
@@ -64,7 +176,7 @@ const S = {
   card: {
     position: "relative",
     background: "#FFFFFF",
-    border: "2px solid #E5E7EB",
+    border: "1px solid #E5E7EB",
     borderRadius: 12,
     overflow: "hidden",
     cursor: "pointer",
@@ -72,11 +184,11 @@ const S = {
   },
   cardSelected: {
     borderColor: "#2563EB",
-    boxShadow: "0 0 0 3px rgba(37,99,235,0.15)",
+    boxShadow: "0 0 0 2px rgba(37,99,235,0.15)",
   },
   cardActive: {
     borderColor: "#16A34A",
-    boxShadow: "0 0 0 3px rgba(22,163,74,0.12)",
+    boxShadow: "0 0 0 2px rgba(22,163,74,0.12)",
   },
   cardPreview: {
     height: 140,
@@ -114,9 +226,9 @@ const S = {
     top: 10,
     right: 10,
     fontSize: 11,
-    fontWeight: 700,
+    fontWeight: 600,
     padding: "3px 10px",
-    borderRadius: 999,
+    borderRadius: 6,
     background: "#16A34A",
     color: "#FFFFFF",
   },
@@ -125,9 +237,9 @@ const S = {
     top: 10,
     right: 10,
     fontSize: 11,
-    fontWeight: 700,
+    fontWeight: 600,
     padding: "3px 10px",
-    borderRadius: 999,
+    borderRadius: 6,
     background: "#2563EB",
     color: "#FFFFFF",
   },
@@ -141,14 +253,14 @@ const S = {
   },
   btnPrimary: {
     padding: "10px 24px",
-    fontSize: 14,
-    fontWeight: 700,
+    fontSize: 13,
+    fontWeight: 600,
     color: "#FFFFFF",
     background: "#2563EB",
-    border: "none",
+    border: "1px solid #2563EB",
     borderRadius: 8,
     cursor: "pointer",
-    transition: "background 0.15s",
+    transition: "all 0.15s",
   },
   btnPrimaryDisabled: {
     background: "#93C5FD",
@@ -156,13 +268,14 @@ const S = {
   },
   btnSecondary: {
     padding: "10px 24px",
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: 600,
     color: "#374151",
     background: "#FFFFFF",
-    border: "1px solid #D1D5DB",
+    border: "1px solid #E5E7EB",
     borderRadius: 8,
     cursor: "pointer",
+    transition: "all 0.15s",
   },
   customSection: {
     background: "#FFFFFF",
@@ -174,7 +287,7 @@ const S = {
   textarea: {
     width: "100%",
     minHeight: 300,
-    border: "1px solid #D1D5DB",
+    border: "1px solid #E5E7EB",
     borderRadius: 8,
     padding: 12,
     fontSize: 13,
@@ -210,23 +323,21 @@ const S = {
   },
   tabs: {
     display: "flex",
-    gap: 0,
-    borderBottom: "2px solid #E5E7EB",
+    gap: 6,
     marginBottom: 24,
   },
   tab: {
-    padding: "12px 24px",
-    fontSize: 14,
+    padding: "9px 20px",
+    fontSize: 13,
     fontWeight: 600,
     color: "#6B7280",
     cursor: "pointer",
-    border: "none",
-    background: "none",
-    borderBottom: "2px solid transparent",
-    marginBottom: -2,
-    transition: "color 0.15s, border-color 0.15s",
+    border: "1px solid #E5E7EB",
+    background: "#FFFFFF",
+    borderRadius: 8,
+    transition: "all 0.15s",
   },
-  tabActive: { color: "#2563EB", borderBottomColor: "#2563EB" },
+  tabActive: { color: "#FFFFFF", background: "#2563EB", borderColor: "#2563EB" },
   previewContainer: {
     background: "#FFFFFF",
     border: "1px solid #E5E7EB",
@@ -480,7 +591,6 @@ export default function Feature2Page() {
     if (fetcher.data) {
       if (fetcher.data.ok) {
         setToast({ type: "success", message: "Layout updated! Changes are live on your storefront." });
-        setSelectedLayout(null);
       } else if (fetcher.data.error) {
         setToast({ type: "error", message: fetcher.data.error });
       }
@@ -554,70 +664,89 @@ export default function Feature2Page() {
       </div>
 
       {activeTab === "presets" && (
-        <>
-          <div style={S.grid}>
+        <div style={{ display: "flex", gap: 20 }}>
+          {/* Left: Layout list */}
+          <div style={{ flex: "0 0 280px" }}>
             {(layouts ?? []).map((layout) => {
               const isActive = activePreset === layout.id;
               const isSelected = selectedLayout === layout.id;
               return (
                 <div
                   key={layout.id}
-                  style={{
-                    ...S.card,
-                    ...(isSelected ? S.cardSelected : {}),
-                    ...(isActive && !isSelected ? S.cardActive : {}),
-                  }}
                   onClick={() => setSelectedLayout(layout.id)}
+                  style={{
+                    position: "relative", padding: "14px 16px", marginBottom: 8, borderRadius: 12, cursor: "pointer",
+                    border: isSelected ? "1px solid #2563EB" : isActive ? "1px solid #16A34A" : "1px solid #E5E7EB",
+                    background: isSelected ? "#EFF6FF" : isActive ? "#F0FDF4" : "#FFFFFF",
+                    boxShadow: isSelected ? "0 0 0 2px rgba(37,99,235,0.15)" : isActive ? "0 0 0 2px rgba(22,163,74,0.12)" : "none",
+                    transition: "all 0.15s",
+                  }}
                 >
-                  {isActive && <span style={S.activeBadge}>Active</span>}
-                  {isSelected && !isActive && <span style={S.selectedBadge}>Selected</span>}
-                  <div style={S.cardPreview}>{layout.thumbnail}</div>
-                  <div style={S.cardBody}>
-                    <h3 style={S.cardName}>{layout.name}</h3>
-                    <p style={S.cardDesc}>{layout.description}</p>
-                    <div style={S.cardSections}>
-                      {layout.sectionTypes.map((type, i) => (
-                        <span key={i} style={S.sectionTag}>{type.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}</span>
-                      ))}
+                  <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <span style={{ fontSize: 28 }}>{layout.thumbnail}</span>
+                    <div style={{ flex: 1 }}>
+                      <h3 style={{ margin: 0, fontSize: 14, fontWeight: 700, color: "#111827" }}>{layout.name}</h3>
+                      <p style={{ margin: "2px 0 0", fontSize: 12, color: "#6B7280" }}>{layout.sectionTypes.length} sections</p>
                     </div>
+                    {isActive && <span style={{ fontSize: 11, fontWeight: 600, padding: "2px 8px", borderRadius: 6, background: "#16A34A", color: "#FFF" }}>Active</span>}
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {selectedLayout && (
-            <div style={S.previewContainer}>
-              <h3 style={{ margin: "0 0 12px", fontSize: 15, fontWeight: 700, color: "#111827" }}>
-                Layout Preview: {(layouts ?? []).find((l) => l.id === selectedLayout)?.name}
-              </h3>
-              {(() => {
-                const layout = (layouts ?? []).find((l) => l.id === selectedLayout);
-                if (!layout) return null;
-                return layout.sectionTypes.map((type, idx) => (
-                  <div key={idx} style={S.previewBlock}>
-                    <p style={S.previewBlockName}>{idx + 1}. {type.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")}</p>
+          {/* Right: Preview panel */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            {(() => {
+              const layout = (layouts ?? []).find((l) => l.id === selectedLayout);
+              if (!layout) return (
+                <div style={{ background: "#F9FAFB", border: "2px dashed #D1D5DB", borderRadius: 12, padding: 60, textAlign: "center" }}>
+                  <p style={{ fontSize: 32, margin: "0 0 8px" }}>&#x1F449;</p>
+                  <p style={{ fontSize: 15, fontWeight: 600, color: "#6B7280", margin: 0 }}>Select a layout to preview</p>
+                  <p style={{ fontSize: 13, color: "#9CA3AF", margin: "4px 0 0" }}>Click on a layout from the list to see its sections</p>
+                </div>
+              );
+              const isActive = activePreset === layout.id;
+              return (
+                <div style={{ background: "#FFFFFF", border: "1px solid #E5E7EB", borderRadius: 12, overflow: "hidden" }}>
+                  {/* Header */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 20px", borderBottom: "1px solid #E5E7EB" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <span style={{ fontSize: 24 }}>{layout.thumbnail}</span>
+                      <div>
+                        <h2 style={{ margin: 0, fontSize: 16, fontWeight: 700, color: "#111827" }}>{layout.name}</h2>
+                        <p style={{ margin: 0, fontSize: 12, color: "#6B7280" }}>{layout.sectionTypes.length} sections</p>
+                      </div>
+                    </div>
+                    <button
+                      style={{ ...S.btnPrimary, padding: "8px 20px", fontSize: 13, ...(isSubmitting || !theme || isActive ? S.btnPrimaryDisabled : {}) }}
+                      disabled={isSubmitting || !theme || isActive}
+                      onClick={handleApplyPreset}
+                    >
+                      {isSubmitting ? "Applying..." : isActive ? "Currently Active" : "Apply Layout"}
+                    </button>
                   </div>
-                ));
-              })()}
-            </div>
-          )}
-
-          <div style={S.actions}>
-            <button
-              style={{ ...S.btnPrimary, ...(!selectedLayout || isSubmitting || !theme ? S.btnPrimaryDisabled : {}) }}
-              disabled={!selectedLayout || isSubmitting || !theme}
-              onClick={handleApplyPreset}
-            >
-              {isSubmitting ? "Applying..." : "Apply Layout"}
-            </button>
-            {selectedLayout && (
-              <button style={S.btnSecondary} onClick={() => setSelectedLayout(null)}>
-                Cancel
-              </button>
-            )}
+                  {/* Wireframe preview */}
+                  <div style={{ padding: "16px 20px", background: "#F8FAFC" }}>
+                    <div style={{ background: "#FFFFFF", borderRadius: 8, border: "1px solid #E5E7EB", overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 12px", background: "#F3F4F6", borderBottom: "1px solid #E5E7EB" }}>
+                        <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#EF4444" }} />
+                        <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#F59E0B" }} />
+                        <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#22C55E" }} />
+                        <div style={{ flex: 1, height: 18, borderRadius: 4, background: "#FFFFFF", marginLeft: 8, border: "1px solid #E5E7EB" }} />
+                      </div>
+                      <div style={{ padding: 8 }}>
+                        {layout.sectionTypes.map((type, idx) => (
+                          <SectionWireframe key={idx} type={type} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
-        </>
+        </div>
       )}
 
       {activeTab === "custom" && (

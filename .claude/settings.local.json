@@ -13,7 +13,10 @@
       "Bash(npx prisma:*)",
       "Bash(sqlite3:*)",
       "Bash(grep \"\"version\"\":*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "mcp__shopify-dev-mcp__learn_shopify_api",
+      "mcp__shopify-dev-mcp__search_docs_chunks",
+      "Bash(git checkout:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
